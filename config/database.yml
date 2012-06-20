@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: shia_me_development
+  database: shiame_development
   pool: 5
   username: nadercarun
   password: cablenader
@@ -42,7 +42,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: shia_me_test
+  database: shiame_test
   pool: 5
   username: nadercarun
   password: cablenader
@@ -51,7 +51,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: shia_me_production
+  database: shiame_production
   pool: 5
   username: nadercarun
   password: cablenader
