@@ -19,13 +19,15 @@ group :development do
   gem 'rspec-rails', '2.10.0'
   gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
+  gem 'guard-rspec', '0.5.5'
 end
 
 group :test do
   gem 'rspec-rails', '2.10.0'
-  gem 'spork', '0.9.0.rc8'
   gem 'factory_girl_rails', '1.0'
   gem 'capybara', '1.1.2'
+  gem 'rb-fsevent', '0.4.3.1', :require => false
+  gem 'growl', '1.0.3'
 end
 
 group :assets do 
