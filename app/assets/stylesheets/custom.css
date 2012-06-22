@@ -1,0 +1,75 @@
+
+/* This is the default Stylesheet for all Controllers and Pages */
+
+* { 
+	margin:0;
+	padding:0;
+}
+
+a {text-decoration:none}
+
+a img {
+	border:none;
+}
+
+html {
+		margin:0;
+		padding:0;
+		border:0;
+}
+
+body {
+	background-color:#6B4724;
+	margin:0 auto;
+}
+
+
+p {
+	font-family:"Helvetica";
+	font-size:14px;
+	margin:0px 0px 5px 0px;
+}
+
+.header {
+	background-color:#2E8A2E;
+	height:40px;
+	padding:0;
+	background-color:#009933;
+	background: -webkit-gradient(linear, left top, left bottom, from(#009933), to(#33AD5C));
+	background: -moz-linear-gradient(top, #009933,  #33AD5C);
+	-moz-box-shadow: 2px 2px 2px #888;
+	-webkit-box-shadow: 2px 2px 2px #888;
+	box-shadow: 2px 2px 2px #888;
+}
+
+
+.logo {
+	margin:0px 0px 0px 0px;
+	font-family:"Helvetica";
+	font-size:40px;
+	font-weight:bold;
+	text-align:left;
+	border:1px solid white;
+}
+
+.logobox {
+		float:left;
+		background-color:white;
+		width:40%;
+}
+
+.container {
+	display:block;
+	min-width: 800px;
+	max-width: 1024px;
+	margin: 10px auto;
+	width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
+}
+
+
+
+
+
+
+
+

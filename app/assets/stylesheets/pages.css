@@ -2,3 +2,12 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+		/* HOME PAGE */
+
+
+.home_logo {
+		float:left;
+		width:60%;
+		margin:100px 0px 0px 100px;
+}

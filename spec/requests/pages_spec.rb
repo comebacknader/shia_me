@@ -4,17 +4,17 @@ describe "Pages Controller Tests" do
   
   describe "Home Page" do
     
-    it "should have h1 of shiaME" do 
-      visit '/pages/home'
-      page.should have_selector('h1',
-                                :text => "shiaME")
-    end
-    
     it "should have the right title" do
       visit '/pages/home'
       page.should have_selector('title',
-                                :text => 'shiaME | Home')
+                                :text => 'shiaME')
     end
+    
+    it "should not have custom page title" do
+    visit '/pages/home'
+    page.should_not have_selector('title',
+                                  :text => '| Home')
+    end                           
   end
   
   describe "About Page" do
