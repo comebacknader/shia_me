@@ -1,17 +1,21 @@
 <div class="container">
 	
-	<h1></h1>
-	
 	<div class="home_logo">
-		<%= image_tag("logo.png") %>
+		<%= image_tag("logo.png", :alt => "shiaME Home Page") %>
 	</div>
-		<div class="invite_code">
-			<%= form_tag about_path, :method => :get do %>
-			    <%= text_field_tag "", "", :class => "invite_code_field" %>
-			    <%= submit_tag "EMAIL", :class => "invite_code_button"  %>
-			<% end %>
-		</div>
+	<div class="invite_code">
+		<h1 class="home_tagline"> a matchmaking service </h1>
+		<%= form_tag about_path, :method => :get do %>
+		    <%= text_field_tag "", "", :class => "invite_code_field" %>
+		    <%= submit_tag "EMAIL", :class => "invite_code_button"  %>
+		<% end %>
 	</div>
+
+	<div class="what_is_site">
+		<p> What is shiaME? </p>
+	</div>
+	
+	
 
 
 </div>

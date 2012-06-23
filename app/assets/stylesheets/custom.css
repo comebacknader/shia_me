@@ -19,7 +19,7 @@ html {
 }
 
 body {
-	background-color:#6B4724;
+	background-color:#522900;
 	margin:0 auto;
 }
 
@@ -29,6 +29,24 @@ p {
 	font-size:14px;
 	margin:0px 0px 5px 0px;
 }
+
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
 
 .header {
 	background-color:#2E8A2E;
@@ -41,7 +59,6 @@ p {
 	-webkit-box-shadow: 2px 2px 2px #888;
 	box-shadow: 2px 2px 2px #888;
 }
-
 
 .logo {
 	margin:0px 0px 0px 0px;
