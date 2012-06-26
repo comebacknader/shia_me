@@ -1,9 +1,8 @@
 ShiaMe::Application.routes.draw do
-
-   get "pages/home"
-   get "pages/about"
+   root to: 'pages#home'
    
-   root :to => 'pages#home'
-   match "/about", to: "pages#about"
+   
+   match "/about", to: 'pages#about'
+   match "/signup", to: 'subscribers#new'
 
 end

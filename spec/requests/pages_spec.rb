@@ -2,27 +2,19 @@ require 'spec_helper'
 
 describe "Pages Controller Tests" do
   
+  subject { page }
+  
   describe "Home Page" do
+    before { visit root_path}
     
-    it "should have the right title" do
-      visit '/pages/home'
-      page.should have_selector('title',
-                                :text => 'shiaME')
-    end
-    
-    it "should not have custom page title" do
-    visit '/pages/home'
-    page.should_not have_selector('title',
-                                  :text => '| Home')
-    end                           
+    it { should have_selector('title', text: full_title('')) }    
+    it { should_not have_selector('title', :text => '| Home') }                          
+  
   end
   
   describe "About Page" do
+    before { visit about_path }
     
-    it "should have Title of About" do 
-      visit '/pages/about'
-      page.should have_selector('title',
-                                :text => 'shiaME | About')
-    end                    
+    it {should have_selector('title', text: full_title('')) }                   
   end
 end
