@@ -19,11 +19,6 @@ describe "Pages Controller Tests" do
   
   describe "About Page" do
     
-    it "should have the h1 About Text" do 
-      visit '/pages/about'
-      page.should have_selector('h1', :text => "About")
-    end
-    
     it "should have Title of About" do 
       visit '/pages/about'
       page.should have_selector('title',
