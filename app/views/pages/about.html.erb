@@ -5,15 +5,28 @@
 	<div class="about_wrapper">
 		<div class="about_header_box">
 		
-		<div class="about_header_title">
-			<h1>Professional MatchMaking</h1>
-			<p> Let us find your marriage partner for you. <br /><br /> 
-			</p>
-	 	</div>
+			<div class="about_header_title">
+				<h1>Professional MatchMaking</h1>
+					<p> Let us find your marriage partner for you.</p>
+					<p> You are personally assigned a shiaME Match Maker who works directly with you. </p>
+					<p> No Searches. No Public Profiles. Just you and the matches we assign you. </p>	
+					<p> If you don't like the match, we find you a new one. </p> 
+					<p> Simple. </p>
+				<h1>How Do I Join?</h1>
+					<p> shiaME is not for everyone.</p>
+					<p> We are highly selective and currently only serving California. </p>
+					<p> You must be given an Invite Code by one of our shiaME Representatives.</p>
+					<p> Afterwards, you must complete an application process. </p>
+					<p> If accepted, alhamdulilah! </p>
+		 	</div>
 
-		<div class="about_header_screenshot">
+			<div class="about_subscribe">
+				<p>To be notified of our Launch, enter your email </p>
+					<%= form_tag about_path, :method => :get do %>
+					    <%= text_field_tag "", "", :class => "invite_code_field" %>
+					    <%= submit_tag "SUBSCRIBE", :class => "invite_code_button"  %>
+					<% end %>
 			</div>
-		</div>
 
 
 		</div>
