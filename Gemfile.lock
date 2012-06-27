@@ -31,7 +31,8 @@ GEM
     acts-as-taggable-on (2.2.2)
       rails (~> 3.0)
     addressable (2.2.8)
-    annotate (2.4.0)
+    annotate (2.5.0.pre1)
+      rake
     arel (3.0.2)
     aws-s3 (0.6.3)
       builder
@@ -200,7 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 2.2.2)
-  annotate (= 2.4.0)
+  annotate (~> 2.5.0.pre1)
   aws-s3
   aws-sdk
   bcrypt-ruby

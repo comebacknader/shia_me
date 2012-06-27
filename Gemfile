@@ -17,9 +17,9 @@ gem 'thin'
 
 group :development do
   gem 'rspec-rails', '2.10.0'
-  gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
   gem 'guard-rspec', '0.5.5'
+  gem "annotate", "~> 2.5.0.pre1"
 end
 
 group :test do
