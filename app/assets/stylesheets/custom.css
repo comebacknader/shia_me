@@ -19,7 +19,7 @@ html {
 }
 
 body {
-	background-color:#522900;
+	background-color:#00478F;
 	margin:0 auto;
 }
 
@@ -79,6 +79,6 @@ h2 {
 	display:block;
 	min-width: 800px;
 	max-width: 1024px;
-	margin: 10px auto;
+	margin: 0px auto;
 	width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
 }
