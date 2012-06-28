@@ -6,7 +6,13 @@
 </head>
 <body>
 
+<% if @title == "Home" %>
+<div class="background_home">
+	<% else %>
+<div class="background_all">
+<% end %>
 <%= yield %>
+</div>
 
 </body>
 </html>
