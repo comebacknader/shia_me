@@ -20,6 +20,7 @@ html {
 
 body {
 	margin:0 auto;
+	background-color:#F2F2F2;
 }
 
 .background_home {
@@ -32,12 +33,11 @@ body {
 
 .background_all {
 	float:left;
-	background-color:#F2F2F2;
 	width:100%;
 	min-height:800px;
 	max-height:5000px;
 	margin:0 auto;
-}
+}  
 
 
 p {
