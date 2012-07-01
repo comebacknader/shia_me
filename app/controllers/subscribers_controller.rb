@@ -14,7 +14,7 @@ class SubscribersController < ApplicationController
     if @subscriber.save
       redirect_to "/thankyou", :notice => "You Are On the Email List"
     else
-      render 'new'
+      redirect_to root_path
     end
   end
   
