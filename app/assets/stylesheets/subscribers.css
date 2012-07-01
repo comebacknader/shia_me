@@ -2,3 +2,62 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.thankyou_wrapper {
+		float:left;
+		background-color:white;
+		width:1024px;
+		height:100%;
+		border:1px solid #D0D0D0;
+		z-index:1;
+		margin:30px 0px 0px 0px;
+		padding:50px 0px 0px 0px;
+}
+
+.thankyou_wrapper h1 {
+		font-family:"Helvetica";
+		font-size:25px;
+		color:#333;
+		font-weight:bold;
+		margin:50px 0px 0px 0px;
+}
+
+.thankyou_wrapper p {
+		font-family:"Helvetica";
+		font-size:20px;
+		color:#333;
+		font-weight:bold;
+		text-align:center;
+		width:700px;
+		margin:20px 0px 100px 170px;
+}
+
+
+.subscribers_wrapper {
+		float:left;
+		background-color:white;
+		width:1024px;
+		height:100%;
+		border:1px solid #D0D0D0;
+		z-index:1;
+		margin:30px 0px 0px 0px;
+		padding:50px 0px 0px 0px;
+}
+
+.subscribers_wrapper h1 {
+		font-family:"Helvetica";
+		font-size:25px;
+		color:#333;
+		font-weight:bold;
+		margin:50px 0px 0px 0px;
+}
+
+.subscribers_wrapper p {
+		font-family:"Helvetica";
+		font-size:20px;
+		color:#333;
+		font-weight:bold;
+		text-align:center;
+		width:700px;
+		margin:20px 0px 0px 170px;
+}

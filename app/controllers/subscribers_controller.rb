@@ -12,7 +12,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(params[:subscriber])
     
     if @subscriber.save
-      redirect_to "/signup", :notice => "You Are On the Email List"
+      redirect_to "/thankyou", :notice => "You Are On the Email List"
     else
       render 'new'
     end

@@ -1,4 +1,4 @@
-<% provide(:title, "Thank You") %>
+<% provide(:title, "All Subscribers") %>
 
 
 <div class="about_header">
@@ -13,11 +13,10 @@
 
 <div class="container">
 	
-	<div class="thankyou_wrapper">
+	<div class="subscribers_wrapper">
 		
-		<h1>Thank You</h1>
-		<p>We will inform you when we launch and how you can
-			 get an invite code, insh'Allah. </p>
-		
+		<% @subscribers.each do |subscriber| %>
+		<p><%= subscriber.email %></p>
+		<% end %>
 	</div>
 </div>
