@@ -8,7 +8,7 @@
 
 .home_logo {
 		position:absolute;
-		margin:20px 0px 0px 150px;
+		margin:20px 0px 0px 120px;
 		width:700px;
 		height:600px;
 		z-index:-2;
@@ -17,7 +17,7 @@
 .invite_code {
 		position:relative;
 		float:left;
-		margin:250px 0px 0px 360px;
+		margin:250px 0px 0px 330px;
 		z-index:2;
 		width:300px;
 		color:White;
@@ -68,7 +68,7 @@
 		position:absolute;
 		width:250px;
 		height:50px;
-		margin:600px 0px 0px 375px;
+		margin:600px 0px 0px 345px;
 		border:1px solid #333;
 		background-color:#0047B2;
 		background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
