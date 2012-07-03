@@ -11,14 +11,10 @@
 		margin:20px 0px 0px 120px;
 		width:700px;
 		height:600px;
-		z-index:-2;
+		z-index:2;
 }
 
 .home_wrapper {
-		float:left;
-		margin:50px 0px 0px 200px;
-		min-height:900px;
-		max-height:1600px;
 }
 
 .invite_code {
