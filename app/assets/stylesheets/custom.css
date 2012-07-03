@@ -24,12 +24,12 @@ body {
 }
 
 .background_home {
+	position: absolute;
 	background-color:#003380;
 	min-height: 100%;
-	min-width: 1280px;
+	min-width: 1024px;
 	width: 100%;
 	height: auto;
-	position: absolute;
 	top: 0;
 	left: 0;
 	overflow:auto;
