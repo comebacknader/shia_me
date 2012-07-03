@@ -15,7 +15,8 @@
 }
 
 .home_wrapper {
-		height:900px;
+		min-height:900px;
+		max-height:1600px;
 }
 
 .invite_code {
