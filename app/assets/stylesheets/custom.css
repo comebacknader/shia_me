@@ -27,12 +27,8 @@ body {
 	background-color:#003380;
 	min-height: 100%;
 	min-width: 1280px;
-
-		/* Set up proportionate scaling */
 	width: 100%;
 	height: auto;
-
-		/* Set up positioning */
 	position: absolute;
 	top: 0;
 	left: 0;
