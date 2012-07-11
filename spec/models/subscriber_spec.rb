@@ -3,11 +3,8 @@ require 'spec_helper'
 describe Subscriber do
   
   before { @subscriber = Subscriber.new(email: "subscriber@example.com") }
-  
   subject { @subscriber }
-  
   it { should respond_to(:email) }
-  
   it { should be_valid }
 
   describe "when email is not present" do 
@@ -47,7 +44,6 @@ describe Subscriber do
       subscriber_with_same_email.email = @subscriber.email.upcase
       subscriber_with_same_email.save
     end
-    
     it { should_not be_valid }
   end
   
