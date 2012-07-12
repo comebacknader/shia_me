@@ -13,10 +13,15 @@ require 'spec_helper'
 
 describe Admin do
   
-  before { @admin = Admin.new(name: "Admin", email: "example@admin.com") }
+  before { @admin = Admin.new(name: "Admin", email: "example@admin.com",
+                              password: "foobar", password_confirmation: "foobar") }
   subject { @admin }
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password) }
+  it { should respond_to(:password_confirmation) }  
+  it { should respond_to(:authenticate) }
   it { should be_valid } # when there is a "be" in front of a something
                         # there is a boolean on it - this case @admin.valid?
   
@@ -70,5 +75,40 @@ describe Admin do
     it { should_not be_valid }
   end
     
+  describe "when password is not present" do 
+    before { @admin.password = @admin.password_confirmation = "" }
+    it { should_not be_valid }
+  end  
+  
+  describe "when password mismatch" do 
+    before { @admin.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+  end
+  
+  describe "when password is nil" do 
+    before { @admin.password_confirmation = nil }
+    it { should_not be_valid }
+  end
+  
+  describe "return authenticate value" do 
+    before { @admin.save }  
+    let(:found_admin) { Admin.find_by_email(@admin.email) }
+    
+    describe "with valid password" do 
+      it { should == found_admin.authenticate(@admin.password) }
+    end
+    
+    describe "with invalid password" do
+      let(:admin_for_invalid_password) { found_admin.authenticate("invalid") }
+      
+      it { should_not == admin_for_invalid_password }
+      specify { admin_for_invalid_password.should be_false }
+    end
+  end
+  
+  describe "password too short" do 
+    before { @admin.password = @admin.password_confirmation = "a" * 5 }
+    it { should be_invalid }
+  end
     
 end
