@@ -1,6 +1,8 @@
 class Admin < ActiveRecord::Base
   attr_accessible :email, :name
   
+  before_save { |admin| admin.email = email.downcase }
+  
   validates :name, presence: true,
                    length: { maximum: 50 }
 
