@@ -18,9 +18,6 @@
 	margin:0px 0px 0px 30px;
 }
 
-.home_wrapper {
-	height:800px;
-}
 
 .invite_code {
 		float:left;
@@ -76,7 +73,7 @@
 		float:left;
 		width:250px;
 		height:50px;
-		margin:50px 0px 0px 355px;
+		margin:50px 0px 160px 355px;
 		border:1px solid DimGray;
 		background-color:#0047B2;
 		background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
