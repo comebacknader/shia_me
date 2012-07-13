@@ -102,3 +102,10 @@ h2 {
 	margin: 0px auto;
 	width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
 }
+
+.debug {
+	font-family:"Helvetica";
+	color:black;
+	float:left;
+	margin:0px 0px 0px 400px;
+}
