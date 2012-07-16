@@ -107,5 +107,9 @@ h2 {
 	font-family:"Helvetica";
 	color:black;
 	float:left;
-	margin:0px 0px 0px 450px;
+	width:100%;
+	margin:0px 0px 20px 0px;
+	background-color:WhiteSmoke;
+	border:1px solid #D0D0D0;
+	text-align:center;
 }
