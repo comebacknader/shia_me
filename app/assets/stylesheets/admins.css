@@ -2,3 +2,81 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.admin_header {
+		width:100%;
+		text-align:center;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:40px;
+		margin:40px 0px 0px 0px;
+}
+
+.admin_signup_box {
+		float:left;
+		width:600px;
+		height:1000px;
+		margin:50px 0px 0px 200px;
+}
+
+.admin_signup {
+		float:left;
+		width:100%;
+		font-family:"Helvetica";
+		font-weight:bold;
+		margin:10px 0px 0px 5px;
+}
+
+.admin_signup_field {
+		float:left;
+		width:100%;
+		height:30px;
+		margin:10px 0px 10px 0px;
+}
+
+.admin_create {
+		float:left;
+		width:600px;
+		height:40px;
+		border:1px solid DimGray;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:14px;
+		margin:20px 0px 0px 0px;
+		color:White;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
+		background: -moz-linear-gradient(top, #0047B2,  #003380);
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;		
+}
+
+.admin_create:hover {
+		border:1px solid Black;
+}
+
+.error_messages {
+	float:left;
+	width:100%;
+	font-family:"Helvetica";
+}
+
+.error_count {
+		float:left;
+		width:100%;
+		font-weight:bold;
+		background-color:#FF8080;
+		border:1px solid #f00;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		padding:10px;
+}
+
+.error_msg {
+		float:left;
+		list-style:none;
+		margin:10px 0px 0px 10px;
+		color:#f00;
+}
+	

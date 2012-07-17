@@ -2,8 +2,28 @@
 
 <div class="container">
 	
-	<h1>Sign Up</h1>
-	<p>Find me in app/views/admins/new.html.erb</p>
+	<h1 class="admin_header">Become A MatchMaker</h1>
+	
+	<div class="admin_signup_box">
+		<%= form_for(@admin) do |f| %>
+		
+		<%= render 'shared/error_messages' %>
+	
+		<%= f.label :name, class: "admin_signup" %>
+		<%= f.text_field :name, class: "admin_signup_field" %>
 
+		<%= f.label :email, class: "admin_signup" %>
+		<%= f.text_field :email, class: "admin_signup_field" %>
+	
+		<%= f.label :password, class: "admin_signup" %>
+		<%= f.password_field :password, class: "admin_signup_field" %>
+	
+		<%= f.label :password_confirmation, "Confirmation", class: "admin_signup" %>
+		<%= f.password_field :password_confirmation, class: "admin_signup_field" %>
 
+		<%= f.submit "Sign Up", class: "admin_create" %>
+
+		<% end %>
+	</div>
+	
 </div>
