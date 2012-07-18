@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   
   def about 
    @subscriber = Subscriber.new
+   @browser = request.env["HTTP_USER_AGENT"]
   end
   
   def signin
