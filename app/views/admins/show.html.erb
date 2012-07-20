@@ -1,9 +1,17 @@
 <% provide(:title, @admin.name) %>
 
+
 <div class="container">
-	<h1><%= @admin.name %></h1>
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
+	
+	<h1 class="admin_header"><%= @admin.name %></h1>
+	
+	
 	<p>Welcome To Your Admin Page.</p>
 	
-	<p> <%= link_to "Profile", admin_path(@admin) %> </p>
-	<p> <%= link_to "Log Out", logout_path %> </p>
+	<p> <%= link_to "Profile", current_admin %> </p>
+	<p> <%= link_to "Log Out", logout_path, method: "delete" %> </p>
 </div>

@@ -40,6 +40,16 @@ describe "AdminPages" do
       it "should create Admin" do
         expect { click_button submit }.to change(Admin, :count).by(1)
       end
+      
+        describe "after saving the user" do 
+          before { click_button submit }
+          let(:admin) { Admin.find_by_email('ali@akbar.com') } 
+          
+          it { should have_selector('title', text: admin.name) }
+          it { should have_selector('div.alert.alert-success', text: "Welcome") }
+          it { should have_link('Log Out', ahref: logout_path )}
+        end
+      
     end
   end   
 end

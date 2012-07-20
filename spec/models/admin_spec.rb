@@ -21,6 +21,7 @@ describe Admin do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }  
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should be_valid } # when there is a "be" in front of a something
                         # there is a boolean on it - this case @admin.valid?
@@ -110,5 +111,9 @@ describe Admin do
     before { @admin.password = @admin.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
-    
+  
+  describe "remember token" do 
+    before { @admin.save }
+    its(:remember_token) { should_not be_blank }
+  end 
 end

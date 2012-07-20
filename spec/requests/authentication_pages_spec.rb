@@ -10,8 +10,8 @@ describe "AuthenticationPages" do
     it { should have_selector('h1', text: 'Log In') }
     it { should have_selector('title', text: 'Log In') }    
   end
-  
-    describe "signin" do 
+ 
+    describe "signin" do
       before { visit login_path }
       
     describe "with invalid information" do 
@@ -26,7 +26,7 @@ describe "AuthenticationPages" do
       end
     end
     
-      it { should have_selector('title', text: "Log In") }
+    it { should have_selector('title', text: "Log In") }
     
     describe "with valid information" do 
       let(:admin) { FactoryGirl.create(:admin) }

@@ -12,6 +12,8 @@ class AdminsController < ApplicationController
     @admin = Admin.new(params[:admin])
     
     if @admin.save
+      sign_in @admin
+      flash[:success] = "Welcome #{@admin.name} "
       redirect_to @admin
     else
       render "new"
