@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include AdminSessionsHelper
-  require 'net/HTTP'
   
   before_filter :browsercheck
   
