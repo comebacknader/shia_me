@@ -3,4 +3,7 @@
 <div class="container">
 	<h1><%= @admin.name %></h1>
 	<p>Welcome To Your Admin Page.</p>
+	
+	<p> <%= link_to "Profile", admin_path(@admin) %> </p>
+	<p> <%= link_to "Log Out", logout_path %> </p>
 </div>
