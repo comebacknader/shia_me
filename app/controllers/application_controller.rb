@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include AdminSessionsHelper
-  
-  before_filter :browsercheck
+
   
   
     def browsercheck
