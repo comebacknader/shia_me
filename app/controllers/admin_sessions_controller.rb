@@ -8,7 +8,7 @@ class AdminSessionsController < ApplicationController
     admin = Admin.find_by_email(params[:admin_sessions][:email])
     if admin && admin.authenticate(params[:admin_sessions][:password])
       sign_in admin
-      redirect_to admin
+      redirect_back_or admin
     else
       flash.now[:error] = "Invalid Email/Password Combination"
       render 'new'

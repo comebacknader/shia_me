@@ -44,7 +44,10 @@ class AdminsController < ApplicationController
   private 
   
   def signed_in_admin
-    redirect_to login_path, notice: "Please Sign In." unless signed_in?
+    unless signed_in? 
+      store_location
+      redirect_to login_path, notice: "Please Sign In."
+    end
   end
   
   def correct_admin 

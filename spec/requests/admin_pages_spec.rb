@@ -5,6 +5,25 @@ describe "AdminPages" do
   
   before { AdminsController.skip_before_filter :authorize }
   
+  
+  describe "index page" do 
+    before do 
+      sign_in FactoryGirl.create(:admin)
+      FactoryGirl.create(:admin, name: "Bob", email: "bob@bobample.com")
+      FactoryGirl.create(:admin, name: "Ben", email: "ben@benample.com")
+      visit admins_path
+    end
+    
+    it { should have_selector('title', text: "All Admins") }  
+    it { should have_selector('h1', text: "All Admins") } 
+    
+    it "should list all admins" do 
+      Admin.all.each do |admin|
+        page.should have_selector('p', text: admin.name)
+      end
+    end
+  end
+     
   describe "signup page" do
     before { visit new_admin_path }
     

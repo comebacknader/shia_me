@@ -47,12 +47,35 @@ describe "AuthenticationPages" do
     
     describe "for non-signed-in admins" do 
       let(:admin) { FactoryGirl.create(:admin) }
+
+      # FRIENDLY-FORWARDING TESTS - NOT USED FOR ADMIN SO I COMMENTED OUT
+      
+  #    describe "when attempting to visit a protected page" do 
+   #     before do 
+    #      visit edit_admin_path(admin) 
+     #     fill_in "Email",    with: admin.email
+      #    fill_in "Password", with: admin.password
+       #   click_button "Log In"
+    #    end
+        
+  #      describe "after signing in" do 
+          
+   #       it "should render the desired protected page" do 
+     #       page.should have_selector('title', text: 'Edit Profile')
+    #      end
+    #    end
+    #  end
       
       describe "In the Admins Controller" do 
         
         describe "visiting the edit page" do 
           before { visit edit_admin_path(admin) }
           it { should have_selector('title', text: 'Log In') }
+        end
+        
+        describe "visiting the Admin Index page" do 
+          before { visit admins_path }
+          it { should have_selector('title', text: "Log In") }
         end
       
         describe "submitting to the update action" do 
