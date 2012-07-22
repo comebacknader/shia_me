@@ -85,9 +85,7 @@ describe "AdminPages" do
         it { should have_link('Log Out', href: logout_path) }
         specify { admin.reload.name.should == new_name }
         specify { admin.reload.email.should == new_email }
-      end
-    
-      
+      end      
     end    
   end   
 end
