@@ -1,8 +1,6 @@
 class AdminsController < ApplicationController
-  before_filter :signed_in_admin
+  before_filter :signed_in_admin, only: [:index, :edit, :update]
   before_filter :correct_admin, only: [:edit, :update]
-  skip_before_filter :authorize
-  
   
   def index
     @admins = Admin.all

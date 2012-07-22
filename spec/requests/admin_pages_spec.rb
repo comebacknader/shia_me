@@ -3,6 +3,8 @@ require 'spec_helper'
 describe "AdminPages" do
   subject { page }
   
+  before { AdminsController.skip_before_filter :authorize }
+  
   describe "signup page" do
     before { visit new_admin_path }
     

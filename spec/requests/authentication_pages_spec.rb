@@ -4,6 +4,8 @@ describe "AuthenticationPages" do
   
   subject { page }
   
+  before { AdminsController.skip_before_filter :authorize }  
+  
   describe "signin page" do 
     before { visit login_path }
     
