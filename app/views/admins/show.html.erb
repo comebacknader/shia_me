@@ -7,11 +7,17 @@
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
 	<% end %>	
 	
-	<h1 class="admin_header"><%= @admin.name %></h1>
+	<h1 class="admin_show_header"><%= @admin.name %></h1>
 	
+	<div class="admin_show">
+		
+		<ul class="admin_nav_bar">
+			<li> <%= link_to "Profile", current_admin %></li>
+			<li> <%= link_to "Settings", edit_admin_path(@admin) %></li>
+			<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
+		</ul>
+		<p>Welcome To Your Admin Page.</p>
+
+	</div>
 	
-	<p>Welcome To Your Admin Page.</p>
-	
-	<p> <%= link_to "Profile", current_admin %> </p>
-	<p> <%= link_to "Log Out", logout_path, method: "delete" %> </p>
 </div>

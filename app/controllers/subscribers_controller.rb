@@ -1,4 +1,5 @@
 class SubscribersController < ApplicationController
+ skip_before_filter :authorize, except: [:index]
  
   def new
     @subscriber = Subscriber.new

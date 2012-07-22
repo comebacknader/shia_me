@@ -13,6 +13,10 @@ module AdminSessionsHelper
     @current_admin ||= Admin.find_by_remember_token(cookies[:remember_token])
   end    
   
+  def current_admin?(admin)
+    admin == current_admin
+  end
+  
   def signed_in? 
     !current_admin.nil? 
   end

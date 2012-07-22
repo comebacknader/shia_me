@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_filter :authorize, only: [:home, :about]
   
   def home
     @subscriber = Subscriber.new

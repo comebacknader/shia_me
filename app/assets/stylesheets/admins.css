@@ -12,6 +12,33 @@
 		margin:40px 0px 0px 0px;
 }
 
+.admin_show_header {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:40px;
+		margin:40px 0px 0px 0px;
+}
+
+.admin_show {
+	clear:left;
+	float:left;
+	width:100%;
+}
+
+.admin_nav_bar {
+		float:right;
+		font-family:"Helvetica";
+		font-size:14px;
+		list-style:none;
+		display:inline;
+}
+
+.admin_nav_bar li {
+		display:inline;
+		padding:10px;
+}
+
 .admin_signup_box {
 		float:left;
 		width:600px;
