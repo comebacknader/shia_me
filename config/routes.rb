@@ -12,6 +12,6 @@ ShiaMe::Application.routes.draw do
    match "/oldbrowser", to: 'pages#oldbrowser'
    match '/login', to: 'admin_sessions#new'
    match '/logout', to: 'admin_sessions#destroy', via: :delete
-  
+   match '/signup', to: 'users#new'
    
 end

@@ -3,7 +3,7 @@
   They will automatically be included in application.css.
 */
 
-.admin_header {
+.user_header {
 		width:100%;
 		text-align:center;
 		font-family:"Helvetica";
@@ -12,7 +12,7 @@
 		margin:40px 0px 0px 0px;
 }
 
-.admin_show_header {
+.user_show_header {
 		float:left;
 		font-family:"Helvetica";
 		font-weight:bold;
@@ -20,13 +20,13 @@
 		margin:40px 0px 0px 0px;
 }
 
-.admin_show {
+.user_show {
 	clear:left;
 	float:left;
 	width:100%;
 }
 
-.admin_nav_bar {
+.user_nav_bar {
 		float:right;
 		font-family:"Helvetica";
 		font-size:14px;
@@ -34,19 +34,19 @@
 		display:inline;
 }
 
-.admin_nav_bar li {
+.user_nav_bar li {
 		display:inline;
 		padding:10px;
 }
 
-.admin_signup_box {
+.user_signup_box {
 		float:left;
 		width:600px;
 		height:1000px;
 		margin:50px 0px 0px 200px;
 }
 
-.admin_signup {
+.user_signup {
 		float:left;
 		width:100%;
 		font-family:"Helvetica";
@@ -54,7 +54,7 @@
 		margin:10px 0px 0px 5px;
 }
 
-.admin_signup_field {
+.user_signup_field {
 		float:left;
 		width:100%;
 		height:30px;
@@ -64,17 +64,7 @@
 		font-family:"Helvetica";
 }
 
-.admin_signup_textarea {
-		float:left;
-		width:100%;
-		height:400px;
-		margin:10px 0px 10px 0px;
-		font-size:16px;
-		color:DimGray;
-		font-family:"Helvetica";
-}
-
-.admin_create {
+.user_create {
 		float:left;
 		width:100px;
 		height:60px;
@@ -92,7 +82,7 @@
 		border-radius: 5px;		
 }
 
-.admin_create:hover {
+.user_create:hover {
 		border:1px solid DimGray;
 		background-color: #0047B2;
 		background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
@@ -152,4 +142,3 @@
 		margin:10px 0px 0px 10px;
 		color:#f00;
 }
-	
