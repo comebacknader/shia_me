@@ -1,11 +1,24 @@
 <% provide(:title, "All Admins") %>
 
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+<div class="all_bar">
+</div>
+
 <div class="container">
 
 	<h1 class="admin_header">All Admins</h1>
 
-	<% @admins.each do |admin|%>
-	<p><%= admin.name %>	</p>
-	<% end %>
+	<div class="admin_box">
 
+		<% @admins.each do |admin|%>
+		<p><%= admin.name %>	</p>
+		<% end %>
+		
+	</div>
 </div>
