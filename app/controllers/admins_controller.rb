@@ -41,7 +41,8 @@ class AdminsController < ApplicationController
     end
   end
   
-  def matchmakers
+  def profile
+    @admin = Admin.find(params[:id])
   end 
     
   

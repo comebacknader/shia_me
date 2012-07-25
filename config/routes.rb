@@ -2,10 +2,21 @@ ShiaMe::Application.routes.draw do
 
    root to: 'pages#home'
     
-   resources :admins    
+   resources :admins       
    resources :subscribers
    resources :admin_sessions, only: [:new, :create, :destroy]
+
+   
+   scope :admins do 
+     resources :admins, :path => "matchmakers"
+   end
   
+   resources :admins do 
+     member do 
+       get 'profile'
+     end
+   end
+
       
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'
@@ -13,6 +24,5 @@ ShiaMe::Application.routes.draw do
    match '/login', to: 'admin_sessions#new'
    match '/logout', to: 'admin_sessions#destroy', via: :delete
    match '/signup', to: 'users#new'
-   match '/matchmakers', to: 'admins#matchmakers'
    
 end
