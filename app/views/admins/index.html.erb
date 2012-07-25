@@ -7,18 +7,37 @@
 </div>
 	<% end %>
 
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_admin %></li>
+		<li> <%= link_to "Settings", edit_admin_path(current_admin) %></li>
+		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
+	</ul>
+
+
 <div class="all_bar">
-</div>
 
-<div class="container">
-
-	<h1 class="admin_header">All Admins</h1>
-
-	<div class="admin_box">
-
-		<% @admins.each do |admin|%>
-		<p><%= admin.name %>	</p>
-		<% end %>
-		
+	<div class="matches_button">
+		<p> All Admins </p>
 	</div>
+
+	<div class="home_button">
+		<p> Home </p>
+	</div>
+
 </div>
+
+<div class="admin_sidebar">
+</div>
+
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
+	
+	<div class="admin_show">
+		
+		
+		<h1 class="admin_show_header">Admin Dashboard</h1>
+
+	
+	</div>

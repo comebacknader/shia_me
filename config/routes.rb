@@ -13,5 +13,6 @@ ShiaMe::Application.routes.draw do
    match '/login', to: 'admin_sessions#new'
    match '/logout', to: 'admin_sessions#destroy', via: :delete
    match '/signup', to: 'users#new'
+   match '/matchmakers', to: 'admins#matchmakers'
    
 end

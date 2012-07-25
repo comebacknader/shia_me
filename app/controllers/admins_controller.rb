@@ -41,6 +41,10 @@ class AdminsController < ApplicationController
     end
   end
   
+  def matchmakers
+  end 
+    
+  
   private 
   
   def signed_in_admin
@@ -54,5 +58,6 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     redirect_to(root_path) unless current_admin?(@admin)
   end
+
   
 end
