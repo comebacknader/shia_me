@@ -44,6 +44,18 @@ class AdminsController < ApplicationController
   def profile
     @admin = Admin.find(params[:id])
   end 
+  
+  def allmen
+    @admin = Admin.find(params[:id]) 
+  end
+  
+  def allwomen 
+    @admin = Admin.find(params[:id])
+  end
+  
+  def allmatches 
+    @admin = Admin.find(params[:id])
+  end
     
   
   private 

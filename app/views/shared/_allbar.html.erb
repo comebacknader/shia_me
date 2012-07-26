@@ -1,0 +1,31 @@
+<div class="all_bar">
+
+	<div class="matches_button">
+		<p> Your Users </p>
+	</div>
+	
+	<%= link_to controller: "admins", action: "allmen" do %>
+	<div class="admin_all_users">
+			<p> All Men </p>
+	</div>
+	<% end %>
+
+	<%= link_to controller: "admins", action: "allwomen" do %>
+	<div class="admin_all_users">
+			<p> All Women </p>
+	</div>
+	<% end %>
+	
+	<%= link_to controller: "admins", action: "allmatches" do %>
+	<div class="admin_all_users">
+			<p> All Matches </p>
+	</div>
+	<% end %>
+
+	<%= link_to controller: "admins", action: "profile" do %>
+		<div class="home_button">
+			<p> Home </p>
+		</div>
+	<% end %>
+
+</div>

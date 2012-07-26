@@ -14,19 +14,7 @@
 	</ul>
 
 
-<div class="all_bar">
-
-	<div class="matches_button">
-		<p> Your Matches </p>
-	</div>
-
-	<%= link_to controller: "admins", action: "profile" do %>
-		<div class="home_button">
-			<p> Home </p>
-		</div>
-	<% end %>
-
-</div>
+<%= render 'shared/allbar' %>
 
 <div class="admin_sidebar">
 </div>

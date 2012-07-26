@@ -1,4 +1,4 @@
-<% provide(:title, "All Admins") %>
+<% provide(:title, @admin.name) %>
 
 	<%= link_to root_path do %>
 <div class="all_logo">
@@ -9,24 +9,11 @@
 
 	<ul class="admin_nav_bar">
 		<li> <%= link_to "Profile", current_admin %></li>
-		<li> <%= link_to "Settings", edit_admin_path(current_admin) %></li>
+		<li> <%= link_to "Settings", edit_admin_path(@admin) %></li>
 		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
 	</ul>
 
-
-<div class="all_bar">
-
-	<div class="matches_button">
-		<p> All MatchMakers </p>
-	</div>
-
-	<%= link_to controller: "admins", action: "index" do %>
-		<div class="home_button">
-			<p> Home </p>
-		</div>
-	<% end %>
-
-</div>
+<%= render 'shared/allbar' %>
 
 <div class="admin_sidebar">
 </div>
@@ -39,7 +26,7 @@
 	<div class="admin_show">
 		
 		
-		<h1 class="admin_show_header">MatchMaker Dashboard</h1>
+		<h1 class="admin_show_header">All Men</h1>
 
 	
 	</div>

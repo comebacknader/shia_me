@@ -14,6 +14,9 @@ ShiaMe::Application.routes.draw do
    resources :admins do 
      member do 
        get 'profile'
+       get 'allmen'
+       get 'allwomen'
+       get 'allmatches'
      end
    end
 
@@ -24,5 +27,7 @@ ShiaMe::Application.routes.draw do
    match '/login', to: 'admin_sessions#new'
    match '/logout', to: 'admin_sessions#destroy', via: :delete
    match '/signup', to: 'users#new'
+   match '/invite', to: 'pages#invite'
+   
    
 end

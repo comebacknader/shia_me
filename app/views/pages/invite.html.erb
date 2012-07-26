@@ -1,0 +1,20 @@
+
+<div class="container">
+
+	<div class="home_logo">
+		<%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "home_logo_new") %>
+
+	<div class="invite_code">
+		<h1 class="home_tagline"> a matchmaking service </h1>
+		<p>Enter Your Invite Code</p>
+		<%= form_for @subscriber do |f| %>
+		    <%= f.text_field :email, :value => "Enter Invite Code", :class => "invite_code_field" %>
+		    <%= f.submit "ENTER", :class => "invite_code_button"  %>
+		<% end %>
+	</div>
+
+</div>
+	
+
+
+</div>

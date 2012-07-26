@@ -13,4 +13,8 @@ class PagesController < ApplicationController
   def signin
   end
   
+  def invite 
+    @subscriber = Subscriber.new
+  end
+  
 end
