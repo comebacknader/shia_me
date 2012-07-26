@@ -28,13 +28,6 @@
 		width:900px;
 }
 
-.admin_show_header {
-		float:left;
-		font-family:"Helvetica";
-		font-weight:bold;
-		font-size:30px;
-		margin:40px 0px 0px 20px;
-}
 
 .admin_show {
 	float:left;
@@ -237,9 +230,19 @@
 		border-radius: 5px;
 }
 
+.admin_show_header {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:30px;
+		width:650px;
+		text-align:left;
+		margin:40px 0px 0px 20px;
+}
+
 .admin_show_bio	{
 	float:left;
-	width:700px;
+	width:650px;
 	font-size:14px;
 	color:DimGray;
 	padding:20px;
@@ -248,7 +251,17 @@
 .admin_show_location {
 		float:left;
 		color:DimGray;
-		width:100%;
+		width:650px;
 		padding:5px 20px 10px 25px;
 		font-weight:bold;
+}
+
+.admin_show_img {
+		clear:right;
+		float:right;
+		width:125px;
+		height:125px;
+		margin:40px 40px 0px 0px;
+		border:1px solid #D0D0D0;
+		padding:10px;
 }
