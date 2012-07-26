@@ -17,12 +17,14 @@
 <div class="all_bar">
 
 	<div class="matches_button">
-		<p> All Admins </p>
+		<p> All MatchMakers </p>
 	</div>
 
-	<div class="home_button">
-		<p> Home </p>
-	</div>
+	<%= link_to current_admin do %>
+		<div class="home_button">
+			<p> Home </p>
+		</div>
+	<% end %>
 
 </div>
 
@@ -37,7 +39,7 @@
 	<div class="admin_show">
 		
 		
-		<h1 class="admin_show_header">Admin Dashboard</h1>
+		<h1 class="admin_show_header">MatchMaker Dashboard</h1>
 
 	
 	</div>

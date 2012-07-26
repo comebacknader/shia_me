@@ -1,5 +1,28 @@
 <% provide(:title, "Edit Admin") %>
 
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_admin %></li>
+		<li> <%= link_to "Settings", edit_admin_path(current_admin) %></li>
+		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
+	</ul>
+	
+	<div class="all_bar">
+		
+		<%= link_to controller: "admins", action: "profile" do %>
+			<div class="home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+		
+	</div>
+
 <div class="container">
 	
 	<h1 class="admin_header">Edit Profile</h1>
@@ -20,6 +43,9 @@
 	
 		<%= f.label :password_confirmation, "Confirmation", class: "admin_signup" %>
 		<%= f.password_field :password_confirmation, class: "admin_signup_field" %>
+		
+		<%= f.label :location, class: "admin_signup" %>
+		<%= f.text_field :location, class: "admin_signup_field" %>
 
 		<%= f.label :bio, "Bio", class: "admin_signup" %>
 		<%= f.text_area :bio, class: "admin_signup_textarea" %>

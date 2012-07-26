@@ -1,5 +1,5 @@
 class Admin < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :bio, :location
   has_secure_password
   
   
