@@ -14,7 +14,8 @@ class PagesController < ApplicationController
   end
   
   def invite 
-    @invite = Invite.search(params[:code])
+    
+    
   end
   
 end

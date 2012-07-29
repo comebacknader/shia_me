@@ -5,7 +5,11 @@ class Invite < ActiveRecord::Base
   private 
   
   def self.search(search)
-    search.present? 
+    if search == Invite.find_by_code("#{search}")
+      return true
+    else
+      nil
+    end
   end
   
 end

@@ -7,9 +7,9 @@
 	<div class="invite_code">
 		<h1 class="home_tagline"> a matchmaking service </h1>
 		<p>Enter Your Invite Code</p>
-		<%= form_for @subscriber do |f| %>
-		    <%= f.text_field :email, :value => "Enter Invite Code", :class => "invite_code_field" %>
-		    <%= f.submit "ENTER", :class => "invite_code_button"  %>
+		<%= form_tag new_user_url, :method => :get  do %>
+		    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+		    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
 		<% end %>
 	</div>
 

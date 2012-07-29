@@ -21,5 +21,11 @@ class ApplicationController < ActionController::Base
           redirect_to login_url, notice: "Please log in"
         end
       end
+      
+    def invitecode 
+      unless Invite.find_by_code(params[:code])
+        redirect_to root_path
+      end
+    end
   
 end
