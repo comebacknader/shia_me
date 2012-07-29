@@ -1,0 +1,33 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.invite_header {
+		width:100%;
+		float:left;
+		text-align:center;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:40px;
+		margin:40px 0px 0px 0px;
+}
+
+.invite_all_header {
+		width:100%;
+		float:left;
+		text-align:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:30px;
+		margin:40px 0px 20px 20px;
+}
+
+.all_codes {
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:16px;
+		padding:5px;
+		margin:0px 0px 0px 20px;
+}

@@ -22,9 +22,15 @@
 	</div>
 	<% end %>
 
-	<%= link_to controller: "admins", action: "profile" do %>
+	<%= link_to profile_admin_url do %>
 		<div class="home_button">
 			<p> Home </p>
+		</div>
+	<% end %>
+
+	<%= link_to new_invite_url do %>
+		<div class="home_button">
+			<p> Code </p>
 		</div>
 	<% end %>
 

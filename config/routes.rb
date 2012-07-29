@@ -1,11 +1,14 @@
 ShiaMe::Application.routes.draw do
 
+  get "invites/new"
+
    root to: 'pages#home'
     
    resources :admins       
    resources :subscribers
    resources :admin_sessions, only: [:new, :create, :destroy]
-
+   resources :invites
+   resources :users
    
    scope :admins do 
      resources :admins, :path => "matchmakers"
@@ -19,7 +22,6 @@ ShiaMe::Application.routes.draw do
        get 'allmatches'
      end
    end
-
       
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'
