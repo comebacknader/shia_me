@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_filter :authorize, only: [:home, :about]
+  skip_before_filter :authorize, only: [:home, :about, :invite, :test]
+  before_filter :invitecode, only: [:test]
   
   def home
     @subscriber = Subscriber.new
@@ -13,9 +14,10 @@ class PagesController < ApplicationController
   def signin
   end
   
-  def invite 
-    
-    
+  def invite     
+  end
+  
+  def test
   end
   
 end

@@ -30,6 +30,7 @@ ShiaMe::Application.routes.draw do
    match '/logout', to: 'admin_sessions#destroy', via: :delete
    match '/signup', to: 'users#new'
    match '/invite', to: 'pages#invite'
+   match '/test', to: 'pages#test'
    
    
 end

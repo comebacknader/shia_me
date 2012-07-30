@@ -2,8 +2,24 @@
 
 <div class ="container"> 
 	
-	<h1 class="user_header"> Sign Up </h1>
+	<h1 class="user_header"> Tell Us A Little About You </h1>
 
+	<div class="user_signup_box">
+		<%= form_for(@user) do |f| %>
 	
+	
+		<%= f.label :name, class: "user_signup" %>
+		<%= f.text_field :name, class: "user_signup_field" %>
+
+		<%= f.label :location, class: "user_signup" %>
+		<%= f.text_field :location, class: "user_signup_field" %>
+	
+		<%= f.label :bio, class: "user_signup" %>
+		<%= f.text_area :bio, class: "user_signup_textarea" %>
+	
+		<%= f.submit "Submit", class: "user_create" %>
+
+		<% end %>
+	</div>
 
 </div>

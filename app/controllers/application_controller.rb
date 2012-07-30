@@ -25,6 +25,16 @@ class ApplicationController < ActionController::Base
     def invitecode 
       unless Invite.find_by_code(params[:code])
         redirect_to root_path
+      else
+        session[:code] = Invite.find_by_code(params[:code])
+        redirect_to new_user_url
+  
+      end
+    end
+    
+    def invite
+      unless session[:code]
+        redirect_to root_path
       end
     end
   
