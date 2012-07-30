@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
     
     def invite
       unless session[:code]
-        redirect_to login_path
+        redirect_to root_path
       end
     end
   
