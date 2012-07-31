@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :bio, :location, :name, :email
+  attr_accessible :bio, :location, :name, :email, :gender
   
   validates :name, presence: true,
                    length: { maximum: 50 }
@@ -12,5 +12,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
                     
   validates :bio, presence: true
+  
+  validates :gender, presence: true
   
 end

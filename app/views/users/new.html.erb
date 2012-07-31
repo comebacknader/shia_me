@@ -18,8 +18,8 @@
 		<%= f.label :location, "City", class: "user_signup" %>
 		<%= f.text_field :location, class: "user_signup_field" %>
 	
-		<%= f.label :bio, "How Did You Hear of Us?", class: "user_signup" %>
-		<%= f.text_area :bio, class: "user_signup_textarea" %>
+		<%= f.label :gender, class: "user_signup" %>
+		<%= f.select(:gender, %w[MALE FEMALE], {}, { :index => nil }) %>
 	
 		<%= f.submit "Submit", class: "user_create" %>
 
