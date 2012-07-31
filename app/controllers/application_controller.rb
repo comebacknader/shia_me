@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include AdminSessionsHelper
+  include UsersessionsHelper
 
   before_filter :authorize
   
@@ -21,6 +22,12 @@ class ApplicationController < ActionController::Base
           redirect_to login_url, notice: "Please log in"
         end
       end
+      
+    def user_authorize
+      unless current_user
+        redirect_to signin_url, notice: "Please Sign In"
+      end
+    end
       
     def invitecode 
       unless Invite.find_by_code(params[:code])

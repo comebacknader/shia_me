@@ -1,12 +1,12 @@
 ShiaMe::Application.routes.draw do
 
-  get "invites/new"
 
    root to: 'pages#home'
     
    resources :admins       
    resources :subscribers
    resources :admin_sessions, only: [:new, :create, :destroy]
+   resources :usersessions, only: [:new, :create, :destroy]
    resources :invites
    resources :users
    
@@ -31,6 +31,8 @@ ShiaMe::Application.routes.draw do
    match '/signup', to: 'users#new'
    match '/invite', to: 'pages#invite'
    match '/test', to: 'pages#test'
+   match 'signin', to: 'usersessions#new'
+   match 'signout', to: 'usersessions#destroy', via: :delete
    
    
 end

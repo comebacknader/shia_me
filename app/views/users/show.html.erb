@@ -1,0 +1,35 @@
+<% provide(:title, @user.name) %>
+
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", @user %></li>
+		<li> <%= link_to "Settings", edit_user_path(@user) %></li>
+		<li> <%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+	</ul>
+
+
+<div class="all_bar">
+
+	</div>
+
+<div class="admin_sidebar">
+</div>
+
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
+	
+	<div class="admin_show">
+		
+		
+		<h1 class="admin_show_header"><%= @user.name %>'s Dashboard</h1>
+
+	
+	</div>
