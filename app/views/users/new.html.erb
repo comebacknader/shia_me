@@ -2,7 +2,7 @@
 
 <div class ="container"> 
 	
-	<h1 class="user_header"> Tell Us a Little About Yourself </h1>
+	<h1 class="user_header"> Let's Get Started</h1>
 
 	<div class="user_signup_box">
 		<%= form_for(@user) do |f| %>
@@ -17,19 +17,47 @@
 
 		<%= f.label :location, "City", class: "user_signup" %>
 		<%= f.text_field :location, class: "user_signup_field" %>
-
-	<%= f.label :gender, class: "user_signup" %>
-	<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
 		
 		<%= f.label :password, class: "user_signup" %>
 		<%= f.password_field :password, class: "user_signup_field" %>
 		
-		<%= f.label :password_confirmation, class: "user_signup" %>
+		<%= f.label :password_confirmation, "Confirm Password", class: "user_signup" %>
 		<%= f.password_field :password_confirmation, class: "user_signup_field" %>
+	
+		<%= f.label :gender, class: "user_signup" %>
+		<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
+	
+	
+	<div class= "signup_rules">
+	
+		<p> 	
+				shiaME will maintain the candidates’ and their parents’ 
+				and family members identity information (names, contact information) confidential. 
+				shiaME’s primary matchmaking function ceases at introduction of prospective matches. 
+				It is the sole responsibility of prospective matches to verify each others’ and family’ 
+				information. shiaME does not do any background check of the match and his/her 
+				family, but we are highly selective in handing out our Invite Codes. 
+		</p>
+	
+	</div>
+	<div class="signup_rules">
+		<h1> Disclaimer:</h1>
+		<p>
+			shiaMe takes no responsibility for the actions of the 
+			persons utilizing its services and does not offer any guarantees of any kind.  The 
+			users of shiaME’s service hereby indemnify and agree to hold shiaME and its members 
+			and associates harmless from any and all claims of damages whatsoever resulting 
+			from the provision of this service.
+		</p>
+	</div>
+	
+	
 	
 		<%= f.submit "Submit", class: "user_create" %>
 
 		<% end %>
+		
+	
 	</div>
 
 </div>

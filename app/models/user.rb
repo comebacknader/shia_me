@@ -15,8 +15,6 @@ class User < ActiveRecord::Base
                     length: { maximum: 70 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-                    
-  validates :bio, presence: true
   
   validates :gender, presence: true
   
