@@ -17,9 +17,15 @@
 
 		<%= f.label :location, "City", class: "user_signup" %>
 		<%= f.text_field :location, class: "user_signup_field" %>
-	
-		<%= f.label :gender, class: "user_signup" %>
-		<%= f.select(:gender, %w[MALE FEMALE], {}, { :index => nil }) %>
+
+	<%= f.label :gender, class: "user_signup" %>
+	<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
+		
+		<%= f.label :password, class: "user_signup" %>
+		<%= f.password_field :password, class: "user_signup_field" %>
+		
+		<%= f.label :password_confirmation, class: "user_signup" %>
+		<%= f.password_field :password_confirmation, class: "user_signup_field" %>
 	
 		<%= f.submit "Submit", class: "user_create" %>
 
