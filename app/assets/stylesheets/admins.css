@@ -287,3 +287,18 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
 	background: -moz-linear-gradient(top, #464646,  #464646);
 }
+
+.admin_go_home {
+		float:left;
+		padding:20px 100px 20px 100px;
+		margin:50px 0px 20px 350px;
+		border:1px solid #D0D0D0;
+		background-color:White;
+		font-family:"Helvetica";
+		text-align:center;
+		font-weight:bold;
+}
+
+.admin_go_home:hover {
+		border:1px solid DimGray;
+}

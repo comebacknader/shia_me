@@ -24,5 +24,13 @@
 
 
 	</div>
+	
+	<% if current_admin  %>
+		<%= link_to profile_admin_url do%>
+			<div class="admin_go_home">
+				Go Home 
+			</div>
+		<% end %>
+	<% end %>
 
 </div>

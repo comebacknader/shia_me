@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
   before_filter :signed_in_admin, only: [:index, :edit, :update]
   before_filter :correct_admin, only: [:edit, :update]
+  skip_before_filter :authorize, only: [:show]
+  
   
   def index
     @admins = Admin.all
@@ -34,7 +36,6 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     if @admin.update_attributes(params[:admin])
       flash[:success] = "Profile Updated"
-      sign_in @admin
       redirect_to @admin
     else
       render 'edit'
@@ -56,6 +57,17 @@ class AdminsController < ApplicationController
   def allmatches 
     @admin = Admin.find(params[:id])
   end
+  
+  def pics 
+    @admin = Admin.find(params[:id])
+    if @admin.update_attributes(params[:admin])
+      flash[:success] = "Picture Changed"
+      redirect_to @admin
+    else
+      render 'pics'
+    end
+  end
+    
     
   
   private 

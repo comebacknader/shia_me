@@ -20,6 +20,7 @@ ShiaMe::Application.routes.draw do
        get 'allmen'
        get 'allwomen'
        get 'allmatches'
+       get 'pics'
      end
    end
    
