@@ -37,6 +37,10 @@ class UsersController < ApplicationController
   def destroy
   end
   
+  def profile
+    @user = User.find(params[:id])
+  end
+  
   private 
 
    def sign_this_user

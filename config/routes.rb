@@ -22,6 +22,12 @@ ShiaMe::Application.routes.draw do
        get 'allmatches'
      end
    end
+   
+   resources :users do 
+     member do 
+       get 'profile'
+      end
+    end
       
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'

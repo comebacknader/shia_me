@@ -49,6 +49,8 @@
 
 		<%= f.label :bio, "Bio", class: "admin_signup" %>
 		<%= f.text_area :bio, class: "admin_signup_textarea" %>
+		
+		<%= f.file_field :avatar, class: "admin_signup" %>
 
 		<%= f.submit "Save", class: "admin_create" %>
 
