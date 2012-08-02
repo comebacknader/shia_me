@@ -64,8 +64,7 @@ class AdminsController < ApplicationController
   
   def picsupdate 
     @admin = Admin.find(params[:id])
-     @admin.attributes = params[:admin]
-    if @admin.save(:validates => false)
+    if @admin.update_column(:avatar, params[:admin][:avatar])
       flash[:success] = "Picture Changed"
       redirect_to @admin
     else

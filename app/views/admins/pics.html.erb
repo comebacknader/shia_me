@@ -30,6 +30,8 @@
 	<div class="admin_signup_box">
 		<%= form_for @admin, :url => { action: "picsupdate" } do |f| %>
 		
+				<%= render 'shared/error_messages' %>
+		
 		<%= f.file_field :avatar, class: "admin_signup" %>
 
 		<%= f.submit "Save", class: "admin_create" %>
