@@ -235,14 +235,14 @@
 		font-family:"Helvetica";
 		font-weight:bold;
 		font-size:30px;
-		width:650px;
+		width:550px;
 		text-align:left;
 		margin:40px 0px 0px 20px;
 }
 
 .admin_show_bio	{
 	float:left;
-	width:650px;
+	width:550px;
 	font-size:14px;
 	color:DimGray;
 	padding:20px;
@@ -251,7 +251,7 @@
 .admin_show_location {
 		float:left;
 		color:DimGray;
-		width:650px;
+		width:550px;
 		padding:5px 20px 10px 25px;
 		font-weight:bold;
 }
@@ -259,9 +259,9 @@
 .admin_show_img {
 		clear:right;
 		float:right;
-		width:125px;
-		height:125px;
-		margin:40px 40px 0px 0px;
+		width:200px;
+		height:200px;
+		margin:20px 40px 0px 0px;
 		border:1px solid #D0D0D0;
 		padding:10px;
 }
@@ -303,9 +303,18 @@
 		border:1px solid DimGray;
 }
 
+.admin_old_pic {
+		float:left;
+		width:250px;
+		height:250px;
+		border: 1px solid DimGray;
+		padding:5px;
+		margin:0px 0px 0px 200px;
+}
+
 .admin_change_pic {
 		float:left;
-		margin:10px 0px 20px 0px;
+		margin:10px 0px 20px 250px;
 		width:100%;
 }
 

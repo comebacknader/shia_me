@@ -25,20 +25,19 @@
 
 <div class="container">
 	
-	<h1 class="admin_header">Change Picture</h1>
-	
 	<div class="admin_signup_box">
+			<h1 class="admin_header">Change Picture</h1>
 		<%= form_for @admin, :url => { action: "picsupdate" } do |f| %>
 		
 		<%= render 'shared/error_messages' %>
 		
 		<div class="admin_image_limits">
-			<p> Make sure IMG is around 350x350px </p>
+			<p> Make sure New IMAGE has dimensions of 250x250 pixels </p>
 			<br />
 			<p> Format must be .jpg or .png </p>
 		</div>
 		
-		<%= image_tag(@admin.avatar(:large)) %>
+		<%= image_tag(@admin.avatar(:large), class: "admin_old_pic") %>
 		
 		<%= f.file_field :avatar, class: "admin_change_pic" %>
 
