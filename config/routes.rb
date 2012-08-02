@@ -21,6 +21,7 @@ ShiaMe::Application.routes.draw do
        get 'allwomen'
        get 'allmatches'
        get 'pics'
+       put 'picsupdate'
      end
    end
    
