@@ -32,6 +32,14 @@ class UsersController < ApplicationController
   end
   
   def update
+    @user = User.find(params[:id])
+    
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Profile Updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -39,6 +47,21 @@ class UsersController < ApplicationController
   
   def profile
     @user = User.find(params[:id])
+  end
+  
+  def pics 
+    @user = User.find(params[:id])
+  end
+  
+  def picsupdate 
+    @user = User.find(params[:id])
+    
+    if @user.update_attribute(:avatar, params[:avatar])
+      flash[:success] = "Picture Updated"
+      redirect_to @user
+    else
+      render 'pics'
+    end
   end
   
   private 

@@ -26,11 +26,19 @@
 		<div class="user_show">
 		
 		<div class="user_show_image">
+			<% if @user.avatar.present? %>
+				<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
+			<% else %>
+				<%= image_tag("userlogo.png", class: "user_no_pic") %>
+			<% end %>
 		</div>
 				<div class="user_show_info">
 					<h1 class="user_show_header"><%= @user.name %></h1>
 					<p><%= @user.location %></p>
 				</div>
+		<div class="user_show_pic">
+			<%= link_to "Change Profile Picture", pics_user_path %>
+		</div>
 
 	
 		</div>

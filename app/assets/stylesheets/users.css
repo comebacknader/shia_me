@@ -46,7 +46,21 @@
 		margin:20px 0px 0px 0px;
 		height:250px;
 		text-align:left;
+}
 
+.user_show_pic {
+		clear:left;
+		float:left;
+		width:250px;
+		font-family:"Helvetica";
+		text-align:center;
+		letter-spacing:-1px;
+		margin:10px 0px 0px 20px;	
+}
+
+.user_no_pic {
+		width:250px;
+		height:250px;
 }
 
 .user_nav_bar {
@@ -205,3 +219,5 @@
 		font-size:20px;
 		margin:0px;
 }
+
+

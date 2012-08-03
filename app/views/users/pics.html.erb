@@ -1,0 +1,55 @@
+<% provide(:title, "Edit User") %>
+
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_user %></li>
+		<li> <%= link_to "Settings", edit_user_path(current_user) %></li>
+		<li> <%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+	</ul>
+	
+	<div class="all_bar">
+		
+		<%= link_to profile_user_url do %>
+			<div class="home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+		
+	</div>
+
+<div class="container">
+	
+	<h1 class="admin_header">Change Profile Pic</h1>
+	
+	<div class="admin_signup_box">
+		<%= form_for @user, :html => {:multipart => true} do |f| %>
+		
+		<%= render 'shared/user_errors' %>
+		
+		
+		<div class="admin_image_limits">
+			<p> Make sure New IMAGE has dimensions of 250x250 pixels </p>
+			<br />
+			<p> Format must be .jpg or .png </p>
+		</div>
+		
+		<% if @user.avatar.present? %>
+			<%= image_tag(@user.avatar(:large), class: "admin_old_pic") %>
+		<% else %>
+			<%= image_tag("userlogo.png", class: "admin_old_pic") %>
+		<% end %>
+
+		<%= f.file_field :avatar, class: "admin_signup_field" %>
+
+		<%= f.submit "Save", class: "admin_create" %>
+
+		<% end %>
+	</div>
+	
+</div>

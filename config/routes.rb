@@ -28,6 +28,8 @@ ShiaMe::Application.routes.draw do
    resources :users do 
      member do 
        get 'profile'
+       get 'pics'
+       put 'picsupdate'
       end
     end
       
