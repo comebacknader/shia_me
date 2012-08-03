@@ -28,7 +28,7 @@
 	<h1 class="admin_header">Change Profile Pic</h1>
 	
 	<div class="admin_signup_box">
-		<%= form_for @user, :html => {:multipart => true} do |f| %>
+		<%= form_for @user, :url => { action: "picsupdate" }  do |f| %>
 		
 		<%= render 'shared/user_errors' %>
 		

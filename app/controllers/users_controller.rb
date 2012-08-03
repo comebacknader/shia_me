@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   
   skip_before_filter :authorize
   before_filter :invite, only: [:new]
-  before_filter :sign_this_user, only: [:index, :show, :edit]
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :sign_this_user, only: [:index, :show, :edit, :pics, :picsupdate]
+  before_filter :correct_user, only: [:edit, :update, :picsupdate]
   
   def index
     @users = User.all
@@ -55,7 +55,6 @@ class UsersController < ApplicationController
   
   def picsupdate 
     @user = User.find(params[:id])
-    
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
       redirect_to @user
