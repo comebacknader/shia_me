@@ -31,13 +31,23 @@
 			<% else %>
 				<%= image_tag("userlogo.png", class: "user_no_pic") %>
 			<% end %>
+			
+			<div class="user_show_pic">
+				<%= link_to "Change Profile Picture", pics_user_path %>
+			</div>
+		
 		</div>
+	
 				<div class="user_show_info">
 					<h1 class="user_show_header"><%= @user.name %></h1>
 					<p><%= @user.location %></p>
 				</div>
-		<div class="user_show_pic">
-			<%= link_to "Change Profile Picture", pics_user_path %>
+				
+		<div class="user_show_match">
+			<h1 class="user_show_match_header"> Current match </h1>
+		</div>
+		
+		<div class="user_show_match_bar">
 		</div>
 
 	
