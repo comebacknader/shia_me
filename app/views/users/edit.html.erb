@@ -1,2 +1,55 @@
-<h1> <%= @user.name %> Edit Page </h1>
+<% provide(:title, "Edit User") %>
 
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_user %></li>
+		<li> <%= link_to "Settings", edit_user_path(current_user) %></li>
+		<li> <%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+	</ul>
+	
+	<div class="all_bar">
+		
+		<%= link_to profile_user_url do %>
+			<div class="home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+		
+	</div>
+
+<div class="container">
+	
+	<h1 class="admin_header">Edit Profile</h1>
+	
+	<div class="admin_signup_box">
+		<%= form_for @user, :html => {:multipart => true} do |f| %>
+		
+		<%= render 'shared/user_errors' %>
+	
+		<%= f.label :name, class: "admin_signup" %>
+		<%= f.text_field :name, class: "admin_signup_field" %>
+
+		<%= f.label :email, class: "admin_signup" %>
+		<%= f.text_field :email, class: "admin_signup_field" %>
+	
+		<%= f.label :password, class: "admin_signup" %>
+		<%= f.password_field :password, class: "admin_signup_field" %>
+	
+		<%= f.label :password_confirmation, "Confirmation", class: "admin_signup" %>
+		<%= f.password_field :password_confirmation, class: "admin_signup_field" %>
+		
+		<%= f.label :location, class: "admin_signup" %>
+		<%= f.text_field :location, class: "admin_signup_field" %>
+
+		<%= f.submit "Save", class: "admin_create" %>
+
+		<% end %>
+	</div>
+	
+</div>

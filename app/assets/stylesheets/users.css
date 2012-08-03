@@ -16,14 +16,37 @@
 		float:left;
 		font-family:"Helvetica";
 		font-weight:bold;
-		font-size:40px;
-		margin:40px 0px 0px 0px;
+		font-size:20px;
+		margin:20px 0px 0px 0px;
+	  letter-spacing: 1px;
 }
 
 .user_show {
 	clear:left;
 	float:left;
 	width:100%;
+}
+
+.user_show_image {
+		float:left;
+		clear:left;
+		width:250px;
+		height:250px;
+		border:1px solid Dimgray;
+		background-color:white;
+		padding:10px;
+		margin:10px;
+}
+
+.user_show_info {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:14px;
+		margin:20px 0px 0px 0px;
+		height:250px;
+		text-align:left;
+
 }
 
 .user_nav_bar {
