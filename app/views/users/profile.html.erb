@@ -11,10 +11,9 @@
 	<div class="admin_profile_box">
 		
 	
-	
 		<h1 class="admin_show_header"><%= @user.name %></h1>
 
-		<%= image_tag("matchmaker1.png", class: "admin_show_img" ) %>
+		<%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
 
 		<p class="admin_show_location">
 			<%= @user.location %>
