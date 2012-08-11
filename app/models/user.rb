@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :bio, :location, :name, :email, :gender, :password, :password_confirmation, :avatar
   has_secure_password
   
+  belongs_to :admin
   
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
