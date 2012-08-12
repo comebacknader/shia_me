@@ -8,7 +8,7 @@
 	<% end %>
 
 	<ul class="admin_nav_bar">
-		<li> <%= link_to "View Your Profile", profile_user_url %></li>
+		<li> <%= link_to "#{@user.name}'s Profile", profile_user_url %></li>
 		<li> <%= link_to "Settings", edit_user_path(@user) %></li>
 		<li> <%= link_to "Sign Out", signout_path, method: "delete" %> </li>
 	</ul>
@@ -48,10 +48,10 @@
 		</div>
 	
 				<div class="user_show_info">
-					<h1 class="user_show_header"><%= @user.name %></h1>
-					<p><%= @user.location %></p>
+			<!--		<h1 class="user_show_header"><%= @user.name %></h1>
+					<p><%= @user.location %></p> -->
 				</div>
-				
+		
 		<div class="user_show_match">
 			<%= image_tag('userlogo.png', class: 'user_show_match_no_pic') %>
 			<h1 class="user_show_match_name"> Mahsa Kahmanoiue </h1>
