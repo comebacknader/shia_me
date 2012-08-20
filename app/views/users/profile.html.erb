@@ -1,13 +1,38 @@
 <% provide(:title, @user.name) %>
 
-<div class="container">
-
-	<%= link_to root_path do %>
-		<div class="all_logo">
-			<%= image_tag("headerlogo.png") %>	
-		</div>
-	<% end %>	
+	<div class="user_all_bar">
+		<div class="container">
+				
+			<%= link_to signout_path, method: "delete" do %>
+				<div class="user_home_button"> 
+	 				 Sign Out
+				</div>
+			<% end %>
 	
+	
+				<%= link_to edit_user_path(@user) do %>
+					<div class="user_home_button">
+							Settings
+					</div>
+				<% end %>
+		
+			
+		<%= link_to @user do %>
+			<div class="user_home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+
+		<%= link_to profile_user_url do %>	
+			<div class="user_home_button">
+			 <%=  @user.name %>'s Profile</li>
+			</div>
+		<% end %>
+	
+		</div>
+	</div>
+	
+	<div class="container">
 	<div class="admin_profile_box">
 		
 	

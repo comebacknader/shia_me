@@ -29,5 +29,11 @@
 		
 		<h1 class="admin_show_header">All Men</h1>
 
+
+	<div class="admin_all_men_box">
+		<% @users.each do |user| %>
+			<%= user.name %>
+		<% end %>
+	</div>
 	
 	</div>

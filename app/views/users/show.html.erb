@@ -1,29 +1,35 @@
 <% provide(:title, @user.name) %>
 
-	<%= link_to root_path do %>
-<div class="all_logo">
-	<%= image_tag("headerlogo.png") %>	
+	<div class="user_all_bar">
+		<div class="container">
+				
+			<%= link_to signout_path, method: "delete" do %>
+				<div class="user_home_button"> 
+	 				 Sign Out
+				</div>
+			<% end %>
 	
-</div>
-	<% end %>
-
-	<ul class="admin_nav_bar">
-		<li> <%= link_to "#{@user.name}'s Profile", profile_user_url %></li>
-		<li> <%= link_to "Settings", edit_user_path(@user) %></li>
-		<li> <%= link_to "Sign Out", signout_path, method: "delete" %> </li>
-	</ul>
-
-
-	<div class="all_bar">
+	
+				<%= link_to edit_user_path(@user) do %>
+					<div class="user_home_button">
+							Settings
+					</div>
+				<% end %>
 		
-		
+			
 		<%= link_to @user do %>
-			<div class="home_button">
+			<div class="user_home_button">
 				<p> Home </p>
 			</div>
 		<% end %>
-		
-		
+
+		<%= link_to profile_user_url do %>	
+			<div class="user_home_button">
+			 <%=  @user.name %>'s Profile</li>
+			</div>
+		<% end %>
+	
+		</div>
 	</div>
 	
 	<div class="container">
@@ -53,20 +59,32 @@
 				</div>
 		
 		<div class="user_show_match">
+			<div class="user_show_match_box">
 			<%= image_tag('userlogo.png', class: 'user_show_match_no_pic') %>
-			<h1 class="user_show_match_name"> Mahsa Kahmanoiue </h1>
+			<h1 class="user_show_match_name"> Fatima Carun </h1>
 			<p class="user_show_match_location"> Age : 23 </p>			
 			<p class="user_show_match_location"> Location : San Jose, CA </p>
 			
 			<div class="view_match_profile">
 				View Profile
 			</div>
+			</div>
 			
-			
+			<div class="user_msg_match">
+				 Message
+			</div>
+			<div class="user_end_match">
+				End Match
+			</div>
 			
 		</div>
 		
 		<div class="user_show_match_bar">
+			<%= image_tag('userlogo.png', class: 'user_matchmaker_pic') %>
+			<p class="user_matchmaker_title">Mrs. Khan </p> 
+			
+
+			
 		</div>
 
 	

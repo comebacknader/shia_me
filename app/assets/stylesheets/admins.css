@@ -329,3 +329,12 @@
 		font-weight:bold;
 		text-align:center;
 }
+
+										/* ALL MEN */
+										
+.admin_all_men_box {
+		float:left;
+		width:100%;
+		font-family:"Helvetica";
+		margin:10px 0px 0px 20px;
+}
