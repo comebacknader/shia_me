@@ -66,22 +66,25 @@
 			<p class="user_show_match_location"> Location : San Jose, CA </p>
 			
 			<div class="view_match_profile">
-				View Profile
+				<%= image_tag("search2.png", class: "search_button") %> 
+				<div class="view_match_text"> View Profile </div> 
 			</div>
 			</div>
 			
 			<div class="user_msg_match">
-				 Message
+			 <%= image_tag("message.png", class: "msg_button") %> 
+				<div class="msg_match_text"> Message </div>
 			</div>
 			<div class="user_end_match">
-				End Match
+			 <%= image_tag("endmatch2.png", class: "end_button") %> 
 			</div>
 			
 		</div>
 		
 		<div class="user_show_match_bar">
 			<%= image_tag('userlogo.png', class: 'user_matchmaker_pic') %>
-			<p class="user_matchmaker_title">Mrs. Khan </p> 
+			<p class="user_matchmaker_title">Mrs. Khan made this match for you! </p> 
+			<p class="user_matchmaker_title"> Comments or Questions? </p>
 			
 
 			
