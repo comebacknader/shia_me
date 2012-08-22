@@ -1,7 +1,7 @@
 module AdminSessionsHelper
   
   def sign_in(admin)
-    cookies.permanent[:remember_token] = admin.remember_token
+    cookies.permanent[:anything] = admin.remember_token
     self.current_admin = admin
   end
   
@@ -10,7 +10,7 @@ module AdminSessionsHelper
   end
   
   def current_admin 
-    @current_admin ||= Admin.find_by_remember_token(cookies[:remember_token])
+    @current_admin ||= Admin.find_by_remember_token(cookies[:anything])
   end    
   
   def current_admin?(admin)
@@ -23,16 +23,16 @@ module AdminSessionsHelper
   
   def sign_out
     self.current_admin = nil
-    cookies.delete(:remember_token)
+    cookies.delete(:anything)
   end
   
   def redirect_back_or(default)
-    redirect_to(session[:return_to] || default)
-    session.delete(:return_to)
+    redirect_to(session[:something] || default)
+    session.delete(:something)
   end
   
   def store_location 
-    session[:return_to] = request.fullpath
+    session[:something] = request.fullpath
   end
   
   

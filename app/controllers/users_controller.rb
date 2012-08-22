@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   skip_before_filter :authorize
   before_filter :invite, only: [:new]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
