@@ -32,6 +32,7 @@
 
 	<div class="admin_all_men_box">
 		<% @users.each do |user| %>
+		<%= link_to profile_user_path do %>
 		<div class="admin_each_men">
 			<% if user.avatar.present? %>
 				<%= image_tag(user.avatar(:small)) %>
@@ -39,10 +40,11 @@
 				<p> No Image Yet </p>
 			<% end %>
 			<div class="admin_each_men_info">
-				<p><%= user.name %></p>
+				<p><%= truncate(user.name, :length => 15) %></p>
 				<p><%= user.location %></p>
 			</div>
 		</div>
+		<% end %>
 		<% end %>
 	</div>
 	
