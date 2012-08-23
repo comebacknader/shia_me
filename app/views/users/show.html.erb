@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	
-	<div class="container">
+	<div class="user_container">
 
 		<% flash.each do |key, value| %>
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
@@ -101,9 +101,13 @@
 				<li class="user_home_list_round"> View Your Profile </li>
 				<% end %>
 				<li> Inbox (1) </li>
-				<li> Your Testimonials </li>
-				<li class="user_home_list_round_down"> All Matchmakers </li>
+				<li> Answer Profile Questions </li>
+				<li class="user_home_list_round_down"> Your Testimonials </li>
 			</ul>
+			<div class="user_account_notif">
+					<%= image_tag("goldpack.png") %>
+					<h1 class="user_account_header"> You are currently a Gold Member </h1>
+			</div>
 
 	
 		</div>

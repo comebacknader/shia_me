@@ -338,3 +338,15 @@
 		font-family:"Helvetica";
 		margin:10px 0px 0px 20px;
 }
+
+.admin_each_men {
+		float:left;
+		border:1px solid #D0D0D0;
+		width:250px;
+		height:250px;
+}
+
+.admin_each_men img {
+		float:left;
+		border:1px solid #D0D0D0;
+}

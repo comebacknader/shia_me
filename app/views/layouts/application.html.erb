@@ -12,9 +12,9 @@
 
 <%= yield %>
 
-<% if Rails.env.development? %>
+<% if Rails.env.test? %>
 <div class="debug">
-<%= debug(params) if Rails.env.development? %>
+<%= debug(params) if Rails.env.test? %>
 </div>
 <% end %>
 </body>

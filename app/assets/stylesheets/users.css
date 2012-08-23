@@ -3,6 +3,12 @@
   They will automatically be included in application.css.
 */
 
+.user_container {
+		display:block;
+		width: 1024px;
+		margin: 0px auto;
+}
+
 .user_all_bar {
 		width:100%;
 		clear:both;
@@ -109,7 +115,7 @@
 		height:210px;
 		color:#474747;
 		border:1px solid #D0D0D0;
-		background-color:WhiteSMoke;
+		background-color:White;
 		-moz-border-radius: 10px 10px 0px 0px;
 		-webkit-border-radius: 10px 10px 0px 0px;
 		border-radius: 10px 10px 0px 0px;
@@ -321,7 +327,7 @@
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	background-color:#FAFAFA;
+	background-color:WhiteSmoke;
 	font-family:"Helvetica Neue";
 	font-size:14px;
 	color:#297ACC;
@@ -335,7 +341,8 @@
 }
 
 .user_home_list li:hover {
-		background-color:WhiteSmoke;
+		background-color:#FAFAFA;
+		color:#333;
 }
 
 .user_home_list_round {
@@ -350,7 +357,29 @@
 	border-radius: 0px 0px 10px 10px;
 }
 
-															/* User Sign Up Log In Stuff */
+.user_account_notif {
+		float:right;
+		border:1px solid #D0D0D0;
+		background-color:WhiteSmoke;
+		height:100px;
+		width:550px;
+		margin:10px;
+}
+
+.user_account_notif img {
+		float:left;
+		margin:10px;
+}
+
+.user_account_header {
+		font-family:"Helvetica";
+		font-size:24px;
+		letter-spacing:0px;
+		color:#333;
+		margin:35px 0px 0px 0px;
+}
+
+																										/* User Sign Up Log In Stuff */
 
 .user_signup_box {
 		float:left;
