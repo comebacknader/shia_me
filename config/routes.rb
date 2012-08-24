@@ -30,6 +30,7 @@ ShiaMe::Application.routes.draw do
        get 'profile'
        get 'pics'
        put 'picsupdate'
+       get 'assign'
       end
     end
       
@@ -41,8 +42,7 @@ ShiaMe::Application.routes.draw do
    match '/signup', to: 'users#new'
    match '/invite', to: 'pages#invite'
    match '/test', to: 'pages#test'
-   match 'signin', to: 'usersessions#new'
-   match 'signout', to: 'usersessions#destroy', via: :delete
-   
+   match '/signin', to: 'usersessions#new'
+   match '/signout', to: 'usersessions#destroy', via: :delete
    
 end

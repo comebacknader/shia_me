@@ -28,24 +28,30 @@
 	<div class="admin_show">
 		
 		
-		<h1 class="admin_show_header">All Matches</h1>
+		<h1 class="admin_show_header">Assign a MatchMaker</h1>
 		
 		<div class="admin_all_men_box">
-			<% @users.each do |user| %>
-			<%= link_to :controller => "users", :action => "assign", :id => user.id do %>
 			<div class="admin_each_men">
-				<% if user.avatar.present? %>
-					<%= image_tag(user.avatar(:small)) %>
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:small)) %>
 				<% else %>
 					<p> No Image Yet </p>
 				<% end %>
 				<div class="admin_each_men_info">
-					<p><%= truncate(user.name, :length => 15) %></p>
-					<p><%= user.location %></p>
+					<p><%= truncate(@user.name, :length => 15) %></p>
+					<p><%= @user.location %></p>
 				</div>
+			
+			<div class="admin_assign_mm">	
+			<%= form_for @user , :action => "assignmm" do |f| %>
+			
+			<%= f.label :admin_id, "MatchMaker", :class => "admin_assign_label" %>
+			<%= collection_select(:users, :admin_id,  Admin.order("name ASC"), :id, :name, {:prompt => true}, :class => "admin_assign_dropdown" )%>
+			
+		<%= f.submit "Save", class: "admin_assign_button" %>
+				
+			<% end %>
 			</div>
-			<% end %>
-			<% end %>
 		</div>
 
 	

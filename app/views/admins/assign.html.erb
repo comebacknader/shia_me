@@ -14,6 +14,7 @@
 		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
 	</ul>
 
+
 <%= render 'shared/allbar' %>
 
 <div class="admin_sidebar">
@@ -27,25 +28,27 @@
 	<div class="admin_show">
 		
 		
-		<h1 class="admin_show_header">All Men</h1>
-
-
-	<div class="admin_all_men_box">
-		<% @users.each do |user| %>
-			<%= link_to :controller => "users", :action => "profile", :id => user.id do %>
-		<div class="admin_each_men">
-			<% if user.avatar.present? %>
-				<%= image_tag(user.avatar(:small)) %>
-			<% else %>
-				<p> No Image Yet </p>
+		<h1 class="admin_show_header">All Matches</h1>
+		
+		<div class="admin_all_men_box">
+			<div class="admin_each_men">
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:small)) %>
+				<% else %>
+					<p> No Image Yet </p>
+				<% end %>
+				<div class="admin_each_men_info">
+					<p><%= truncate(@user.name, :length => 15) %></p>
+					<p><%= @user.location %></p>
+				</div>
+			<%= form_for @users , :action => "assignmm" do |f| %>
+			
+			<%= f.label :admin_id %>
+			<%= collection_select(:users, :admin_id,  Admin.order("name ASC"), :id, :name, {:prompt => true}) %>
+		
 			<% end %>
-			<div class="admin_each_men_info">
-				<p><%= truncate(user.name, :length => 15) %></p>
-				<p><%= user.location %></p>
 			</div>
 		</div>
-		<% end %>
-		<% end %>
-	</div>
+
 	
 	</div>

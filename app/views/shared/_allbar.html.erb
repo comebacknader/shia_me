@@ -4,19 +4,19 @@
 		<p> Your Users </p>
 	</div>
 	
-	<%= link_to controller: "admins", action: "allmen" do %>
+	<%= link_to controller: "admins", action: "allmen", :id => current_admin do %>
 	<div class="admin_all_users">
 			<p> All Men </p>
 	</div>
 	<% end %>
 
-	<%= link_to controller: "admins", action: "allwomen" do %>
+	<%= link_to controller: "admins", action: "allwomen", :id => current_admin do %>
 	<div class="admin_all_users">
 			<p> All Women </p>
 	</div>
 	<% end %>
 	
-	<%= link_to controller: "admins", action: "allmatches" do %>
+	<%= link_to controller: "admins", action: "allmatches", :id => current_admin do %>
 	<div class="admin_all_users">
 			<p> All Matches </p>
 	</div>

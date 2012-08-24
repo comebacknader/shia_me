@@ -62,6 +62,21 @@ class UsersController < ApplicationController
     end
   end
   
+  def assign
+    @admin = current_admin
+    @user = User.find(params[:id])  
+  end
+  
+  def assignmm 
+    @admin = Admin.find(params[:id])
+    if @admin.update_attribute(:admin_id, params[:user][:admin_id])
+      flash[:success] = "Picture Changed"
+      redirect_to @admin
+    else
+      render 'pics'
+    end
+  end
+  
   private 
 
    def sign_this_user

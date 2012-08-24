@@ -58,6 +58,7 @@ class AdminsController < ApplicationController
   end
   
   def allmatches 
+    @users = User.all
     @admin = Admin.find(params[:id])
   end
   
