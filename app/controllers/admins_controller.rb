@@ -49,12 +49,12 @@ class AdminsController < ApplicationController
   
   def allmen
     @admin = Admin.find(params[:id]) 
-    @users = User.where(:gender => "MALE").order(:id)
+    @users = User.where(:gender => "MALE").order
   end
   
   def allwomen 
     @admin = Admin.find(params[:id])
-    @users = User.where(:gender => "FEMALE").order(:id)
+    @users = User.where(:gender => "FEMALE").order
   end
   
   def allmatches 

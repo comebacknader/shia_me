@@ -32,7 +32,7 @@
 
 		<div class="admin_all_men_box">
 			<% @users.each do |user| %>
-			<%= link_to profile_user_path do %>
+			<%= link_to :controller => "users", :action => "profile", :id => user.id do %>
 			<div class="admin_each_men">
 				<% if user.avatar.present? %>
 					<%= image_tag(user.avatar(:small)) %>
