@@ -47,6 +47,11 @@
 		<p class="admin_show_bio">
 			<%= @user.name %>
 		</p>
+		
+		<% if @user.admin_id? %>
+			<p class="admin_show_bio">MatchMaker: <%= @user.admin.name %></p>
+		<% else %>
+		<% end %>
 
 
 	</div>

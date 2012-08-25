@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :authorize, except: [:assign, :assignmm]
   before_filter :invite, only: [:new]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
@@ -68,12 +68,13 @@ class UsersController < ApplicationController
   end
   
   def assignmm 
-    @admin = Admin.find(params[:id])
-    if @admin.update_attribute(:admin_id, params[:user][:admin_id])
-      flash[:success] = "Picture Changed"
-      redirect_to @admin
+    @admin = current_admin
+    @user = User.find(params[:id])
+    if @user.update_attribute(:admin_id, params[:user][:admin_id])
+      flash[:success] = "MatchMaker Assigned"
+      redirect_to profile_user_path
     else
-      render 'pics'
+      render 'assign'
     end
   end
   
