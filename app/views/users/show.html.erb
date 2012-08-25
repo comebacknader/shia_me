@@ -40,50 +40,45 @@
 	
 		<div class="user_show">
 		
-		<div class="user_show_image">
-			<% if @user.avatar.present? %>
-				<%= image_tag(@user.avatar(:medium), class: "user_no_pic") %>
-			<% else %>
-				<%= image_tag("userlogo.png", class: "user_no_pic") %>
-			<% end %>
+		<div class="user_show_match_made">
+	
+					<div class="user_show_image">
+						<% if @user.avatar.present? %>
+							<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
+						<% else %>
+							<%= image_tag("userlogo.png", class: "user_no_pic") %>
+						<% end %>
 			
-			<div class="user_show_pic">
-				<%= link_to "Change Profile Picture", pics_user_path %>
-			</div>
+						<div class="user_show_pic">
+							<%= link_to "Change Profile Picture", pics_user_path %>
+						</div>
 		
+					</div>
+	
+				<div class="user_show_match">
+					<%= image_tag('userlogo.png', class: 'user_show_match_no_pic') %>
+				
+				<div class="user_show_match_info">
+						<h1 class="user_show_match_name"> Fatima Carun </h1>
+						<p class="user_show_match_location"> Age : 23 </p>			
+						<p class="user_show_match_location"> Location : San Jose, CA </p>
+						<p class="user_show_match_location"> Ethnicity: Persian </p>
+				</div>
+					<div class="user_to_match_buttons">
+					<div class="view_match_profile">
+						<%= image_tag("search3.png", class: "search_button") %> 
+					</div>
+					<div class="user_msg_match">
+					 <%= image_tag("message.png", class: "msg_button") %> 
+					</div>			
+					<div class="user_end_match">
+					 <%= image_tag("endmatch2.png", class: "end_button") %> 
+					</div>
+			
+				</div>
+			</div>
 		</div>
 	
-				<div class="user_show_info">
-			<!--		<h1 class="user_show_header"><%= @user.name %></h1>
-					<p><%= @user.location %></p> -->
-				</div>
-		
-		<div class="user_show_match">
-			<div class="user_show_match_box">
-			<%= image_tag('userlogo.png', class: 'user_show_match_no_pic') %>
-			<h1 class="user_show_match_name"> Fatima Carun </h1>
-			<p class="user_show_match_location"> Age : 23 </p>			
-			<p class="user_show_match_location"> Location : San Jose, CA </p>
-			<p class="user_show_match_location"> Ethnicity: Persian </p>
-		
-			</div>
-			
-			<div class="view_match_profile">
-				<%= image_tag("search3.png", class: "search_button") %> 
-				<div class="view_match_text"> View </div> 
-			</div>
-			
-			<div class="user_msg_match">
-			 <%= image_tag("message.png", class: "msg_button") %> 
-				<div class="msg_match_text"> Message </div>
-			</div>			
-			
-			<div class="user_end_match">
-			 <%= image_tag("endmatch2.png", class: "end_button") %> 
-			</div>
-			
-		</div>
-		
 		<div class="user_show_match_bar">
 			
 			<%= image_tag('userlogo.png', class: 'user_matchmaker_pic') %>
