@@ -78,18 +78,19 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="user_account_notif">
+				<%= image_tag("goldpack.png") %>
+				<h1 class="user_account_header"> You are currently a Gold Member </h1>
+		</div>
+
 	
 		<div class="user_show_match_bar">
 			
-			<%= image_tag('userlogo.png', class: 'user_matchmaker_pic') %>
-			<div class="message_mm_button">
-							 <%= image_tag("message.png", class: "message_mm_logo") %> 
-			</div>
-			
-			<p class="user_matchmaker_title">Mrs. Khan made this match for you! </p> 
-			<p class="user_matchmaker_title"> Comments or Questions? </p>
+			<%= image_tag(@user.admin.avatar(:small), class: 'user_matchmaker_pic') %>
+			<p class="user_matchmaker_title_bold">Your MatchMaker:</p>			
+			<p class="user_matchmaker_title"><%= @user.name %></p>
 
-				
 		</div>
 
 			<ul class="user_home_list">
@@ -100,10 +101,7 @@
 				<li> Answer Profile Questions </li>
 				<li class="user_home_list_round_down"> Your Testimonials </li>
 			</ul>
-			<div class="user_account_notif">
-					<%= image_tag("goldpack.png") %>
-					<h1 class="user_account_header"> You are currently a Gold Member </h1>
-			</div>
+			
 
 	
 		</div>

@@ -72,10 +72,10 @@
 .user_show_match_made {
 		float:left;
 		clear:both;
-		width:900px;
+		width:860px;
 		height:230px;
 		padding:10px;
-		background-color:white;
+		background-color:#FDFDFD;
 		border:1px solid #D0D0D0;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
@@ -83,16 +83,16 @@
 }
 
 .user_show_match {
-	float:left;
-	width:470px;
-	height:200px;
+	float:right;
+	width:500px;
+	height:210px;
 	margin:0px 0px 0px 110px;
 	border:1px solid #D0D0D0;
 	background-color:WhiteSmoke;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	padding:10px;
+	padding:20px 0px 0px 10px;
 }
 
 .user_show_image {
@@ -108,7 +108,7 @@
 
 .user_show_match_info {
 		float:left;
-		width:150px;
+		width:300px;
 }
 
 .user_show_pic {
@@ -129,9 +129,12 @@
 		float:left;
 		font-family:"Helvetica";
 		font-weight:bold;
-		font-size:20px;
-		margin:20px 0px 0px 20px;
+		font-size:25px;
+		color:#333;
+		margin:10px 0px 0px 20px;
 	  letter-spacing: 0px;
+		width:200px;
+		text-align:left;
 }
 
 .user_show_match_location {
@@ -251,46 +254,64 @@
 
 .user_show_match_bar {
 		float:right;
-		width:540px;
-		height:100px;
+		width:200px;
+		height:220px;
 		margin:5px 10px 0px 0px;
 		border:1px solid #D0D0D0;
-		background-color:#FFFFFF;
-		background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#DCDCDC));
-		background: -moz-linear-gradient(top, #FFFFFF,  #DCDCDC);		
+		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
 		padding:5px;
-		-webkit-box-shadow: 2px 2px 2px #B8B8B8;
-		-moz-box-shadow: 2px 2px 2px #B8B8B8;
-		 box-shadow: 2px 2px 2px #B8B8B8;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_show_match_bar:hover {
+		-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+		            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
 .user_matchmaker_pic {
 		float:left;
-		width:75px;
-		height:75px;
+		width:150px;
+		height:150px;
 		border:1px solid #D0D0D0;
 		padding:5px;
-		margin:5px;
+		margin:10px 10px 0px 20px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
 }
 
 .user_matchmaker_title {
 		float:left;
-		margin:10px 0px 0px 10px;
-		padding:5px;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
 		font-family:"Helvetica";
-		font-weight:bold;
 		color:#333;
 		width:200px;
+		text-align:center;
+}
+
+.user_matchmaker_title_bold {
+	float:left;
+	margin:0px 0px 0px 0px;
+	padding:5px 0px 0px 0px;
+	font-family:"Helvetica";
+	color:#333;
+	width:200px;
+	text-align:center;
+	font-weight:bold;
 }
 
 .message_mm_button {
 		float:right;
 		margin:0px 0px 0px 0px;
-		height:100px;
-		width:125px;
+		height:40px;
+		width:100px;
 		border-left:1px solid DimGray;
 		border-top:1px solid DimGray;
 		border-right:1px solid DimGray;						
@@ -314,7 +335,6 @@
 .message_mm_logo {
 		float:left;
 		margin:25px 0px 0px 35px;
-		width:50px;
 }
 
 
@@ -356,28 +376,45 @@
 }
 
 .user_account_notif {
-		float:right;
-		border:1px solid #D0D0D0;
-		background-color:WhiteSmoke;
-		height:100px;
-		width:550px;
-		margin:10px;
-		-webkit-box-shadow: 2px 2px 2px #B8B8B8;
-		-moz-box-shadow: 2px 2px 2px #B8B8B8;
-		 box-shadow: 2px 2px 2px #B8B8B8;
+	float:right;
+	width:200px;
+	height:220px;
+	margin:5px 10px 0px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+	            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_account_notif:hover {
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
 .user_account_notif img {
-		float:left;
-		margin:10px;
+	float:left;
+	width:150px;
+	height:128px;
+	border:1px solid none;
+	padding:5px;
+	margin:10px 10px 20px 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .user_account_header {
 		font-family:"Helvetica";
-		font-size:24px;
+		font-size:14px;
 		letter-spacing:0px;
 		color:#333;
-		margin:35px 0px 0px 0px;
+		margin:5px 0px 0px 0px;
 }
 
 																										/* User Sign Up Log In Stuff */
