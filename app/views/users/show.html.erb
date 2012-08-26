@@ -93,7 +93,7 @@
 			
 			<%= image_tag(@user.admin.avatar(:small), class: 'user_matchmaker_pic') %>
 			<p class="user_matchmaker_title_bold">Your MatchMaker:</p>			
-			<p class="user_matchmaker_title"><%= @user.name %></p>
+			<p class="user_matchmaker_title"><%= @user.admin.name %></p>
 
 		</div>
 	<% end %>
