@@ -253,10 +253,10 @@
 }
 
 .user_show_match_bar {
-		float:right;
+		float:left;
 		width:200px;
 		height:220px;
-		margin:5px 10px 0px 0px;
+		margin:5px 10px 0px 100px;
 		border:1px solid #D0D0D0;
 		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
@@ -340,7 +340,7 @@
 
 .user_home_list {
 	float:left;
-	margin:30px 0px 0px 0px;
+	margin:30px 0px 0px 20px;
 	width:300px;
 	list-style-type:none;
 	-moz-border-radius: 10px;
@@ -376,7 +376,7 @@
 }
 
 .user_account_notif {
-	float:right;
+	float:left;
 	width:200px;
 	height:220px;
 	margin:5px 10px 0px 0px;

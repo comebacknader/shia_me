@@ -78,13 +78,17 @@
 				</div>
 			</div>
 		</div>
+		
+		<ul class="user_home_list">
+			<%= link_to profile_user_url do %>	
+			<li class="user_home_list_round"> View Your Profile </li>
+			<% end %>
+			<li> Inbox (1) </li>
+			<li> Answer Profile Questions </li>
+			<li class="user_home_list_round_down"> Your Testimonials </li>
+		</ul>
 
-		<div class="user_account_notif">
-				<%= image_tag("goldpack.png") %>
-				<h1 class="user_account_header"> You are currently a Gold Member </h1>
-		</div>
-
-	
+	<%= link_to @user.admin do %>
 		<div class="user_show_match_bar">
 			
 			<%= image_tag(@user.admin.avatar(:small), class: 'user_matchmaker_pic') %>
@@ -92,16 +96,12 @@
 			<p class="user_matchmaker_title"><%= @user.name %></p>
 
 		</div>
-
-			<ul class="user_home_list">
-				<%= link_to profile_user_url do %>	
-				<li class="user_home_list_round"> View Your Profile </li>
-				<% end %>
-				<li> Inbox (1) </li>
-				<li> Answer Profile Questions </li>
-				<li class="user_home_list_round_down"> Your Testimonials </li>
-			</ul>
-			
+	<% end %>
+		
+		<div class="user_account_notif">
+				<%= image_tag("goldpack.png") %>
+				<h1 class="user_account_header"> You are currently a Gold Member </h1>
+		</div>		
 
 	
 		</div>
