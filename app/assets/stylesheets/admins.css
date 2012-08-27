@@ -218,6 +218,36 @@
    box-shadow:         inset 0 0 10px #000000;
 }
 
+.admin_sidebar_list {
+		float:left;
+		list-style-type:none;
+		font-weight:bold;
+		font-family:"Helvetica";
+		width:298px;
+}
+
+.admin_sidebar_list li {
+		float:left;
+		border:1px solid #D0D0D0;
+		padding:5px;		
+		width:285px;
+}
+
+.admin_sidebar_list li:hover {
+		background-color:WhiteSmoke;
+}
+
+.admin_sidebar_pics {
+		float:left;
+		width:50px;
+		height:50px;
+}
+
+.admin_sidebar_name {
+		float:left;
+		margin:15px 0px 0px 30px;
+}
+
 .admin_profile_box {
 		float:left;
 		width:900px;

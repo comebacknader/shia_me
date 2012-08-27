@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize, except: [:assign, :assignmm]
+  skip_before_filter :authorize, except: [:assign, :assignmm, :match]
   before_filter :invite, only: [:new]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
@@ -77,6 +77,13 @@ class UsersController < ApplicationController
       render 'assign'
     end
   end
+  
+  def match 
+    @admin = current_admin
+    @users = User.all
+    @user = User.find(params[:id])
+  end
+    
   
   private 
 

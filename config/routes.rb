@@ -40,6 +40,7 @@ ShiaMe::Application.routes.draw do
        put 'picsupdate'
        get 'assign'
        put 'assignmm'
+       get 'match'
       end
     end
       

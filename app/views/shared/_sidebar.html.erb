@@ -1,0 +1,9 @@
+<div class="admin_sidebar">
+	<ul class="admin_sidebar_list">
+	<% @users.each do |user| %>
+	<%= link_to :controller => "users", :action => "match", :id => user.id do %>
+	<li><%= image_tag(user.avatar(:small), class: "admin_sidebar_pics")%>	<p class="admin_sidebar_name"><%= user.name %></p>	</li>
+	<% end %>
+	<% end %>
+	</ul>
+</div>
