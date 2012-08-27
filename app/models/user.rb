@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   
   belongs_to :admin
   
+  has_many :matches
+  has_many :man, through: :matches, source: "man_id"
+  has_many :woman, through: :matches, source: "woman_id"
+  
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811224510) do
+ActiveRecord::Schema.define(:version => 20120827134131) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20120811224510) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "matches", :force => true do |t|
+    t.integer  "man_id"
+    t.integer  "woman_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "matches", ["man_id", "woman_id"], :name => "index_matches_on_man_id_and_woman_id", :unique => true
+  add_index "matches", ["man_id"], :name => "index_matches_on_man_id"
+  add_index "matches", ["woman_id"], :name => "index_matches_on_woman_id"
 
   create_table "subscribers", :force => true do |t|
     t.string   "email"
