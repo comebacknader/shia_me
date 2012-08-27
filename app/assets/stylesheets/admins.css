@@ -394,7 +394,7 @@
 .admin_assign_mm {
 		float:left;
 		padding:10px;
-}								
+}
 
 .admin_assign_button {
 		float:left;
@@ -427,7 +427,7 @@
 		font-weight:bold;
 		color:DimGray;
 		padding:10px;
-		width:100px;
+		width:150px;
 		font-size:20px;
 }
 
@@ -454,4 +454,38 @@
 	  text-overflow: ellipsis;
 	  white-space: nowrap;
 }
+
+																									/* CREATE MATCH */
+
+.admin_create_match_list {
+		float:left;
+		margin:20px 0px 0px 100px;
+		width:200px;
+}	
+
+.admin_create_match_dropdown {
+	float:left;
+	margin:0px 0px 0px 20px;
+	-webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(arrow2.png);
+    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+	width:200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}							
+
 										

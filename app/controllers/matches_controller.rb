@@ -1,6 +1,10 @@
 class MatchesController < ApplicationController
+  skip_before_filter :authorize, excpet: [:index]
   
   def index
+    @admin = current_admin
+    @matches = Match.all
+    @users = User.all
   end
 
   def new
@@ -21,6 +25,9 @@ class MatchesController < ApplicationController
   end
   
   def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    redirect_to matches_path
   end
   
 end

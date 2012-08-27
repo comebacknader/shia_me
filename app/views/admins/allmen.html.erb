@@ -16,9 +16,7 @@
 
 <%= render 'shared/allbar' %>
 
-<div class="admin_sidebar">
-</div>
-
+<%= render 'shared/sidebar' %>
 
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
@@ -31,7 +29,7 @@
 
 
 	<div class="admin_all_men_box">
-		<% @users.each do |user| %>
+		<% @men.each do |user| %>
 			<%= link_to :controller => "users", :action => "profile", :id => user.id do %>
 		<div class="admin_each_men">
 			<% if user.avatar.present? %>

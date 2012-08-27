@@ -16,13 +16,13 @@
 	</div>
 	<% end %>
 	
-	<%= link_to controller: "admins", action: "allmatches", :id => current_admin do %>
+	<%= link_to controller: "matches", action: "index" do %>
 	<div class="admin_all_users">
 			<p> All Matches </p>
 	</div>
 	<% end %>
 
-	<%= link_to profile_admin_url do %>
+	<%= link_to controller: "admins", action: "profile", id: current_admin do %>
 		<div class="home_button">
 			<p> Home </p>
 		</div>

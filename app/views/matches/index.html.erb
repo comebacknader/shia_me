@@ -1,2 +1,52 @@
-<h1>Matches#index</h1>
-<p>Find me in app/views/matches/index.html.erb</p>
+<% provide(:title, @admin.name) %>
+
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_admin %></li>
+		<li> <%= link_to "Settings", edit_admin_path(@admin) %></li>
+		<li> <%= link_to "Change Picture", controller: "admins", action: "pics", id: current_admin %></li>
+		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
+	</ul>
+
+
+<%= render 'shared/allbar' %>
+<%= render 'shared/sidebar' %>
+
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
+	
+	<div class="admin_show">
+		
+		
+		<h1 class="admin_show_header">All Matches</h1>
+		
+		<div class="admin_all_men_box">
+			<% @matches.each do |match| %>
+			<%= link_to match do %>
+			<div class="admin_each_men">
+				<% if match.man.avatar.present? %>
+					<%= image_tag(match.man.avatar(:small)) %>
+					<%= image_tag(match.woman.avatar(:small)) %>					
+				<% else %>
+					<p> No Image Yet </p>
+				<% end %>
+				<div class="admin_each_men_info">
+					<p><%= truncate(match.man.name, :length => 15) %></p>
+					<p><%= truncate(match.woman.name, :length => 15) %></p>					
+					<p><%= match.created_at %></p>
+				</div>
+			</div>
+			<% end %>
+			<% end %>
+		</div>
+
+	
+	</div>

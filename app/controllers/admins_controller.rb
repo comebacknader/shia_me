@@ -4,7 +4,6 @@ class AdminsController < ApplicationController
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
   
-  
   def index
     @admins = Admin.all
   end
@@ -45,16 +44,19 @@ class AdminsController < ApplicationController
   
   def profile
     @admin = Admin.find(params[:id])
+    @users = User.all
   end 
   
   def allmen
     @admin = Admin.find(params[:id]) 
-    @users = User.where(:gender => "MALE").order
+    @users = User.all
+    @men = User.where(:gender => "MALE").order
   end
   
   def allwomen 
     @admin = Admin.find(params[:id])
-    @users = User.where(:gender => "FEMALE").order
+    @users = User.all
+    @women = User.where(:gender => "FEMALE").order
   end
   
   def allmatches 

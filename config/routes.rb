@@ -1,14 +1,5 @@
 ShiaMe::Application.routes.draw do
 
-
-  get "matches/index"
-
-  get "matches/new"
-
-  get "matches/show"
-
-  get "matches/edit"
-
    root to: 'pages#home'
     
    resources :admins       
@@ -17,6 +8,7 @@ ShiaMe::Application.routes.draw do
    resources :usersessions, only: [:new, :create, :destroy]
    resources :invites
    resources :users
+   resources :matches
    
    scope :admins do 
      resources :admins, :path => "matchmakers"
@@ -32,6 +24,7 @@ ShiaMe::Application.routes.draw do
        put 'picsupdate'
      end
    end
+
    
    resources :users do 
      member do 
@@ -41,6 +34,7 @@ ShiaMe::Application.routes.draw do
        get 'assign'
        put 'assignmm'
        get 'match'
+       post 'makematch'
       end
     end
       

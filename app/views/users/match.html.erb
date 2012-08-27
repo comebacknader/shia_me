@@ -39,18 +39,41 @@
 					<p><%= truncate(@user.name, :length => 15) %></p>
 					<p><%= @user.location %></p>
 				</div>
+				
+					</div>
 			
-			<div class="admin_assign_mm">	
-			<%= form_for @user, :url => { action: "assignmm" } do |f| %>
+			<% if @user.gender == "MALE" then %>	
 			
-			<%= f.label :admin_id, "MatchMaker", :class => "admin_assign_label" %>
-			<%= collection_select(:user, :admin_id,  Admin.order("name ASC"), :id, :name, {:prompt => true}, :class => "admin_assign_dropdown" )%>
+			<div class="admin_create_match_list">	
+			<%= form_for @match, :url => {:action => "makematch" } do |f| %>
 			
-		<%= f.submit "Save", class: "admin_assign_button" %>
+			<%= f.hidden_field :man_id, :value =>  @user.id %>
+			
+			<%= f.label :woman_id, "Select Woman", class: "admin_assign_label" %>
+			<%= collection_select(:match, :woman_id,  User.where(:gender => "FEMALE").order("name ASC"), :id, :name, 
+			{:prompt => true}, :class => "admin_create_match_dropdown" )%>
+			
+		<%= f.submit "Create Match", class: "admin_assign_button" %>
 				
 			<% end %>
 			</div>
-		</div>
+			
+		<% else %>	
+			
+				<div class="admin_create_match_list">	
+				<%= form_for @match, :url => {:action => "makematch" } do |f| %>
+
+				<%= f.hidden_field :woman_id, :value =>  @user.id %>
+
+				<%= f.label :man_id, "Select Man", class: "admin_assign_label" %>
+				<%= collection_select(:match, :man_id,  User.where(:gender => "MALE").order("name ASC"), :id, :name, 
+				{:prompt => true}, :class => "admin_create_match_dropdown" )%>
+
+			<%= f.submit "Create Match", class: "admin_assign_button" %>
+
+				<% end %>
+				</div>
+		<% end %>	
 		</div>
 
 	

@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @match = @user.matches
   end
   
   def edit
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
   def assign
     @admin = current_admin
     @user = User.find(params[:id])  
+    @users = User.all
   end
   
   def assignmm 
@@ -82,6 +84,17 @@ class UsersController < ApplicationController
     @admin = current_admin
     @users = User.all
     @user = User.find(params[:id])
+    @match = Match.new
+  end
+  
+  def makematch
+    @match = Match.new(params[:match])
+    
+    if @match.save
+      redirect_to matches_path
+    else
+      render 'match'
+    end
   end
     
   
