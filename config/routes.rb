@@ -1,6 +1,14 @@
 ShiaMe::Application.routes.draw do
 
 
+  get "matches/index"
+
+  get "matches/new"
+
+  get "matches/show"
+
+  get "matches/edit"
+
    root to: 'pages#home'
     
    resources :admins       

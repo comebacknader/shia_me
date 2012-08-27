@@ -80,6 +80,7 @@
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
+		
 }
 
 .user_show_match {
@@ -93,6 +94,9 @@
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	padding:20px 0px 0px 10px;
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
 .user_show_image {
@@ -178,12 +182,19 @@
 		-moz-border-radius:5px;
 		-webkit-border-radius:5px;
 		border-radius:5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
 .view_match_profile:hover {
 	background-color: #0047B2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
 	background: -moz-linear-gradient(top, #0047B2,  #003380);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+	
 }
 
 .search_button {
@@ -208,12 +219,18 @@
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
 .user_msg_match:hover {
 		background-color: #0047B2;
 		background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
 		background: -moz-linear-gradient(top, #0047B2,  #003380);
+		-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+		            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
 .msg_button {
@@ -238,12 +255,18 @@
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
 .user_end_match:hover {
 	background-color:#CC0000;
 	background: -webkit-gradient(linear, left top, left bottom, from(#CC0000), to(#990000));
 	background: -moz-linear-gradient(top, #CC0000,  #990000);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
 .end_button {
@@ -351,6 +374,9 @@
 	font-size:14px;
 	color:#297ACC;
 	font-weight:bold;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+	            box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
 .user_home_list li {
