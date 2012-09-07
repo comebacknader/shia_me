@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   def assign
     @admin = current_admin
     @user = User.find(params[:id])  
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
   end
   
   def assignmm 
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
   
   def match 
     @admin = current_admin
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
     @user = User.find(params[:id])
     @match = Match.new
   end

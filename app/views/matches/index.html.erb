@@ -28,10 +28,10 @@
 		
 		<h1 class="admin_show_header">All Matches</h1>
 		
-		<div class="admin_all_men_box">
+		<div class="admin_match_box">
 			<% @matches.each do |match| %>
 			<%= link_to match do %>
-			<div class="admin_each_men">
+			<div class="admin_each_match">
 				<% if match.man.avatar.present? %>
 					<%= image_tag(match.man.avatar(:small)) %>
 					<%= image_tag(match.woman.avatar(:small)) %>					
@@ -41,7 +41,7 @@
 				<div class="admin_each_men_info">
 					<p><%= truncate(match.man.name, :length => 15) %></p>
 					<p><%= truncate(match.woman.name, :length => 15) %></p>					
-					<p><%= match.created_at %></p>
+					<p class="admin_match_date"><%= time_ago_in_words(match.created_at).titlecase %></p>
 				</div>
 			</div>
 			<% end %>

@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
   def index
     @admin = current_admin
     @matches = Match.all
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
   end
 
   def new

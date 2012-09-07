@@ -49,18 +49,18 @@ class AdminsController < ApplicationController
   
   def allmen
     @admin = Admin.find(params[:id]) 
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
     @men = User.where(:gender => "MALE").order
   end
   
   def allwomen 
     @admin = Admin.find(params[:id])
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
     @women = User.where(:gender => "FEMALE").order
   end
   
   def allmatches 
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
     @admin = Admin.find(params[:id])
   end
   
