@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   
   belongs_to :admin
   
-  has_many :matches
-  has_many :man, through: :matches, source: "man_id"
+  has_many :matches, foreign_key: "man_id", dependent: :destroy
+  has_many :wmatches, foreign_key: "woman_id", class_name: "Match", dependent: :destroy
+  has_many :man, through: :wmatches, source: "man_id"
   has_many :woman, through: :matches, source: "woman_id"
   
   before_save { |user| user.email = email.downcase }
@@ -35,7 +36,8 @@ class User < ActiveRecord::Base
               :access_key_id => ENV['S3_KEY_SHIAME'],
               :secret_access_key => ENV['S3_SECRET_SHIAME']
             }
-  
+            
+
   private
   
     def create_remember_token 

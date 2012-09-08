@@ -75,8 +75,7 @@
 		width:860px;
 		height:230px;
 		padding:10px;
-		background-color:#FDFDFD;
-		border:1px solid #D0D0D0;
+		border:0px solid #D0D0D0;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
@@ -89,7 +88,7 @@
 	height:210px;
 	margin:0px 0px 0px 110px;
 	border:1px solid #D0D0D0;
-	background-color:WhiteSmoke;
+	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
