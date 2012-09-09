@@ -278,13 +278,13 @@
 		float:left;
 		width:200px;
 		height:220px;
-		margin:5px 10px 0px 100px;
+		margin:5px 10px 0px 50px;
 		border:1px solid #D0D0D0;
 		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
-		padding:5px;
+		padding:5px 20px 5px 20px;
 		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
 		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
 		            box-shadow: 0 4px 4px -2px #B8B8B8;
@@ -303,9 +303,6 @@
 		border:1px solid #D0D0D0;
 		padding:5px;
 		margin:10px 10px 0px 20px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
 }
 
 .user_matchmaker_title {
@@ -327,6 +324,48 @@
 	width:200px;
 	text-align:center;
 	font-weight:bold;
+}
+
+.user_account_notif {
+	float:left;
+	width:200px;
+	height:220px;
+	margin:5px 10px 0px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:5px 20px 5px 20px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+	            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_account_notif:hover {
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.user_account_notif img {
+	float:left;
+	width:150px;
+	height:128px;
+	border:1px solid none;
+	padding:5px;
+	margin:10px 10px 20px 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.user_account_header {
+		font-family:"Helvetica";
+		font-size:14px;
+		letter-spacing:0px;
+		color:#333;
+		margin:5px 0px 0px 0px;
 }
 
 .message_mm_button {
@@ -368,7 +407,7 @@
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	background-color:WhiteSmoke;
+	background-color:#FDFDFD;
 	font-family:"Helvetica Neue";
 	font-size:14px;
 	color:#297ACC;
@@ -399,50 +438,8 @@
 	-webkit-border-radius: 0px 0px 10px 10px;
 	border-radius: 0px 0px 10px 10px;
 }
-
-.user_account_notif {
-	float:left;
-	width:200px;
-	height:220px;
-	margin:5px 10px 0px 0px;
-	border:1px solid #D0D0D0;
-	background-color:#FDFDFD;	
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	padding:5px;
-	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
-	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
-	            box-shadow: 0 4px 4px -2px #B8B8B8;
-}
-
-.user_account_notif:hover {
-	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
-	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
-	            box-shadow: 0 4px 4px -1px #B8B8B8;
-}
-
-.user_account_notif img {
-	float:left;
-	width:150px;
-	height:128px;
-	border:1px solid none;
-	padding:5px;
-	margin:10px 10px 20px 20px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-.user_account_header {
-		font-family:"Helvetica";
-		font-size:14px;
-		letter-spacing:0px;
-		color:#333;
-		margin:5px 0px 0px 0px;
-}
-
-																										/* User Sign Up Log In Stuff */
+														
+														/* User Sign Up Log In Stuff */
 
 .user_signup_box {
 		float:left;
