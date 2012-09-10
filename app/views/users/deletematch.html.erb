@@ -44,33 +44,32 @@
 	
 	<div class="admin_profile_box">		
 	
-	
-		<h1 class="admin_show_header"><%= @user.name %></h1>
-
-		<%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
-
-		<p class="admin_show_location">
-			<%= @user.location %>
-		</p>
-		
-		<p class="admin_show_bio">
-			<%= @user.name %>
-		</p>
-		
-		<% if @user.admin_id? %>
-			<p class="admin_show_bio">MatchMaker: <%= @user.admin.name %></p>
-		<% else %>
+			<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
+		<div class="delete_match_middle">	
+			<%= image_tag("goldpack.png", class: "delete_match_middle_logo") %>
+			<p class="delete_match_header"> Are You Sure? </p>
+		</div>
+		<% if @user.gender == "MALE" %>
+			<%= image_tag(@match.woman.avatar(:small), class:"delete_match_other_pic") %>
 		<% end %>
-
-
+		<% if @user.gender == "FEMALE" %>
+			<%= image_tag(@wmatch.man.avatar(:small), class:"delete_match_other_pic") %>
+		<% end %>
 	</div>
-	
+
+	<div class="delete_match_bottom_bar">	
 		<% if current_user  %>
 		<%= link_to current_user do %>
-			<div class="admin_go_home">
+			<div class="delete_match_go_back">
 				Go Home 
 			</div>
 		<% end %>
-	<% end %>
+		<%= link_to :controller => "matches", :action => "destroy" do %>
+			<div class="delete_match_big_button">
+				Delete Match
+			</div>
+		<% end %>
+		<% end %>
+	</div>
 
 </div>

@@ -30,4 +30,5 @@ class MatchesController < ApplicationController
     redirect_to matches_path
   end
   
+
 end

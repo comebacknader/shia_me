@@ -35,6 +35,7 @@ ShiaMe::Application.routes.draw do
        put 'assignmm'
        get 'match'
        post 'makematch'
+       get 'deletematch'
       end
     end
       

@@ -73,12 +73,14 @@
 				<% end %>
 				<div class="user_msg_match">
 				 <%= image_tag("message.png", class: "msg_button") %> 
-				</div>			
+				</div>		
+				<%= link_to deletematch_user_path do %>	
 				<div class="user_end_match">
 				 <%= image_tag("endmatch2.png", class: "end_button") %> 
-				</div>				
+				</div>		
+				<% end %>		
 					<% else %> 
-										<%= image_tag(@wmatch.man.avatar(:small), class: 'user_show_match_no_pic') %>
+							<%= image_tag(@wmatch.man.avatar(:small), class: 'user_show_match_no_pic') %>
 				<div class="user_show_match_info">
 						<h1 class="user_show_match_name"> <%= @wmatch.man.name %> </h1>
 						<p class="user_show_match_location"> Age:  </p>			

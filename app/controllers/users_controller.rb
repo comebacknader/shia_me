@@ -98,6 +98,11 @@ class UsersController < ApplicationController
     end
   end
     
+  def deletematch
+  	@user = current_user
+  	@match = @user.matches.last
+    @wmatch = @user.wmatches.last
+  end   
   
   private 
 
