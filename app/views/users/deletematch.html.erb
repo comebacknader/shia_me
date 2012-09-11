@@ -64,10 +64,7 @@
 				Go Home 
 			</div>
 		<% end %>
-			<div class="delete_match_big_button">
-			<%= button_to 'delete', @match, :method => :delete %>
-				Delete Match
-			</div>
+			<%= button_to 'Delete Match', @match, :method => :delete, :class=> "delete_match_big_button" %>
 		<% end %>
 	</div>
 
