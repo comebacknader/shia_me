@@ -38,6 +38,11 @@ ShiaMe::Application.routes.draw do
        get 'deletematch'
       end
     end
+    
+    resources :users do 
+    	resources :matches
+	end
+    	
       
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'

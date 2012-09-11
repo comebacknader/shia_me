@@ -64,11 +64,10 @@
 				Go Home 
 			</div>
 		<% end %>
-		<%= link_to :controller => "matches", :action => "destroy" do %>
 			<div class="delete_match_big_button">
+			<%= button_to 'delete', @match, :method => :delete %>
 				Delete Match
 			</div>
-		<% end %>
 		<% end %>
 	</div>
 

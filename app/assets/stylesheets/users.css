@@ -438,6 +438,16 @@
 	-webkit-border-radius: 0px 0px 10px 10px;
 	border-radius: 0px 0px 10px 10px;
 }
+
+.no_match_made {
+	font-family:"Helvetica";
+	font-weight:bold;
+	font-size:35px;
+}
+
+.no_match_description {
+	text-align:center;
+}
 														
 														/* User Sign Up Log In Stuff */
 
@@ -706,3 +716,4 @@
 	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
 	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }	
+
