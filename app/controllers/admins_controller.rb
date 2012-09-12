@@ -44,7 +44,7 @@ class AdminsController < ApplicationController
   
   def profile
     @admin = Admin.find(params[:id])
-    @users = User.all
+    @users = User.where(:admin_id => current_admin.id)
   end 
   
   def allmen

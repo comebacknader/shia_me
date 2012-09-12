@@ -17,6 +17,7 @@ class MatchesController < ApplicationController
 
   def show
   	@match = Match.find(params[:id])
+  	@user = @match.man
   end
 
   def edit
@@ -28,7 +29,11 @@ class MatchesController < ApplicationController
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
+    if current_user
     redirect_to current_user 
+    else
+    redirect_to current_admin
+    end
   end
   
 

@@ -1,1 +1,70 @@
-<h1> <%= @match.woman.name %> </h1>
+
+	<div class="user_all_bar">
+		<div class="container">
+		
+	<% if current_user == @user then %>
+				
+			<%= link_to signout_path, method: "delete" do %>
+				<div class="user_home_button"> 
+	 				 Sign Out
+				</div>
+			<% end %>
+	
+	
+				<%= link_to edit_user_path(@user) do %>
+					<div class="user_home_button">
+							Settings
+					</div>
+				<% end %>
+		
+			
+		<%= link_to @user do %>
+			<div class="user_home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+
+		<%= link_to profile_user_url do %>	
+			<div class="user_home_button">
+			 <%=  @user.name %>'s Profile</li>
+			</div>
+		<% end %>
+	<% end %>
+		</div>
+	</div>
+	
+	<div class="container">
+	
+				<%= link_to root_path do %>
+		<div class="all_logo">
+			<%= image_tag("headerlogo.png") %>	
+		</div>
+			<% end %>	
+	
+	<div class="admin_profile_box">		
+	
+			<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
+		<div class="delete_match_middle">	
+			<%= image_tag("goldpack.png", class: "delete_match_middle_logo") %>
+			<p class="delete_match_header"> Are You Sure? </p>
+		</div>
+		<% if @user.gender == "MALE" %>
+			<%= image_tag(@match.woman.avatar(:small), class:"delete_match_other_pic") %>
+		<% end %>
+		<% if @user.gender == "FEMALE" %>
+			<%= image_tag(@wmatch.man.avatar(:small), class:"delete_match_other_pic") %>
+		<% end %>
+	</div>
+
+	<div class="delete_match_bottom_bar">	
+		<% if current_admin  %>
+		<%= link_to current_admin do %>
+			<div class="delete_match_go_back">
+				Go Home 
+			</div>
+		<% end %>
+			<%= button_to 'Delete Match', @match, :method => :delete, :class=> "delete_match_big_button" %>
+		<% end %>
+	</div>
+
+</div>
