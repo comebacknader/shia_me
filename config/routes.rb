@@ -43,6 +43,10 @@ ShiaMe::Application.routes.draw do
     resources :users do 
     	resources :matches
 	end
+	
+	resources :users do 
+		resources :messages
+	end
     	
       
    match "/about", to: 'pages#about'

@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   has_many :man, through: :wmatches, source: "man_id"
   has_many :woman, through: :matches, source: "woman_id"
   
+  has_many :sent, foreign_key: "sender_id", dependent: :destroy
+  has_many :recieved, foreign_key: "recieve_id", class_name: "Message", dependent: :destroy
+  has_many :sender, through: :recieved, source: "sender_id"
+  has_many :reciever, through: :sent, source: "reciever_id"
+  
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
   
