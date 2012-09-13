@@ -1,1 +1,100 @@
-<h1 class="messages_header"> All Messages </h1>
+<% provide(:title, @user.name) %>
+
+	<div class="user_all_bar">
+		<div class="container">
+				
+			<%= link_to signout_path, method: "delete" do %>
+				<div class="user_home_button"> 
+	 				 Sign Out
+				</div>
+			<% end %>
+	
+	
+				<%= link_to edit_user_path(@user) do %>
+					<div class="user_home_button">
+							Settings
+					</div>
+				<% end %>
+		
+			
+		<%= link_to @user do %>
+			<div class="user_home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+
+		<%= link_to profile_user_url(@user) do %>	
+			<div class="user_home_button">
+			 <%=  @user.name %>'s Profile</li>
+			</div>
+		<% end %>
+	
+		</div>
+	</div>
+	
+	<div class="user_container">
+
+		<% flash.each do |key, value| %>
+		  <div class="alert  alert-<%= key %>"><%= value %></div>
+		<% end %>	
+	
+	
+				<div class="user_show_image">
+					<% if @user.avatar.present? %>
+						<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
+					<% else %>
+						<%= image_tag("userlogo.png", class: "user_no_pic") %>
+					<% end %>
+		
+					<div class="user_show_pic">
+						<%= link_to "Change Profile Picture", pics_user_path(@user) %>
+					</div>
+	
+				</div>
+	
+				<div class="all_messages_box">
+					<h1 class="no_match_made"> All Messages </h1>
+					<p class="no_match_description"> No Messages in Inbox</p>
+				</div>
+				
+				
+			
+		<ul class="message_home_list">
+			<%= link_to profile_user_url(@user) do %>	
+			<li class="message_home_list_round"> View Your Profile </li>
+			<% end %>
+			<%= link_to user_messages_path(@user) do %>
+			<li> Inbox () </li>
+			<% end %>
+			<li class="message_home_list_round_down"> Answer Profile Questions </li>
+		</ul>
+
+	<%= link_to @user.admin do %>
+		<div class="message_show_mm_box">
+			
+			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+			<p class="message_mm_title_bold">Your MatchMaker:</p>			
+			<p class="message_mm_title"><%= @user.admin.name %></p>
+
+		</div>
+	<% end %>
+		
+		<div class="message_match_box">
+		<% if @user.gender == "MALE" %>
+			<%= link_to profile_user_url(@match.woman)  do %>
+				<%= image_tag(@match.woman.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>
+				<p class="message_mm_title"> <%= @match.woman.name %> </p>
+			<% end %>
+		<% else %>
+			<%= link_to profile_user_url(@match.man) do %>
+				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>				
+				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
+			<% end %>
+		<% end %>
+		</div>		
+	
+	
+		</div>
+	</div>

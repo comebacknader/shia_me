@@ -2,7 +2,10 @@ class MessagesController < ApplicationController
 	skip_before_filter :authorize
 
 	def index
-	  @messages = Message.all
+    @messages = Message.all
+	@user = current_user
+    @match = @user.matches.last
+    @wmatch = @user.wmatches.last
 	end
 	
 	def show

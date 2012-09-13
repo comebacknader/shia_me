@@ -38,8 +38,6 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 	
-		<div class="user_show">
-		
 		<div class="user_show_match_made">
 	
 					<div class="user_show_image">
@@ -106,16 +104,16 @@
 				</div>
 				
 				
-			</div>
 		</div>
 		
 		<ul class="user_home_list">
 			<%= link_to profile_user_url do %>	
 			<li class="user_home_list_round"> View Your Profile </li>
 			<% end %>
-			<li> Inbox (1) </li>
-			<li> Answer Profile Questions </li>
-			<li class="user_home_list_round_down"> Your Testimonials </li>
+			<%= link_to user_messages_path(@user) do %>
+			<li> Inbox () </li>
+			<% end %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
 		</ul>
 
 	<%= link_to @user.admin do %>

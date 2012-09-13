@@ -62,31 +62,13 @@
 	background: -moz-linear-gradient(top, #464646,  #464646);
 }
 
-.user_show {
-	clear:left;
-	float:left;
-	width:100%;
-	margin:20px 0px 0px 0px;
-}
 
-.user_show_match_made {
-		float:left;
-		clear:both;
-		width:860px;
-		height:230px;
-		padding:10px;
-		border:0px solid #D0D0D0;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		
-}
 
 .user_show_match {
 	float:right;
 	width:500px;
 	height:210px;
-	margin:0px 0px 0px 110px;
+	margin:20px 0px 0px 50px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;
@@ -101,8 +83,8 @@
 .user_show_image {
 		float:left;
 		clear:left;
-		width:175px;
-		height:175px;
+		width:225px;
+		height:225px;
 		border:1px solid #D0D0D0;
 		background-color:WhiteSmoke;
 		padding:10px;
@@ -116,7 +98,7 @@
 
 .user_show_pic {
 		float:left;
-		width:175px;
+		width:225px;
 		font-family:"Helvetica";
 		text-align:center;
 		letter-spacing:-1px;
@@ -124,8 +106,8 @@
 }
 
 .user_no_pic {
-		width:175px;
-		height:175px;
+		width:225px;
+		height:225px;
 }
 
 .user_show_match_name {
@@ -278,7 +260,7 @@
 		float:left;
 		width:200px;
 		height:220px;
-		margin:5px 10px 0px 50px;
+		margin:5px 10px 0px 100px;
 		border:1px solid #D0D0D0;
 		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
@@ -400,9 +382,10 @@
 
 
 .user_home_list {
+	clear:left;
 	float:left;
-	margin:30px 0px 0px 20px;
-	width:300px;
+	margin:50px 0px 0px 20px;
+	width:250px;
 	list-style-type:none;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;

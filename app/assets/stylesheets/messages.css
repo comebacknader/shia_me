@@ -15,4 +15,159 @@
 }
 
 
+.all_messages_box {
+	float:right;
+	width:500px;
+	height:410px;
+	margin:20px 0px 0px 50px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:20px 0px 0px 10px;
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.message_home_list {
+	clear:left;
+	float:left;
+	margin:30px 0px 0px 20px;
+	width:250px;
+	list-style-type:none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#FDFDFD;
+	font-family:"Helvetica Neue";
+	font-size:14px;
+	color:#297ACC;
+	font-weight:bold;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+	            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.message_home_list li {
+	border:1px solid #D0D0D0;
+	height:25px;
+	padding:10px;
+}
+
+.message_home_list li:hover {
+		background-color:#FAFAFA;
+}
+
+.message_home_list_round {
+		-moz-border-radius: 10px 10px 0px 0px;
+		-webkit-border-radius: 10px 10px 0px 0px;
+		border-radius: 10px 10px 0px 0px;
+}
+
+.message_home_list_round_down {
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.message_show_mm_box {
+		clear:left;
+		float:left;
+		width:200px;
+		height:80px;
+		margin:5px 10px 0px 20px;
+		border:1px solid #D0D0D0;
+		background-color:#FDFDFD;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		padding:5px 20px 5px 20px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.message_show_mm_box:hover {
+		-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+		            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.message_mm_pic {
+		float:left;
+		width:75px;
+		height:75px;
+		border:1px solid none;
+		margin:0px 10px 0px 0px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;		
+}
+
+.message_mm_title {
+		float:left;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
+		font-family:"Helvetica";
+		color:#333;
+		width:100px;
+		text-align:center;
+}
+
+.message_mm_title_bold {
+	float:left;
+	margin:0px 0px 0px 0px;
+	padding:10px 0px 0px 0px;
+	font-family:"Helvetica";
+	color:#333;
+	width:100px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.message_match_box {
+	clear:left;
+	float:left;
+	width:200px;
+	height:80px;
+	margin:5px 10px 0px 20px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:5px 20px 5px 20px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+	            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.message_match_box:hover {
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.message_match_box img {
+	float:left;
+	width:75px;
+	height:75px;
+	border:1px solid none;
+	margin:0px 10px 20px 0px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.message_match_box_name {
+		float:left;
+		font-family:"Helvetica";
+		font-size:14px;
+		letter-spacing:0px;
+		color:#333;
+		margin:25px 0px 0px 0px;
+		width:100px;
+}
 
