@@ -9,6 +9,7 @@ ShiaMe::Application.routes.draw do
    resources :invites
    resources :users
    resources :matches
+   resources :messages
    
    scope :admins do 
      resources :admins, :path => "matchmakers"

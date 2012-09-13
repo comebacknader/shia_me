@@ -1,0 +1,18 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.messages_header {
+	float:left;
+	font-family:"Helvetica";
+	font-weight:bold;
+	font-size:25px;
+	text-align:center;
+	width:100%;
+	margin:20px 0px 0px 0px;
+}
+
+
+
