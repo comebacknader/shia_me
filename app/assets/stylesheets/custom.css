@@ -113,6 +113,7 @@ h2 {
 	background-color:WhiteSmoke;
 	border:1px solid #D0D0D0;
 	text-align:center;
+	opacity:0.5;
 }
 
 .alert {
