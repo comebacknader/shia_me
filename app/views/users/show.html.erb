@@ -37,8 +37,7 @@
 		<% flash.each do |key, value| %>
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
-	
-		<div class="user_show_match_made">
+
 	
 					<div class="user_show_image">
 						<% if @user.avatar.present? %>
@@ -104,7 +103,6 @@
 				</div>
 				
 				
-		</div>
 		
 		<ul class="user_home_list">
 			<%= link_to profile_user_url do %>	

@@ -14,11 +14,21 @@
 	margin:20px 0px 0px 0px;
 }
 
+.message_show_image {
+	float:left;
+	clear:left;
+	width:225px;
+	height:225px;
+	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
+	padding:10px;
+	margin:20px 10px 10px 20px;	
+}
 
 .all_messages_box {
 	float:right;
 	width:500px;
-	height:410px;
+	height:500px;
 	margin:20px 0px 0px 50px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
