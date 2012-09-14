@@ -260,7 +260,7 @@
 		float:left;
 		width:200px;
 		height:220px;
-		margin:5px 10px 0px 100px;
+		margin:0px 10px 0px 105px;
 		border:1px solid #D0D0D0;
 		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
@@ -312,7 +312,7 @@
 	float:left;
 	width:200px;
 	height:220px;
-	margin:5px 10px 0px 0px;
+	margin:0px 10px 0px 0px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;
