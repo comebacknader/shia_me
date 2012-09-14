@@ -3,6 +3,17 @@
   They will automatically be included in application.css.
 */
 
+.message_left_column {
+	float:left;
+	width:300px;
+}
+
+.message_right_column {
+	float:left;
+	width:510px;
+	margin:0px 0px 0px 40px
+}
+
 
 .messages_header {
 	float:left;
@@ -181,3 +192,69 @@
 		width:100px;
 }
 
+					/* NEW MESSAGE */ 
+
+.new_msg_box {	
+	float:right;
+	width:500px;
+	height:300px;
+	margin:20px 0px 0px 50px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:20px 0px 0px 10px;
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+					
+.new_msg_match_show {
+	float:right;
+	width:500px;
+	height:100px;
+	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
+	margin:5px 10px 5px 5px;
+}
+
+.new_msg_match_show img {
+	float:left;
+	width:75px;
+	height:75px
+	border:1px solid #D0D0D0;
+	margin:5px;
+}
+
+.new_msg_match_name {
+	float:left;
+	font-family:"Helvetica";
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+	margin:10px;
+}
+
+.new_msg_label {
+	clear:both;
+	float:left;
+	font-size:16px;
+	font-family:"Helvetica";
+	font-weight:bold;
+	color:#333;
+	margin:10px; 
+	width:100%;
+}
+
+.new_msg_textarea {
+	float:left;
+	width:460px;
+	height:200px;
+	margin:10px;
+	border:1px solid #D0D0D0;
+	font-family:"Helvetica";
+	padding:5px;
+	font-size:14px;
+	color:#333;
+}

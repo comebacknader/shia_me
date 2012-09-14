@@ -13,7 +13,10 @@ class MessagesController < ApplicationController
 	end
 	
 	def new
-	  @message = Message.new
+	@message = Message.new
+	@user = current_user
+    @match = @user.matches.last
+    @wmatch = @user.wmatches.last
 	end
 	
 	def create

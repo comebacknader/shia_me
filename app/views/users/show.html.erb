@@ -68,9 +68,11 @@
 					<%= image_tag("search3.png", class: "search_button") %> 
 				</div>
 				<% end %>
+				<%= link_to new_user_message_path(@user) do %>
 				<div class="user_msg_match">
 				 <%= image_tag("message.png", class: "msg_button") %> 
 				</div>		
+				<% end %>
 				<%= link_to deletematch_user_path do %>	
 				<div class="user_end_match">
 				 <%= image_tag("endmatch2.png", class: "end_button") %> 
@@ -85,15 +87,21 @@
 						<p class="user_show_match_location"> Ethnicity: Persian </p>
 				</div>
 					<div class="user_to_match_buttons">
+				<%= link_to profile_user_url(@match.woman) do %>
 					<div class="view_match_profile">
 						<%= image_tag("search3.png", class: "search_button") %> 
 					</div>
+				<% end %>
+				<%= link_to new_user_message_path(@user) do %>
 					<div class="user_msg_match">
 					 <%= image_tag("message.png", class: "msg_button") %> 
 					</div>			
+				<% end %>
+				<%= link_to deletematch_user_path do %>						
 					<div class="user_end_match">
 					 <%= image_tag("endmatch2.png", class: "end_button") %> 
 					</div>
+				<% end %>	
 					<% end %>
 				</div>
 					<% else %>

@@ -2,11 +2,16 @@
 
 <div class="container">
 	
-	<h1 class="admin_header">Sign In</h1>
+	<%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "signin_logo") %>
+
+	
+	
+	
 	
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
 	<% end %>
+	
 	
 	<div class="admin_signup_box">
 		<%= form_for(:usersessions, url: usersessions_path) do |f| %>
