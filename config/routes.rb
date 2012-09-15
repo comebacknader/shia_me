@@ -47,6 +47,7 @@ ShiaMe::Application.routes.draw do
 	resources :users do 
 		resources :messages
 	end
+	
     	
       
    match "/about", to: 'pages#about'
@@ -59,5 +60,6 @@ ShiaMe::Application.routes.draw do
    match '/test', to: 'pages#test'
    match '/signin', to: 'usersessions#new'
    match '/signout', to: 'usersessions#destroy', via: :delete
+   match '/sent', to: 'messages#sent'
    
 end

@@ -52,8 +52,30 @@
 			</div>
 
 			<div class="all_messages_box">
-				<h1 class="no_match_made"> All Messages </h1>
+				<h1 class="all_message_header"> Inbox </h1>
+					<% if @recieved.empty? then %>
 				<p class="no_match_description"> No Messages in Inbox</p>
+					<% else %>
+				<% @recieved.each do |recieved| %>
+					<div class="each_message"> 
+				<%= link_to recieved do %>
+					<%= image_tag(recieved.sender.avatar(:small), class:"all_msg_photo") %>
+					<p class="all_msg_message">
+						<%= recieved.message %> <br />
+					</p>
+					<p class="all_msg_message_time">
+						<%= time_ago_in_words(recieved.created_at) %>
+						ago
+					</p>				
+					</div>
+				<% end %>
+				<% end %>
+			 <%= link_to new_message_path do %>
+				<div class="new_msg_link"> 
+				    New Message
+				 </div>			
+			<% end %>
+					<% end %>
 			</div>
 				
 				

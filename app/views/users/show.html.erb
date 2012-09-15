@@ -39,55 +39,53 @@
 		<% end %>	
 
 	
-					<div class="user_show_image">
-						<% if @user.avatar.present? %>
-							<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
-						<% else %>
-							<%= image_tag("userlogo.png", class: "user_no_pic") %>
-						<% end %>
-			
-						<div class="user_show_pic">
-							<%= link_to "Change Profile Picture", pics_user_path %>
-						</div>
-		
-					</div>
-	
-				<div class="user_show_match">
-					<% if @user.matches.present? %>
-					<% if @user.gender == "MALE" %>
-					<%= image_tag(@match.woman.avatar(:small), class: 'user_show_match_no_pic') %>
-				<div class="user_show_match_info">
-						<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
-						<p class="user_show_match_location"> Age:  </p>			
-						<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
-						<p class="user_show_match_location"> Ethnicity: Persian </p>
+			<div class="user_show_image">
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
+				<% else %>
+					<%= image_tag("userlogo.png", class: "user_no_pic") %>
+				<% end %>
+				<div class="user_show_pic">
+					<%= link_to "Change Profile Picture", pics_user_path %>
 				</div>
-				<div class="user_to_match_buttons">
+			</div>
+
+			<div class="user_show_match">
+				<% if @user.matches.present? || @user.wmatches.present? %>
+				<% if @user.gender == "MALE" %>
+				<%= image_tag(@match.woman.avatar(:small), class: 'user_show_match_no_pic') %>
+			<div class="user_show_match_info">
+					<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
+					<p class="user_show_match_location"> Age:  </p>			
+					<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
+					<p class="user_show_match_location"> Ethnicity: Persian </p>
+			</div>
+			<div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@match.woman) do %>
-				<div class="view_match_profile">
-					<%= image_tag("search3.png", class: "search_button") %> 
-				</div>
+			<div class="view_match_profile">
+				<%= image_tag("search3.png", class: "search_button") %> 
+			</div>
 				<% end %>
 				<%= link_to new_user_message_path(@user) do %>
-				<div class="user_msg_match">
-				 <%= image_tag("message.png", class: "msg_button") %> 
-				</div>		
+			<div class="user_msg_match">
+			 <%= image_tag("message.png", class: "msg_button") %> 
+			</div>		
 				<% end %>
 				<%= link_to deletematch_user_path do %>	
-				<div class="user_end_match">
-				 <%= image_tag("endmatch2.png", class: "end_button") %> 
-				</div>		
+			<div class="user_end_match">
+			 <%= image_tag("endmatch2.png", class: "end_button") %> 
+			</div>		
 				<% end %>		
-					<% else %> 
-							<%= image_tag(@wmatch.man.avatar(:small), class: 'user_show_match_no_pic') %>
-				<div class="user_show_match_info">
-						<h1 class="user_show_match_name"> <%= @wmatch.man.name %> </h1>
-						<p class="user_show_match_location"> Age:  </p>			
-						<p class="user_show_match_location"> Location: <%= @wmatch.man.location %> </p>
-						<p class="user_show_match_location"> Ethnicity: Persian </p>
-				</div>
+		<% else %> 
+			<%= image_tag(@wmatch.man.avatar(:small), class: 'user_show_match_no_pic') %>
+					<div class="user_show_match_info">
+							<h1 class="user_show_match_name"> <%= @wmatch.man.name %> </h1>
+							<p class="user_show_match_location"> Age:  </p>			
+							<p class="user_show_match_location"> Location: <%= @wmatch.man.location %> </p>
+							<p class="user_show_match_location"> Ethnicity: Persian </p>
+					</div>
 					<div class="user_to_match_buttons">
-				<%= link_to profile_user_url(@match.woman) do %>
+				<%= link_to profile_user_url(@wmatch.man) do %>
 					<div class="view_match_profile">
 						<%= image_tag("search3.png", class: "search_button") %> 
 					</div>
@@ -102,7 +100,7 @@
 					 <%= image_tag("endmatch2.png", class: "end_button") %> 
 					</div>
 				<% end %>	
-					<% end %>
+		<% end %>
 				</div>
 					<% else %>
 					<h1 class="no_match_made"> No Match Made </h1>

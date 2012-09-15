@@ -38,7 +38,6 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 	
-	<div class="message_left_column">
 			<div class="message_show_image">
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
@@ -50,7 +49,31 @@
 					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
 				</div>
 
-			</div>		
+			</div>
+
+			<div class="all_messages_box">
+				<h1 class="all_message_header"> All Messages </h1>
+					<% if @messages.empty? then %>
+				<p class="no_match_description"> No Sent Messages</p>
+					<% else %>
+				<% @messages.each do |message| %>
+				 <%= link_to message do %>
+					<div class="each_message"> 
+					<%= image_tag(message.sender.avatar(:small), class:"all_msg_photo") %>
+					<p class="all_msg_message">
+						<%= message.message %> <br />
+					</p>
+					<p class="all_msg_message_time">
+						<%= time_ago_in_words(message.created_at) %>
+						 ago
+					</p>				
+					</div>
+				<% end %>
+				<% end %>	
+					<% end %>
+			</div>
+				
+				
 			
 		<ul class="message_home_list">
 			<%= link_to profile_user_url(@user) do %>	
@@ -61,8 +84,8 @@
 			<% end %>
 			<li class="message_home_list_round_down"> Answer Profile Questions </li>
 		</ul>
-		
-			<%= link_to @user.admin do %>
+
+	<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
 			
 			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
@@ -81,7 +104,7 @@
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
 		<% else %>
-			<%= link_to profile_user_url(@wmatch.man) do %>
+			<%= link_to profile_user_url(@match.man) do %>
 				<%= image_tag(@wmatch.man.avatar(:small)) %>
 				<p class="message_mm_title_bold">Your Match:</p>				
 				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
@@ -90,63 +113,4 @@
 		</div>			
 		</div>
 	<% end %>		
-	
-	</div>
-
-	<div class="message_right_column">
-
-	
-	 <div class="new_msg_match_show">
-		<% if @user.gender == "MALE" %>
-					<%= image_tag(@match.woman.avatar(:small), 
-									class: "new_msg_match_show_img") %>
-		<% if @lastmessage.present? %>
-			<p class="all_msg_message">
-				<%= @lastmessage.message %>
-			</p>
-			<p class="all_msg_message_time">
-				<%= time_ago_in_words(@lastmessage.created_at) %>
-				ago
-			</p>
-		<% else %>
-		 	<p class="all_msg_message">
-		 		Send <%= @match.woman.name %> a Message
-		 	</p>
-		<% end %>
-		<% else %>
-					<%= image_tag(@wmatch.man.avatar(:small), 
-									class: "new_msg_match_show_img") %>
-				<% if @lastmessage.present? %>
-			<p class="all_msg_message">
-				<%= @lastmessage.message %>
-			</p>
-			<p class="all_msg_message_time">
-				<%= time_ago_in_words(@lastmessage.created_at) %>
-				ago
-			</p>
-		<% else %>
-		 	<p class="all_msg_message">
-		 		Send <%= @match.woman.name %> a Message
-		 	</p>
-		<% end %>
-		<% end %>
-	  </div>	
-
-		<div class="new_msg_box">
-		
-			<%= form_for @message do |f| %>
-			
-				<%= f.label :message, "New Message",  class: "new_msg_label" %>
-				<%= f.text_area :message, class: "new_msg_textarea" %>
-				
-				<%= f.hidden_field(:reciever_id) %>
-				<%= f.hidden_field(:sender_id) %>
-				
-				<%= f.submit "Send Message", class:"new_msg_submit" %>
-				
-			<% end %>	
-		</div>	
-	
-	</div>
-
 	</div>
