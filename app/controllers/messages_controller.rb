@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
 		@user = current_user	
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
-		@messages = @user.messages
-		@recieved = @user.recieved
+		@messages = @user.messages.order('created_at DESC').limit(5)
+		@recieved = @user.recieved.order('created_at DESC').limit(5)
 	end
 	
 	def show
@@ -20,7 +20,13 @@ class MessagesController < ApplicationController
 	def new
 		@user = current_user
 		@match = @user.matches.last
+		unless @match == nil
+		@lastmessage = @match.woman.messages.last
+		end		
 		@wmatch = @user.wmatches.last
+		unless @wmatch == nil
+		@msg = @wmatch.man.messages.last
+		end
 			if @user.gender == "MALE"
 				@message = Message.new(:reciever_id => @match.woman.id, 
 									   :sender_id => @user.id)
@@ -28,15 +34,13 @@ class MessagesController < ApplicationController
 				@message = Message.new(:reciever_id => @wmatch.man.id,
 									   :sender_id => @user.id)
 			end    	 	
-		@lastmessage = @match.woman.messages.last
-		@msg = @wmatch
 	end
 	
 	def create
 	  @message = Message.new(params[:message])
 	  
 	  if @message.save 
-	  	redirect_to @message
+	  	redirect_to messages_path
 	  else
 	  	render 'new'
 	  end
@@ -66,8 +70,8 @@ class MessagesController < ApplicationController
 		@user = current_user	
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
-		@messages = @user.messages
-		@recieved = @user.recieved
+		@messages = @user.messages.order('created_at DESC').limit(5)
+		@recieved = @user.recieved.order('created_at DESC').limit(5)
 	end
 
 end

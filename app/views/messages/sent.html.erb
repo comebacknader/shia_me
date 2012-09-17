@@ -52,7 +52,7 @@
 			</div>
 
 			<div class="all_messages_box">
-				<h1 class="all_message_header"> All Messages </h1>
+				<h1 class="all_message_header"> Sent Messages </h1>
 					<% if @messages.empty? then %>
 				<p class="no_match_description"> No Sent Messages</p>
 					<% else %>
@@ -69,7 +69,17 @@
 					</p>				
 					</div>
 				<% end %>
-				<% end %>	
+				<% end %>
+		 <%= link_to new_message_path do %>
+				<div class="new_msg_link"> 
+				    New Message
+				 </div>			
+			<% end %>	
+		 <%= link_to messages_path do %>
+				<div class="new_msg_link"> 
+				    Inbox
+				 </div>			
+			<% end %>					
 					<% end %>
 			</div>
 				
@@ -95,7 +105,7 @@
 		</div>
 	<% end %>
 		
-	<% if @user.matches.present? %>
+	<% if @user.matches.present? || @user.wmatches.present? %>
 		<div class="message_match_box">
 		<% if @user.gender == "MALE" %>
 			<%= link_to profile_user_url(@match.woman)  do %>
@@ -104,7 +114,7 @@
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
 		<% else %>
-			<%= link_to profile_user_url(@match.man) do %>
+			<%= link_to profile_user_url(@wmatch.man) do %>
 				<%= image_tag(@wmatch.man.avatar(:small)) %>
 				<p class="message_mm_title_bold">Your Match:</p>				
 				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>

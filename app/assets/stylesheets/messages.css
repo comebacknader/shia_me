@@ -234,7 +234,7 @@
 	height:100px;
 	border:1px solid #D0D0D0;
 	background-color:WhiteSmoke;
-	margin:20px 10px 5px 5px;
+	margin:20px 5px 5px 5px;
 }
 
 .new_msg_match_show_img {
@@ -306,7 +306,7 @@
 	
 .each_message {
 	float:left;
-	width:500px;
+	width:499px;
 	height:100px;
 	background-color:WhiteSmoke;
 	border:1px solid #D0D0D0;
@@ -369,4 +369,45 @@
 	background-color:#FF5050;
 	background: -webkit-gradient(linear, left top, left bottom, from(#FF5050), to(#CC4040));
 	background: -moz-linear-gradient(top, #FF5050,  #CC4040);
+}
+
+
+			/* MESSAGE SHOW */
+
+.message_show_box {
+	float:right;
+	width:500px;
+	margin:20px 0px 0px 50px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:20px 0px 20px 10px;
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.message_show_user_pic {
+	float:left;
+	width:75px;
+	height:75px;
+	border:1px solid #D0D0D0;
+	margin:10px;	
+}
+
+.message_show_user_info {
+	float:left;
+	width:320px;
+	height:75px;
+	margin:10px;
+	background-color:none;
+}
+
+.message_show_msg {
+	float:left;
+	width:450px;
+	padding:5px;
+	margin:10px;
 }

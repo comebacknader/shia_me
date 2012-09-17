@@ -57,7 +57,7 @@
 			<li class="message_home_list_round"> View Your Profile </li>
 			<% end %>
 			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox () </li>
+			<li> Inbox </li>
 			<% end %>
 			<li class="message_home_list_round_down"> Answer Profile Questions </li>
 		</ul>
@@ -72,7 +72,7 @@
 		</div>
 	<% end %>
 		
-	<% if @user.matches.present? %>
+	<% if @user.matches.present? || @user.wmatches.present? %>
 		<div class="message_match_box">
 		<% if @user.gender == "MALE" %>
 			<%= link_to profile_user_url(@match.woman)  do %>
@@ -116,17 +116,17 @@
 		<% else %>
 					<%= image_tag(@wmatch.man.avatar(:small), 
 									class: "new_msg_match_show_img") %>
-				<% if @lastmessage.present? %>
+				<% if @msg.present? %>
 			<p class="all_msg_message">
-				<%= @lastmessage.message %>
+				<%= @msg.message %>
 			</p>
 			<p class="all_msg_message_time">
-				<%= time_ago_in_words(@lastmessage.created_at) %>
+				<%= time_ago_in_words(@msg.created_at) %>
 				ago
 			</p>
 		<% else %>
 		 	<p class="all_msg_message">
-		 		Send <%= @match.woman.name %> a Message
+		 		Send <%= @wmatch.man.name %> a Message
 		 	</p>
 		<% end %>
 		<% end %>

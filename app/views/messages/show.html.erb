@@ -38,6 +38,7 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 	
+	<div class="message_left_column">
 			<div class="message_show_image">
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
@@ -49,28 +50,19 @@
 					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
 				</div>
 
-			</div>
-
-			<div class="all_messages_box">
-				<h1 class="no_match_made"> Message </h1>
-				<p class="no_match_description"> <%= @message.message %> </p>
-				<p class="no_match_description">Sender: <%= @message.sender.name %> </p>
-				<p class="no_match_description">Reciever: <%= @message.reciever.name %> </p>
-			</div>
-				
-				
+			</div>		
 			
 		<ul class="message_home_list">
 			<%= link_to profile_user_url(@user) do %>	
 			<li class="message_home_list_round"> View Your Profile </li>
 			<% end %>
 			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox () </li>
+			<li> Inbox </li>
 			<% end %>
 			<li class="message_home_list_round_down"> Answer Profile Questions </li>
 		</ul>
-
-	<%= link_to @user.admin do %>
+		
+			<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
 			
 			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
@@ -89,7 +81,7 @@
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
 		<% else %>
-			<%= link_to profile_user_url(@match.man) do %>
+			<%= link_to profile_user_url(@wmatch.man) do %>
 				<%= image_tag(@wmatch.man.avatar(:small)) %>
 				<p class="message_mm_title_bold">Your Match:</p>				
 				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
@@ -98,4 +90,35 @@
 		</div>			
 		</div>
 	<% end %>		
+	
+	</div>
+
+	<div class="message_right_column">
+
+
+		<div class="message_show_box">
+		
+         <div class="message_show_user">
+        	<%= image_tag(@message.sender.avatar(:small), 
+        	              class: "message_show_user_pic")%>
+         </div>
+         <div class="message_show_user_info">
+         	<p> <%= @message.sender.name %> </p>
+         	<p> <%= @message.sender.location %> </p>
+         	<p> Message Sent <%= time_ago_in_words(@message.created_at).titlecase %>
+         						 Ago </p>
+         </div>
+         <div class="message_show_msg">
+         <p> <%= @message.message %> </p>
+         </div>
+		
+			 <%= link_to new_message_path do %>
+				<div class="new_msg_link"> 
+				    New Message
+				 </div>			
+			<% end %>
+		</div>	
+	
+	</div>
+
 	</div>
