@@ -55,10 +55,13 @@
 				<h1 class="all_message_header"> Sent Messages </h1>
 					<% if @messages.empty? then %>
 				<p class="no_match_description"> No Sent Messages</p>
+			
+			<% if @match.present? || @wmatch.present?  %>
 			 <%= link_to new_message_path do %>
 				<div class="new_msg_link"> 
 				    New Message
 				 </div>			
+			<% end %>
 			<% end %>
 			 <%= link_to messages_path do %>
 				<div class="new_msg_link"> 
@@ -84,13 +87,13 @@
 				<div class="new_msg_link"> 
 				    New Message
 				 </div>			
-			<% end %>	
+		<% end %>
 		 <%= link_to messages_path do %>
 				<div class="new_msg_link"> 
 				    Inbox
 				 </div>			
 			<% end %>					
-					<% end %>
+	<% end %>
 			</div>
 				
 				
@@ -100,7 +103,7 @@
 			<li class="message_home_list_round"> View Your Profile </li>
 			<% end %>
 			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox () </li>
+			<li> Inbox </li>
 			<% end %>
 			<li class="message_home_list_round_down"> Answer Profile Questions </li>
 		</ul>

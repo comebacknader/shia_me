@@ -18,15 +18,15 @@ class MessagesController < ApplicationController
 	end
 	
 	def new
-		@user = current_user
-		@match = @user.matches.last
-		unless @match == nil
+	@user = current_user
+	@match = @user.matches.last
+	unless @match == nil
 		@lastmessage = @match.woman.messages.last
-		end		
-		@wmatch = @user.wmatches.last
-		unless @wmatch == nil
+	end		
+	@wmatch = @user.wmatches.last
+	unless @wmatch == nil
 		@msg = @wmatch.man.messages.last
-		end
+	end
 			if @user.gender == "MALE"
 				@message = Message.new(:reciever_id => @match.woman.id, 
 									   :sender_id => @user.id)
