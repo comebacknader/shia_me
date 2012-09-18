@@ -64,7 +64,13 @@
 				Go Home 
 			</div>
 		<% end %>
-			<%= button_to 'Delete Match', @match, :method => :delete, :class=> "delete_match_big_button" %>
+		<% if @user.gender == "MALE" %> 
+			<%= button_to 'Delete Match', @match, :controller => :matches,
+			    :method => :delete, :class=> "delete_match_big_button" %>
+		<% else %>
+<%= button_to 'Delete Match', @wmatch, :controller => :matches, 
+				:method => :delete, :class=> "delete_match_big_button" %>	
+			<% end %>	
 		<% end %>
 	</div>
 

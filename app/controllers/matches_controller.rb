@@ -26,9 +26,21 @@ class MatchesController < ApplicationController
   def update
   end
   
-  def destroy
+  def destroy   
     @match = Match.find(params[:id])
+
+    @usr = User.find(@match.man_id)
+    @messages = @usr.messages
+		@messages.each do |message|
+			message.destroy
+		end
+    @recieved = @usr.recieved
+		@recieved.each do |recieve|
+			recieved.destroy
+		end
+    
     @match.destroy
+    
     if current_user
     redirect_to current_user 
     else

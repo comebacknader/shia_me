@@ -102,7 +102,7 @@
 									class: "new_msg_match_show_img") %>
 		<% if @lastmessage.present? %>
 			<p class="all_msg_message">
-				<%= @lastmessage.message %>
+				<%= truncate(@lastmessage.message, :length => 50) %>
 			</p>
 			<p class="all_msg_message_time">
 				<%= time_ago_in_words(@lastmessage.created_at) %>
@@ -110,7 +110,7 @@
 			</p>
 		<% else %>
 		 	<p class="all_msg_message">
-		 		Send <%= @match.woman.name %> a Message
+		 	<em>	Send <strong><%= @match.woman.name %></strong> a Message </em>
 		 	</p>
 		<% end %>
 		<% else %>
@@ -118,7 +118,7 @@
 									class: "new_msg_match_show_img") %>
 				<% if @msg.present? %>
 			<p class="all_msg_message">
-				<%= @msg.message %>
+				<%= truncate(@msg.message, :length => 50) %>
 			</p>
 			<p class="all_msg_message_time">
 				<%= time_ago_in_words(@msg.created_at) %>

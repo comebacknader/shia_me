@@ -333,16 +333,18 @@
 .all_msg_message {
 	float:left;
 	width:300px;
-	height:70px;
+	height:60px;
 	color:#333;
 	margin:15px 0px 0px 0px;
 }
 
 .all_msg_message_time {
-	float:left;
+	float:right;
 	font-size:12px;
 	color:#333;
-	margin:80px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	width:150px;
+	height:15px;
 }
 
 .new_msg_link {

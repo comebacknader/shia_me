@@ -55,13 +55,23 @@
 				<h1 class="all_message_header"> Sent Messages </h1>
 					<% if @messages.empty? then %>
 				<p class="no_match_description"> No Sent Messages</p>
+			 <%= link_to new_message_path do %>
+				<div class="new_msg_link"> 
+				    New Message
+				 </div>			
+			<% end %>
+			 <%= link_to messages_path do %>
+				<div class="new_msg_link"> 
+				    Inbox 
+				 </div>			
+			<% end %>					
 					<% else %>
 				<% @messages.each do |message| %>
 				 <%= link_to message do %>
 					<div class="each_message"> 
 					<%= image_tag(message.sender.avatar(:small), class:"all_msg_photo") %>
 					<p class="all_msg_message">
-						<%= message.message %> <br />
+						<%= truncate(message.message, :length => 60) %> <br />
 					</p>
 					<p class="all_msg_message_time">
 						<%= time_ago_in_words(message.created_at) %>
