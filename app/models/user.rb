@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :recieved, foreign_key: "reciever_id", class_name: "Message", dependent: :destroy
   has_many :sender, through: :recieved, source: "sender_id"
  
+  has_many :msgs
+  has_many :admins, through: :msgs
+ 
   
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

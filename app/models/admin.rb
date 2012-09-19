@@ -4,6 +4,9 @@ class Admin < ActiveRecord::Base
   
   has_many :users
   
+  has_many :msgs
+  has_many :users, :through => :msgs
+  
   before_save { |admin| admin.email = email.downcase }
   before_save :create_remember_token
   

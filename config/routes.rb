@@ -10,6 +10,8 @@ ShiaMe::Application.routes.draw do
    resources :users
    resources :matches
    resources :messages
+   resources :msgs
+   
    
    scope :admins do 
      resources :admins, :path => "matchmakers"
@@ -23,7 +25,7 @@ ShiaMe::Application.routes.draw do
        get 'allmatches'
        get 'pics'
        put 'picsupdate'
-     end
+     end     
    end
 
    
@@ -42,12 +44,14 @@ ShiaMe::Application.routes.draw do
     
     resources :users do 
     	resources :matches
+    	resources :messages
+    	resources :msgs
 	end
+
 	
-	resources :users do 
-		resources :messages
+	resources :admins do 
+		resources :msgs
 	end
-	
     	
       
    match "/about", to: 'pages#about'

@@ -36,7 +36,8 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     if @admin.update_attributes(params[:admin])
       flash[:success] = "Profile Updated"
-      redirect_to @admin
+      sign_in @admin
+      redirect_to profile_admin_path(@admin)
     else
       render 'edit'
     end
@@ -85,7 +86,7 @@ class AdminsController < ApplicationController
   def signed_in_admin
     unless signed_in? 
       store_location
-      redirect_to login_path, notice: "Please Sign In."
+      redirect_to login_path, notice: "Don't trip yo"
     end
   end
   

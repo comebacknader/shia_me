@@ -8,6 +8,7 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 	
+	<div class="message_left_column">
 			<div class="message_show_image">
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
@@ -19,54 +20,7 @@
 					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
 				</div>
 
-			</div>
-
-			<div class="all_messages_box">
-				<h1 class="all_message_header"> Sent Messages </h1>
-					<% if @messages.empty? then %>
-				<p class="no_match_description"> No Sent Messages</p>
-			
-			<% if @match.present? || @wmatch.present?  %>
-			 <%= link_to new_message_path do %>
-				<div class="new_msg_link"> 
-				    New Message
-				 </div>			
-			<% end %>
-			<% end %>
-			 <%= link_to messages_path do %>
-				<div class="new_msg_link"> 
-				    Inbox 
-				 </div>			
-			<% end %>					
-					<% else %>
-				<% @messages.each do |message| %>
-				 <%= link_to message do %>
-					<div class="each_message"> 
-					<%= image_tag(message.sender.avatar(:small), class:"all_msg_photo") %>
-					<p class="all_msg_message">
-						<%= truncate(message.message, :length => 60) %> <br />
-					</p>
-					<p class="all_msg_message_time">
-						<%= time_ago_in_words(message.created_at) %>
-						 ago
-					</p>				
-					</div>
-				<% end %>
-				<% end %>
-		 <%= link_to new_message_path do %>
-				<div class="new_msg_link"> 
-				    New Message
-				 </div>			
-		<% end %>
-		 <%= link_to messages_path do %>
-				<div class="new_msg_link"> 
-				    Inbox
-				 </div>			
-			<% end %>					
-	<% end %>
-			</div>
-				
-				
+			</div>		
 			
 		<ul class="message_home_list">
 			<%= link_to profile_user_url(@user) do %>	
@@ -77,8 +31,8 @@
 			<% end %>
 			<li class="message_home_list_round_down"> Answer Profile Questions </li>
 		</ul>
-
-	<%= link_to @user.admin do %>
+		
+			<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
 			
 			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
@@ -106,4 +60,45 @@
 		</div>			
 		</div>
 	<% end %>		
+	
+	</div>
+
+	<div class="message_right_column">
+
+	
+	 <div class="new_msg_match_show">
+					<%= image_tag(@user.admin.avatar(:small), 
+									class: "new_msg_match_show_img") %>
+		<% if @lastmsg.present? %>
+			<p class="all_msg_message">
+				<%= truncate(@lastmsg.message, :length => 50) %>
+			</p>
+			<p class="all_msg_message_time">
+				<%= time_ago_in_words(@lastmsg.created_at) %>
+				ago
+			</p>
+		<% else %>
+		 	<p class="all_msg_message">
+		 	<em>	Send <strong><%= @user.admin.name %></strong> a Message </em>
+		 	</p>
+		<% end %>
+	  </div>	
+
+		<div class="new_msg_box">
+		
+			<%= form_for @msg do |f| %>
+			
+				<%= f.label :message, "New Message",  class: "new_msg_label" %>
+				<%= f.text_area :message, class: "new_msg_textarea" %>
+				
+				<%= f.hidden_field(:admin_id) %>
+				<%= f.hidden_field(:user_id) %>
+				
+				<%= f.submit "Send Message", class:"new_msg_submit" %>
+				
+			<% end %>	
+		</div>	
+	
+	</div>
+
 	</div>

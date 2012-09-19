@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
 		@wmatch = @user.wmatches.last
 		@messages = @user.messages.order('created_at DESC').limit(5)
 		@recieved = @user.recieved.order('created_at DESC').limit(5)
+		@msgs = @user.msgs
 	end
 	
 	def show
