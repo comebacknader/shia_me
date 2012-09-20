@@ -70,10 +70,12 @@
 		
          <div class="message_show_user">
         	<%= image_tag(@msg.admin.avatar(:small), 
-        	              class: "message_show_user_pic")%>
+        	              class: "mm_msg_photo")%>
+        	<%= image_tag(@msg.user.avatar(:small), 
+        	              class: "mm_user_msg_photo")%>        	              
          </div>
          <div class="message_show_user_info">
-         	<p> <%= @msg.admin.name %> </p>
+         	<p> <strong>Your MatchMaker:</strong> <%= @msg.admin.name %> </p>
          	<p> Message Sent <%= time_ago_in_words(@msg.created_at).titlecase %>
          						 Ago </p>
          </div>

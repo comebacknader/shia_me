@@ -106,8 +106,13 @@
 				    Sent Messages
 				 </div>			
 			<% end %>	
-					<% end %>
+		<% end %>
 			</div>
+			
+		<div class="match_msg_delete">
+			<p> Your Messages will Delete after the Match Finishes
+			</p>
+		</div>	
 		
 		<div class="all_messages_box">
 			<h1 class="all_message_header">MatchMaker Messages
@@ -124,7 +129,8 @@
 		<% @msgs.each do |msg| %>
 			<div class="each_message"> 
 		<%= link_to msg do %>
-			<%= image_tag(msg.admin.avatar(:small), class:"all_msg_photo") %>
+			<%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
+			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>			
 			<p class="all_msg_message">
 				<%= truncate(msg.message, length: 70) %> <br />
 			</p>

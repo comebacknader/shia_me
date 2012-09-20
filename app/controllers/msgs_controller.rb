@@ -1,9 +1,11 @@
 class MsgsController < ApplicationController
-   skip_before_filter :authorize
+   skip_before_filter :authorize, except: [:index]
 
 
   def index
     @msgs = Msg.all
+	@admin = current_admin
+    @users = User.where(:admin_id => current_admin.id)	
   end
 
   def show

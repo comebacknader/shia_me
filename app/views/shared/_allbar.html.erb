@@ -4,10 +4,16 @@
 		<p> Your Users </p>
 	</div>
 	
+		<%= link_to msgs_path do %>
+		<div class="admin_all_users">
+				<p> Inbox </p>
+		</div>
+	<% end %>
+	
 	<%= link_to controller: "admins", action: "allmen", :id => current_admin do %>
-	<div class="admin_all_users">
-			<p> All Men </p>
-	</div>
+		<div class="admin_all_users">
+				<p> All Men </p>
+		</div>
 	<% end %>
 
 	<%= link_to controller: "admins", action: "allwomen", :id => current_admin do %>

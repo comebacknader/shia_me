@@ -373,7 +373,57 @@
 		text-align:center;
 }
 
-										/* ALL MEN */
+.user_go_home {
+	float:left;
+	padding:20px 100px 20px 100px;
+	margin:30px 0px 0px 150px;
+	border:1px solid #D0D0D0;
+	background-color:White;
+	font-family:"Helvetica";
+	text-align:center;
+	font-weight:bold;
+	color:#333;
+	background-color:#FFD1D1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFD1D1), to(#E6B8B8));
+    background: -moz-linear-gradient(top, #FFD1D1,  #E6B8B8);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+				box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_go_home:hover {
+		border:1px solid DimGray;
+}
+
+.msg_go_home {
+	float:left;
+	padding:20px 80px 20px 80px;
+	margin:30px 0px 0px 50px;
+	border:1px solid #D0D0D0;
+	background-color:White;
+	font-family:"Helvetica";
+	text-align:center;
+	font-weight:bold;
+	color:#333;
+	background-color:#FFD1D1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFD1D1), to(#E6B8B8));
+    background: -moz-linear-gradient(top, #FFD1D1,  #E6B8B8);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+				box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.msg_go_home:hover {
+		border:1px solid DimGray;
+}
+
+						/* ALL MEN */
 										
 .admin_all_men_box {
 		float:left;
@@ -402,7 +452,7 @@
 		margin:10px 0px 0px 10px;
 }
 
-																					/* ASSIGN MatchMaker to User */
+					/* ASSIGN MatchMaker to User */
 
 .admin_assign_mm {
 		float:left;
@@ -468,7 +518,7 @@
 	  white-space: nowrap;
 }
 
-																									/* CREATE MATCH */
+						/* CREATE MATCH */
 
 .admin_create_match_list {
 		float:left;
@@ -501,7 +551,7 @@
   white-space: nowrap;
 }				
 
-																									/* All Matches Check Matches.css */
+						/* All Matches Check Matches.css */
 
 .admin_match_box {
 		float:left;
@@ -538,4 +588,35 @@
 		color:#333;
 }										
 
-										
+					
+						/* Admins MSGS */
+
+.admin_msg_box {
+	float:left;
+	width:700px;
+	border:1px solid DimGray;
+	margin:10px;
+}	
+
+.admin_msg_each {
+	float:left;
+	width:698px;
+	height:70px;
+	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
+	color:#333;
+	font-family:"Helvetica";
+}
+
+.admin_msg_each_msg {
+	float:left;
+	margin:10px;
+	width:400px;
+	height:40px;
+	background-color:none;
+}
+
+.admin_msg_each_time {
+
+}
+

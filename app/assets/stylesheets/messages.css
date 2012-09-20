@@ -373,6 +373,38 @@
 	background: -moz-linear-gradient(top, #FF5050,  #CC4040);
 }
 
+.mm_msg_photo {
+	float:left;
+	width:50px;
+	height:50px;
+	border:1px solid #D0D0D0;
+	margin:10px 0px 0px 10px;
+}
+
+.mm_user_msg_photo {
+	float:left;
+	width:50px;
+	height:50px;
+	border:1px solid #D0D0D0;
+	margin:10px 10px 0px 0px;
+}
+
+.match_msg_delete {
+	float:left;
+	width:500px;
+	margin:20px 0px 0px 10px;
+	padding:20px 0px 20px 0px;
+	text-align:center;
+	border:1px solid #D0D0D0;
+	background-color:#FFFFDB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFDB), to(#FFFFCC));
+	background: -moz-linear-gradient(top, #FFFFDB,  #FFFFCC);
+	color:#333;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
 
 			/* MESSAGE SHOW */
 

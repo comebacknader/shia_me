@@ -68,7 +68,9 @@
 	
 	 <div class="new_msg_match_show">
 					<%= image_tag(@user.admin.avatar(:small), 
-									class: "new_msg_match_show_img") %>
+									class: "mm_msg_photo") %>
+					<%= image_tag(@user.avatar(:small), 
+									class: "mm_user_msg_photo") %>									
 		<% if @lastmsg.present? %>
 			<p class="all_msg_message">
 				<%= truncate(@lastmsg.message, :length => 50) %>
