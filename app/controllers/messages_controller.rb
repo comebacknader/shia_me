@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
 		@user = current_user	
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
-		@messages = @user.messages.order('created_at DESC').limit(5)
-		@recieved = @user.recieved.order('created_at DESC').limit(5)
+		@messages = @user.messages.order('created_at DESC').limit(20)
+		@recieved = @user.recieved.order('created_at DESC').limit(20)
 		@msgs = @user.msgs
 	end
 	

@@ -26,6 +26,7 @@ ShiaMe::Application.routes.draw do
        get 'pics'
        put 'picsupdate'
        get 'sendmsg'
+       get 'showmsg'
      end     
    end
 

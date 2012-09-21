@@ -86,7 +86,11 @@ class AdminsController < ApplicationController
     @users = User.where(:admin_id => current_admin.id)	 	
   end
   
-    
+  def showmsg 
+    @msg = Msg.find(params[:id])
+	@admin = current_admin
+    @users = User.where(:admin_id => current_admin.id)	
+  end
     
   
   private 

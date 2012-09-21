@@ -608,6 +608,10 @@
 	font-family:"Helvetica";
 }
 
+.admin_msg_each:hover {
+	background-color:white;
+}
+
 .admin_msg_each_msg {
 	float:left;
 	margin:10px 0px 0px 0px;
