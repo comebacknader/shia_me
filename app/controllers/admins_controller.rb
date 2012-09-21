@@ -78,6 +78,14 @@ class AdminsController < ApplicationController
       render 'pics'
     end
   end
+  
+  def sendmsg
+ 	@admin = Admin.find(params[:id])
+ 	@msg = Msg.new(:admin_id => @admin.id)
+    @msgs = Msg.all
+    @users = User.where(:admin_id => current_admin.id)	 	
+  end
+  
     
     
   

@@ -26,16 +26,19 @@
 	<div class="admin_show">
 		
 		
-		<h1 class="admin_show_header"><%= @admin.name %>'s Messages</h1>
+		<h1 class="admin_show_header">New Message</h1>
 
 	<div class="admin_msg_box">
-		<% @msgs.each do |msg| %>
-			<div class="admin_msg_each">
-			<%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
-			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>				
-				<p class="admin_msg_each_msg"> <%= truncate(msg.message, length: 100) %> </p>
-				<p class="admin_msg_each_time"> <%= time_ago_in_words(msg.created_at) %> </p>
-			</div>			
+		<%= form_for @msg do |f| %>
+				<%= f.text_area :message, class: "new_msg_textarea" %>
+				
+				<%= f.hidden_field(:admin_id) %>
+				<div class="admin_msg_user_select">
+				  <p> Send Message To: </p>
+				  <%= f.collection_select(:user_id,  @users.all, 
+				  		:id, :name) %>
+				</div>
+				<%= f.submit "Send Message", class:"admin_msg_submit" %>				
 		<% end %>
 
 	</div>

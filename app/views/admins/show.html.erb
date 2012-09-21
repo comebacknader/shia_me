@@ -31,22 +31,21 @@
 				Go Home 
 			</div>
 		<% end %>
-	<% end %>
-
-	<% if current_user %>
+	<% else if current_user %>
 		<%= link_to current_user do %>
-		<div class="user_go_home">
-			Go Home
-		</div>
+	     <div class="user_go_home">
+			 Go Home
+		 </div>
 		<% end %>
 
-	<% if current_user.admin == @admin  %>
+	  <% if current_user.admin == @admin  %>
 		<%= link_to new_msg_path do %>
 			<div class="msg_go_home">
 				Message Admin
 			</div>
 		<% end %>
-	<% end %>	
-		<% end %>
+	  <% end %>	
+	<% end %>
+	<% end %>
 
 </div>

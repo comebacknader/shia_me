@@ -2,3 +2,37 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+/* ADMIN NEW MSG */
+
+.admin_msg_submit {
+	float:left;
+	margin:0px 10px 0px 20px;
+	width:120px;
+	height:60px;
+	border:1px solid #D0D0D0;
+	font-family:"Helvetica";
+	font-weight:bold;
+	font-size:14px;
+	color:White;
+	background-color:#336CC1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#336CC1), to(#0047B2));
+	background: -moz-linear-gradient(top, #336CC1,  #0047B2);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;			
+}
+
+.admin_msg_submit:hover {
+	border:1px solid #D0D0D0;
+	background-color:#FF5050;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF5050), to(#CC4040));
+	background: -moz-linear-gradient(top, #FF5050,  #CC4040);
+}
+
+.admin_msg_user_select {
+	float:left;
+	margin:20px 0px 80px 20px;
+	
+}
