@@ -20,15 +20,11 @@
 		<p class="admin_show_location">
 			<%= @user.location %>
 		</p>
-		
-		<p class="admin_show_bio">
-			<%= @user.name %>
-		</p>
-		
-		<% if @user.admin_id? %>
-			<p class="admin_show_bio">MatchMaker: <%= @user.admin.name %></p>
-		<% else %>
+	
+		<% if @question %>
+			<p class="admin_show_bio"> <%= @user.name %> is attending <%= @question.education %> </p>
 		<% end %>
+			
 
 
 	</div>

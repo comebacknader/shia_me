@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   
   def profile
     @user = User.find(params[:id])
+    @question = @user.question
   end
   
   def pics 

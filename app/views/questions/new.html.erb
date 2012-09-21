@@ -64,10 +64,11 @@
 	</div>
 	
 	<div class="message_right_column">
+	
+			<h1 class="user_header"> Create Profile</h1>
 
 	<div class="question_new_box">
 		<%= form_for(@question) do |f| %>
-
 	
 		<%= f.label :job, "Occupation", class: "user_signup" %>
 		<%= f.text_field :job, class: "user_signup_field" %>

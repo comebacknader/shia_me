@@ -1,2 +1,107 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<% provide(:title, @user.name) %>
+
+<%= render 'shared/userallbar' %>
+
+	<div class="user_container">
+
+		<% flash.each do |key, value| %>
+		  <div class="alert  alert-<%= key %>"><%= value %></div>
+		<% end %>	
+		
+		<div class="message_left_column">
+	
+			<div class="message_show_image">
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
+				<% else %>
+					<%= image_tag("userlogo.png", class: "user_no_pic") %>
+				<% end %>
+	
+				<div class="user_show_pic">
+					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
+				</div>
+
+			</div>
+			
+					<ul class="message_home_list">
+			<%= link_to profile_user_url(@user) do %>	
+			<li class="message_home_list_round"> View Your Profile </li>
+			<% end %>
+			<%= link_to user_messages_path(@user) do %>
+			<li> Inbox </li>
+			<% end %>
+			<li class="message_home_list_round_down"> Answer Profile Questions </li>
+		</ul>
+
+	<%= link_to @user.admin do %>
+		<div class="message_show_mm_box">
+			
+			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+			<p class="message_mm_title_bold">Your MatchMaker:</p>			
+			<p class="message_mm_title"><%= @user.admin.name %></p>
+
+		</div>
+	<% end %>
+		
+	<% if @user.matches.present? || @user.wmatches.present? %>
+		<div class="message_match_box">
+		<% if @user.gender == "MALE" %>
+			<%= link_to profile_user_url(@match.woman)  do %>
+				<%= image_tag(@match.woman.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>
+				<p class="message_mm_title"> <%= @match.woman.name %> </p>
+			<% end %>
+		<% else %>
+			<%= link_to profile_user_url(@wmatch.man) do %>
+				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>				
+				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
+			<% end %>
+		<% end %>
+		</div>			
+		</div>
+	<% end %>	
+	</div>
+	
+	<div class="message_right_column">
+	
+			<h1 class="user_header"> Answer Questions</h1>
+
+	<div class="question_new_box">
+		<%= form_for(@question) do |f| %>
+	
+		<%= f.label :job, "Occupation", class: "user_signup" %>
+		<%= f.text_field :job, class: "user_signup_field" %>
+		
+		<%= f.label :education, class: "user_signup" %>
+		<%= f.text_field :education, class: "user_signup_field" %>
+		
+		<%= f.label :ethnicity, class: "user_signup" %>
+		<%= f.text_field :ethnicity, class: "user_signup_field" %>		
+
+		<%= f.label :prayer, "Prayer", class: "user_signup" %>
+		<%= f.text_field :prayer, class: "user_signup_field" %>
+	
+		<% if @user.gender == "FEMALE" %> 
+	
+		<%= f.label :hijab, "Hijab", class: "user_signup" %>
+		<%= f.text_field :hijab, class: "user_signup_field" %>		
+		
+		<% end %>
+		
+		<%= f.label :syed, "Are You Syed?", class: "user_signup" %>
+		<%= f.text_field :syed, class: "user_signup_field" %>
+	
+		
+		<%= f.hidden_field(:user_id) %>
+	
+		<%= f.submit "Answer", class: "user_create" %>
+
+		<% end %>
+		
+	
+	</div>
+		
+	</div>
+	
+	</div>

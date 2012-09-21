@@ -88,8 +88,14 @@
 			<%= link_to user_messages_path(@user) do %>
 			<li> Inbox </li>
 			<% end %>
+			<% unless @user.question.present? then %>
 			<%= link_to new_user_question_path(@user) do %>
 			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>			
+			<% else %>
+			<%= link_to edit_user_question_path(@user) do %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>			
 			<% end %>
 		</ul>
 

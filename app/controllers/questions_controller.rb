@@ -9,14 +9,14 @@ class QuestionsController < ApplicationController
 	@user = current_user	
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last 
-  	@question = Question.new
+  	@question = Question.new(:user_id => @user.id)
   end
   
   def create
   	@question = Question.new(params[:question])
   	
   	if @question.save 
-  	   redirect_to @question
+  	   redirect_to profile_user_path(current_user)
   	else 
   		render 'new'
   	end
@@ -27,6 +27,9 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+	@user = current_user	
+	@match = @user.matches.last
+	@wmatch = @user.wmatches.last   
   	@question = Question.find(params[:id])
   end
   
@@ -34,7 +37,7 @@ class QuestionsController < ApplicationController
   	@question = Question.find(params[:id])
   	
   	if @question.update_attributes(params[:question])
-  		redirect_to @question
+  		redirect_to profile_user_path(current_user)
   	else
   		render 'edit'
   	end
