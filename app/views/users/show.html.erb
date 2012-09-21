@@ -88,7 +88,9 @@
 			<%= link_to user_messages_path(@user) do %>
 			<li> Inbox </li>
 			<% end %>
+			<%= link_to new_user_question_path(@user) do %>
 			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>
 		</ul>
 
 	<%= link_to @user.admin do %>

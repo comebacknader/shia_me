@@ -1,5 +1,11 @@
 ShiaMe::Application.routes.draw do
 
+  get "questions/index"
+
+  get "questions/new"
+
+  get "questions/edit"
+
    root to: 'pages#home'
     
    resources :admins       
@@ -11,6 +17,7 @@ ShiaMe::Application.routes.draw do
    resources :matches
    resources :messages
    resources :msgs
+   resources :questions
    
    
    scope :admins do 
@@ -48,6 +55,7 @@ ShiaMe::Application.routes.draw do
     	resources :matches
     	resources :messages
     	resources :msgs
+    	resources :questions
 	end
 
 	

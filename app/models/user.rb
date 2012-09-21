@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   
   belongs_to :admin
   
+  has_one :question
+  
   has_many :matches, foreign_key: "man_id", dependent: :destroy
   has_many :wmatches, foreign_key: "woman_id", class_name: "Match", dependent: :destroy
   has_many :man, through: :wmatches, source: "man_id"
