@@ -28,7 +28,7 @@
 					<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
 					<p class="user_show_match_location"> Age:  </p>			
 					<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
-					<p class="user_show_match_location"> Ethnicity: Persian </p>
+					<p class="user_show_match_location"> Ethnicity: <%= @match.woman.question %> </p>
 			</div>
 			<div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@match.woman) do %>

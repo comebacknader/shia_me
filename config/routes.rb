@@ -1,10 +1,5 @@
 ShiaMe::Application.routes.draw do
 
-  get "questions/index"
-
-  get "questions/new"
-
-  get "questions/edit"
 
    root to: 'pages#home'
     
@@ -57,6 +52,10 @@ ShiaMe::Application.routes.draw do
     	resources :msgs
     	resources :questions
 	end
+	
+	resources :messages do 
+		resources :questions
+		end
 
 	
 	resources :admins do 

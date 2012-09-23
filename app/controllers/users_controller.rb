@@ -52,6 +52,11 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(params[:id])
     @question = @user.question
+    if @user.gender == "MALE"
+    	@they = "He"
+    else
+    	@they = "She"
+    end
   end
   
   def pics 

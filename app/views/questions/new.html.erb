@@ -70,22 +70,30 @@
 	<div class="question_new_box">
 		<%= form_for(@question) do |f| %>
 	
-		<%= f.label :job, "Occupation", class: "user_signup" %>
+		<%= f.label :job, "What Is Your Occupation?", class: "user_signup" %>
 		<%= f.text_field :job, class: "user_signup_field" %>
 		
-		<%= f.label :education, class: "user_signup" %>
-		<%= f.text_field :education, class: "user_signup_field" %>
-		
-		<%= f.label :ethnicity, class: "user_signup" %>
+		<%= f.label :education, "Highest Level of Education Finished", class: "user_signup" %>
+		<%= f.select(:education, options_for_select([['High School'],
+						 ['Community College'], ['University'],['Grad School'],
+						 ['PHD']])) %>
+						 
+		<%= f.label :ethnicity, "What is your Ethnicity?", class: "user_signup" %>
 		<%= f.text_field :ethnicity, class: "user_signup_field" %>		
 
-		<%= f.label :prayer, "Prayer", class: "user_signup" %>
-		<%= f.text_field :prayer, class: "user_signup_field" %>
+		<%= f.label :prayer, "How Often Do You Pray?", class: "user_signup" %>
+		<%= f.select(:prayer, options_for_select([['Barely Wajib Prayers'],
+						 ['All Wajib Prayers'], ['Wajib and Some Extra Prayers'],
+						 ['All Wajib and A Lot of Extra Prayers']])) %>
+	
+		<% if @user.gender == "FEMALE" %> 
 	
 		<%= f.label :hijab, "Hijab", class: "user_signup" %>
 		<%= f.text_field :hijab, class: "user_signup_field" %>		
 		
-		<%= f.label :syed, "Are You Syed?", class: "user_signup" %>
+		<% end %>
+		
+		<%= f.label :syed, "Are You a Syed?", class: "user_signup" %>
 		<%= f.text_field :syed, class: "user_signup_field" %>
 	
 		

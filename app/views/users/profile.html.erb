@@ -1,7 +1,8 @@
 <% provide(:title, @user.name) %>
 
+<% if current_user %>
 <%= render 'shared/userallbar' %>
-	
+<% end %>	
 	<div class="container">
 	
 				<%= link_to root_path do %>
@@ -22,19 +23,27 @@
 		</p>
 	
 		<% if @question %>
-			<p class="admin_show_bio"> <%= @user.name %> is attending <%= @question.education %> </p>
+			<p class="admin_show_bio"> <%= @user.name %> attended 
+			<%= @question.education %> and is pursuing a career as a
+			 <%= @question.job %>.  <%= @they %> prays <%= @question.prayer %>.  </p>
 		<% end %>
 			
 
 
 	</div>
 	
-		<% if current_user  %>
-		<%= link_to current_user do %>
+	<% if current_admin  %>
+		<%= link_to profile_admin_url do %>
 			<div class="admin_go_home">
 				Go Home 
 			</div>
 		<% end %>
+	<% else if current_user %>
+		<%= link_to current_user do %>
+	     <div class="admin_go_home">
+			 Go Home
+		 </div>
+		<% end %>
 	<% end %>
-
+	<% end %>
 </div>
