@@ -23,8 +23,12 @@
 		</p>
 		<% if @question %>
 		<p class="user_profile_ethnic">
+			<strong> Age: </strong> <%= @user.age %>
+		</p>		
+		<p class="user_profile_ethnic">
 			<strong> Ethnicity: </strong> <%= @question.ethnicity %>
-		</p>
+		</p>	
+		
 		<% end %>
 	
 		<% if @question %>

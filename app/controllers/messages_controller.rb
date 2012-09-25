@@ -21,21 +21,22 @@ class MessagesController < ApplicationController
 	
 	def new
 	@user = current_user
+	@question = @user.question
 	@match = @user.matches.last
-	unless @match == nil
-		@lastmessage = @match.woman.messages.last
-	end		
+		unless @match == nil
+			@lastmessage = @match.woman.messages.last
+		end		
 	@wmatch = @user.wmatches.last
-	unless @wmatch == nil
-		@msg = @wmatch.man.messages.last
-	end
-			if @user.gender == "MALE"
-				@message = Message.new(:reciever_id => @match.woman.id, 
-									   :sender_id => @user.id)
-			else 
-				@message = Message.new(:reciever_id => @wmatch.man.id,
-									   :sender_id => @user.id)
-			end    	 	
+		unless @wmatch == nil
+			@msg = @wmatch.man.messages.last
+		end
+		if @user.gender == "MALE"
+			@message = Message.new(:reciever_id => @match.woman.id, 
+								   :sender_id => @user.id)
+		else 
+			@message = Message.new(:reciever_id => @wmatch.man.id,
+								   :sender_id => @user.id)
+		end    	 	
 	end
 	
 	def create

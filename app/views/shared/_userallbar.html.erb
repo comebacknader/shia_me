@@ -10,14 +10,14 @@
 	
 				<%= link_to edit_user_path(@user) do %>
 					<div class="user_home_button">
-							Settings
+				<p> <%= image_tag("settingsbutton.png", class: "home_img_button") %>  </p>
 					</div>
 				<% end %>
 		
 			
 		<%= link_to @user do %>
 			<div class="user_home_button">
-				<p> Home </p>
+				<p> <%= image_tag("homebutton2.png", class: "home_img_button") %>  </p>
 			</div>
 		<% end %>
 	
