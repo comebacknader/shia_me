@@ -8,6 +8,7 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 
+	<div class="message_left_column">
 	
 			<div class="user_show_image">
 				<% if @user.avatar.present? %>
@@ -19,7 +20,28 @@
 					<%= link_to "Change Profile Picture", pics_user_path %>
 				</div>
 			</div>
-
+			
+					<ul class="user_home_list">
+			<%= link_to profile_user_url do %>	
+			<li class="user_home_list_round"> View Your Profile </li>
+			<% end %>
+			<%= link_to user_messages_path(@user) do %>
+			<li> Inbox </li>
+			<% end %>
+			<% unless @user.question.present? then %>
+			<%= link_to new_user_question_path(@user) do %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>			
+			<% else %>
+			<%= link_to edit_user_question_path(@user) do %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>			
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="message_right_column">
+	
 			<div class="user_show_match">
 				<% if @user.matches.present? || @user.wmatches.present? %>
 				<% if @user.gender == "MALE" %>
@@ -30,7 +52,7 @@
 					<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
 					<p class="user_show_match_location"> Ethnicity: <%= @match.woman.question %> </p>
 			</div>
-			<div class="user_to_match_buttons">
+		  <div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@match.woman) do %>
 			<div class="view_match_profile">
 				<%= image_tag("search3.png", class: "search_button") %> 
@@ -44,6 +66,11 @@
 				<%= link_to deletematch_user_path do %>	
 			<div class="user_end_match">
 			 <%= image_tag("endmatch2.png", class: "end_button") %> 
+			</div>		
+		</div>
+			<div class="user_show_match_reason">
+				<%= @user.admin.photo(:small) %>
+			<p>	<%= truncate(@match.reason, length: 150) %> </p>
 			</div>		
 				<% end %>		
 		<% else %> 
@@ -69,35 +96,26 @@
 					<div class="user_end_match">
 					 <%= image_tag("endmatch2.png", class: "end_button") %> 
 					</div>
+		  </div>
+			<div class="user_show_match_reason">
+				<%= image_tag(@user.admin.avatar(:small), class:"user_show_reason_img") %>			
+				<p><%= truncate(@wmatch.reason, length: 200) %></p>
+			</div>		
 				<% end %>	
 		<% end %>
-				</div>
 					<% else %>
+					<% if @user.question %>
 					<h1 class="no_match_made"> No Match Made </h1>
 					<p class="no_match_description"> We are finding you the best match available. <br />
 					  Thank You for your Patience. </p>
+					<% else %>
+					<h1 class="no_match_made"> No Match Made </h1>
+					<p class="no_match_description"> We cannot match you until you answer
+					your Profile Questions!  </p>
+					<% end %>					
 					<% end %>
-
-				</div>
+		</div>
 				
-		
-		<ul class="user_home_list">
-			<%= link_to profile_user_url do %>	
-			<li class="user_home_list_round"> View Your Profile </li>
-			<% end %>
-			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox </li>
-			<% end %>
-			<% unless @user.question.present? then %>
-			<%= link_to new_user_question_path(@user) do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
-			<% end %>			
-			<% else %>
-			<%= link_to edit_user_question_path(@user) do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
-			<% end %>			
-			<% end %>
-		</ul>
 
 	<%= link_to @user.admin do %>
 		<div class="user_show_match_bar">
@@ -109,10 +127,28 @@
 		</div>
 	<% end %>
 		
-		<div class="user_account_notif">
-				<%= image_tag("goldpack.png") %>
-				<h1 class="user_account_header"> You are currently a Gold Member </h1>
-		</div>		
+	<% unless @user.question.present? then %>
+	<%= link_to new_user_question_path(@user) do %>				
+		<div class="user_account_notif">	
+				<p class="user_account_notif_question">
+					?
+				</p>
+				<h1 class="user_account_header"> Answer Your Profile Questions? </h1>
+		</div>	
+	<% end %>	
+	<% else %>
+	<%= link_to edit_user_question_path(@user) do %>
+		<div class="user_account_notif">	
+				<p class="user_account_notif_question">
+					?
+				</p>
+				<h1 class="user_account_header"> Need to Update Your Answers? </h1>
+		</div>	
+	<% end %>
+	<% end %>			
+	
+	</div>
+	
 
 	
 		</div>

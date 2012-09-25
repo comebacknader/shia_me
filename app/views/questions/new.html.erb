@@ -30,7 +30,15 @@
 			<%= link_to user_messages_path(@user) do %>
 			<li> Inbox </li>
 			<% end %>
-			<li class="message_home_list_round_down"> Answer Profile Questions </li>
+		<% unless @user.question.present? then %>
+			<%= link_to new_user_question_path(@user) do %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>			
+			<% else %>
+			<%= link_to :controller => "questions", :action => "edit", :id => @question.id do %>
+			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+			<% end %>
+			<% end %>		
 		</ul>
 
 	<%= link_to @user.admin do %>
@@ -68,34 +76,56 @@
 			<h1 class="user_header"> Create Profile</h1>
 
 	<div class="question_new_box">
-		<%= form_for(@question) do |f| %>
+	
+		<%= form_for @question, :html => { :multipart => true } do |f| %>
 	
 		<%= f.label :job, "What Is Your Occupation?", class: "user_signup" %>
+		<div class="question_form_details">
+		  example: Civil Engineer, Filmmaker, Artist, Student, etc.
+		</div>				
 		<%= f.text_field :job, class: "user_signup_field" %>
+
+		<%= f.label :ethnicity, "What is your Ethnicity?", class: "user_signup" %>
+		<%= f.text_field :ethnicity, class: "user_signup_field" %>			
 		
 		<%= f.label :education, "Highest Level of Education Finished", class: "user_signup" %>
-		<%= f.select(:education, options_for_select([['High School'],
-						 ['Community College'], ['University'],['Grad School'],
-						 ['PHD']])) %>
+		<%= f.select(:education, ['High School',
+						 'Community College', 'University','Grad School',
+						 'PHD']) %>
 						 
-		<%= f.label :ethnicity, "What is your Ethnicity?", class: "user_signup" %>
-		<%= f.text_field :ethnicity, class: "user_signup_field" %>		
-
 		<%= f.label :prayer, "How Often Do You Pray?", class: "user_signup" %>
-		<%= f.select(:prayer, options_for_select([['Barely Wajib Prayers'],
-						 ['All Wajib Prayers'], ['Wajib and Some Extra Prayers'],
-						 ['All Wajib and A Lot of Extra Prayers']])) %>
-	
+		<div class="question_form_details">
+		 Be honest. 
+		</div>
+		<%= f.select(:prayer, ['almost all the Wajib prayers',
+					    'all the Wajib prayers', 'all the Wajib prayers & some extra prayers',
+						 'all the Wajib and a lot of extra prayers']) %>		
+		
 		<% if @user.gender == "FEMALE" %> 
 	
-		<%= f.label :hijab, "Hijab", class: "user_signup" %>
-		<%= f.text_field :hijab, class: "user_signup_field" %>		
+		<%= f.label :hijab, "Do You Wear Hijab?", class: "user_signup" %>
+		<%= f.select(:hijab, %w[NO YES]) %>			
 		
 		<% end %>
 		
 		<%= f.label :syed, "Are You a Syed?", class: "user_signup" %>
-		<%= f.text_field :syed, class: "user_signup_field" %>
-	
+		<%= f.select(:syed, %w[NO YES]) %>			 				 
+							
+		
+		<%= f.label :firsthobby, "What hobbies do you engage in?", class: "user_signup" %>
+		<div class="question_form_details">
+		i.e: community activities, sports, etc. 
+		</div>
+		<%= f.text_field :firsthobby, class: "user_signup_field" %>	
+		<%= f.text_field :secondhobby, class: "user_signup_field" %>	
+		<%= f.text_field :thirdhobby, class: "user_signup_field" %>								
+
+		<%= f.label :islamtoyou, "What does Islam mean to you?", class: "user_signup" %>
+		<div class="question_form_details">
+		Keep your answers to one or two sentences. 
+		</div>
+
+		<%= f.text_field :islamtoyou, class: "user_signup_field" %>	
 		
 		<%= f.hidden_field(:user_id) %>
 	

@@ -65,9 +65,8 @@
 
 
 .user_show_match {
-	float:right;
+	float:left;
 	width:500px;
-	height:210px;
 	margin:20px 20px 0px 0px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
@@ -145,6 +144,8 @@
 		float:left;
 		margin:20px 10px 10px 40px;
 		width:250px;
+		height:80px;
+		background-color:none;
 }
 
 .view_match_profile {
@@ -256,11 +257,35 @@
 		width:50px;
 }
 
+.user_show_match_reason {
+	clear:left;
+	float:left;
+	width:410px;
+	padding:5px;
+	margin:5px;
+	font-family:"Helvetica";
+	color:DimGray;
+	font-size:12px;
+}
+
+.user_show_match_reason p {
+	width:350px;
+	margin:5px 0px 0px 60px;
+	font-size:12px;
+}
+
+.user_show_reason_img {
+	float:left;
+	width:50px;
+	height:50px;
+	border:1px solid #D0D0D0;
+}
+
 .user_show_match_bar {
 		float:left;
 		width:200px;
 		height:220px;
-		margin:0px 10px 0px 105px;
+		margin:10px 10px 0px 6px;
 		border:1px solid #D0D0D0;
 		background-color:#FDFDFD;
 		-moz-border-radius: 10px;
@@ -312,7 +337,7 @@
 	float:left;
 	width:200px;
 	height:220px;
-	margin:0px 10px 0px 0px;
+	margin:10px 10px 0px 0px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;
@@ -336,6 +361,22 @@
 	height:128px;
 	border:1px solid none;
 	padding:5px;
+	margin:10px 10px 20px 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.user_account_notif_question {
+	float:left;
+	width:150px;
+	height:128px;
+	border:1px solid none;
+	padding:5px;
+	font-size:120px;
+	font-weight:bold;
+	text-align:center;
+	color:#E68A8A;
 	margin:10px 10px 20px 20px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;

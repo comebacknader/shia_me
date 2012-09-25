@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 
-<% if current_user %>
-<%= render 'shared/userallbar' %>
+<% if current_user == User.find(params[:id]) %>
+	<%= render 'shared/userallbar' %>
 <% end %>	
 	<div class="container">
 	
@@ -11,7 +11,7 @@
 		</div>
 			<% end %>	
 	
-	<div class="admin_profile_box">		
+	<div class="user_profile_box">		
 	
 	
 		<h1 class="admin_show_header"><%= @user.name %></h1>
@@ -21,14 +21,44 @@
 		<p class="admin_show_location">
 			<%= @user.location %>
 		</p>
+		<% if @question %>
+		<p class="user_profile_ethnic">
+			<strong> Ethnicity: </strong> <%= @question.ethnicity %>
+		</p>
+		<% end %>
 	
 		<% if @question %>
 			<p class="admin_show_bio"> <%= @user.name %> attended 
 			<%= @question.education %> and is pursuing a career as a
 			 <%= @question.job %>.  <%= @they %> prays <%= @question.prayer %>.  </p>
-		<% end %>
-			
-
+			 
+			 <div class="user_profile_question">
+			 	<p> Some of <%= @user.name %>'s Hobbies Include:
+			 		<ul> 
+			 			<li> <%= @question.firsthobby %> </li> 
+			 			<li> <%= @question.secondhobby %> </li>
+			 			<li> <%= @question.thirdhobby %> </li>
+			 		</ul>
+			 	</p>
+			 </div>
+			 <div class="user_islamtome">
+			 <p class="user_islamtome_header">
+			 What Islam means to <%= @user.name %> : 
+			 </p>
+			 	<p class="user_profile_quotes">
+			 			"
+			 	</p>
+			 	<p class="user_islamtome_text"><%= @question.islamtoyou %>
+			 	</p>
+			 	<p class="user_profile_quotes">
+			 			"
+			 	</p>			 	
+			 </div>
+		<% else %>
+			<p class="admin_show_bio"> <%= @user.name %> has not filled 
+				out a profile. 
+			</p>
+		<% end %>	
 
 	</div>
 	

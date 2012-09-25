@@ -3,8 +3,8 @@ class MsgsController < ApplicationController
 
 
   def index
-    @msgs = Msg.order('created_at DESC').all
-	@admin = current_admin
+ 	@admin = current_admin 
+    @msgs = Msg.where(:admin_id => @admin.id).order('created_at DESC').all
     @users = User.where(:admin_id => current_admin.id)	
   end
 

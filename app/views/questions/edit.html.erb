@@ -91,7 +91,7 @@
 		 Be honest. 
 		</div>
 		<%= f.select(:prayer, ['almost all the Wajib prayers',
-					    'all the Wajib prayers', 'all the Wajib some extra prayers',
+					    'all the Wajib prayers', 'all the Wajib prayers & some extra prayers',
 						 'all the Wajib and a lot of extra prayers']) %>		
 		
 		<% if @user.gender == "FEMALE" %> 
@@ -117,8 +117,8 @@
 		<div class="question_form_details">
 		Keep your answers to one or two sentences. 
 		</div>
+
 		<%= f.text_field :islamtoyou, class: "user_signup_field" %>	
-	
 		
 		<%= f.hidden_field(:user_id) %>
 	

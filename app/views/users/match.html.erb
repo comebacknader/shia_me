@@ -40,8 +40,8 @@
 					<p><%= @user.location %></p>
 				</div>
 				
-					</div>
-			
+		</div>
+	
 			<% if @user.gender == "MALE" then %>	
 			
 			<div class="admin_create_match_list">	
@@ -49,9 +49,12 @@
 			
 			<%= f.hidden_field :man_id, :value =>  @user.id %>
 			
-			<%= f.label :woman_id, "Select Woman", class: "admin_assign_label" %>
+			<%= f.label :woman_id, "Select Woman", class: "admin_create_match_label" %>
 			<%= collection_select(:match, :woman_id,  User.where(:gender => "FEMALE").order("name ASC"), :id, :name, 
 			{:prompt => true}, :class => "admin_create_match_dropdown" )%>
+			
+		<%= f.label :reason, "Tell them Why You Made This Match", class: "user_signup" %>
+		<%= f.text_area :reason, class: "create_match_textarea" %>		
 			
 		<%= f.submit "Create Match", class: "admin_assign_button" %>
 				
@@ -65,11 +68,14 @@
 
 				<%= f.hidden_field :woman_id, :value =>  @user.id %>
 
-				<%= f.label :man_id, "Select Man", class: "admin_assign_label" %>
+				<%= f.label :man_id, "Select Man", class: "admin_create_match_label" %>
 				<%= collection_select(:match, :man_id,  User.where(:gender => "MALE").order("name ASC"), :id, :name, 
 				{:prompt => true}, :class => "admin_create_match_dropdown" )%>
 
-			<%= f.submit "Create Match", class: "admin_assign_button" %>
+		<%= f.label :reason, "Tell them Why You Made This Match", class: "user_signup" %>
+		<%= f.text_area :reason, class: "create_match_textarea" %>	
+
+			<%= f.submit "Create Match", class: "create_match_button" %>
 
 				<% end %>
 				</div>

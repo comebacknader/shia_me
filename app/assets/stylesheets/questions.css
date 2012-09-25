@@ -85,6 +85,32 @@
 	  white-space: nowrap;
 }
 
+#question_hijab {
+		float:left;
+		margin:10px 0px 5px 0px;
+		width:500px;
+		height:40px;
+		-webkit-appearance: button;
+	  -webkit-border-radius: 2px;
+	  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	  -webkit-padding-end: 20px;
+	  -webkit-padding-start: 2px;
+	  -webkit-user-select: none;
+	  background-image: url(arrow2.png);
+	    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	  background-position: center right;
+	  background-repeat: no-repeat;
+	  border: 1px solid #AAA;
+	  color: #555;
+	  font-size: inherit;
+	  overflow: hidden;
+	  padding-top: 2px;
+	  padding-bottom: 2px;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+}
+
+
 .question_form_details {
 	float:left;
 	font-family:"Helvetica";
@@ -93,4 +119,84 @@
 	width:400px;
 	height:15px;
 	margin:0px 0px 0px 5px;
+}
+
+		/* User Question Profile Page */
+
+.user_profile_question {
+	float:left;
+	margin:10px 0px 0px 20px;;
+	width:550px;
+	padding:5px;
+	background-color:none;
+	color:DimGray;	
+}
+
+.user_profile_question p {
+	font-size:20px;
+	font-weight:bold;
+}
+
+.user_profile_box {
+		float:left;
+		width:900px;
+		padding:10px;
+		margin:30px 0px 0px 20px;
+		border:1px solid #D0D0D0;
+		background-color:#F6F6F6;
+		font-family:"Helvetica";		
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+			box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_profile_question ul {
+	list-style-type:number;
+	margin:0px 0px 0px 20px;
+	font-family:"Helvetica";
+	font-size:18px;
+	color:DimGray;
+}
+
+.user_islamtome {
+	float:left;
+	margin:15px 0px 0px 10px;
+	width:800px;
+	padding:10px;
+}
+
+.user_islamtome_text {
+	float:left;
+	margin:10px 10px 0px 10px;
+	font-size:16px;
+	color:DimGray;	
+}
+
+.user_islamtome_header {
+	float:left;
+	width:800px;
+	font-family:"Helvetica";
+	color:DimGray;
+	font-weight:bold;
+	font-size:22px;
+	font-family:"Helvetica";
+}
+
+.user_profile_quotes {
+	float:left;
+	margin:0px 10px 5px 10px;
+	font-size:30px;
+	color:DimGray;
+	font-weight:bold;
+}
+
+.user_profile_ethnic {
+		float:left;
+		color:DimGray;
+		width:550px;
+		margin:0px 0px 0px 0px;
+		padding:5px 20px 0px 25px;
 }
