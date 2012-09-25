@@ -31,11 +31,11 @@
 			<% end %>
 		<% unless @user.question.present? then %>
 			<%= link_to new_user_question_path(@user) do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+				<li class="user_home_list_round_down"> Answer Profile Questions </li>
 			<% end %>			
 			<% else %>
 			<%= link_to :controller => "questions", :action => "edit", :id => @question.id do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
+				<li class="user_home_list_round_down"> Answer Profile Questions </li>
 			<% end %>	
 			<% end %>	
 		</ul>

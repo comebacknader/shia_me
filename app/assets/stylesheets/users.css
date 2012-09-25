@@ -67,6 +67,19 @@
 .user_show_match {
 	float:left;
 	width:500px;
+	margin:20px 0px 0px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:20px 0px 0px 10px;
+}
+
+.user_show_match_none {
+	float:left;
+	width:500px;
+	height:200px;
 	margin:20px 20px 0px 0px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
@@ -260,18 +273,27 @@
 .user_show_match_reason {
 	clear:left;
 	float:left;
-	width:410px;
+	width:480px;
 	padding:5px;
-	margin:5px;
+	margin:0px 5px 0px 10px;
 	font-family:"Helvetica";
 	color:DimGray;
 	font-size:12px;
+	border:1px solid #D0D0D0;
+	border-top:0px;
+	background-color:#F8F8F8;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;	
+	-webkit-box-shadow: 0 2px 2px -1px #B8B8B8;
+	   -moz-box-shadow: 0 2px 2px -1px #B8B8B8;
+	            box-shadow: 0 2px 4px -1px #B8B8B8;	
 }
 
 .user_show_match_reason p {
-	width:350px;
-	margin:5px 0px 0px 60px;
-	font-size:12px;
+	margin:5px 5px 5px 60px;
+	font-size:14px;
+	font-weight:bold;
 }
 
 .user_show_reason_img {
@@ -279,6 +301,9 @@
 	width:50px;
 	height:50px;
 	border:1px solid #D0D0D0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;		
 }
 
 .user_show_match_bar {
@@ -337,7 +362,7 @@
 	float:left;
 	width:200px;
 	height:220px;
-	margin:10px 10px 0px 0px;
+	margin:10px 0px 0px 10px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;

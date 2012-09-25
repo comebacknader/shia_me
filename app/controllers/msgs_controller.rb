@@ -20,6 +20,7 @@ class MsgsController < ApplicationController
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last 
     @lastmsg = @user.msgs.last
+    @question = @user.question
     
     @msg = Msg.new(:user_id => @user.id, :admin_id => @user.admin.id)
   end
