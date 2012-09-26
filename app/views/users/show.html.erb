@@ -9,7 +9,7 @@
 		<% end %>	
 
 	<div class="message_left_column">
-	
+		
 			<div class="user_show_image">
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
@@ -20,25 +20,12 @@
 					<%= link_to "Change Profile Picture", pics_user_path %>
 				</div>
 			</div>
-			
-					<ul class="user_home_list">
-			<%= link_to profile_user_url do %>	
-			<li class="user_home_list_round"> View Your Profile </li>
-			<% end %>
-			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox </li>
-			<% end %>
-			<% unless @user.question.present? then %>
-			<%= link_to new_user_question_path(@user) do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
-			<% end %>			
-			<% else %>
-			<%= link_to edit_user_question_path(@user) do %>
-			<li class="user_home_list_round_down"> Answer Profile Questions </li>
-			<% end %>			
-			<% end %>
-		</ul>
+
+
+		<%= render 'shared/navbar' %>
+
 	</div>
+
 	
 	<div class="message_right_column">
 	

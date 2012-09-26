@@ -9,6 +9,14 @@
 		margin: 0px auto;
 }
 
+.user_allbar_container {
+	display:block;
+	min-width: 800px;
+	max-width: 880px;
+	margin: 0px auto;
+	width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");	
+}
+
 .user_all_bar {
 		width:100%;
 		clear:both;
@@ -299,7 +307,6 @@
 .user_show_match_reason p {
 	margin:5px 5px 5px 60px;
 	font-size:14px;
-	font-weight:bold;
 }
 
 .user_show_reason_img {

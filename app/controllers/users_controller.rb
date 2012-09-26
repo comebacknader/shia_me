@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @question = @user.question
     @match = @user.matches.last
     @wmatch = @user.wmatches.last
   end
