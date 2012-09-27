@@ -71,6 +71,7 @@ class MessagesController < ApplicationController
 
 	def sent
 		@user = current_user	
+		@question = @user.question
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
 		@messages = @user.messages.order('created_at DESC').limit(5)

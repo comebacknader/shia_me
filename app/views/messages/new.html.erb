@@ -21,25 +21,8 @@
 				</div>
 
 			</div>		
-			
-		<ul class="message_home_list">
-			<%= link_to profile_user_url(@user) do %>	
-			<li class="message_home_list_round"> View Your Profile </li>
-			<% end %>
-				<%= link_to user_messages_path(@user) do %>
-				<li> Inbox </li>
-				<% end %>
-			<% unless @user.question.present? then %>
-				<%= link_to new_user_question_path(@user) do %>
-				<li class="user_home_list_round_down"> Answer Profile Questions </li>
-				<% end %>			
-			<% else %>
-				<%= link_to :controller => "questions", 
-							:action => "edit", :id => @question.id do %>
-				  <li class="user_home_list_round_down"> Answer Profile Questions </li>
-				<% end %>			
-			<% end %>			
-		</ul>
+
+	<%= render 'shared/navbar' %>
 		
 			<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
