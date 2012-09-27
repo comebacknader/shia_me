@@ -76,17 +76,11 @@
 	margin:30px 0px 0px 20px;
 	width:250px;
 	list-style-type:none;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	background-color:#FDFDFD;
+	background-color:none;
 	font-family:"Helvetica Neue";
 	font-size:14px;
 	color:#297ACC;
 	font-weight:bold;
-	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
-	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
-	            box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
 .message_home_list li {
@@ -99,16 +93,50 @@
 		background-color:#FAFAFA;
 }
 
-.message_home_list_round {
-		-moz-border-radius: 10px 10px 0px 0px;
-		-webkit-border-radius: 10px 10px 0px 0px;
-		border-radius: 10px 10px 0px 0px;
+.home_list_logo {
+	float:left;
+	width:50px;
+	height:50px;
+	border:1px solid #D0D0D0;
+} 
+
+.view_your_profile_box {
+	float:left;
+	width:250px;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color:#FDFDFD;
+	text-align:center;
+	border:1px solid #D0D0D0;
+		-webkit-box-shadow: 0 2px 2px -2px #B8B8B8;
+		   -moz-box-shadow: 0 2px 2px -2px #B8B8B8;
+		            box-shadow: 0 2px 4px -2px #B8B8B8;	
 }
 
-.message_home_list_round_down {
-	-moz-border-radius: 0px 0px 10px 10px;
-	-webkit-border-radius: 0px 0px 10px 10px;
-	border-radius: 0px 0px 10px 10px;
+.view_your_profile_box:hover {
+	background-color:#F4F4F4;	
+}
+
+.view_profile_text {
+	margin:20px 0px 0px 0px;
+	color:#333;
+}
+
+.inbox_box {
+	float:left;
+	width:250px;
+	padding:0px 0px 0px 0px;
+	margin:5px 0px 0px 0px;
+	background-color:#FDFDFD;
+	text-align:center;
+	border:1px solid #D0D0D0;
+		-webkit-box-shadow: 0 2px 2px -2px #B8B8B8;
+		   -moz-box-shadow: 0 2px 2px -2px #B8B8B8;
+		            box-shadow: 0 2px 4px -2px #B8B8B8;		
+}
+
+.inbox_box:hover {
+	background-color:#F4F4F4;	
 }
 
 .message_show_mm_box {

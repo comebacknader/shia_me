@@ -124,18 +124,14 @@
 	<% unless @user.question.present? then %>
 	<%= link_to new_user_question_path(@user) do %>				
 		<div class="user_account_notif">	
-				<p class="user_account_notif_question">
-					?
-				</p>
+			<%= image_tag("questions.png", class: 'user_questions_pic') %>
 				<h1 class="user_account_header"> Answer Your Profile Questions? </h1>
 		</div>	
 	<% end %>	
 	<% else %>
 	<%= link_to edit_user_question_path(@user) do %>
 		<div class="user_account_notif">	
-				<p class="user_account_notif_question">
-					?
-				</p>
+			<%= image_tag("questions.png", class: 'user_matchmaker_pic') %>
 				<h1 class="user_account_header"> Need to Update Your Answers? </h1>
 		</div>	
 	<% end %>

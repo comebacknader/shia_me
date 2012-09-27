@@ -23,17 +23,7 @@
 
 			</div>
 			
-			<ul class="message_home_list">
-			<%= link_to profile_user_url(@user) do %>	
-			<li class="message_home_list_round"> View Your Profile </li>
-			<% end %>
-			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox </li>
-			<% end %>
-			<%= link_to edit_user_question_path(@user) do %>
-			<li class="message_home_list_round_down"> Answer Profile Questions </li>
-			<% end %>
-		</ul>
+	<%= render 'shared/navbar' %>
 
 	<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
@@ -97,7 +87,7 @@
 		<% if @user.gender == "FEMALE" %> 
 	
 		<%= f.label :hijab, "Do You Wear Hijab?", class: "user_signup" %>
-		<%= f.text_field :hijab, class: "user_signup_field" %>		
+		<%= f.select(:hijab, %w[NO YES]) %>			
 		
 		<% end %>
 		
