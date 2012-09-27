@@ -110,6 +110,8 @@
 				</div>
 					<% end %>
 
+	
+	<% if @user.admin.present? %>
 				
 	<%= link_to @user.admin do %>
 		<div class="user_show_match_bar">
@@ -120,6 +122,17 @@
 
 		</div>
 	<% end %>
+	
+	<% else %>
+		<div class="user_show_match_bar">
+			
+			<%= image_tag("viewprofile.png", class: 'user_matchmaker_pic') %>
+			<p class="user_matchmaker_title_bold">Select A MatchMaker</p>			
+			<p class="user_matchmaker_title"></p>
+
+		</div>
+	<% end %>	
+	 
 		
 	<% unless @user.question.present? then %>
 	<%= link_to new_user_question_path(@user) do %>				
