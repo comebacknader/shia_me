@@ -16,8 +16,12 @@
 	
 		<h1 class="admin_show_header"><%= @user.name %></h1>
 
-		<%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
-
+		<% if @user.avatar.present? %>
+		 <%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
+        <% else %>
+		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
+        <% end %>
+        
 		<p class="admin_show_location">
 			<%= @user.location %>
 		</p>
@@ -67,7 +71,7 @@
 	</div>
 	
 	<% if current_admin  %>
-		<%= link_to profile_admin_url do %>
+		<%= link_to profile_admin_url(current_admin) do %>
 			<div class="admin_go_home">
 				Go Home 
 			</div>

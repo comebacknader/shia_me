@@ -36,9 +36,13 @@
 	<div class="admin_show_msg_box">
 			<div class="admin_msg_each_show">
 			<%= image_tag(@msg.admin.avatar(:small), class:"mm_msg_photo") %>
-			<%= image_tag(@msg.user.avatar(:small), class:"mm_user_msg_photo") %>				
+		  <% if @msg.user.avatar.present? %>	
+			<%= image_tag(@msg.user.avatar(:small), class:"mm_user_msg_photo") %>
+		  <% else %>
+			<%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
+		  <% end %>				
 				<p class="admin_msg_each_msg_show"> <%= @msg.message %> </p>
-				<p class="admin_msg_each_time"> <%= time_ago_in_words(@msg.created_at) %> </p>
+				<p class="admin_msg_each_time"> <%= time_ago_in_words(@msg.created_at) %> ago </p>
 			</div>			
 
 	</div>

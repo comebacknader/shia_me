@@ -22,15 +22,7 @@
 
 			</div>		
 			
-		<ul class="message_home_list">
-			<%= link_to profile_user_url(@user) do %>	
-			<li class="message_home_list_round"> View Your Profile </li>
-			<% end %>
-			<%= link_to user_messages_path(@user) do %>
-			<li> Inbox </li>
-			<% end %>
-			<li class="message_home_list_round_down"> Answer Profile Questions </li>
-		</ul>
+   <%= render 'shared/navbar' %>
 		
 			<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
@@ -71,8 +63,13 @@
          <div class="message_show_user">
         	<%= image_tag(@msg.admin.avatar(:small), 
         	              class: "mm_msg_photo")%>
+          <% if @msg.user.avatar.present? %>	              
         	<%= image_tag(@msg.user.avatar(:small), 
-        	              class: "mm_user_msg_photo")%>        	              
+        	              class: "mm_user_msg_photo")%>
+          <% else %>
+        	<%= image_tag("viewprofile.png", 
+        	              class: "mm_user_msg_photo")%>
+          <% end %>                    	              
          </div>
          <div class="message_show_user_info">
          	<p> <strong>Your MatchMaker:</strong> <%= @msg.admin.name %> </p>

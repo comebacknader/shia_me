@@ -36,7 +36,8 @@
 					<%= image_tag(match.man.avatar(:small)) %>
 					<%= image_tag(match.woman.avatar(:small)) %>					
 				<% else %>
-					<p> No Image Yet </p>
+					<%= image_tag("viewprofile.png") %>
+					<%= image_tag("viewprofile.png") %>
 				<% end %>
 				<div class="admin_each_men_info">
 					<p><%= truncate(match.man.name, :length => 15) %></p>

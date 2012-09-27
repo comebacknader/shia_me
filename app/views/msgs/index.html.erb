@@ -38,10 +38,18 @@
 		<%= link_to showmsg_admin_path(msg) do %>
 			<div class="admin_msg_each">
 			<%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
-			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>				
-				<p class="admin_msg_each_msg"> <%= truncate(msg.message, length: 100) %> </p>
-				<p class="admin_msg_each_time"> <%= time_ago_in_words(msg.created_at) %> </p>
-			</div>			
+		  <% if msg.user.avatar.present? %>	
+			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>
+		  <% else %>
+			<%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
+		  <% end %>			    				
+				<p class="admin_msg_each_msg"> 
+				  <%= truncate(msg.message, length: 100) %> 
+				</p>
+				<p class="admin_msg_each_time"> 
+				  <%= time_ago_in_words(msg.created_at) %> 
+				</p>
+		    </div>			
 		<% end %>
 	   <% end %>
 	</div>

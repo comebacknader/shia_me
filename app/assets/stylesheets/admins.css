@@ -611,6 +611,7 @@
 .admin_each_match {
 		float:left;
 		padding:10px;
+		margin:10px 0px 0px 10px;
 		border:1px solid #D0D0D0;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;

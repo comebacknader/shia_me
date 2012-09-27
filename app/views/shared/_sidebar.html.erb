@@ -2,7 +2,14 @@
 	<ul class="admin_sidebar_list">
 	<% @users.each do |user| %>
 	<%= link_to :controller => "users", :action => "match", :id => user.id do %>
-	<li><%= image_tag(user.avatar(:small), class: "admin_sidebar_pics")%>	<p class="admin_sidebar_name"><%= user.name %></p>	</li>
+	<li>
+	  <% if user.avatar.present? %>
+	   <%= image_tag(user.avatar(:small), class: "admin_sidebar_pics")%>
+	  <% else %>
+	   <%= image_tag("viewprofile.png", class: "admin_sidebar_pics")%>
+	  <% end %>	  	
+	  <p class="admin_sidebar_name"><%= user.name %></p>	
+	</li>
 	<% end %>
 	<% end %>
 	</ul>

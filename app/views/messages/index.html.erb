@@ -39,20 +39,28 @@
 		<div class="message_match_box">
 		<% if @user.gender == "MALE" %>
 			<%= link_to profile_user_url(@match.woman)  do %>
-				<%= image_tag(@match.woman.avatar(:small)) %>
+				<% if @match.woman.avatar.present? %>
+				 <%= image_tag(@match.woman.avatar(:small)) %>
+				<% else %>
+				 <%= image_tag("viewprofile.png") %>
+				<% end %>				
 				<p class="message_mm_title_bold">Your Match:</p>
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
 		<% else %>
 			<%= link_to profile_user_url(@wmatch.man) do %>
-				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<% if @wmatch.man.avatar.present? %>
+				 <%= image_tag(@wmatch.man.avatar(:small)) %>
+				<% else %>
+				 <%= image_tag("viewprofile.png") %>
+				<% end %>	
 				<p class="message_mm_title_bold">Your Match:</p>				
 				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
 			<% end %>
 		<% end %>
 		</div>			
 		</div>
-	<% end %>	
+	<% end %>
 	</div>
 	
 		<div class="message_right_column">
@@ -77,7 +85,13 @@
 				<% @recieved.each do |recieved| %>
 					<div class="each_message"> 
 				<%= link_to recieved do %>
-					<%= image_tag(recieved.sender.avatar(:small), class:"all_msg_photo") %>
+				  <% if recieved.sender.avatar.present? %>
+					<%= image_tag(recieved.sender.avatar(:small), 
+					   			  class:"all_msg_photo") %>
+				  <% else %>
+					<%= image_tag("viewprofile.png", 
+					   			  class:"all_msg_photo") %>
+				  <% end %>	   			  				  	   			  
 					<p class="all_msg_message">
 						<%= truncate(recieved.message, length: 70) %> <br />
 					</p>
@@ -122,7 +136,11 @@
 			<div class="each_message"> 
 		<%= link_to msg do %>
 			<%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
-			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>			
+		   <% if msg.user.avatar.present? %>
+			<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>
+		   <% else %>
+		    <%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
+		   <% end %> 				
 			<p class="all_msg_message">
 				<%= truncate(msg.message, length: 70) %> <br />
 			</p>

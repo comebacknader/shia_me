@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
+  	@admin = Admin.last
+    @user = User.new(:admin_id => @admin.id)
   end
   
   def create

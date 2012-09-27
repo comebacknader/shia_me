@@ -11,16 +11,32 @@
 	
 	<div class="admin_profile_box">		
 	
-			<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
+	  <% if @user.avatar.present? %>
+		<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
+	  <% else %>
+	   <%= image_tag("viewprofile.png", class: "delete_match_pic" ) %>	
+	  <% end %>
 		<div class="delete_match_middle">	
 			<%= image_tag("goldpack.png", class: "delete_match_middle_logo") %>
 			<p class="delete_match_header"> Are You Sure? </p>
 		</div>
 		<% if @user.gender == "MALE" %>
-			<%= image_tag(@match.woman.avatar(:small), class:"delete_match_other_pic") %>
+		  <% if @match.woman.avatar.present? %>
+			<%= image_tag(@match.woman.avatar(:small), 
+			   class:"delete_match_other_pic") %>
+		  <% else %>
+		    <%= image_tag("viewprofile.png", 
+			   class:"delete_match_other_pic") %>	 
+		  <% end %>  
 		<% end %>
 		<% if @user.gender == "FEMALE" %>
-			<%= image_tag(@wmatch.man.avatar(:small), class:"delete_match_other_pic") %>
+		  <% if @wmatch.man.avatar.present? %>
+			<%= image_tag(@wmatch.man.avatar(:small), 
+			   class:"delete_match_other_pic") %>
+		  <% else %>
+		    <%= image_tag("viewprofile.png", 
+			   class:"delete_match_other_pic") %>	 
+		  <% end %>  
 		<% end %>
 	</div>
 

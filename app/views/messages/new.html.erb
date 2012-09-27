@@ -38,13 +38,21 @@
 		<div class="message_match_box">
 		<% if @user.gender == "MALE" %>
 			<%= link_to profile_user_url(@match.woman)  do %>
-				<%= image_tag(@match.woman.avatar(:small)) %>
+				<% if @match.woman.avatar.present? %>
+				 <%= image_tag(@match.woman.avatar(:small)) %>
+				<% else %>
+				 <%= image_tag("viewprofile.png") %>
+				<% end %>				
 				<p class="message_mm_title_bold">Your Match:</p>
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
 		<% else %>
 			<%= link_to profile_user_url(@wmatch.man) do %>
-				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<% if @wmatch.man.avatar.present? %>
+				 <%= image_tag(@wmatch.man.avatar(:small)) %>
+				<% else %>
+				 <%= image_tag("viewprofile.png") %>
+				<% end %>	
 				<p class="message_mm_title_bold">Your Match:</p>				
 				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
 			<% end %>
@@ -60,8 +68,13 @@
 	
 	 <div class="new_msg_match_show">
 		<% if @user.gender == "MALE" %>
-					<%= image_tag(@match.woman.avatar(:small), 
-									class: "new_msg_match_show_img") %>
+          <% if @match.woman.avatar.present? %>		
+			<%= image_tag(@match.woman.avatar(:small), 
+					class: "new_msg_match_show_img") %>
+		 <% else %>
+			<%= image_tag("viewprofile.png", 
+					class: "new_msg_match_show_img") %>	
+		 <% end %>	
 		<% if @lastmessage.present? %>
 			<p class="all_msg_message">
 				<%= truncate(@lastmessage.message, :length => 50) %>
@@ -76,9 +89,14 @@
 		 	</p>
 		<% end %>
 		<% else %>
-					<%= image_tag(@wmatch.man.avatar(:small), 
-									class: "new_msg_match_show_img") %>
-				<% if @msg.present? %>
+          <% if @wmatch.man.avatar.present? %>		
+			<%= image_tag(@wmatch.man.avatar(:small), 
+					class: "new_msg_match_show_img") %>
+		 <% else %>
+			<%= image_tag("viewprofile.png", 
+					class: "new_msg_match_show_img") %>	
+		 <% end %>	
+		  <% if @msg.present? %>
 			<p class="all_msg_message">
 				<%= truncate(@msg.message, :length => 50) %>
 			</p>

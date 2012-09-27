@@ -33,7 +33,7 @@
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:medium)) %>
 				<% else %>
-					<p> No Image Yet </p>
+					<%= image_tag("viewprofile.png") %>
 				<% end %>
 				<div class="admin_each_men_info">
 					<p><%= truncate(@user.name, :length => 15) %></p>
