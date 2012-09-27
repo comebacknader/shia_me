@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save 
+      sign_in_user @user
       redirect_to @user
     else
       render 'new'
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
     
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile Updated"
+      sign_in_user @user
       redirect_to @user
     else
       render 'edit'
