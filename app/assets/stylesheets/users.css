@@ -792,3 +792,35 @@
 	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }	
 
+
+					/* USER PROFILE SPOUSE */
+
+.profile_spouse_box {
+		float:left;
+		width:900px;
+		padding:10px;
+		margin:30px 0px 0px 20px;
+		border:1px solid #D0D0D0;
+		background-color:#F6F6F6;
+		font-family:"Helvetica";		
+		color:DimGray;
+		font-size:14px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+  		-moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+
+.list_of_mquest_answers {
+	text-align:left
+}
+
+.profile_mquest_header {
+	clear:both;
+	float:left;
+	width:900px;
+	color:#333;
+}

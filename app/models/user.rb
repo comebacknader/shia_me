@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   
   has_one :question
   
+  has_one :mquest
+  
   has_many :matches, foreign_key: "man_id", dependent: :destroy
   has_many :wmatches, foreign_key: "woman_id", class_name: "Match", dependent: :destroy
   has_many :man, through: :wmatches, source: "man_id"
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
   has_many :recieved, foreign_key: "reciever_id", class_name: "Message", dependent: :destroy
   has_many :sender, through: :recieved, source: "sender_id"
  
-  has_many :msgs
+  has_many :msgs, dependent: :destroy
   has_many :admins, through: :msgs
  
   

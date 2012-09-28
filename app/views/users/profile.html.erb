@@ -70,6 +70,39 @@
 
 	</div>
 	
+	
+	<% if current_admin %> 
+	
+	<div class="profile_spouse_box">
+	
+	<% if @user.mquest.present? %>
+	
+	<h1 class="profile_mquest_header">Spouse Preferences</h1>
+	
+	<p class="list_of_mquest_answers">
+	 Age Range: <%= @user.mquest.agerange %>
+	</p>
+		<p class="list_of_mquest_answers">
+	 Ethnicity: <%= @user.mquest.ethnic %>
+	</p>
+		<p class="list_of_mquest_answers">
+	 Hijab: <%= @user.mquest.needhijabi %>
+	</p>
+		<p class="list_of_mquest_answers">
+	 Education Level: <%= @user.mquest.edulevel %>
+	</p>
+		<p class="list_of_mquest_answers">
+	 Other Preferences: <%= @user.mquest.anypref %>
+	</p>
+	
+	<% end %>
+	
+	</div>
+	
+	
+	<% end %>
+	
+	
 	<% if current_admin  %>
 		<%= link_to profile_admin_url(current_admin) do %>
 			<div class="admin_go_home">

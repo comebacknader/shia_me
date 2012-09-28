@@ -1,0 +1,107 @@
+<% provide(:title, @user.name) %>
+
+<%= render 'shared/userallbar' %>
+
+	<div class="user_container">
+
+		<% flash.each do |key, value| %>
+		  <div class="alert  alert-<%= key %>"><%= value %></div>
+		<% end %>	
+		
+		<div class="message_left_column">
+	
+			<div class="message_show_image">
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:small), class: "user_no_pic") %>
+				<% else %>
+					<%= image_tag("userlogo.png", class: "user_no_pic") %>
+				<% end %>
+	
+				<div class="user_show_pic">
+					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
+				</div>
+
+			</div>
+			
+	<%= render 'shared/navbar' %> 
+
+	<%= link_to @user.admin do %>
+		<div class="message_show_mm_box">
+			
+			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+			<p class="message_mm_title_bold">Your MatchMaker:</p>			
+			<p class="message_mm_title"><%= @user.admin.name %></p>
+
+		</div>
+	<% end %>
+		
+	<% if @user.matches.present? || @user.wmatches.present? %>
+		<div class="message_match_box">
+		<% if @user.gender == "MALE" %>
+			<%= link_to profile_user_url(@match.woman)  do %>
+				<%= image_tag(@match.woman.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>
+				<p class="message_mm_title"> <%= @match.woman.name %> </p>
+			<% end %>
+		<% else %>
+			<%= link_to profile_user_url(@wmatch.man) do %>
+				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>				
+				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
+			<% end %>
+		<% end %>
+		</div>			
+		</div>
+	<% end %>	
+	</div>
+	
+	<div class="message_right_column">
+	
+			<h1 class="user_header"> Spouse Preferences</h1>
+
+	<div class="question_new_box">
+	
+		<%= form_for @mquest, :html => { :multipart => true } do |f| %>
+	
+		<%= f.label :agerange, "What Age Range are you Looking For?", class: "user_signup" %>
+		<div class="question_form_details">
+			example: 18-40 or 23-35
+		</div>				
+		<%= f.text_field :agerange, class: "user_signup_field" %>
+
+		<%= f.label :ethnic, "What Ethnicity Do You Prefer?", class: "user_signup" %>
+		<%= f.text_field :ethnic, class: "user_signup_field" %>			
+		
+		<%= f.label :edulevel, "What Level of Education Do You Prefer They Finished?", class: "user_signup" %>
+		<%= f.select(:edulevel, ['High School',
+						 'Community College', 'University','Grad School',
+						 'PHD']) %>
+							
+		
+		<% if @user.gender == "MALE" %> 
+	
+		<%= f.label :needhijabi, "Do They Have To Wear Hijab?", class: "user_signup" %>
+		<%= f.select(:needhijabi, %w[NO YES]) %>			
+		
+		<% end %>		 				 												
+
+		<%= f.label :anypref, "Any other Preferences?", class: "user_signup" %>
+		<div class="question_form_details">
+		Keep your answers to one or two sentences. 
+		</div>
+
+		<%= f.text_area :anypref, class: "user_signup_field" %>	
+		
+		<%= f.hidden_field(:user_id) %>
+		
+	
+		<%= f.submit "Answer", class: "user_create" %>
+
+		<% end %>
+		
+	
+	</div>
+		
+	</div>
+	
+	</div>

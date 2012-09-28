@@ -146,18 +146,18 @@
 	<% end %>	
 	 
 		
-	<% unless @user.question.present? then %>
-	<%= link_to new_user_question_path(@user) do %>				
+	<% unless @user.mquest.present? then %>
+	<%= link_to new_user_mquest_path(@user) do %>				
 		<div class="user_account_notif">	
 			<%= image_tag("questions.png", class: 'user_questions_pic') %>
-				<h1 class="user_account_header"> Answer Your Profile Questions? </h1>
+				<h1 class="user_account_header"> Help Us Find You a Match </h1>
 		</div>	
 	<% end %>	
 	<% else %>
-	<%= link_to edit_user_question_path(@user) do %>
+	<%= link_to edit_user_mquest_path(@user) do %>
 		<div class="user_account_notif">	
 			<%= image_tag("questions.png", class: 'user_matchmaker_pic') %>
-				<h1 class="user_account_header"> Need to Update Your Answers? </h1>
+				<h1 class="user_account_header"> Need to Change your Match Preferences?  </h1>
 		</div>	
 	<% end %>
 	<% end %>			

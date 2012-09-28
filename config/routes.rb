@@ -13,6 +13,7 @@ ShiaMe::Application.routes.draw do
    resources :messages
    resources :msgs
    resources :questions
+   resources :mquests
    
    
    scope :admins do 
@@ -51,6 +52,7 @@ ShiaMe::Application.routes.draw do
     	resources :messages
     	resources :msgs
     	resources :questions
+    	resources :mquests
 	end
 	
 	resources :messages do 
