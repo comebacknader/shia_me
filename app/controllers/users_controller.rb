@@ -71,11 +71,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
-      redirect_to @user
+      render :action => "crop"
     else
       render 'pics'
     end
   end
+  
+  def crop
+    @user = User.find(params[:id])  
+  end
+  	
   
   def assign
     @admin = current_admin

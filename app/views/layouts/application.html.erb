@@ -5,7 +5,8 @@
  	<%= render 'layouts/stylesheets' %>
 	<%= render 'layouts/analytics' %>
 	<%= render 'layouts/meta' %>
-  <%= favicon_link_tag 'favicon.ico' %>	
+    <%= favicon_link_tag 'favicon.ico' %>	
+    <%= yield(:head) %>
 </head>
 <body>
 

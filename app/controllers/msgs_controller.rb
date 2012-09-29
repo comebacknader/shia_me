@@ -13,6 +13,7 @@ class MsgsController < ApplicationController
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last  
     @msg = Msg.find(params[:id])
+    @question = @user.question    
   end
 
   def new
