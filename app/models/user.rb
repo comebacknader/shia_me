@@ -50,7 +50,8 @@ class User < ActiveRecord::Base
               :bucket => 'userphotos.shiame.com',
               :s3_credentials => {
               :access_key_id => ENV['S3_KEY_SHIAME'],
-              :secret_access_key => ENV['S3_SECRET_SHIAME']
+              :secret_access_key => ENV['S3_SECRET_SHIAME'], 
+              :processors => [:cropper]              
             }
   
   def cropping?
