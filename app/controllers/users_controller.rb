@@ -80,6 +80,15 @@ class UsersController < ApplicationController
   def crop
     @user = User.find(params[:id])  
   end
+  
+  def cropupdate 
+    @user = User.find(params[:id])
+    if @user.update_attribute(:avatar, params[:user][:avatar])
+      flash[:success] = "Picture Updated"
+    else
+      render 'crop'
+    end
+  end  
   	
   
   def assign

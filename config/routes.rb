@@ -45,6 +45,7 @@ ShiaMe::Application.routes.draw do
        post 'makematch'
        get 'deletematch'
        get 'crop'
+       put 'cropupdate'
       end
     end
     
