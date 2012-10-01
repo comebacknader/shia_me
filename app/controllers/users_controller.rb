@@ -39,13 +39,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update_attributes(params[:user])
-     if params[:user][:avatar].blank?
        flash[:notice] = "Successfully updated user."
+       @user.avatar.reprocess!
        sign_in_user @user
-       redirect_to @user
-     else
-  		render :action => 'edit'
-     end
+       redirect_to @user       
     else
      render :action => 'edit'
   	end
