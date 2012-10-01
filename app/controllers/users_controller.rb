@@ -84,12 +84,12 @@ class UsersController < ApplicationController
 
   def cropupdate 
     @user = User.find(params[:id])
-	if @user.crop_x.present? 
-	  @user.avatar.reprocess!  
-	  redirect_to @user
-    else
-      render :action => 'crop'   
-    end
+	@user.crop_x = 368
+	@user.crop_y = 85
+	@user.crop_h = 248
+	@user.crop_w = 248
+	@user.avatar.reprocess!  
+	redirect_to @user
   end  
   	
   

@@ -49,10 +49,11 @@ function update_crop(coords) {
 	
 		<%= form_for @user, :url => { action: "cropupdate" }, :multipart => true  do |f| %>
 		<% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] do %>
+		  <%= f.label attribute %>
 		  <%= f.text_field attribute, :id => attribute %>
 		<% end %>
 		<p><%= f.submit "Crop", :class => "admin_create" %></p>
 	<% end %>
-			
+	
 	</div>		
 </div>
