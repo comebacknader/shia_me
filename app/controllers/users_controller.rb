@@ -72,10 +72,14 @@ class UsersController < ApplicationController
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
       sign_in_user @user      
-
+       render :action => "crop"  
     else
       render 'pics'
     end
+  end
+  
+  def crop
+  	@user = User.find(params[:id])
   end
 
   def cropupdate 
@@ -85,8 +89,7 @@ class UsersController < ApplicationController
       sign_in_user @user
 	  redirect_to @user    
     else
-      render :action => 'crop'
-       render :action => "crop"     
+      render :action => 'crop'   
     end
   end  
   	
