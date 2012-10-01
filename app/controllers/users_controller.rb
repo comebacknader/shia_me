@@ -86,6 +86,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
+      sign_in_user @user
 	  redirect_to @user    
     else
       render :action => 'crop'
