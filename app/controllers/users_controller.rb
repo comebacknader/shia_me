@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize, except: [:assign, :assignmm, :match, :crop, :cropupdate]
+  skip_before_filter :authorize, except: [:assign, :assignmm, :match]
   before_filter :invite, only: [:new]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
@@ -71,6 +71,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
+      sign_in_user @user      
       render :action => "crop"
     else
       render 'pics'
@@ -85,6 +86,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
       flash[:success] = "Picture Updated"
+      sign_in_user @user      
     else
       render 'crop'
     end
