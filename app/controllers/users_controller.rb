@@ -39,12 +39,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile Updated"
-      sign_in_user @user
-      redirect_to @user
+     if params[:user][:avatar].blank?
+       flash[:notice] = "Successfully updated user."
+       sign_in_user @user
+       redirect_to @user
+     else
+       render :action => "crop"
+     end
     else
-      render 'edit'
-    end
+     render :action => 'edit'
+  	end
   end
 
   def destroy
@@ -79,15 +83,12 @@ class UsersController < ApplicationController
   end
   
   def crop
-  	@user = User.find(params[:id])
+   @user = User.find(params[:id])
   end
+
 
   def cropupdate 
     @user = User.find(params[:id])
-	@user.crop_x = 368
-	@user.crop_y = 85
-	@user.crop_h = 248
-	@user.crop_w = 248
 	@user.avatar.reprocess!  
 	redirect_to @user
   end  

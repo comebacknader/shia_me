@@ -1,4 +1,4 @@
-<% provide(:title, "Change Profile Pic") %>
+<% provide(:title, "Edit User") %>
 
 <% content_for(:head) do %>
  <%= stylesheet_link_tag "jquery.Jcrop" %>
@@ -36,24 +36,52 @@ function update_crop(coords) {
 
 <div class="container">
 	
-	<h1 class="user_pics_header">Crop Profile Pic</h1>
+	<h1 class="user_pics_header">Edit Profile</h1>
 	
-	<div class="admin_signup_box">
-		
-			<%= image_tag(@user.avatar(:large), class: "cropbox") %>
 	
+<div class="croppingbox">	
+<%= image_tag @user.avatar.url(:large), :class => "cropbox" %>
+
+<h4>Preview:</h4>
 <div style="width:100px; height:100px; overflow:hidden">
   <%= image_tag @user.avatar.url(:large), :id => "preview" %>
+</div>	
 </div>
 	
+	<div class="admin_signup_box">
+		<%= form_for @user, :html => {:multipart => true} do |f| %>
+		
+		<%= render 'shared/user_errors' %>
 	
-		<%= form_for @user, :url => { action: "cropupdate" }, :multipart => true  do |f| %>
-		<% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] do %>
-		  <%= f.label attribute %>
-		  <%= f.text_field attribute, :id => attribute %>
+		<%= f.label :name, class: "admin_signup" %>
+		<%= f.text_field :name, class: "admin_signup_field" %>
+
+		<%= f.label :email, class: "admin_signup" %>
+		<%= f.text_field :email, class: "admin_signup_field" %>
+	
+		<%= f.label :password, class: "admin_signup" %>
+		<%= f.password_field :password, class: "admin_signup_field" %>
+	
+		<%= f.label :password_confirmation, "Confirmation", class: "admin_signup" %>
+		<%= f.password_field :password_confirmation, class: "admin_signup_field" %>
+		
+		<%= f.label :location, class: "admin_signup" %>
+		<%= f.text_field :location, class: "admin_signup_field" %>
+
+		<%= f.label :age, "Age", class: "user_signup" %>
+		<%= f.text_field :age, class: "user_signup_field" %>			
+
+<% form_for @user do |f| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= f.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= f.submit "Crop", :class => "admin_create_button" %></p>
+<% end %>
+
+
+		<%= f.submit "Save", class: "admin_create" %>
+
 		<% end %>
-		<p><%= f.submit "Crop", :class => "admin_create" %></p>
-	<% end %>
+	</div>
 	
-	</div>		
 </div>

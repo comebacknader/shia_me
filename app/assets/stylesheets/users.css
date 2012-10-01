@@ -824,3 +824,13 @@
 	width:900px;
 	color:#333;
 }
+
+.cropbox {
+	float:left;
+}
+
+.croppingbox {
+	float:left;
+	margin:10px 0px 0px 100px;
+	width:700px;
+}
