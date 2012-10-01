@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   		:crop_x, :crop_y, :crop_w, :crop_h		
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h		
   has_secure_password
+  after_update :reprocess_avatar, :if => :cropping?
+  
   
   belongs_to :admin
   
