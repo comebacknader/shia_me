@@ -25,6 +25,10 @@
 		<% end %>
 
 		<%= f.file_field :avatar, class: "admin_signup_field" %>
+		
+		<% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] do %>
+		  <%= f.hidden_field attribute, :id => attribute %>
+		<% end %>
 
 		<%= f.submit "Save", class: "admin_create" %>
 
