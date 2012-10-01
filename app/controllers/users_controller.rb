@@ -77,11 +77,7 @@ class UsersController < ApplicationController
       render 'pics'
     end
   end
-  
-  def crop
-    @user = User.find(params[:id])  
-  end
-  
+
   def cropupdate 
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
