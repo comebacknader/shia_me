@@ -71,12 +71,9 @@ function update_crop(coords) {
 		<%= f.label :age, "Age", class: "user_signup" %>
 		<%= f.text_field :age, class: "user_signup_field" %>			
 
-<% form_for @user do |f| %>
-  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
-    <%= f.hidden_field attribute, :id => attribute %>
-  <% end %>
-  <p><%= f.submit "Crop", :class => "admin_create_button" %></p>
-<% end %>
+ 	    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+		 <%= f.hidden_field attribute, :id => attribute %>
+	    <% end %>
 
 
 		<%= f.submit "Save", class: "admin_create" %>

@@ -38,6 +38,16 @@ function update_crop(coords) {
 	
 	<h1 class="user_pics_header">Edit Profile</h1>
 	
+	
+<div class="croppingbox">	
+<%= image_tag @user.avatar.url(:large), :class => "cropbox" %>
+
+<h4>Preview:</h4>
+<div style="width:100px; height:100px; overflow:hidden">
+  <%= image_tag @user.avatar.url(:large), :id => "preview" %>
+</div>	
+</div>
+	
 	<div class="admin_signup_box">
 		<%= form_for @user, :html => {:multipart => true} do |f| %>
 		
@@ -60,6 +70,11 @@ function update_crop(coords) {
 
 		<%= f.label :age, "Age", class: "user_signup" %>
 		<%= f.text_field :age, class: "user_signup_field" %>			
+
+ 	    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+		 <%= f.hidden_field attribute, :id => attribute %>
+	    <% end %>
+
 
 		<%= f.submit "Save", class: "admin_create" %>
 
