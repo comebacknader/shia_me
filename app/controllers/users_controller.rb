@@ -44,7 +44,7 @@ class UsersController < ApplicationController
        sign_in_user @user
        redirect_to @user
      else
-       render :action => "crop"
+  		render :action => 'edit'
      end
     else
      render :action => 'edit'
