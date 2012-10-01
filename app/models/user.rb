@@ -6,11 +6,10 @@ class User < ActiveRecord::Base
   has_secure_password
   after_update :reprocess_avatar, :if => :cropping?
   
-  
   belongs_to :admin
   
-  has_one :question
-  
+  has_one :question 
+
   has_one :mquest
   
   has_many :matches, foreign_key: "man_id", dependent: :destroy

@@ -47,11 +47,11 @@ function update_crop(coords) {
 </div>
 	
 	
-		<%= form_for @user, :url => { action: "cropupdate" }  do |f| %>
-		<p><%= f.submit "Crop", :class => "admin_create" %></p>
+		<%= form_for @user do |f| %>
 		<% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
 		  <%= f.hidden_field attribute, :id => attribute %>
 		<% end %>
+		<p><%= f.submit "Crop", :class => "admin_create" %></p>
 	<% end %>
 			
 	</div>		
