@@ -86,6 +86,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 	if @user.crop_x.present? 
 	  @user.avatar.reprocess!  
+	  redirect_to @user
     else
       render :action => 'crop'   
     end
