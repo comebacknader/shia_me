@@ -48,12 +48,12 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", 
   															 :large => "450x450>" },
+  			  :processors => [:cropper], 											 
               :storage => :s3, 
               :bucket => 'userphotos.shiame.com',
               :s3_credentials => {
               :access_key_id => ENV['S3_KEY_SHIAME'],
-              :secret_access_key => ENV['S3_SECRET_SHIAME'], 
-              :processors => [:cropper]              
+              :secret_access_key => ENV['S3_SECRET_SHIAME']            
             }
   
   def cropping?
