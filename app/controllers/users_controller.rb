@@ -70,7 +70,7 @@ class UsersController < ApplicationController
   def picsupdate 
     @user = User.find(params[:id])
     if @user.update_attribute(:avatar, params[:user][:avatar])
-     if @user.params[:user][:avatar].blank?
+     if params[:user][:avatar].blank?
       flash[:success] = "Picture Updated"
       sign_in_user @user      
 	  redirect_to @user
