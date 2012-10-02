@@ -41,8 +41,8 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
        flash[:notice] = "Successfully updated user."
        if @user.cropping? 
+    	 @user.avatar.reprocess!       
         sign_in_user @user
-        @user.avatar.reprocess!
         redirect_to  @user
        else
         sign_in_user @user
