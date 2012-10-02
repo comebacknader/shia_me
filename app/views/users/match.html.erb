@@ -34,8 +34,8 @@
 					<%= image_tag(@user.avatar(:medium), 
 								:class => "create_match_user_pic") %>
 				<% else %>
-					<%= image_tag("viewprofile.png"), 
-									:class => "create_match_user_pic" %>
+					<%= image_tag("viewprofile.png", 
+									:class => "create_match_user_pic") %>
 				<% end %>
 				<div class="admin_each_men_info">
 					<p><%= truncate(@user.name, :length => 15) %></p>
