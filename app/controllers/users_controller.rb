@@ -99,6 +99,8 @@ class UsersController < ApplicationController
         sign_in_user @user
         render :action => 'crop'
        end 
+    else 
+       render :action => 'edit'
     end
   end  
   	
