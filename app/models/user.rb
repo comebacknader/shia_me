@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   before_save :create_remember_token
   
   validates :name, presence: true,
-                   length: { maximum: 50 }
+                   length: { maximum: 50 },
                    on: :create
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -38,13 +38,13 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
                     length: { maximum: 70 },
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+                    uniqueness: { case_sensitive: false },
                     on: :create
   
   validates :gender, presence: true, on: :create
   
   validates :password, presence: true,
-                       length: { minimum: 6 }
+                       length: { minimum: 6 },
                        on: :create
   
   validates :password_confirmation, presence: true, on: :create
