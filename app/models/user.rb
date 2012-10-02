@@ -46,7 +46,8 @@ class User < ActiveRecord::Base
   
   validates :password_confirmation, presence: true
   
-  has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", :large => "450x450>" },
+  has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", 
+  															 :large => "450x450>" },
               :storage => :s3, 
               :bucket => 'userphotos.shiame.com',
               :s3_credentials => {
