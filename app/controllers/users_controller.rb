@@ -42,10 +42,11 @@ class UsersController < ApplicationController
        flash[:notice] = "Successfully updated user."
        if @user.cropping? 
         sign_in_user @user
-        render :action => "pics"
+        @user.avatar.reprocess!
+        redirect_to  @user
        else
         sign_in_user @user
-        redirect_to @user
+        render :action => 'edit'
        end      
     else
      render :action => 'edit'
