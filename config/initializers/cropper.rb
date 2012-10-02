@@ -1,4 +1,4 @@
-odule Paperclip
+Module Paperclip
   class Cropper < Thumbnail
     def initialize(file, options = {}, attachment = nil)
       super
