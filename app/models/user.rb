@@ -30,24 +30,21 @@ class User < ActiveRecord::Base
   before_save :create_remember_token
   
   validates :name, presence: true,
-                   length: { maximum: 50 },
-                   on: :create
+                   length: { maximum: 50 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :email, presence: true,
                     length: { maximum: 70 },
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false },
-                    on: :create
+                    uniqueness: { case_sensitive: false }
   
-  validates :gender, presence: true, on: :create
+  validates :gender, presence: true
   
   validates :password, presence: true,
-                       length: { minimum: 6 },
-                       on: :create
+                       length: { minimum: 6 }
   
-  validates :password_confirmation, presence: true, on: :create
+  validates :password_confirmation, presence: true
   
   
   has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", 
