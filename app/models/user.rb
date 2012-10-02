@@ -42,9 +42,11 @@ class User < ActiveRecord::Base
   validates :gender, presence: true
   
   validates :password, presence: true,
-                       length: { minimum: 6 }
+                       length: { minimum: 6 }, 
+                       :if => :password_validation_required?
   
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, 
+  				      :if => :password_validation_required?
   
   
   has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", 
@@ -56,6 +58,12 @@ class User < ActiveRecord::Base
               :access_key_id => ENV['S3_KEY_SHIAME'],
               :secret_access_key => ENV['S3_SECRET_SHIAME']            
             }
+  
+  
+    
+  def password_validation_required?
+    @password.blank?
+  end
   
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
