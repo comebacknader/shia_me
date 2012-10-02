@@ -12,7 +12,7 @@
 		
 			<div class="user_show_image">
 				<% if @user.avatar.present? %>
-					<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
+					<%= image_tag(@user.avatar(:large)) %>
 				<% else %>
 					<%= image_tag("userlogo.png", class: "user_no_pic") %>
 				<% end %>
