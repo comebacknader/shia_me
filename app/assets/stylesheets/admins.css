@@ -527,6 +527,14 @@
 		color:DimGray;
 }	
 
+.create_match_user_pic {
+	float:left;
+	width:250px;
+	height:250px;
+	margin:10px;
+	padding:10px;
+}
+
 .admin_create_match_label {
 		float:left;
 		font-family:"Helvetica";
