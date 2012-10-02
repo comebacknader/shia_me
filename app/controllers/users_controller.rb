@@ -89,7 +89,7 @@ class UsersController < ApplicationController
 
   def cropupdate 
     @user = User.find(params[:id])
-	 if @user.update_attributes(params[:user])
+	 if @user.save(:validate => false)
        if @user.cropping? 
     	@user.avatar.reprocess!       
         sign_in_user @user
