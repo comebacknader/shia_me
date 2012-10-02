@@ -40,9 +40,13 @@ class UsersController < ApplicationController
     
     if @user.update_attributes(params[:user])
        flash[:notice] = "Successfully updated user."
-       @user.avatar.reprocess!
-       sign_in_user @user
-       redirect_to @user       
+       if @user.cropping? 
+        sign_in_user @user
+        render :action => "pics"
+       else
+        sign_in_user @user
+        redirect_to @user
+       end      
     else
      render :action => 'edit'
   	end
