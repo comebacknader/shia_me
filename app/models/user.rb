@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :bio, :location, :name, :email, :gender, :password, 
   		:password_confirmation, :avatar, :admin_id, :age, 
-  		:crop_x, :crop_y, :crop_w, :crop_h		
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h		
+  		:crop_x, :crop_y, :crop_w, :crop_h, :updating_password		
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h, :password, :updating_password	
   has_secure_password
   
   belongs_to :admin
@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   
     
   def password_validation_required?
-    @password.blank?
+	 updating_password || new_record?
   end
   
   def cropping?

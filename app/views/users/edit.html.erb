@@ -26,6 +26,8 @@
 		
 		<%= f.label :location, class: "admin_signup" %>
 		<%= f.text_field :location, class: "admin_signup_field" %>
+		
+		<%= f.hidden_field :updating_password, :value => "true" %>		
 
 		<%= f.label :age, "Age", class: "user_signup" %>
 		<%= f.text_field :age, class: "user_signup_field" %>			
