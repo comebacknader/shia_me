@@ -14,6 +14,7 @@ gem 'heroku'
 gem 'acts-as-taggable-on', '~> 2.2.2'
 gem "friendly_id", "~> 4.0.1"
 gem 'thin'
+gem 'stripe'
 
 group :development do
   gem 'rspec-rails', '2.10.0'
