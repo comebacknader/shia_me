@@ -77,6 +77,7 @@ class AdminsController < ApplicationController
       signed_in_admin @admin      
 	  redirect_to @admin
      else 
+      signed_in_admin @admin
       render :action => "crop"
      end
     else
