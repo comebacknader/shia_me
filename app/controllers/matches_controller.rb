@@ -36,7 +36,7 @@ class MatchesController < ApplicationController
 		end
     @recieved = @usr.recieved
 		@recieved.each do |recieve|
-			recieved.destroy
+			recieve.destroy
 		end
     
     @match.destroy

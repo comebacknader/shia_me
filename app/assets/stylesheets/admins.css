@@ -463,6 +463,8 @@
 	float:left;
 	width:255px;
 	height:250px;
+	background-color:red;
+	margin:0px 0px 0px 10px;
 }
 
 
@@ -543,7 +545,7 @@
 
 .admin_create_match_list {
 		float:left;
-		margin:20px 0px 0px 100px;
+		margin:20px 0px 0px 20px;
 		width:500px;
 		color:DimGray;
 }	
@@ -552,8 +554,6 @@
 	float:left;
 	width:250px;
 	height:250px;
-	margin:10px;
-	padding:10px;
 }
 
 .admin_create_match_label {
