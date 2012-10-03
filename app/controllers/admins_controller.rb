@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
-  before_filter :signed_in_admin, only: [:index, :edit, :update, :pics, :picsupdate]
-  before_filter :correct_admin, only: [:edit, :update, :pics, :picsupdate]
+  before_filter :signed_in_admin, only: [:index, :edit, :update, :pics, :picsupdate, :crop, :cropupdate]
+  before_filter :correct_admin, only: [:edit, :update, :pics, :picsupdate, :crop, :cropupdate]
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
   
@@ -90,7 +90,6 @@ class AdminsController < ApplicationController
 
   def cropupdate 
     @admin = Admin.find(params[:id])
-    @admin.attributes = params[:admin] 
 	 if @admin.update_attributes(params[:admin])
        if @admin.cropping? 
     	@admin.avatar.reprocess!       
