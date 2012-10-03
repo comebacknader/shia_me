@@ -72,12 +72,38 @@ class AdminsController < ApplicationController
   def picsupdate 
     @admin = Admin.find(params[:id])
     if @admin.update_attribute(:avatar, params[:admin][:avatar])
-      flash[:success] = "Picture Changed"
-      redirect_to @admin
+     if params[:admin][:avatar].blank?
+      flash[:success] = "Picture Updated"
+      sign_in_user @admin      
+	  redirect_to @admin
+     else 
+      render :action => "crop"
+     end
     else
       render 'pics'
     end
   end
+  
+  def crop
+   @admin = Admin.find(params[:id])
+  end
+
+  def cropupdate 
+    @admin = Admin.find(params[:id])
+    @admin.attributes = params[:admin] 
+	 if @admin.update_attributes(params[:admin])
+       if @admin.cropping? 
+    	@admin.avatar.reprocess!       
+        sign_in_user @admin
+        redirect_to  @admin
+       else
+        sign_in_user @admin
+        render :action => 'crop'
+       end 
+    else 
+       render :action => 'edit'
+    end
+  end  
   
   def sendmsg
  	@admin = Admin.find(params[:id])

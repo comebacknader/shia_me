@@ -30,6 +30,8 @@ ShiaMe::Application.routes.draw do
        put 'picsupdate'
        get 'sendmsg'
        get 'showmsg'
+       get 'crop' 
+       put 'cropupdate'
      end     
    end
 

@@ -45,6 +45,8 @@
 		<%= f.label :password_confirmation, "Confirmation", class: "admin_signup" %>
 		<%= f.password_field :password_confirmation, class: "admin_signup_field" %>
 		
+		<%= f.hidden_field :updating_password, :value => "true" %>			
+		
 		<%= f.label :location, class: "admin_signup" %>
 		<%= f.text_field :location, class: "admin_signup_field" %>
 

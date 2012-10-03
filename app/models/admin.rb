@@ -1,5 +1,8 @@
 class Admin < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :bio, :location, :avatar
+  attr_accessible :email, :name, :password, :password_confirmation, 
+  				  :bio, :location, :avatar, :crop_x, :crop_y, :crop_h,
+  				  :crop_w, :updating_password
+  attr_accessor :crop_x, :crop_y, :crop_h, :crop_w, :updating_password			  
   has_secure_password
   
   has_many :users
@@ -19,12 +22,17 @@ class Admin < ActiveRecord::Base
                     length: { maximum: 70 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+                    
   
   validates :password, presence: true,
-                       length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+                       length: { minimum: 6 },
+                       :if => :password_validation_required?
+                       
+  validates :password_confirmation, presence: true,
+		    :if => :password_validation_required?
   
   has_attached_file :avatar, :styles => { :small =>"125x125>", :large =>"350x350>" },
+  			  :processors => [:cropper],   
               :storage => :s3, 
               :bucket => 'adminphotos.shiame.com',
               :s3_credentials => {
@@ -32,8 +40,26 @@ class Admin < ActiveRecord::Base
               :secret_access_key => ENV['S3_SECRET_SHIAME']
             }
   
+  def password_validation_required?
+	 updating_password || new_record?
+  end
+  
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+  
+  def avatar_geometry(style = :original)
+   @geometry ||= {}
+   avatar_path = (avatar.options[:storage] == :s3) ? avatar.url(style) : avatar.to_file(style)
+   @geometry[style] ||= Paperclip::Geometry.from_file(avatar_path)
+  end   
+  
   
   private
+  
+  def reprocess_avatar
+  	avatar.reprocess!
+  end  
   
     def create_remember_token 
       self.remember_token = SecureRandom.urlsafe_base64

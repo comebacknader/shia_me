@@ -1,0 +1,84 @@
+<% provide(:title, "Crop Pic") %>
+
+<% content_for(:head) do %>
+ <%= stylesheet_link_tag "jquery.Jcrop" %>
+ <%= javascript_include_tag "jquery.Jcrop.min" %>
+ <script type="text/javascript" charset="utf-8">
+$(function() {
+  $('.cropbox').Jcrop({
+    onChange: update_crop,
+    onSelect: update_crop,
+    setSelect: [0, 0, 500, 500],
+    aspectRatio: 1
+  });
+});
+
+function update_crop(coords) {
+  var rx = 100/coords.w;
+  var ry = 100/coords.h;
+  $('#preview').css({
+    width: Math.round(rx * <%= @admin.avatar_geometry(:large).width %>) + 'px',
+    height: Math.round(ry * <%= @admin.avatar_geometry(:large).height %>) + 'px',
+    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+  });
+  var ratio = <%= @admin.avatar_geometry(:original).width %> / <%= @admin.avatar_geometry(:large).width %>;
+  $("#crop_x").val(Math.round(coords.x * ratio));
+  $("#crop_y").val(Math.round(coords.y * ratio));
+  $("#crop_w").val(Math.round(coords.w * ratio));
+  $("#crop_h").val(Math.round(coords.h * ratio));
+}
+ </script>
+
+<% end %>
+
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<ul class="admin_nav_bar">
+		<li> <%= link_to "Profile", current_admin %></li>
+		<li> <%= link_to "Settings", edit_admin_path(current_admin) %></li>
+		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
+	</ul>
+	
+	<div class="all_bar">
+		
+		<%= link_to profile_admin_url do %>
+			<div class="home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+		
+	</div>
+
+<div class="container">
+	
+	<h1 class="user_pics_header">Crop Photo</h1>
+	
+<div class="croppingbox">	
+<%= image_tag @admin.avatar.url(:large), :class => "cropbox" %>
+
+<h4>Preview:</h4>
+<div style="width:100px; height:100px; overflow:hidden">
+  <%= image_tag @admin.avatar.url(:large), :id => "preview" %>
+</div>	
+</div>
+	
+	<div class="admin_signup_box">
+		<%= form_for @admin, :url => { action: "cropupdate" }, :multipart => true  do |f| %>					
+
+ 	    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+		 <%= f.hidden_field attribute, :id => attribute %>
+	    <% end %>
+
+
+		<%= f.submit "Save", class: "admin_create" %>
+
+		<% end %>
+	</div>
+	
+</div>
