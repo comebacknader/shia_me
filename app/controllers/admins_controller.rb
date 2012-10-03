@@ -74,7 +74,7 @@ class AdminsController < ApplicationController
     if @admin.update_attribute(:avatar, params[:admin][:avatar])
      if params[:admin][:avatar].blank?
       flash[:success] = "Picture Updated"
-      sign_in_user @admin      
+      signed_in_admin @admin      
 	  redirect_to @admin
      else 
       render :action => "crop"
@@ -94,10 +94,10 @@ class AdminsController < ApplicationController
 	 if @admin.update_attributes(params[:admin])
        if @admin.cropping? 
     	@admin.avatar.reprocess!       
-        sign_in_user @admin
+        signed_in_admin @admin
         redirect_to  @admin
        else
-        sign_in_user @admin
+        signed_in_admin @admin
         render :action => 'crop'
        end 
     else 
