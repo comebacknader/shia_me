@@ -1,0 +1,15 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+#stripe_error {	
+	font-family:"Helvetica";
+	font-weight:bold;
+	color:red;
+	font-size:16px;
+	text-align:left;
+	width:500px;
+	padding:5px;
+}

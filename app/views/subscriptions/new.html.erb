@@ -1,0 +1,107 @@
+<% provide(:title, @user.name) %>
+
+<%= render 'shared/userallbar' %>
+
+	<div class="user_container">
+
+		<% flash.each do |key, value| %>
+		  <div class="alert  alert-<%= key %>"><%= value %></div>
+		<% end %>	
+		
+		<div class="message_left_column">
+	
+			<div class="message_show_image">
+				<% if @user.avatar.present? %>
+					<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
+				<% else %>
+					<%= image_tag("userlogo.png", class: "user_no_pic") %>
+				<% end %>
+	
+				<div class="user_show_pic">
+					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
+				</div>
+
+			</div>
+			
+	<%= render 'shared/navbar' %> 
+
+	<%= link_to @user.admin do %>
+		<div class="message_show_mm_box">
+			
+			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+			<p class="message_mm_title_bold">Your MatchMaker:</p>			
+			<p class="message_mm_title"><%= @user.admin.name %></p>
+
+		</div>
+	<% end %>
+		
+	<% if @user.matches.present? || @user.wmatches.present? %>
+		<div class="message_match_box">
+		<% if @user.gender == "MALE" %>
+			<%= link_to profile_user_url(@match.woman)  do %>
+				<%= image_tag(@match.woman.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>
+				<p class="message_mm_title"> <%= @match.woman.name %> </p>
+			<% end %>
+		<% else %>
+			<%= link_to profile_user_url(@wmatch.man) do %>
+				<%= image_tag(@wmatch.man.avatar(:small)) %>
+				<p class="message_mm_title_bold">Your Match:</p>				
+				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
+			<% end %>
+		<% end %>
+		</div>			
+		</div>
+	<% end %>	
+	</div>
+	
+	<div class="message_right_column">
+	
+			<h1 class="user_header"> Monthly Payment</h1>
+
+	<div class="question_new_box">
+	
+		<%= form_for @subscription, :html => { :multipart => true } do |f| %>
+	
+		<%= f.label :name, "Name on Card", class: "user_signup" %>
+		<%= f.text_field :name, class: "user_signup_field" %>
+
+		<%= f.label :email, "Email", class: "user_signup" %>
+		<%= f.text_field :email, class: "user_signup_field" %>			
+				
+		<%= f.hidden_field :stripe_card_token %>
+		<%= f.hidden_field :user_id %>		
+		
+		<% if @subscription.stripe_card_token.present? %>
+		  Credit card has been provided.
+		<% else %>
+		  <div class="field">
+			<%= label_tag :card_number, "Credit Card Number", class: "user_signup" %>
+			<%= text_field_tag :card_number, nil, name: nil, class: "user_signup_field" %>
+		  </div>
+		  <div class="field">
+			<%= label_tag :card_code, "Security Code on Card (CVV)", class: "user_signup" %>
+			<%= text_field_tag :card_code, nil, name: nil, class: "user_signup_field" %>
+		  </div>
+		  <div class="field">
+			<%= label_tag :card_month, "Card Expiration", class: "user_signup" %>
+			<%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+			<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+		  </div>
+		<% end %>
+		<div id="stripe_error">
+		  <noscript>JavaScript is not enabled and is required for this form. 
+		  First enable it in your web browser settings.</noscript>
+		</div>	
+		
+	
+		<%= f.submit "Submit", class: "user_create" %>
+
+		<% end %>
+		
+	
+	</div>
+		
+	</div>
+	
+	</div>

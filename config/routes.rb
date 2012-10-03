@@ -1,6 +1,5 @@
 ShiaMe::Application.routes.draw do
 
-
    root to: 'pages#home'
     
    resources :admins       
@@ -14,6 +13,7 @@ ShiaMe::Application.routes.draw do
    resources :msgs
    resources :questions
    resources :mquests
+   resources :subscriptions
    
    
    scope :admins do 
@@ -57,6 +57,7 @@ ShiaMe::Application.routes.draw do
     	resources :msgs
     	resources :questions
     	resources :mquests
+    	resources :subscriptions
 	end
 	
 	resources :messages do 
