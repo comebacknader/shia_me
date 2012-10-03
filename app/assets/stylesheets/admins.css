@@ -427,7 +427,7 @@
 										
 .admin_all_men_box {
 		float:left;
-		width:800px;;
+		width:900px;
 		font-family:"Helvetica";
 		margin:20px 0px 0px 20px;
 }
@@ -436,6 +436,7 @@
 		float:left;
 		width:125px;
 		height:200px;
+		margin:0px 0px 0px 10px;
 }
 
 .admin_each_men img {
@@ -445,6 +446,26 @@
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
 }
+
+.admin_each_men img:hover {
+	opacity:0.5;
+}
+
+
+.admin_match_user_box {
+		float:left;
+		width:900px;
+		font-family:"Helvetica";
+		margin:20px 0px 0px 0px;
+}
+
+.admin_match_each_men {
+	float:left;
+	width:255px;
+	height:250px;
+}
+
+
 
 .admin_each_men_info {
 		clear:left;
