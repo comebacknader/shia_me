@@ -2,7 +2,7 @@
 		    marry, karbala, shia spouse " />
 <meta name="description" content = "<%= metacontent %>" />
  
- <% if Rails.env.Production? %>
+ <% if Rails.env.production? %>
   <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
  <% else %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>

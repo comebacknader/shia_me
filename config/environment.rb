@@ -6,4 +6,4 @@ ShiaMe::Application.initialize!
 
   if Rails.env.production? 
     Stripe.api_key = ENV['STRIPE_API_KEY']
- end
+  end
