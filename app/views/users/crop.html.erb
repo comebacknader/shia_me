@@ -36,16 +36,22 @@ function update_crop(coords) {
 
 <div class="container">
 	
-	<h1 class="user_pics_header">Edit Profile</h1>
+	<h1 class="user_pics_header">Crop Your Image</h1>
 	
-<div class="croppingbox">	
-<%= image_tag @user.avatar.url(:large), :class => "cropbox" %>
+<div class="croppingbox">
+	
+  <div class="crop_container">	
+	<%= image_tag @user.avatar.url(:large), :class => "cropbox" %>
+  </div>
+	<div class="crop_preview">
+	  <h4>PREVIEW</h4>
+	   <div style="width:100px; height:100px; overflow:hidden">
+	    <%= image_tag @user.avatar.url(:large), :id => "preview" %>
+	   </div>	
+	</div>
 
-<h4>Preview:</h4>
-<div style="width:100px; height:100px; overflow:hidden">
-  <%= image_tag @user.avatar.url(:large), :id => "preview" %>
-</div>	
 </div>
+
 	
 	<div class="admin_signup_box">
 		<%= form_for @user, :url => { action: "cropupdate" }, :multipart => true  do |f| %>		
@@ -56,7 +62,7 @@ function update_crop(coords) {
 	    <% end %>
 
 
-		<%= f.submit "Save", class: "admin_create" %>
+		<%= f.submit "CROP", class: "crop_button_submit" %>
 
 		<% end %>
 	</div>
