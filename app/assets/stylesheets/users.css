@@ -834,3 +834,47 @@
 	margin:10px 0px 0px 100px;
 	width:700px;
 }
+
+
+.moneybags {
+	float:left;
+	width:40px;
+	height:40px;
+	text-align:left;
+}
+
+.pay_now_text {
+	margin:10px 0px 0px 0px;
+	width:150px;
+	font-size:18px;
+}
+
+.pay_now_button {
+	float:left;
+	padding:10px 50px 10px 50px;
+	margin:30px 100px 0px 120px;
+	border:1px solid #D0D0D0;
+	font-family:"Helvetica";
+	font-size:14px;
+	text-align:center;
+	font-weight:bold;
+	color:#0047B2;
+	background-color:#EBEBEB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EBEBEB), to(#CFCFCF));
+	background: -moz-linear-gradient(top, #EBEBEB,  #CFCFCF);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+				box-shadow: 0 4px 4px -2px #B8B8B8;	
+}
+
+.pay_now_button:hover {
+	background-color:#E7E7E7;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E7E7E7), to(#BABABA));
+	background: -moz-linear-gradient(top, #E7E7E7,  #BABABA);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+				box-shadow: 0 4px 4px -1px #B8B8B8;	
+}

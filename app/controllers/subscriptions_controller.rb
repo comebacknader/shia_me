@@ -10,11 +10,12 @@ class SubscriptionsController < ApplicationController
  	@match = @user.matches.last
 	@wmatch = @user.wmatches.last  
 	@question = current_user.question	
-  	@subscription = Subscription.new(:user_id => @user.id)
+  	@subscription = Subscription.new(:user_id => @user.id, :plan_id => 1)
   end
   
   def create
   	@user = current_user
+  	@question = current_user.question
 	@subscription = Subscription.new(params[:subscription])
 	
 	if @subscription.save_with_payment

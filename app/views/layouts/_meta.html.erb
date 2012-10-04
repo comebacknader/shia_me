@@ -1,4 +1,11 @@
-<meta name="keywords" content="shia, islam, shia marriage, shias, matchmaking, muslim, marry, karbala, shia spouse " />
+<meta name="keywords" content="shia, islam, shia marriage, shias, matchmaking, muslim,
+		    marry, karbala, shia spouse " />
 <meta name="description" content = "<%= metacontent %>" />
-<%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
-
+ 
+ <% if Rails.env.Production? %>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
+ <% else %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+ <% end %>
+ 
+ 

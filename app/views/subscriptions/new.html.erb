@@ -57,11 +57,13 @@
 	
 	<div class="message_right_column">
 	
-			<h1 class="user_header"> Monthly Payment</h1>
+			<h1 class="user_header"> Monthly Subscription</h1>
 
 	<div class="question_new_box">
 	
 		<%= form_for @subscription, :html => { :multipart => true } do |f| %>
+		<%= render 'shared/sub_errors' %>
+	
 	
 		<%= f.label :name, "Name on Card", class: "user_signup" %>
 		<%= f.text_field :name, class: "user_signup_field" %>
@@ -70,7 +72,8 @@
 		<%= f.text_field :email, class: "user_signup_field" %>			
 				
 		<%= f.hidden_field :stripe_card_token %>
-		<%= f.hidden_field :user_id %>		
+		<%= f.hidden_field :user_id %>	
+		<%= f.hidden_field :plan_id %>				
 		
 		<% if @subscription.stripe_card_token.present? %>
 		  Credit card has been provided.

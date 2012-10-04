@@ -109,7 +109,8 @@
 			</div>		
 	    <% end %>
 					<% else %>
-				<div class="user_show_match_none">	
+				<div class="user_show_match_none">
+				  <% if @user.subscription %>	
 					<% if @user.question %>
 					<h1 class="no_match_made"> No Match Made </h1>
 					<p class="no_match_description"> We are finding you the best match available. <br />
@@ -120,7 +121,20 @@
 					your Profile Questions!  </p>
 					<% end %>							
 				</div>
-					<% end %>
+				<% else %>
+					<h1 class="no_match_made"> No Match Made </h1>
+					   <p class="no_match_description"> We Cannot Match You Until You Pay </p>
+					 <%= link_to new_subscription_path do %>
+					   <div class="pay_now_button">
+					   <%= image_tag("moneybags.png", class: "moneybags") %>
+					   <p class="pay_now_text">
+							PAY NOW
+						</p>
+					   </div>
+					</div>
+					 <% end %>
+			   <% end %>
+			   <% end %>									
 
 	
 	<% if @user.admin.present? %>
