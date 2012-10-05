@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :bio, :location, :name, :email, :gender, :password, 
   		:password_confirmation, :avatar, :admin_id, :age, 
   		:crop_x, :crop_y, :crop_w, :crop_h, :updating_password		
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h, :password, :updating_password	
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h, :updating_password
+  	
   has_secure_password
   
   belongs_to :admin
@@ -48,7 +49,7 @@ class User < ActiveRecord::Base
                        :if => :password_validation_required?
   
   validates :password_confirmation, presence: true, 
-  				      :if => :password_validation_required?
+  				     :if => :password_validation_required?
   
   
   has_attached_file :avatar, :styles => { :small =>"125x125>", :medium =>"250x250>", 

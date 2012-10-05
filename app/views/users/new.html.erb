@@ -22,10 +22,12 @@
 		<%= f.text_field :location, class: "user_signup_field" %>
 		
 		<%= f.label :password, class: "user_signup" %>
-		<%= f.password_field :password, class: "user_signup_field" %>
+		<%= f.password_field :password, class: "user_signup_field" %>		
 		
 		<%= f.label :password_confirmation, "Confirm Password", class: "user_signup" %>
 		<%= f.password_field :password_confirmation, class: "user_signup_field" %>
+	
+		<%= f.hidden_field :updating_password, :value => "true" %>	
 	
 		<%= f.label :gender, class: "user_signup" %>
 		<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
