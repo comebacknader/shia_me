@@ -43,5 +43,11 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       end
     end
+    
+    def alreadypaid 
+      if current_user.subscription.present? 
+        redirect_to current_user, :notice => "You Already Paid"
+       end
+    end
   
 end

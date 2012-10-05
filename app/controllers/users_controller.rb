@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     @question = @user.question
     @match = @user.matches.last
     @wmatch = @user.wmatches.last
+    @newmessages = @user.recieved.where(:seen => "false")
   end
   
   def edit

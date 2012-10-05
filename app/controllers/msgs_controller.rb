@@ -13,6 +13,7 @@ class MsgsController < ApplicationController
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last  
     @msg = Msg.find(params[:id])
+	@newmessages = @user.recieved.where(:seen => "false")    
     @question = @user.question    
   end
 
@@ -22,6 +23,7 @@ class MsgsController < ApplicationController
 	@wmatch = @user.wmatches.last 
     @lastmsg = @user.msgs.last
     @question = @user.question
+	@newmessages = @user.recieved.where(:seen => "false")    
     
     @msg = Msg.new(:user_id => @user.id, :admin_id => @user.admin.id)
   end

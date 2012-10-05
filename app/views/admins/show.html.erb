@@ -1,5 +1,12 @@
 <% provide(:title, @admin.name) %>
 
+<% if current_user %>
+	<%= render 'shared/userallbar' %>
+<% else %>
+	<div class="user_all_bar">
+	</div>
+<% end %>	
+
 <div class="container">
 
 	<%= link_to root_path do %>
@@ -28,20 +35,20 @@
 	<% if current_admin  %>
 		<%= link_to profile_admin_url do %>
 			<div class="admin_go_home">
-				Go Home 
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 			</div>
 		<% end %>
-	<% else if current_user %>
+	<% else if current_user && current_user.admin == @admin %>
 		<%= link_to current_user do %>
 	     <div class="user_go_home">
-			 Go Home
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 		 </div>
 		<% end %>
 
 	  <% if current_user.admin == @admin  %>
 		<%= link_to new_msg_path do %>
 			<div class="msg_go_home">
-				Message MatchMaker
+				<%= image_tag("inbox.png", class: "home_list_logo") %>	
 			</div>
 		<% end %>
 	  <% end %>	

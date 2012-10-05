@@ -2,7 +2,11 @@
 	<ul class="admin_sidebar_list">
 	<% @users.each do |user| %>
 	<%= link_to :controller => "users", :action => "match", :id => user.id do %>
+	<% if user.subscription.present? %>	
 	<li>
+	<% else %>
+	<li class="admin_user_no_pay_list">
+	<% end %>
 	  <% if user.avatar.present? %>
 	   <%= image_tag(user.avatar(:small), class: "admin_sidebar_pics")%>
 	  <% else %>

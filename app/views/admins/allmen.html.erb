@@ -31,7 +31,11 @@
 	<div class="admin_all_men_box">
 		<% @men.each do |user| %>
 			<%= link_to :controller => "users", :action => "profile", :id => user.id do %>
+		<% if user.subscription.present? %>
 		<div class="admin_each_men">
+		<% else %>
+		<div class="admin_no_pay_each">
+		<% end %>
 			<% if user.avatar.present? %>
 				<%= image_tag(user.avatar(:small)) %>
 			<% else %>

@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
 		@wmatch = @user.wmatches.last
 		@messages = @user.messages.order('created_at DESC').limit(20)
 		@recieved = @user.recieved.order('created_at DESC').limit(20)
+		@newmessages = @user.recieved.where(:seen => "false")
 		@msgs = @user.msgs.order('created_at DESC').limit(10)
 		@question = current_user.question
 	end
@@ -15,13 +16,23 @@ class MessagesController < ApplicationController
 	  @message = Message.find(params[:id])
  	  @messages = Message.all
 	  @user = current_user
+	  @newmessages = @user.recieved.where(:seen => "false")	  
+ 	  @question = @user.question	  
 	  @match = @user.matches.last
-	  @wmatch = @user.wmatches.last	  
+	  @wmatch = @user.wmatches.last	
+	  
+	  if @message.reciever_id == @user.id
+	   if @message.seen = "false" 
+	     @message.update_attribute(:seen, "true")
+	   end
+	  end
+	    
 	end
 	
 	def new
 	@user = current_user
 	@question = @user.question
+	@newmessages = @user.recieved.where(:seen => "false")	
 	@match = @user.matches.last
 		unless @match == nil
 			@lastmessage = @match.woman.messages.last
@@ -32,10 +43,10 @@ class MessagesController < ApplicationController
 		end
 		if @user.gender == "MALE"
 			@message = Message.new(:reciever_id => @match.woman.id, 
-								   :sender_id => @user.id)
+								   :sender_id => @user.id, :seen => "false")
 		else 
 			@message = Message.new(:reciever_id => @wmatch.man.id,
-								   :sender_id => @user.id)
+								   :sender_id => @user.id, :seen => "false")
 		end    	 	
 	end
 	
@@ -74,6 +85,7 @@ class MessagesController < ApplicationController
 		@question = @user.question
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
+		@newmessages = @user.recieved.where(:seen => "false")		
 		@messages = @user.messages.order('created_at DESC').limit(5)
 		@recieved = @user.recieved.order('created_at DESC').limit(5)
 	end

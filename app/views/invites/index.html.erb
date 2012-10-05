@@ -17,25 +17,8 @@
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
 	<% end %>
 
-	<div class="all_bar">
-		
-		<%= link_to profile_admin_url(current_admin) do %>
-			<div class="home_button">
-				<p> Home </p>
-			</div>
-		<% end %>
-		
-		<%= link_to new_invite_url do %>
-			<div class="home_button">
-				<p> New Code </p>
-			</div>
-		<% end %>
-		
-	</div>
-
-<div class="admin_sidebar">
-</div>
-
+<%= render 'shared/allbar' %>
+<%= render 'shared/sidebar' %>
 	
 	<div class="admin_show">
 		

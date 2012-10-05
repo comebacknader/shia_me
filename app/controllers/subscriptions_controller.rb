@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
 	skip_before_filter :authorize
+	before_filter :alreadypaid, :only => [:new]
 
 
   def index
@@ -11,6 +12,7 @@ class SubscriptionsController < ApplicationController
 	@wmatch = @user.wmatches.last  
 	@question = current_user.question	
   	@subscription = Subscription.new(:user_id => @user.id, :plan_id => 1)
+    @newmessages = @user.recieved.where(:seen => "false")  	
   end
   
   def create

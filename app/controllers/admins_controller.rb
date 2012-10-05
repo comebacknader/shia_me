@@ -25,6 +25,7 @@ class AdminsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @admin = Admin.find(params[:id])
   end
 

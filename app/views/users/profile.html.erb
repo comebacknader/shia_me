@@ -2,6 +2,9 @@
 
 <% if current_user == User.find(params[:id]) %>
 	<%= render 'shared/userallbar' %>
+<% else %>
+	<div class="user_all_bar">
+	</div>
 <% end %>	
 	<div class="container">
 	
@@ -106,13 +109,13 @@
 	<% if current_admin  %>
 		<%= link_to profile_admin_url(current_admin) do %>
 			<div class="admin_go_home">
-				Go Home 
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 			</div>
 		<% end %>
 	<% else if current_user %>
 		<%= link_to current_user do %>
 	     <div class="admin_go_home">
-			 Go Home
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 		 </div>
 		<% end %>
 	<% end %>

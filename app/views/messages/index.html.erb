@@ -83,7 +83,11 @@
 			<% end %>					
 					<% else %>
 				<% @recieved.each do |recieved| %>
-					<div class="each_message"> 
+				<% if recieved.seen? %>
+					<div class="each_message">
+			   <% else %>
+			       <div class="each_message_notseen">
+			    <% end %> 
 				<%= link_to recieved do %>
 				  <% if recieved.sender.avatar.present? %>
 					<%= image_tag(recieved.sender.avatar(:small), 

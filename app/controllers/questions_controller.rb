@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
 	@user = current_user	
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last 
+	@newmessages = @user.recieved.where(:seen => "false")	
   	@question = Question.new(:user_id => @user.id)
   end
   
@@ -30,6 +31,7 @@ class QuestionsController < ApplicationController
 	@user = current_user	
 	@match = @user.matches.last
 	@wmatch = @user.wmatches.last   
+	@newmessages = @user.recieved.where(:seen => "false")	
   	@question = Question.find(params[:id])
   end
   

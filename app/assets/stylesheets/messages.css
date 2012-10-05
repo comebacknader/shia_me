@@ -350,6 +350,19 @@
 	font-size:14px;
 }
 
+.each_message_notseen {
+	float:left;
+	width:499px;
+	height:100px;
+	background-color:#DFDFDF;
+	border:1px solid #D0D0D0;
+}
+
+.each_message_notseen:hover {
+	border:1px solid DimGray;
+}
+
+
 .all_msg_photo {
 	float:left;
 	width:75px;
