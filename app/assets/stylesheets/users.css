@@ -522,6 +522,23 @@
 .no_match_description {
 	text-align:center;
 }
+
+.no_match_answer_button {
+	float:left;
+	width:75px;
+	height:75px;
+	border:1px solid none;
+	margin:10px 0px 0px 210px;
+}
+
+.no_match_answer_button img {
+	width:75px;
+	height:75px;
+}
+
+.no_match_answer_button img:hover {
+	border:1px solid #D0D0D0;
+}
 														
 														/* User Sign Up Log In Stuff */
 
