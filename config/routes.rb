@@ -37,7 +37,7 @@ ShiaMe::Application.routes.draw do
 
    
    resources :users do 
-     member do 
+     member do      
        get 'profile'
        get 'pics'
        put 'picsupdate'
@@ -48,6 +48,8 @@ ShiaMe::Application.routes.draw do
        get 'deletematch'
        get 'crop'
        put 'cropupdate'
+       get 'permission'
+       put 'gotpermit'       
       end
     end
     

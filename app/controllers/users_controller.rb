@@ -17,8 +17,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save 
-      sign_in_user @user
-      redirect_to @user
+      if @user.gender == "FEMALE"
+        render :action => "permission"
+      else 
+      	sign_in_user @user
+        redirect_to @user
+      end	
     else
       render 'new'
     end
@@ -145,6 +149,22 @@ class UsersController < ApplicationController
   	@match = @user.matches.last
     @wmatch = @user.wmatches.last
   end   
+  
+  
+  def permission
+  	@user = User.find(params[:id])
+  end
+  
+  def gotpermit
+  	@user = User.find(params[:id])
+  	
+  	if @user.update_attribute("permission", params[:user][:permission])
+  	 sign_in_user @user
+     redirect_to @user
+  	else
+  	 render :action => "permission"
+  	end	  	
+  end
   
   private 
 
