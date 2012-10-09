@@ -10,19 +10,7 @@
 		
 		<div class="message_left_column">
 	
-			<div class="message_show_image">
-				<% if @user.avatar.present? %>
-					<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
-				<% else %>
-					<%= image_tag("userlogo.png", class: "user_no_pic") %>
-				<% end %>
-	
-				<div class="user_show_pic">
-					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
-				</div>
-
-			</div>
-			
+		<%= render 'shared/userimage' %>
 		<%= render 'shared/navbar' %>
 
 	<%= link_to @user.admin do %>

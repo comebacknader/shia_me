@@ -8,20 +8,9 @@
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
 
-	<div class="message_left_column">
-		
-			<div class="user_show_image">
-				<% if @user.avatar.present? %>
-					<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
-				<% else %>
-					<%= image_tag("userlogo.png", class: "user_no_pic") %>
-				<% end %>
-				<div class="user_show_pic">
-					<%= link_to "Change Profile Picture", pics_user_path %>
-				</div>
-			</div>
+	<div class="message_left_column">	
 
-
+		<%= render 'shared/userimage' %>
 		<%= render 'shared/navbar' %>
 
 	</div>
@@ -29,8 +18,8 @@
 	
 	<div class="message_right_column">
 	
-		<% if @user.matches.present? || @user.wmatches.present? %>
-		<% if @user.gender == "MALE" %>
+	<% if @user.matches.present? || @user.wmatches.present? %>
+	   <% if @user.gender == "MALE" %>
 			<div class="user_show_match">	
 			 <% if @match.woman.avatar.present? %>
 				<%= image_tag(@match.woman.avatar(:large), 
@@ -68,7 +57,7 @@
 				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>
 			<p>	<%= truncate(@match.reason, length: 200) %> </p>
 			</div>					
-		<% else %> 
+	   <% else %> 
 		<div class="user_show_match">
 		  <% if @wmatch.man.avatar.present? %>
 			<%= image_tag(@wmatch.man.avatar(:large), 
@@ -82,7 +71,7 @@
 					<p class="user_show_match_location"> Age: <%= @wmatch.man.age %>  </p>			
 					<p class="user_show_match_location"> Location: 
 							<%= @wmatch.man.location %> </p>
-					<% if @wmatch.infoapprove.blank? %>					
+			<% if @wmatch.femapprove.blank? %>					
 					<p class="user_show_match_location"> Ethnicity:
 							  <%= @wmatch.woman.question.ethnicity %> </p>							
 					</div>
@@ -93,7 +82,7 @@
 						<%= image_tag("search3.png", class: "search_button") %> 
 					</div>
 				<% end %>
-				<%= link_to profile_user_url(@wmatch.man) do %>
+				<%= link_to(approvefem_match_path(@wmatch.id), :method => :put)  do %>
 					<div class="view_match_profile">
 						<%= image_tag("thumbsup.png", class: "search_button") %> 
 					</div>
@@ -103,8 +92,12 @@
 					 <%= image_tag("thumbsdown.png", class: "end_button") %> 
 					</div>
 				<% end %>												
+			 </div>
+			<% else if @wmatch.infoapprove.blank? %>
+			<div class="user_to_match_buttons"> 	
+			<p> We are sending him your Profile </p>
 			</div>
-			<% else %> 				
+			<% else %>			
 			<div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@wmatch.man) do %>
 					<div class="view_match_profile">
@@ -122,14 +115,15 @@
 					</div>
 				<% end %>
 		  </div>
-		  		<% end %>
-	     </div>		  
+		  	<% end %>				  		
+		  	<% end %>  
+		  </div>	
 			<div class="user_show_match_reason">
 				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>			
 				<p><%= truncate(@wmatch.reason, length: 200) %></p>
 			</div>		
 	    <% end %>
-					<% else %>
+	<% else %>
 				<div class="user_show_match_none">	
 					<% if @user.question %>
 					<h1 class="no_match_made"> No Match Made </h1>
@@ -145,7 +139,7 @@
 				      <% end %>
 					<% end %>							
 				</div>
-			   <% end %>									
+    <% end %>									
 
 	
 	<% if @user.admin.present? %>

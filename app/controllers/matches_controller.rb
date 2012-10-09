@@ -26,6 +26,22 @@ class MatchesController < ApplicationController
   def update
   end
   
+   def approvefem 
+  	@user = current_user
+  	@match = Match.find(params[:id])
+  	@match.update_attribute("femapprove", "true")
+  	redirect_to @user
+  end	 
+  
+  
+  def approveinfo 
+  	@user = current_user
+  	@match = Match.find(params[:id])
+  	@match.update_attribute(:infoapprove, "true")
+  	redirect_to @user
+  end	
+  
+  
   def destroy   
     @match = Match.find(params[:id])
 

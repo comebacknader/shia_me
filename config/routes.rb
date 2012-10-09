@@ -71,6 +71,12 @@ ShiaMe::Application.routes.draw do
 		resources :msgs
 	end
     	
+    resources :matches do 
+     member do
+     	put 'approvefem'
+        put 'approveinfo'
+     end
+    end	
       
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'
