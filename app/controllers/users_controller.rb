@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     if @user.save 
       if @user.gender == "FEMALE"
-        render :action => "permission"
+        redirect_to permission_user_path(@user)
       else 
       	sign_in_user @user
         redirect_to @user

@@ -1,16 +1,22 @@
 <% provide(:title, "Sign Up") %>
 
-<div class ="container"> 
-	
-	<h1 class="user_header"> Permission</h1>
+
+	<div class="user_all_bar">
+	</div>
+
+<div class="container"> 
+
 
 	<div class="user_signup_box">
+	<h1 class="user_header"> Permission</h1>
+
+
 		<%= form_for @user, :url => { controller: "users", action: "gotpermit" }, :multipart => true  do |f| %>		
 	
 		<%= f.label :permission, "Do You Have/Need Your Father's
 		 Permission To Use This Site?", 
 		class: "user_signup" %>
-		<%= f.select(:permission, %w[YES NO], { :index => nil }) %>
+		<%= f.select(:permission, ['I HAVE PERMISSION', 'I DO NOT NEED IT']) %>
 
 		<%= f.submit "Sign Up", class: "user_create" %>
 
