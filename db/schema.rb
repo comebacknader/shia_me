@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007231336) do
+ActiveRecord::Schema.define(:version => 20121009004257) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -40,9 +40,12 @@ ActiveRecord::Schema.define(:version => 20121007231336) do
   create_table "matches", :force => true do |t|
     t.integer  "man_id"
     t.integer  "woman_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.text     "reason"
+    t.boolean  "femapprove"
+    t.boolean  "infoapprove"
+    t.boolean  "picapprove"
   end
 
   add_index "matches", ["man_id", "woman_id"], :name => "index_matches_on_man_id_and_woman_id", :unique => true

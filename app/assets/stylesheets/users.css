@@ -171,7 +171,6 @@
 		float:left;
 		margin:20px 10px 10px 40px;
 		width:250px;
-		height:80px;
 		background-color:none;
 }
 
@@ -282,6 +281,34 @@
 		float:left;
 		margin:10px;
 		width:50px;
+}
+
+.should_info_approve {
+	float:left;
+	color:DimGray;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.info_approve_button {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		margin:0px 0px 0px 0px;
+		width:75px;
+		height:75px;
+		border:1px solid #D0D0D0;
+		background-color: #FF0000;
+		background: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#CC0000));
+		background: -moz-linear-gradient(top, #FF0000,  #CC0000);
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;	
 }
 
 .user_show_match_reason {

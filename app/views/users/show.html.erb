@@ -82,9 +82,29 @@
 					<p class="user_show_match_location"> Age: <%= @wmatch.man.age %>  </p>			
 					<p class="user_show_match_location"> Location: 
 							<%= @wmatch.man.location %> </p>
+					<% if @wmatch.infoapprove.blank? %>					
 					<p class="user_show_match_location"> Ethnicity:
 							  <%= @wmatch.woman.question.ethnicity %> </p>							
 					</div>
+			<div class="user_to_match_buttons">			
+			<p class="should_info_approve"> SHOULD WE SEND HIM YOUR INFO? </p>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile">
+						<%= image_tag("search3.png", class: "search_button") %> 
+					</div>
+				<% end %>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile">
+						<%= image_tag("thumbsup.png", class: "search_button") %> 
+					</div>
+				<% end %>
+				<%= link_to deletematch_user_path do %>						
+					<div class="user_end_match">
+					 <%= image_tag("thumbsdown.png", class: "end_button") %> 
+					</div>
+				<% end %>												
+			</div>
+			<% else %> 				
 			<div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@wmatch.man) do %>
 					<div class="view_match_profile">
@@ -102,6 +122,7 @@
 					</div>
 				<% end %>
 		  </div>
+		  		<% end %>
 	     </div>		  
 			<div class="user_show_match_reason">
 				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>			
