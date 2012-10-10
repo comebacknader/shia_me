@@ -75,6 +75,7 @@ ShiaMe::Application.routes.draw do
      member do
      	put 'approvefem'
         put 'approveinfo'
+        put 'approvepic'
      end
     end	
       

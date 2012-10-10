@@ -40,6 +40,13 @@ class MatchesController < ApplicationController
   	@match.update_attribute(:infoapprove, "true")
   	redirect_to @user
   end	
+
+  def approvepic 
+  	@user = current_user
+  	@match = Match.find(params[:id])
+  	@match.update_attribute(:picapprove, "true")
+  	redirect_to @user
+  end	  
   
   
   def destroy   
