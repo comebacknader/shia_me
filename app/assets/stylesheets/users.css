@@ -331,6 +331,43 @@
 	            box-shadow: 0 2px 4px -1px #B8B8B8;	
 }
 
+.view_match_profile_wide {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		margin:0px 0px 0px 0px;
+		width:225px;
+		height:70px;
+		border:1px solid #D0D0D0;
+		background-color:#336CC1;
+		background: -webkit-gradient(linear, left top, left bottom, from(#336CC1), to(#0047B2));
+		background: -moz-linear-gradient(top, #336CC1,  #0047B2);
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.view_match_profile_wide:hover {
+	background-color: #0047B2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
+	background: -moz-linear-gradient(top, #0047B2,  #003380);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+	
+}
+
+.search_button_wide {
+	float:left;
+	margin:10px 0px 0px 90px;
+	width:50px;
+}
+
 .user_show_match_reason p {
 	margin:5px 5px 5px 60px;
 	font-size:14px;

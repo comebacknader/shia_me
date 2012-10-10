@@ -91,12 +91,19 @@
 					<div class="user_end_match">
 					 <%= image_tag("thumbsdown.png", class: "end_button") %> 
 					</div>
-				<% end %>												
-			 </div>
-			<% else if @wmatch.infoapprove.blank? %>
-			<div class="user_to_match_buttons"> 	
-			<p> We are sending him your Profile </p>
 			</div>
+				<% end %>												
+			<% else if @wmatch.infoapprove.blank? %>	
+				<div class="user_to_match_buttons">
+					<p class="should_info_approve"> WE ARE SENDING HIM YOUR INFO </p>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile_wide">
+						<%= image_tag("search3.png", class: "search_button_wide") %> 
+					</div>
+				<% end %>
+				 </div>
+				 
+				</div>
 			<% else %>			
 			<div class="user_to_match_buttons">
 				<%= link_to profile_user_url(@wmatch.man) do %>
@@ -114,10 +121,9 @@
 					 <%= image_tag("endmatch2.png", class: "end_button") %> 
 					</div>
 				<% end %>
-		  </div>
 		  	<% end %>				  		
 		  	<% end %>  
-		  </div>	
+		  </div>
 			<div class="user_show_match_reason">
 				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>			
 				<p><%= truncate(@wmatch.reason, length: 200) %></p>
