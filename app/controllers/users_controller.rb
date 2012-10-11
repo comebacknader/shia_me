@@ -60,6 +60,8 @@ class UsersController < ApplicationController
   
   def profile
     @user = User.find(params[:id])
+    @match = @user.matches.last
+    @wmatch = @user.wmatches.last  
     @question = @user.question
     if @user.gender == "MALE"
     	@they = "He"

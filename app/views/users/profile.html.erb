@@ -18,13 +18,24 @@
 	
 	
 		<h1 class="admin_show_header"><%= @user.name %></h1>
-
+	 
+	 <% if current_user != @user && current_user.gender == "MALE" %>
+	  <% if @wmatch.infoapprove.blank? %>
+		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
+	  <% else %>
 		<% if @user.avatar.present? %>
 		 <%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
         <% else %>
 		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
-        <% end %>
-        
+        <% end %>	 
+       <% end %>  
+    <% else %> 
+		<% if @user.avatar.present? %>
+		 <%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
+        <% else %>
+		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
+        <% end %>  
+    <% end %>         
 		<p class="admin_show_location">
 			<%= @user.location %>
 		</p>
@@ -70,7 +81,6 @@
 				out a profile. 
 			</p>
 		<% end %>	
-
 	</div>
 	
 	
