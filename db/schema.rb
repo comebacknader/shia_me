@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009004257) do
+ActiveRecord::Schema.define(:version => 20121012154416) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20121009004257) do
     t.boolean  "femapprove"
     t.boolean  "infoapprove"
     t.boolean  "picapprove"
+    t.integer  "admin_id"
+    t.string   "femreason"
   end
 
   add_index "matches", ["man_id", "woman_id"], :name => "index_matches_on_man_id_and_woman_id", :unique => true

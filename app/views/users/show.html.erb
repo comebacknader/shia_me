@@ -57,7 +57,7 @@
 			</div>	
 		</div>
 			<div class="user_show_match_reason">
-				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>
+				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
 			<p>	<%= truncate(@match.reason, length: 200) %> </p>
 			</div>				
 		 <% else if @match.picapprove.blank? %>
@@ -96,7 +96,7 @@
 			    </div>	
 	     	 </div>
 		     	<div class="user_show_match_reason">
-				 <%= image_tag(@user.admin.avatar(:large), 
+				 <%= image_tag(@admin.avatar(:large), 
 				        class:"user_show_reason_img") %>
 			 <p><%= truncate(@match.reason, length: 200) %> </p>
 			</div>						 
@@ -135,7 +135,7 @@
 		</div>
 		</div>
 			<div class="user_show_match_reason">
-				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>
+				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
 			<p>	<%= truncate(@match.reason, length: 200) %> </p>
 			</div>		
 		<% end %>
@@ -221,8 +221,8 @@
 		    <% end %>
 		  </div>
 			<div class="user_show_match_reason">
-				<%= image_tag(@user.admin.avatar(:large), class:"user_show_reason_img") %>			
-				<p><%= truncate(@wmatch.reason, length: 200) %></p>
+				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>			
+				<p><%= truncate(@wmatch.femreason, length: 200) %></p>
 			</div>		
 	    <% end %>
 	<% else %>

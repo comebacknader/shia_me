@@ -7,6 +7,7 @@ class Admin < ActiveRecord::Base
   
   has_many :users
   
+    
   has_many :msgs
   has_many :users, :through => :msgs
   

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :bio, :location, :name, :email, :gender, :password, 
-  		:password_confirmation, :avatar, :admin_id, :age, 
+  		:password_confirmation, :avatar, :admin_id, :age,
   		:crop_x, :crop_y, :crop_w, :crop_h, :updating_password		
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h, :updating_password
   	

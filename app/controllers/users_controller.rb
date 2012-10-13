@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     @question = @user.question
     @match = @user.matches.last
     @wmatch = @user.wmatches.last
+    unless @user.gender == "MALE"
+    	@admin = Admin.where(:id => @wmatch.admin_id).last
+    else
+    	@admin = Admin.where(:id => @match.admin_id).last
+    end
     @newmessages = @user.recieved.where(:seen => "false")
   end
   
