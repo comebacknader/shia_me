@@ -31,7 +31,7 @@
 		<div class="admin_match_user_box">
 			<div class="admin_match_each_men">
 				<% if @user.avatar.present? %>
-					<%= image_tag(@user.avatar(:medium), 
+					<%= image_tag(@user.avatar(:large), 
 								:class => "create_match_user_pic") %>
 				<% else %>
 					<%= image_tag("viewprofile.png", 
