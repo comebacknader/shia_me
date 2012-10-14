@@ -81,8 +81,14 @@
 				<%= collection_select(:match, :man_id,  User.where(:gender => "MALE").order("name ASC"), :id, :name, 
 				{:prompt => true}, :class => "admin_create_match_dropdown" )%>
 
-		<%= f.label :reason, "Tell them Why You Made This Match", class: "user_signup" %>
-		<%= f.text_area :reason, class: "create_match_textarea" %>	
+		<%= f.label :reason, "Tell the MAN why you made the match",
+								class: "user_signup" %>
+		<%= f.text_area :reason, class: "create_match_textarea" %>
+		
+		<%= f.label :femreason, "Tell the WOMAN why you made the mach", 
+								class: "user_signup" %>
+								
+		<%= f.text_area :femreason, class: "create_match_textarea" %>
 
 			<%= f.submit "Create Match", class: "create_match_button" %>
 
