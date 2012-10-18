@@ -57,7 +57,11 @@
 			</div>	
 		</div>
 			<div class="user_show_match_reason">
+			  <% if @admin.avatar.present? %>
 				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
+			  <% else %>
+				<%= image_tag("viewprofile.png", class:"user_show_reason_img") %>			  
+			  <% end %>	
 			<p>	<%= truncate(@match.reason, length: 200) %> </p>
 			</div>				
 		 <% else if @match.picapprove.blank? %>
@@ -96,8 +100,12 @@
 			    </div>	
 	     	 </div>
 		     	<div class="user_show_match_reason">
+			  <% if @admin.avatar.present? %>		     	
 				 <%= image_tag(@admin.avatar(:large), 
 				        class:"user_show_reason_img") %>
+			  <% else %>
+			    <%= image_tag("viewprofile.png", class: "user_show_reason_img") %>
+			  <% end %>	        
 			 <p><%= truncate(@match.reason, length: 200) %> </p>
 			</div>						 
 		 <% else %>		
@@ -221,7 +229,11 @@
 		    <% end %>
 		  </div>
 			<div class="user_show_match_reason">
-				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>			
+			  <% if @admin.avatar.present? %>			 
+				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
+			  <% else %>
+			    <%= image_tag("viewprofile.png", class: "user_show_reason_img") %>
+			  <% end %>				
 				<p><%= truncate(@wmatch.femreason, length: 200) %></p>
 			</div>		
 	    <% end %>

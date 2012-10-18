@@ -1018,3 +1018,11 @@
 	  text-overflow: ellipsis;
 	  white-space: nowrap;
 }
+
+.waiting_match {
+	text-align:center;
+	font-family:"Helvetica";
+	color:DimGray;
+	font-weight:bold;
+	margin:25px 0px 0px 0px;
+}

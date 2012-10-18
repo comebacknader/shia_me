@@ -38,11 +38,15 @@
 	<% if @user.matches.present? || @user.wmatches.present? %>
 		<div class="message_match_box">
 		<% if @user.gender == "MALE" %>
+		 <% if @match.infoapprove.blank? %>
+		  <p class="waiting_match"> You are being matched </p>
+	     <% else %>				
 			<%= link_to profile_user_url(@match.woman)  do %>
 				<%= image_tag(@match.woman.avatar(:small)) %>
 				<p class="message_mm_title_bold">Your Match:</p>
 				<p class="message_mm_title"> <%= @match.woman.name %> </p>
 			<% end %>
+		 <% end %>	
 		<% else %>
 			<%= link_to profile_user_url(@wmatch.man) do %>
 				<%= image_tag(@wmatch.man.avatar(:small)) %>
