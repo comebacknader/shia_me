@@ -19,8 +19,11 @@
 	
 		<h1 class="admin_show_header"><%= @admin.name %></h1>
 
+      <% if @admin.avatar.present? %>
 		<%= image_tag(@admin.avatar(:large), class: "admin_show_img" ) %>
-
+	  <% else %>
+		<%= image_tag("viewprofile.png", class: "admin_show_img" ) %>
+	  <% end %>	  
 		<p class="admin_show_location">
 			<%= @admin.location %>
 		</p>
