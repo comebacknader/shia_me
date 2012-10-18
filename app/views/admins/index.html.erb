@@ -29,7 +29,20 @@
 </div>
 
 <div class="admin_sidebar">
+	<ul class="admin_sidebar_list">
+	<% @admins.each do |admin| %>
+		<li>
+		  <% if admin.avatar.present? %>
+		   <%= image_tag(admin.avatar(:large), class: "admin_sidebar_pics")%>
+		  <% else %>
+		   <%= image_tag("viewprofile.png", class: "admin_sidebar_pics")%>
+		  <% end %>	  	
+		  <p class="admin_sidebar_name"><%= admin.name %></p>	
+		</li>
+	<% end %>
+	</ul>
 </div>
+
 
 
 	<% flash.each do |key, value| %>
