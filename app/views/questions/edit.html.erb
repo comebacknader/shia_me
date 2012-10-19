@@ -68,7 +68,7 @@
 	
 		<%= f.label :job, "What Is Your Occupation?", class: "user_signup" %>
 		<div class="question_form_details">
-		  example: Civil Engineer, Filmmaker, Artist, Student, etc.
+		  "<%= @user.name %> is pursuing a career as a ____________"
 		</div>				
 		<%= f.text_field :job, class: "user_signup_field" %>
 
