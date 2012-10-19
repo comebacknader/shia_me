@@ -136,6 +136,14 @@ class UsersController < ApplicationController
     end
   end
   
+  def pick
+  	@user = User.find(params[:id])
+  	@admins = Admin.all
+  end
+  
+  def pickmm
+  end
+  
   def match 
     @admin = current_admin
     @users = User.where(:admin_id => current_admin.id)

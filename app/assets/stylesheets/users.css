@@ -1026,3 +1026,50 @@
 	font-weight:bold;
 	margin:25px 0px 0px 0px;
 }
+
+ 			/* PICK MATCHMAKER */
+
+.pick_mm_box {
+	float:left;
+	font-family:"Helvetica";
+	color:DimGray;
+	width:1000px;
+}
+
+.pick_mm_header {
+	margin:20px 0px 0px 0px;
+}
+
+.pick_mm_name {
+	float:left;
+}
+
+.user_pick_each_admin {
+	float:left;
+	border:1px solid #D0D0D0;
+	width:860px;
+	height:75px;
+	padding:10px;
+	margin:10px 0px 0px 0px;
+	background-color:WhiteSmoke;
+}
+
+.user_pick_mm_img_div {
+	float:right;
+	margin:0px;
+}
+
+.user_pick_mm_img {
+	width:75px;
+	height:75px;
+	border:1px solid #D0D0D0;
+	margin:0px;
+}
+
+.pick_mm_bio {
+	clear:left;
+	float:left;
+	width:600px;
+	padding:0px;
+	margin:0px 0px 0px 0px;
+}

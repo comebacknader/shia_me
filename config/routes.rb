@@ -49,7 +49,9 @@ ShiaMe::Application.routes.draw do
        get 'crop'
        put 'cropupdate'
        get 'permission'
-       put 'gotpermit'       
+       put 'gotpermit'  
+       get 'pick'
+       put 'pickmm'     
       end
     end
     

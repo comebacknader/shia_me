@@ -1,7 +1,7 @@
 class Admin < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, 
   				  :bio, :location, :avatar, :crop_x, :crop_y, :crop_h,
-  				  :crop_w, :updating_password
+  				  :crop_w, :updating_password, :ethnicity
   attr_accessor :crop_x, :crop_y, :crop_h, :crop_w, :updating_password			  
   has_secure_password
   
