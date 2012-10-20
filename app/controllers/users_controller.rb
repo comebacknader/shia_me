@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         redirect_to permission_user_path(@user)
       else 
       	sign_in_user @user
-        redirect_to @user
+        redirect_to pick_user_path(@user)
       end	
     else
       render 'new'
@@ -142,6 +142,14 @@ class UsersController < ApplicationController
   end
   
   def pickmm
+    @user = User.find(params[:id])
+    if @user.update_attribute(:admin_id, params[:user][:admin_id])
+      flash[:success] = "MatchMaker Assigned"
+      sign_in_user @user
+      redirect_to @user
+    else
+      render 'pick'
+    end  
   end
   
   def match 
@@ -177,7 +185,7 @@ class UsersController < ApplicationController
   	
   	if @user.update_attribute("permission", params[:user][:permission])
   	 sign_in_user @user
-     redirect_to @user
+     redirect_to pick_user_path(@user)
   	else
   	 render :action => "permission"
   	end	  	

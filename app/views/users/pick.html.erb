@@ -26,6 +26,14 @@
  	    <p class="pick_mm_bio"> <%= admin.bio %> </p>
 	 	     
  	 </div>
+			<div class="">	
+		<%= form_for @user, :url => { action: "pickmm" } do |f| %>
+		
+		<%= f.hidden_field :admin_id, :value => admin.id %>	
+			
+			<%= f.submit "PICK", class: "user_pick_button" %>
+				
+		<% end %> 	 
  	<% end %>
  </div>
 
