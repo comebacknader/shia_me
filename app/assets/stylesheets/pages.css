@@ -10,18 +10,19 @@
 		float:left;
 		margin:50px 0px 0px 320px;
 		z-index:2;
-		width:300px;
+		width:350px;
 		padding:10px;
+		background-color:none;
 }
 
 .home_logo_new {
-	margin:0px 0px 0px 30px;
+	margin:0px 0px 0px 50px;
 }
 
 
 .invite_code {
 		float:left;
-		margin:0px 0px 0px 0px;
+		margin:0px 0px 0px 20px;
 		z-index:2;
 		width:300px;
 		color:DimGray;

@@ -6,21 +6,21 @@
 
 	<div class="invite_code">
 		<h1 class="home_tagline"> a matchmaking service </h1>
-		<p>To be notified of our Launch, enter your email</p>
-		<%= form_for @subscriber do |f| %>
-		    <%= f.text_field :email, :value => "Enter Email", :class => "invite_code_field" %>
-		    <%= f.submit "SUBSCRIBE", :class => "invite_code_button"  %>
+		
+	<div class="home_video">
+<iframe width="300" height="169" src="http://www.youtube-nocookie.com/embed/XDnnu7-hdow"
+				 frameborder="0" allowfullscreen></iframe>
+	</div>		
+	<br />
+	<br />			
+		<p>Enter Your Invite Code</p>
+		<%= form_tag test_path, :method => :get  do %>
+		    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+		    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
 		<% end %>
 	</div>
 
 </div>
-
-	<%= link_to about_path do %>
-		<div class="what_is_site">
-			<p> What is shiaME? </p>
-		</div>
-	<% end %>
-
 	
 
 
