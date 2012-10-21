@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include AdminSessionsHelper
   include UsersessionsHelper
+  include MsgsHelper
 
   before_filter :authorize
   

@@ -1,5 +1,10 @@
 module ApplicationHelper
   
+  include AdminSessionsHelper
+  include UsersessionsHelper
+  include MsgsHelper
+  
+  
   def full_title(page_title) 
     base_title = "shiaME"
     if page_title.empty?

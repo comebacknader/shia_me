@@ -1,6 +1,6 @@
 class MsgsController < ApplicationController
    skip_before_filter :authorize, except: [:index]
-
+	before_filter :retrieve_newmsg
 
   def index
  	@admin = current_admin 
@@ -15,6 +15,9 @@ class MsgsController < ApplicationController
     @msg = Msg.find(params[:id])
 	@newmessages = @user.recieved.where(:seen => "false")    
     @question = @user.question    
+	   if @msg.seen = "false" 
+	     @msg.update_attribute(:seen, "true")
+	   end    
   end
 
   def new

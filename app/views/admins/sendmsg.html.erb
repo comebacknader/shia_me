@@ -33,11 +33,13 @@
 				<%= f.text_area :message, class: "new_msg_textarea" %>
 				
 				<%= f.hidden_field(:admin_id) %>
+				<%= f.hidden_field :seen %>				
 				<div class="admin_msg_user_select">
 				  <p> Send Message To: </p>
 				  <%= f.collection_select(:user_id,  @users.all, 
 				  		:id, :name) %>
 				</div>
+				
 				<%= f.submit "Send Message", class:"admin_msg_submit" %>				
 		<% end %>
 

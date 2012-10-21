@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
 	skip_before_filter :authorize
+	before_filter :retrieve_newmsg 
 
 	def index
 		@user = current_user	
