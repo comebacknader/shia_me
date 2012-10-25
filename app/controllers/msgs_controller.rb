@@ -1,6 +1,5 @@
 class MsgsController < ApplicationController
    skip_before_filter :authorize, except: [:index]
-	before_filter :retrieve_newmsg
 
   def index
  	@admin = current_admin 

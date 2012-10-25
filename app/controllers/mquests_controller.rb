@@ -1,5 +1,6 @@
 class MquestsController < ApplicationController
 	skip_before_filter :authorize
+  before_filter :retrieve_newmsg  
 
   def index
   	@mquests = Mquest.all

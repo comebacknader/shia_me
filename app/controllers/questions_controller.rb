@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 	skip_before_filter :authorize
+  before_filter :retrieve_newmsg  
 
   def index
 	@questions = Question.all
