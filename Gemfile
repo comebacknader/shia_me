@@ -15,12 +15,12 @@ gem 'acts-as-taggable-on', '~> 2.2.2'
 gem "friendly_id", "~> 4.0.1"
 gem 'thin'
 gem 'stripe'
-gem 'sqlite3'
 
 
 group :development do
   gem 'rspec-rails', '2.10.0'
   gem 'faker', '0.3.1'
+  gem 'sqlite3'  
   gem 'guard-rspec', '0.5.5'
   gem "annotate", "~> 2.5.0.pre1"
   gem 'taps', :require => false
