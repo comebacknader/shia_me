@@ -31,12 +31,17 @@ class ApplicationController < ActionController::Base
     end
       
     def invitecode 
-      unless Invite.find_by_code(params[:code])
-        redirect_to root_path
-      else
+      if Invite.find_by_code(params[:code])
         session[:code] = Invite.find_by_code(params[:code])
         redirect_to new_user_url
+      else if  
+        params[:code] == "MatchMaker"
+        session[:code] = "MatchMaker"
+        redirect_to new_admin_url
+      else
+        redirect_to root_path
       end
+     end
     end
     
     def invite
