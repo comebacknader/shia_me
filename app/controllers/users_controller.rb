@@ -21,6 +21,7 @@ class UsersController < ApplicationController
       if @user.gender == "FEMALE"
         redirect_to permission_user_path(@user)
       else 
+        UserMailer.welcome(@user).deliver      
       	sign_in_user @user
         redirect_to pick_user_path(@user)
       end	
