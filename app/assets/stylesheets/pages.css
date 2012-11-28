@@ -119,7 +119,7 @@
 }
 
 .matchmaker_signin:hover {
-		border:1px solid #D0D0D0;
+		border:1px solid DimGray;
 		background-color:#FF5050;
 		background: -webkit-gradient(linear, left top, left bottom, from(#FF5050), to(#CC4040));
 		background: -moz-linear-gradient(top, #FF5050,  #CC4040);	

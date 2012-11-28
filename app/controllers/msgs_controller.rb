@@ -1,19 +1,19 @@
 class MsgsController < ApplicationController
    skip_before_filter :authorize, except: [:index]
-   before_filter :retrieve_newmsg, only: [:new]
+   before_filter :retrieve_newmsg, only: [:new, :show]
 
   def index
- 	@admin = current_admin 
+  	@admin = current_admin 
     @msgs = Msg.where(:admin_id => @admin.id).order('created_at DESC').all
     @users = User.where(:admin_id => current_admin.id)	
   end
 
   def show
    	@user = current_user 
-	@match = @user.matches.last
-	@wmatch = @user.wmatches.last  
+	  @match = @user.matches.last
+	  @wmatch = @user.wmatches.last  
     @msg = Msg.find(params[:id])
-	@newmessages = @user.recieved.where(:seen => "false")    
+	  @newmessages = @user.recieved.where(:seen => "false")    
     @question = @user.question    
 	   if @msg.seen = "false" 
 	     @msg.update_attribute(:seen, "true")
@@ -22,11 +22,11 @@ class MsgsController < ApplicationController
 
   def new
    	@user = current_user 
-	@match = @user.matches.last
-	@wmatch = @user.wmatches.last 
+  	@match = @user.matches.last
+	  @wmatch = @user.wmatches.last 
     @lastmsg = @user.msgs.last
     @question = @user.question
-	@newmessages = @user.recieved.where(:seen => "false")    
+	  @newmessages = @user.recieved.where(:seen => "false")    
     
     @msg = Msg.new(:user_id => @user.id, :admin_id => @user.admin.id)
   end
