@@ -8,9 +8,10 @@ class UserMailer < ActionMailer::Base
   	mail(to: user.email, subject: "Welcome to shiaME")
   end
 
-  def newmessage(user)
+  def newmessage(user, admin)
+  	@admin = admin
   	@user = user
-  	@login = "http://www.shiame.com/login"
+  	@link = "http://www.shiame.com"
   	mail(to: user.email, subject: "You have a New Message")
   end
 end

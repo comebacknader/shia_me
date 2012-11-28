@@ -36,9 +36,13 @@ class MsgsController < ApplicationController
     
     if @msg.save
     	if current_admin
-    	redirect_to current_admin
+        @user = @msg.user
+        UserMailer.newmessage(@user, current_admin).deliver
+    	 redirect_to msgs_path
     	else if current_user
-      redirect_to messages_path
+        @user = @msg.admin
+        UserMailer.newmessage(@user, current_user).deliver
+        redirect_to messages_path
       end
       end
     else

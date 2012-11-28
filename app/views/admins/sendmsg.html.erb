@@ -29,7 +29,7 @@
 		<h1 class="admin_show_header">New Message</h1>
 
 	<div class="admin_msg_box">
-		<%= form_for @msg do |f| %>
+		<%= form_for @msg, controller: "admins", action: "newmsg" do |f| %>
 				<%= f.text_area :message, class: "new_msg_textarea" %>
 				
 				<%= f.hidden_field(:admin_id) %>
