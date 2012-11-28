@@ -92,5 +92,6 @@ ShiaMe::Application.routes.draw do
    match '/signin', to: 'usersessions#new'
    match '/signout', to: 'usersessions#destroy', via: :delete
    match '/sent', to: 'messages#sent'
+
    
 end

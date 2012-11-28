@@ -94,7 +94,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
 	 if @admin.update_attributes(params[:admin])
        if @admin.cropping? 
-    	@admin.avatar.reprocess!       
+      	@admin.avatar.reprocess!       
         sign_in @admin
         redirect_to  @admin
        else
@@ -107,15 +107,15 @@ class AdminsController < ApplicationController
   end  
   
   def sendmsg
- 	@admin = Admin.find(params[:id])
- 	@msg = Msg.new(:admin_id => @admin.id)
+  	@admin = Admin.find(params[:id])
+  	@msg = Msg.new(:admin_id => @admin.id)
     @msgs = Msg.all
     @users = User.where(:admin_id => current_admin.id)	 	
   end
   
   def showmsg 
     @msg = Msg.find(params[:id])
-	@admin = current_admin
+  	@admin = current_admin
     @users = User.where(:admin_id => current_admin.id)	
   end
     

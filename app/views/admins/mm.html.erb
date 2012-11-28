@@ -1,0 +1,21 @@
+
+<div class="container">
+
+	<div class="home_logo">
+	 <%= link_to root_path do %>	
+		<%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "home_logo_new") %>
+	 <% end %>
+	<div class="invite_code">
+		<h1 class="home_tagline"> a matchmaking service </h1>
+
+		<p>Enter Your MatchMaker Code</p>
+		<%= form_tag verify_path, :method => :get  do %>
+		    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+		    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
+		<% end %>
+	</div>
+
+</div>
+
+
+</div>

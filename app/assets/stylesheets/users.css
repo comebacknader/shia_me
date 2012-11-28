@@ -665,7 +665,7 @@
 		font-family:"Helvetica";
 		font-weight:bold;
 		font-size:14px;
-		margin:10px 0px 50px 0px;
+		margin:10px 0px 0px 0px;
 		color:White;
 		background-color:#336CC1;
 		background: -webkit-gradient(linear, left top, left bottom, from(#336CC1), to(#0047B2));
@@ -761,6 +761,32 @@
 		font-weight:bold;
 		font-size:40px;
 		margin:30px 0px 0px 0px;
+}
+
+.go_to_matchmaker {
+		clear:left;
+		float:left;
+		width:200px;
+		padding:10px 20px 10px 20px;
+		margin:10px 0px 20px 200px;
+		border:1px solid #D0D0D0;
+		background-color:#FF8484;
+		background: -webkit-gradient(linear, left top, left bottom, from(#FF8484), to(#FF5050));
+		background: -moz-linear-gradient(top, #FF8484,  #FF5050);
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;	
+		text-align:center;	
+		font-weight:bold;
+		font-family:"Helvetica";
+		color:White;		
+}
+
+.go_to_matchmaker:hover {		
+		background-color:#FF5050;
+		background: -webkit-gradient(linear, left top, left bottom, from(#FF5050), to(#CC4040));
+		background: -moz-linear-gradient(top, #FF5050,  #CC4040);
+
 }
 
 
