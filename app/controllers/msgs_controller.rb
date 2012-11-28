@@ -28,7 +28,7 @@ class MsgsController < ApplicationController
     @question = @user.question
 	  @newmessages = @user.recieved.where(:seen => "false")    
     
-    @msg = Msg.new(:user_id => @user.id, :admin_id => @user.admin.id)
+    @msg = Msg.new(:user_id => @user.id, :admin_id => @user.admin.id, :seen => "true")
   end
   
   def create
