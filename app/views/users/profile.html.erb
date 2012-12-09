@@ -8,11 +8,19 @@
 <% end %>	
 	<div class="container">
 	
-				<%= link_to root_path do %>
-		<div class="all_logo">
-			<%= image_tag("headerlogo.png") %>	
-		</div>
-			<% end %>	
+	  <% if current_user  %>
+		<%= link_to current_user do %>
+			<div class="all_logo">
+				<%= image_tag("headerlogo.png") %>	
+			</div>
+		<% end %>		
+	  <% else %> 
+	  	<%= link_to profile_admin_url(current_admin) do %>
+			<div class="all_logo">
+				<%= image_tag("headerlogo.png") %>	
+			</div>
+		<% end %>	
+	  <% end %>
 	
 	<div class="user_profile_box">		
 	
