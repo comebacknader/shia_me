@@ -24,16 +24,13 @@
 	<% end %>	
 	
 	<div class="admin_show">
-		
-		
-		<h1 class="admin_show_header"><%= @admin.name %>'s Messages</h1>
 		 <%= link_to sendmsg_admin_path(@admin) do %>	
 			<div class="admin_new_msg_link">
-				Send New Message 
+				Compose New Message 
 			</div>
 		 <% end %>
 
-	<div class="admin_show_msg_box">
+		<div class="admin_show_msg_box">
 			<div class="admin_msg_each_show">
 			<%= image_tag(@msg.admin.avatar(:small), class:"mm_msg_photo") %>
 		  <% if @msg.user.avatar.present? %>	
@@ -44,7 +41,5 @@
 				<p class="admin_msg_each_msg_show"> <%= @msg.message %> </p>
 				<p class="admin_msg_each_time"> <%= time_ago_in_words(@msg.created_at) %> ago </p>
 			</div>			
-
-	</div>
-	
+		</div>
 	</div>

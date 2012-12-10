@@ -37,11 +37,11 @@ class MsgsController < ApplicationController
     if @msg.save
     	if current_admin
         @user = @msg.user
-        UserMailer.newmessage(@user, current_admin).deliver
+          UserMailer.newmessage(@user, current_admin).deliver
     	 redirect_to msgs_path
     	else if current_user
         @user = @msg.admin
-        UserMailer.newmessage(@user, current_user).deliver
+          UserMailer.newmessage(@user, current_user).deliver
         redirect_to messages_path
       end
       end
@@ -51,6 +51,13 @@ class MsgsController < ApplicationController
   end
   
   def destroy
+    @msg = Msg.find(params[:id])
+    @msg.destroy
+    if current_admin
+      redirect_to current_admin
+    else 
+      redirect_to current_user
+    end
   end
 
 

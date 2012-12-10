@@ -1,10 +1,9 @@
 <% provide(:title, "Edit Admin") %>
 
-	<%= link_to root_path do %>
-<div class="all_logo">
-	<%= image_tag("headerlogo.png") %>	
-	
-</div>
+	<%= link_to profile_admin_path(current_admin) do %>
+		<div class="all_logo">
+			<%= image_tag("headerlogo.png") %>	
+		</div>
 	<% end %>
 
 	<ul class="admin_nav_bar">
