@@ -4,7 +4,7 @@ class MsgsController < ApplicationController
 
   def index
   	@admin = current_admin 
-    @msgs = Msg.where(:admin_id => @admin.id).order('created_at DESC').all
+    @msgs = Msg.where(:admin_id => @admin.id, :admin_hide => nil).order('created_at DESC').all
     @users = User.where(:admin_id => current_admin.id)	
   end
 
@@ -58,6 +58,18 @@ class MsgsController < ApplicationController
     else 
       redirect_to current_user
     end
+  end
+
+  def adminhide 
+    @msg = Msg.find(params[:id])
+    @msg.update_attribute(:admin_hide, "true")
+    redirect_to msgs_path
+  end   
+
+  def userhide
+    @msg = Msg.find(params[:id])
+    @msg.update_attribute(:user_hide, "true")
+    redirect_to messages_path
   end
 
 

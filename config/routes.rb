@@ -80,7 +80,15 @@ ShiaMe::Application.routes.draw do
         put 'approvepic'
      end
     end	
-      
+    
+    resources :msgs do 
+      member do 
+        put 'adminhide'
+        put 'userhide'
+      end
+    end
+
+
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'
    match "/oldbrowser", to: 'pages#oldbrowser'

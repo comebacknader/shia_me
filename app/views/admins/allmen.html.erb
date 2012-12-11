@@ -1,22 +1,15 @@
 <% provide(:title, @admin.name) %>
 
-	<%= link_to root_path do %>
-<div class="all_logo">
-	<%= image_tag("headerlogo.png") %>	
-	
-</div>
+	<%= link_to profile_admin_path(current_admin) do %>
+	  <div class="all_logo">
+		<%= image_tag("headerlogo.png") %>	
+	  </div>
 	<% end %>
 
-	<ul class="admin_nav_bar">
-		<li> <%= link_to "Profile", current_admin %></li>
-		<li> <%= link_to "Settings", edit_admin_path(@admin) %></li>
-		<li> <%= link_to "Change Picture", pics_admin_path %></li>
-		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
-	</ul>
 
-<%= render 'shared/allbar' %>
-
-<%= render 'shared/sidebar' %>
+	<%= render 'shared/admin_navbar' %>
+	<%= render 'shared/allbar' %>
+	<%= render 'shared/sidebar' %>
 
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
@@ -24,9 +17,7 @@
 	
 	<div class="admin_show">
 		
-		
 		<h1 class="admin_show_header">All Men</h1>
-
 
 	<div class="admin_all_men_box">
 		<% @men.each do |user| %>

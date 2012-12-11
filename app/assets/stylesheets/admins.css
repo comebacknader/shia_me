@@ -687,46 +687,4 @@
 		color:#333;
 }										
 
-					
-						/* Admins MSGS */
-
-.admin_msg_box {
-	float:left;
-	width:700px;
-	border:1px solid DimGray;
-	margin:10px;
-}	
-
-.admin_msg_each {
-	float:left;
-	width:698px;
-	height:70px;
-	border:1px solid #D0D0D0;
-	background-color:WhiteSmoke;
-	color:#333;
-	font-family:"Helvetica";
-}
-
-.admin_msg_each:hover {
-	background-color:white;
-}
-
-.admin_msg_each_msg {
-	float:left;
-	margin:10px 0px 0px 0px;
-	width:500px;
-	height:40px;
-	background-color:none;
-}
-
-.admin_msg_each_time {
-	float:right;
-	heigh:15px;
-	font-size:12px;
-	color:#333;
-	background-color:none;
-	width:200px;
-	margin:0px;	
-	text-align:center;
-}
 

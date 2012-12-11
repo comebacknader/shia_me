@@ -84,11 +84,14 @@
          <p> <%= @msg.message %> </p>
          </div>
 		
+		  <%= button_to "Delete", {:action => "userhide", :id => @msg.id, :controller => "msgs" }, 
+		  		:confirm => "Are you sure you want to delete this message?", 
+		  		:method => "put", form_class: "user_show_delete_msg"  %>
 			 <%= link_to new_msg_path do %>
 				<div class="new_msg_link"> 
 				    New Message
 				 </div>			
-			<% end %>
+			<% end %>			
 		</div>	
 	
 	</div>

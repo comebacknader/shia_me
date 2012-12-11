@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 		@messages = @user.messages.order('created_at DESC').limit(20)
 		@recieved = @user.recieved.order('created_at DESC').limit(20)
 		@newmessages = @user.recieved.where(:seen => "false")
-		@msgs = @user.msgs.order('created_at DESC').limit(10)
+		@msgs = @user.msgs.where(:user_hide => nil).order('created_at DESC').limit(10)
 		@question = current_user.question
 	end
 	

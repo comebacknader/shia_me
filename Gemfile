@@ -15,6 +15,7 @@ gem 'acts-as-taggable-on', '~> 2.2.2'
 gem "friendly_id", "~> 4.0.1"
 gem 'thin'
 gem 'stripe'
+gem 'libv8', '~> 3.11.8'
 
 
 group :development do

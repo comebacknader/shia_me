@@ -60,6 +60,73 @@
 		            box-shadow: 0 4px 4px -2px #B8B8B8;	
 }
 
+
+/* ADMIN MSG INDEX */
+
+.admin_msg_box {
+	float:left;
+	width:740px;
+	border:1px solid none;
+	margin:10px;
+}	
+
+.admin_msg_each {
+	float:left;
+	width:698px;
+	height:70px;
+	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
+	color:#333;
+	font-family:"Helvetica";
+}
+
+.admin_msg_each:hover {
+	background-color:white;
+}
+
+.admin_msg_each_msg {
+	float:left;
+	margin:10px 0px 0px 0px;
+	width:500px;
+	height:40px;
+	background-color:none;
+}
+
+.admin_msg_each_time {
+	float:right;
+	heigh:15px;
+	font-size:12px;
+	color:#333;
+	background-color:none;
+	width:200px;
+	margin:0px;	
+	text-align:center;
+}
+
+.admin_msg_delete div input {
+	float:left;
+	width:40px;
+	height:72px;
+	font-size:14px;
+	margin:0px 0px 0px 0px;
+	padding:5px;
+	text-align:center;
+	color:#333;
+	border:1px solid #D0D0D0;		
+	background-color:#F4F4F4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#DBDBDB));
+	background: -moz-linear-gradient(top, #F4F4F4,  #DBDBDB);
+}
+
+.admin_msg_delete div input:hover {
+	background-color:#DBDBDB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DBDBDB), to(#F4F4F4));
+	background: -moz-linear-gradient(top, #DBDBDB,  #F4F4F4);	
+}
+
+
+/* ADMIN MSG SHOW */
+
 .admin_msg_each_msg_show {
 	float:left;
 	width:400px;
@@ -71,8 +138,8 @@
 	float:left;
 	width:680px;
 	height:100%;
-	border:1px solid DimGray;
-	background-color:WhiteSmoke;
+	border:1px solid none;
+	background-color:none;
 	margin:10px;
 	padding:10px;
 }
@@ -82,6 +149,34 @@
 	width:100%;
 	height:100%;
 	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
 	padding:0px 0px 10px 0px;
 }
+
+.admin_show_msg_delete div input {
+	float:right;
+	font-family:"Helvetica";
+	font-weight:bold;
+	width:150px;
+	height:72px;
+	font-size:14px;
+	margin:20px 0px 0px 0px;
+	padding:5px;
+	text-align:center;
+	color:#333;
+	border:1px solid #D0D0D0;		
+	background-color:#F4F4F4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#DBDBDB));
+	background: -moz-linear-gradient(top, #F4F4F4,  #DBDBDB);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.admin_show_msg_delete div input:hover {
+	background-color:#DBDBDB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DBDBDB), to(#F4F4F4));
+	background: -moz-linear-gradient(top, #DBDBDB,  #F4F4F4);	
+}
+
 
