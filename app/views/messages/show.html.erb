@@ -88,7 +88,7 @@
          						 Ago </p>
          </div>
          <div class="message_show_msg">
-         <p> <%= @message.message %> </p>
+         <p> <%= sanitize(@message.message.gsub(/\n/, '<br/>')) %> </p>
          </div>
 		
 			 <%= link_to new_message_path do %>

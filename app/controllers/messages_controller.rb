@@ -7,9 +7,9 @@ class MessagesController < ApplicationController
 		@match = @user.matches.last
 		@wmatch = @user.wmatches.last
 		@messages = @user.messages.order('created_at DESC').limit(20)
-		@recieved = @user.recieved.order('created_at DESC').limit(20)
+		@recieved = @user.recieved.order('created_at DESC').limit(5)
 		@newmessages = @user.recieved.where(:seen => "false")
-		@msgs = @user.msgs.where(:user_hide => nil).order('created_at DESC').limit(10)
+		@msgs = @user.msgs.where(:user_hide => nil).order('created_at DESC').page(params[:page]).per(5)
 		@question = current_user.question
 	end
 	
@@ -89,6 +89,17 @@ class MessagesController < ApplicationController
 		@newmessages = @user.recieved.where(:seen => "false")		
 		@messages = @user.messages.order('created_at DESC').limit(5)
 		@recieved = @user.recieved.order('created_at DESC').limit(5)
+	end
+
+	def allbox 
+		@user = current_user	
+		@match = @user.matches.last
+		@wmatch = @user.wmatches.last
+		@messages = @user.messages.order('created_at DESC').limit(20)
+		@recieved = @user.recieved.order('created_at DESC').page(params[:page]).per(15)
+		@newmessages = @user.recieved.where(:seen => "false")
+		@msgs = @user.msgs.where(:user_hide => nil).order('created_at DESC').page(params[:page]).per(5)
+		@question = current_user.question		
 	end
 
 end

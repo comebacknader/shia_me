@@ -432,6 +432,11 @@
 	background: -moz-linear-gradient(top, #DBDBDB,  #F4F4F4);	
 }
 
+.user_paginate_msgs {
+	float:left;
+	margin:20px 0px 0px 50px;
+}
+
 .new_msg_link {
 	float:right;
 	margin:20px 10px 0px 0px;

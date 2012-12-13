@@ -74,16 +74,27 @@
 					<% if @messages.empty? then %>
 				<p class="no_match_description"> No Sent Messages</p>
 			
-			<% if @match.present? || @wmatch.present?  %>
-		 <% if @match.femapprove.blank? %>
+	    <% if @match.present? || @wmatch.present? %>
+	     <% if @user.gender == "MALE" %>
+		  <% if @match.femapprove.blank?  %>
 		  <% else %>						
-			 <%= link_to new_message_path do %>
-				<div class="new_msg_link"> 
-				    New Message
-				 </div>			
-			<% end %>
+		    <%= link_to new_message_path do %>
+		 	 <div class="new_msg_link"> 
+			     New Message
+			 </div>			
+		    <% end %>
+		  <% end %>
+		 <% else %>
+		  <% if @wmatch.femapprove.blank? %>
+		  <% else %>						
+		   <%= link_to new_message_path do %>
+			<div class="new_msg_link"> 
+			    New Message
+			</div>			
+		   <% end %>
+		  <% end %>		 
 		 <% end %>	
-			<% end %>
+		<% end %>
 			 <%= link_to messages_path do %>
 				<div class="new_msg_link"> 
 				    Inbox 

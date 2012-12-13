@@ -4,7 +4,7 @@ class MsgsController < ApplicationController
 
   def index
   	@admin = current_admin 
-    @msgs = Msg.where(:admin_id => @admin.id, :admin_hide => nil).order('created_at DESC').page(params[:page]).per(3)
+    @msgs = Msg.where(:admin_id => @admin.id, :admin_hide => nil).order('created_at DESC').page(params[:page]).per(20)
     @users = User.where(:admin_id => current_admin.id)	
   end
 
