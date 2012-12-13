@@ -125,6 +125,12 @@
 }
 
 
+.paginate_msgs {
+	float:left;
+	font-family:20px;
+	margin:10px 0px 0px 250px;
+}
+
 /* ADMIN MSG SHOW */
 
 .admin_msg_each_msg_show {
