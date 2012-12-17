@@ -159,6 +159,13 @@
 	padding:0px 0px 10px 0px;
 }
 
+.admin_msg_to_user {
+	float:left;
+	font-style:italic;
+	margin:5px 0px 0px 0px;
+	width:400px;
+}
+
 .admin_show_msg_delete div input {
 	float:right;
 	font-family:"Helvetica";
