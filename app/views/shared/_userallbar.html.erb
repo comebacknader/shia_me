@@ -2,22 +2,38 @@
 		<div class="user_allbar_container">
 				
 			<%= link_to signout_path, method: "delete" do %>
-				<div class="user_home_button"> 
-				<p> <%= image_tag("signoutbutton.png", class: "home_img_button") %>  </p>
+				<div class="topbar_signout_button"> 
+					<p> <%= image_tag("signoutbutton.png", 
+										class: "topbar_signout_img") %>  
+				  </p>
+				 <div class="signout_menu">
+	        <p> Sign Out </p>
+	       </div>  	
 				</div>
 			<% end %>
 	
 	
 				<%= link_to edit_user_path(@user) do %>
-					<div class="user_home_button">
-				<p> <%= image_tag("settingsbutton.png", class: "home_img_button") %>  </p>
+					<div class="topbar_edit_button">
+						<p> <%= image_tag("settingsbutton.png", 
+											class: "topbar_edit_img") %>  
+						</p>
+						<div class="user_edit_menu">
+							Account 
+						</div>
 					</div>
 				<% end %>
 		
 			
 		<%= link_to @user do %>
 			<div class="user_home_button">
-				<p> <%= image_tag("homebutton2.png", class: "home_img_button") %>  </p>
+				<p> 
+					<%= image_tag("homebutton2.png", 
+							class: "home_img_button") %>  
+				</p>
+				<div class="user_home_menu">
+					Home
+				</div>
 			</div>
 		<% end %>
 	

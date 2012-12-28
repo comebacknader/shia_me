@@ -54,12 +54,13 @@
 .user_home_button {
 	float:right;
 	height:40px;
+	width:90px;
 	font-size:14px;
 	font-family:"Helvetica";
 	font-weight:bold;
 	color:#595959;
 	text-align:center;
-	padding:0px 30px 0px 30px;
+	padding:0px 0px 0px 0px;
 	background-color:#E6B8B8;
 	background: -webkit-gradient(linear, left top, left bottom, from(#E6B8B8), to(#FFD1D1));
 	background: -moz-linear-gradient(top, #E6B8B8,  #FFD1D1);
@@ -69,6 +70,7 @@
 	float:left;
 	height:35px;
 	width:35px;
+	margin:0px 0px 0px 25px;	
 }
 
 .user_home_button:hover {
@@ -77,7 +79,119 @@
 	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
 }
 
+.user_home_menu {
+	position:absolute;
+	display:none;
+	margin:35px 0px 0px 0px;
+	width:90px;
+	padding:10px 0px 10px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FFD1D1;
+	font-weight:bold;
+	color:DimGray;
+}
 
+.user_home_menu:hover {
+	background-color:#FFDFDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFDFDF), to(#FFE3E3));
+	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
+	color:#333;
+}
+
+
+.topbar_edit_button {
+	float:right;
+	height:40px;
+	width:91px;
+	font-size:14px;
+	font-family:"Helvetica";
+	font-weight:bold;
+	color:#595959;
+	text-align:center;
+	padding:0px 0px 0px 0px;
+	background-color:#E6B8B8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E6B8B8), to(#FFD1D1));
+	background: -moz-linear-gradient(top, #E6B8B8,  #FFD1D1);
+}
+
+.topbar_edit_img {
+	float:left;
+	height:35px;
+	width:35px;
+	margin:0px 0px 0px 25px;	
+}
+
+.topbar_edit_button:hover {
+	background-color:#FFDFDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFDFDF), to(#FFE3E3));
+	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
+}
+
+.user_edit_menu:hover {
+	background-color:#FFDFDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFDFDF), to(#FFE3E3));
+	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
+	color:#333;
+}
+
+.user_edit_menu {
+	position:absolute;
+	display:none;
+	margin:35px 0px 0px 0px;
+	width:90px;
+	padding:10px 0px 10px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FFD1D1;
+	font-weight:bold;
+	color:DimGray;
+}
+
+.topbar_signout_button {
+	float:right;
+	height:40px;
+	width:91px;
+	font-size:14px;
+	font-family:"Helvetica";
+	font-weight:bold;
+	color:#595959;
+	text-align:center;
+	padding:0px 0px 0px 0px;
+	background-color:#E6B8B8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E6B8B8), to(#FFD1D1));
+	background: -moz-linear-gradient(top, #E6B8B8,  #FFD1D1);
+}
+
+.topbar_signout_img {
+	float:left;
+	height:35px;
+	width:35px;
+	margin:0px 0px 0px 25px;
+}
+
+.topbar_signout_button:hover {
+	background-color:#FFDFDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFDFDF), to(#FFE3E3));
+	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
+}
+
+.signout_menu {
+	position:absolute;
+	display:none;
+	margin:35px 0px 0px 0px;
+	width:90px;
+	padding:10px 0px 10px 0px;
+	border:1px solid #D0D0D0;
+	background-color:#FFD1D1;
+	font-weight:bold;
+	color:DimGray;
+}
+
+.signout_menu:hover {
+	background-color:#FFDFDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFDFDF), to(#FFE3E3));
+	background: -moz-linear-gradient(top, #FFDFDF,  #FFE3E3);
+	color:#333;
+}
 
 .user_show_match {
 	float:left;

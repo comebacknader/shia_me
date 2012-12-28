@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_one :subscription
   
   has_many :matches, foreign_key: "man_id", dependent: :destroy
-  has_many :wmatches, foreign_key: "woman_id", class_name: "Match", dependent: :destroy
+  has_many :wmatches, foreign_key: "woman_id", class_name: "Match", dependent: :destroy 
   has_many :man, through: :wmatches, source: "man_id"
   has_many :woman, through: :matches, source: "woman_id"
   
