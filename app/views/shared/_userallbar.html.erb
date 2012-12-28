@@ -3,7 +3,8 @@
 				
 			<%= link_to signout_path, method: "delete" do %>
 				<div class="topbar_signout_button"> 
-					<p> <%= image_tag("signoutbutton.png", 
+					<p> 
+						<%= image_tag("signoutbutton.png", 
 										class: "topbar_signout_img") %>  
 				  </p>
 				 <div class="signout_menu">
@@ -15,7 +16,8 @@
 	
 				<%= link_to edit_user_path(@user) do %>
 					<div class="topbar_edit_button">
-						<p> <%= image_tag("settingsbutton.png", 
+						<p> 
+							<%= image_tag("settingsbutton.png", 
 											class: "topbar_edit_img") %>  
 						</p>
 						<div class="user_edit_menu">
