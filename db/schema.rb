@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211191235) do
+ActiveRecord::Schema.define(:version => 20121230193225) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(:version => 20121211191235) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["remember_token"], :name => "index_admins_on_remember_token"
+
+  create_table "feeds", :force => true do |t|
+    t.string   "title"
+    t.text     "post"
+    t.integer  "feedable_id"
+    t.string   "feedable_type"
+    t.integer  "admin_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "invites", :force => true do |t|
     t.string   "code"

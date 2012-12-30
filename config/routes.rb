@@ -1,5 +1,13 @@
 ShiaMe::Application.routes.draw do
 
+  get "feeds/index"
+
+  get "feeds/new"
+
+  get "feeds/show"
+
+  get "feeds/edit"
+
    root to: 'pages#home'
     
    resources :admins       
