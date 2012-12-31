@@ -1,12 +1,5 @@
 ShiaMe::Application.routes.draw do
 
-  get "feeds/index"
-
-  get "feeds/new"
-
-  get "feeds/show"
-
-  get "feeds/edit"
 
    root to: 'pages#home'
     
@@ -22,7 +15,8 @@ ShiaMe::Application.routes.draw do
    resources :questions
    resources :mquests
    resources :subscriptions
-   
+   resources :feeds
+
    
    scope :admins do 
      resources :admins, :path => "matchmakers"
@@ -79,6 +73,7 @@ ShiaMe::Application.routes.draw do
 	
 	resources :admins do 
 		resources :msgs
+    resources :feeds
 	end
     	
     resources :matches do 

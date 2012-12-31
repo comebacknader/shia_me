@@ -45,8 +45,9 @@ class AdminsController < ApplicationController
   end
   
   def profile
-    @admin = Admin.find(params[:id])
+    @admin = @feedable = Admin.find(params[:id])
     @users = User.where(:admin_id => current_admin.id)
+    @feeds = Feed.all 
   end 
   
   def allmen

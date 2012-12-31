@@ -17,8 +17,21 @@
 	
 	<div class="admin_show">
 		
-		
-		<h1 class="admin_show_header"> What's On Your Mind? </h1>
+	 <% if @feeds.any? %>
+		<div class="all_admin_feeds">
+		 <% @feeds.each do |feed| %>
+			<div class="admin_each_feeds">
+		   <p> <%= feed.post %> </p>
+		  </div>
+		 <% end %>
+		</div> 
+	 <% else %>	
+		<div class="no_feeds"> 
+			Nobody has said anything.
+		</div>
+	 <% end %>
 
-	
+	<%= render 'shared/feed_form' %>	
+
+
 	</div>

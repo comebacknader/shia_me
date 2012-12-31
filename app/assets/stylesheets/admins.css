@@ -31,7 +31,9 @@
 
 .admin_show {
 	float:left;
-	width:50%;
+	width:800px;
+	padding:0px 0px 20px 0px;
+	background-color:none;
 }
 
 .admin_nav_bar {
@@ -274,7 +276,7 @@
 		font-size:30px;
 		width:550px;
 		text-align:left;
-		margin:40px 0px 0px 20px;
+		margin:40px 0px 0px 30px;
 }
 
 .admin_show_bio	{

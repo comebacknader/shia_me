@@ -1,0 +1,14 @@
+		<div class="new_admin_feeds">
+
+	    <%= form_for [@feedable, Feed.new] do |f| %>
+
+	    <%= f.label :post, "What's On Your Mind?", 
+	    					class: "feed_label" %>
+	    <%= f.text_area :post, 
+	    					class: "feed_admin_textarea" %>
+
+	    <%= f.submit "POST", class: "feed_home_create" %>
+
+	    <% end %>  
+
+		</div>

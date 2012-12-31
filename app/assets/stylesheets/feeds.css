@@ -2,3 +2,101 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+.all_admin_feeds {
+	float:left;
+	width:650px;
+	font-family: "Helvetica";
+	font-size:14px;
+	padding:5px;
+	margin:10px 0px 0px 10px;
+	background-color:none;
+}
+
+.admin_each_feeds {
+	float:left;
+	height:100px;
+	padding:5px;
+	width:650px;
+	background-color:whitesmoke;
+	border:1px solid #D0D0D0;
+}
+
+.no_feeds {
+	float:left;
+	font-family:"Helvetica";
+	font-size:16px;
+	width:650px;
+	text-align:center;
+	padding:10px;
+	margin:40px 0px 0px 30px;
+	border:1px solid #D0D0D0;
+	background-color:whitesmoke;	
+}
+
+.new_admin_feeds {
+	float:left;
+	width:700px;
+	background-color: none;
+	margin:10px;
+}
+
+.feed_label {
+		float:left;
+		text-align:center;
+		width:100%;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:25px;
+		margin:10px 0px 0px 5px;
+}
+
+.feed_admin_text {
+		float:left;
+		width:500px;
+		height:20px;
+		margin:10px 0px 10px 0px;
+		font-size:16px;
+		padding:5px;
+		color:DimGray;
+		font-family:"Helvetica";
+}
+
+.feed_admin_textarea {
+		float:left;
+		width:650px;
+		height:200px;
+		margin:10px 0px 10px 20px;
+		font-size:16px;
+		padding:5px;
+		color:DimGray;
+		font-family:"Helvetica";
+}
+
+.feed_home_create {
+		clear:left;
+		float:left;
+		width:650px;
+		height:60px;
+		border:1px solid #D0D0D0;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:14px;
+		margin:0px 0px 50px 25px;
+		color:White;
+		background-color:#5CADFF;
+		background: -webkit-gradient(linear, left top, left bottom, from(#5CADFF), to(#2E8AE6));
+		background: -moz-linear-gradient(top, #5CADFF,  #2E8AE6);		
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;		
+}
+
+.feed_home_create:hover {
+	border:1px solid #939393;
+	background-color:#3399FF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#3399FF), to(#297ACC));
+	background: -moz-linear-gradient(top, #3399FF,  #297ACC);
+}
+

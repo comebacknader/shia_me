@@ -11,8 +11,8 @@ class Admin < ActiveRecord::Base
   has_many :users, :through => :msgs
 
   has_many :feeds, :dependent => :destroy
-  has_many :feeds, :as => :feedable
-  
+  has_many :feeds, :as => :feedable 
+
   before_save { |admin| admin.email = email.downcase }
   before_save :create_remember_token
   
