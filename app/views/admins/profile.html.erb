@@ -27,12 +27,12 @@
 		    <p> <%= image_tag("viewprofile.png", class: "feed_admin_img" ) %> </p> 
 		   <% end %>      
 				<% if feed.admin.name == current_admin.name %>
-		    <%= button_to "X", {:action => "destroy",
-		                        :id => feed.id, 
-		                        :controller => "feeds"},
-		                        :method => "delete", 
-		                        :confirm => "Are you sure?", 
-		                        :form_class => "delete_feed" %>
+			    <%= button_to "X", {:action => "destroy",
+			                        :id => feed.id, 
+			                        :controller => "feeds"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :form_class => "delete_feed" %>
 		    <% end %>				
 		   <p class="feed_admin_post"> <%= feed.post %> </p>
 		   <p class="feed_admin_name"> <%= feed.admin.name %> </p> 

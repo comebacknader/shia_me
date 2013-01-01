@@ -29,6 +29,7 @@
 		<h1 class="admin_profile_box_header">Create Match</h1>
 		
 		<div class="admin_match_user_box">
+		  <%= link_to profile_user_path(@user) do %>	
 			<div class="admin_match_each_men">
 				<% if @user.avatar.present? %>
 					<%= image_tag(@user.avatar(:large), 
@@ -41,7 +42,7 @@
 					<p><%= truncate(@user.name, :length => 15) %></p>
 					<p><%= @user.location %></p>
 				</div>
-				
+		  <% end %>		
 		</div>
 	
 			<% if @user.gender == "MALE" then %>	
