@@ -25,7 +25,7 @@
 	
 	<div class="admin_profile_box">
 	
-		<h1 class="admin_show_header"><%= @admin.name %></h1>
+		<h1 class="admin_profile_box_header"><%= @admin.name %></h1>
 
       <% if @admin.avatar.present? %>
 		<%= image_tag(@admin.avatar(:large), class: "admin_show_img" ) %>

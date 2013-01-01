@@ -47,7 +47,7 @@ class AdminsController < ApplicationController
   def profile
     @admin = @feedable = Admin.find(params[:id])
     @users = User.where(:admin_id => current_admin.id)
-    @feeds = Feed.all 
+    @feeds = Feed.order("created_at DESC")
   end 
   
   def allmen

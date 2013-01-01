@@ -21,6 +21,58 @@
 	width:650px;
 	background-color:whitesmoke;
 	border:1px solid #D0D0D0;
+	margin:0px 0px 5px 10px;
+}
+
+.feed_admin_img {
+	float:left;
+	width:75px;
+	height:75px;
+	border:1px solid #D0D0D0;
+}
+
+.feed_admin_post {
+	float:left;
+	width:500px;
+	padding:0px 10px 0px 10px;
+}
+
+.feed_admin_name {
+	clear:left;
+	float:left;
+	width:200px;
+	font-size:12px;
+	padding:0px 10px 0px 0px;	
+	margin:5px 0px 0px 0px;
+}
+
+.feed_admin_time {
+	float:right;
+	width:120px;
+	font-size:10px;
+	padding:0px 0px 0px 0px;	
+	margin:5px 0px 0px 0px;
+	background-color: none;
+}
+
+
+.delete_feed div input {
+	float:right;
+	font-family: "Helvetica";
+	color:DimGray;
+	width:30px;
+	padding:5px;
+	margin:0px 5px 0px 0px;
+	border:1px solid #D0D0D0;		
+	background-color:#F4F4F4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#DBDBDB));
+	background: -moz-linear-gradient(top, #F4F4F4,  #DBDBDB);
+}
+
+.delete_feed div input:hover {
+	background-color:#DBDBDB;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DBDBDB), to(#F4F4F4));
+	background: -moz-linear-gradient(top, #DBDBDB,  #F4F4F4);	
 }
 
 .no_feeds {

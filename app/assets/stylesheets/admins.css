@@ -269,6 +269,16 @@
 			box-shadow: 0 4px 4px -2px #B8B8B8;
 }
 
+.admin_profile_box_header {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:30px;
+		width:550px;
+		text-align:left;
+		margin:40px 0px 0px 20px;	
+}
+
 .admin_show_header {
 		float:left;
 		font-family:"Helvetica";

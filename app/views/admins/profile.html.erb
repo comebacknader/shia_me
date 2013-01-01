@@ -21,7 +21,22 @@
 		<div class="all_admin_feeds">
 		 <% @feeds.each do |feed| %>
 			<div class="admin_each_feeds">
-		   <p> <%= feed.post %> </p>
+			 <% if feed.admin.avatar.present? %>	
+		    <p> <%= image_tag(feed.admin.avatar(:small), class: "feed_admin_img" ) %> </p> 
+		   <% else %>
+		    <p> <%= image_tag("viewprofile.png", class: "feed_admin_img" ) %> </p> 
+		   <% end %>      
+				<% if feed.admin.name == current_admin.name %>
+		    <%= button_to "X", {:action => "destroy",
+		                        :id => feed.id, 
+		                        :controller => "feeds"},
+		                        :method => "delete", 
+		                        :confirm => "Are you sure?", 
+		                        :form_class => "delete_feed" %>
+		    <% end %>				
+		   <p class="feed_admin_post"> <%= feed.post %> </p>
+		   <p class="feed_admin_name"> <%= feed.admin.name %> </p> 
+		   <p class="feed_admin_time"> <%= time_ago_in_words(feed.created_at) %> ago </p> 	   
 		  </div>
 		 <% end %>
 		</div> 
