@@ -7,21 +7,32 @@
 	<% end %>
 
 	<%= render 'shared/admin_navbar' %>
-
-	<% flash.each do |key, value| %>
-	  <div class="alert  alert-<%= key %>"><%= value %></div>
-	<% end %>
-
 	<%= render 'shared/allbar' %>
+
+ <div class="admin_cont">
+
 	<%= render 'shared/sidebar' %>
 	
 	<div class="admin_show">
-		
+	
+		<% flash.each do |key, value| %>
+	  <div class="admin_alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
 		
 		<h1 class="invite_all_header">All Invite Codes</h1>
 		<% @invites.each do |invite| %>
-		<p class="all_codes"> <%= invite.code %> </p>
+		<div class="all_codes"> 	
+			<%= invite.code %>		
+			    <%= button_to "Delete", {:action => "destroy",
+			                        :id => invite.id, 
+			                        :controller => "invites"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :form_class => "admin_user_delete" %>
+		</div>	
+	
 		<% end %>
 
 	
 	</div>
+ </div>

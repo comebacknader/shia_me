@@ -24,6 +24,10 @@ class InvitesController < ApplicationController
   end
   
   def destroy
+    @invite = Invite.find(params[:id])
+    @invite.destroy
+    flash[:notice] = "Code Deleted"
+    redirect_to invites_path
   end
   
   

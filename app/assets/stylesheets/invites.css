@@ -25,6 +25,9 @@
 }
 
 .all_codes {
+		clear:left;
+		float:left;
+		width:200px;
 		font-family:"Helvetica";
 		font-weight:bold;
 		font-size:16px;
