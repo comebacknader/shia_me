@@ -33,6 +33,7 @@ class FeedsController < ApplicationController
   def destroy
   	@feed = Feed.find(params[:id])
   	@feed.destroy 
+    flash[:notice] = "Successfully Deleted Post"      
   	redirect_to profile_admin_path(current_admin)
   end
 

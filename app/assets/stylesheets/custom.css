@@ -132,6 +132,22 @@ h2 {
 	font-family:"Helvetica";
 }
 
+.admin_alert {
+	float:left;
+	width:650px;
+	padding:10px;
+	border:1px solid #D11919;
+	background-color:#FF9696;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF9696), to(#FF8484));
+	background: -moz-linear-gradient(top, #FF9696,  #FF8484);
+	text-align:center;
+	margin:10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-family:"Helvetica";
+}
+
 .all_bar {
 		width:100%;
 		clear:both;

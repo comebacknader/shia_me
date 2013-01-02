@@ -33,13 +33,13 @@
 
 .admin_cont {
 	float:left;
+	width:1200px;
 	background-color:none;
 }
 
 .admin_show {
 	float:left;
-	width:70%;
-	height:800px;	
+	width:800px;	
 	padding:0px 0px 20px 0px;
 	margin:5px;
 	background-color: none;
@@ -352,16 +352,13 @@
 		width:150px;
 		height:30px;
 		margin:9px 0px 0px 0px;
-		border-right:1px solid DimGray;
+		border-right:0px 1px 0px 1px solid DimGray;
 		font-family:"Helvetica";
 		font-weight:bold;
 		color:white;
 		text-align:center;
 		padding:10px 0px 0px 0px;
 		background-color:#313131;
-		background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#272727));
-		background: -moz-linear-gradient(top, #313131,  #272727);
-		text-shadow: 0px 0px 0px, -1px -1px #000;
 }
 
 .admin_all_men_drop:hover {
@@ -376,16 +373,13 @@
 		width:150px;
 		height:30px;
 		margin:46px 0px 0px 0px;
-		border-right:1px solid DimGray;
+		border-right:0px 1px 0px 1px solid DimGray;
 		font-family:"Helvetica";
 		font-weight:bold;
 		color:white;
 		text-align:center;
 		padding:10px 0px 0px 0px;
 		background-color:#313131;
-		background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#272727));
-		background: -moz-linear-gradient(top, #313131,  #272727);
-		text-shadow: 0px 0px 0px, -1px -1px #000;
 }
 
 .admin_all_women_drop:hover {
@@ -400,16 +394,13 @@
 		width:150px;
 		height:30px;
 		margin:85px 0px 0px 0px;
-		border-right:1px solid DimGray;
+		border-right:0px 1px 0px 1px solid DimGray;
 		font-family:"Helvetica";
 		font-weight:bold;
 		color:white;
 		text-align:center;
 		padding:10px 0px 0px 0px;
 		background-color:#313131;
-		background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#272727));
-		background: -moz-linear-gradient(top, #313131,  #272727);
-		text-shadow: 0px 0px 0px, -1px -1px #000;
 }
 
 .admin_all_matches_drop:hover {
@@ -424,19 +415,37 @@
 	width:150px;
 	height:30px;
 	margin:120px 0px 0px 0px;
-	border-right:1px solid DimGray;
+	border-right:0px 1px 0px 1px solid DimGray;
 	font-family:"Helvetica";
 	font-weight:bold;
 	color:white;
 	text-align:center;
 	padding:10px 0px 0px 0px;
 	background-color:#313131;
-	background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#272727));
-	background: -moz-linear-gradient(top, #313131,  #272727);
-	text-shadow: 0px 0px 0px, -1px -1px #000;
 }
 
 .admin_delete_users_drop:hover {
+	background-color:#464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
+	background: -moz-linear-gradient(top, #464646,  #464646);
+}
+
+.admin_code_drop {
+	display:none;	
+	position:absolute;
+	width:150px;
+	height:30px;
+	margin:160px 0px 0px 0px;
+	border-right:0px 1px 0px 1px solid DimGray;
+	font-family:"Helvetica";
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	padding:10px 0px 0px 0px;
+	background-color:#313131;
+}
+
+.admin_code_drop:hover {
 	background-color:#464646;
 	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
 	background: -moz-linear-gradient(top, #464646,  #464646);

@@ -7,15 +7,11 @@
 </div>
 	<% end %>
 
-	<ul class="admin_nav_bar">
-		<li> <%= link_to "Profile", current_admin %></li>
-		<li> <%= link_to "Settings", edit_admin_path(@admin) %></li>
-		<li> <%= link_to "Change Picture", pics_admin_path(@admin) %></li>
-		<li> <%= link_to "Log Out", logout_path, method: "delete" %> </li>
-	</ul>
-
-
+	<%= render 'shared/admin_navbar' %>
 	<%= render 'shared/allbar' %>
+
+  <div class="admin_cont">
+
 	<%= render 'shared/sidebar' %>
 
 
@@ -45,3 +41,4 @@
 	 		  <%= button_to "Delete Message", {:action => "adminhide", :id => @msg.id, :controller => "msgs" }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_show_msg_delete"  %>				
 		</div>
 	</div>
+  </div>

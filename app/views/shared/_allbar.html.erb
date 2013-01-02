@@ -30,24 +30,23 @@
 		</div>
 		<% end %>
 
-
 		<%= link_to controller: "admins", action: "deleteusers", :id => current_admin do %>
 		<div class="admin_delete_users_drop">
 				<p> Delete Users </p>
 		</div>
 		<% end %>
 
+	<%= link_to new_invite_url do %>
+		<div class="admin_code_drop">
+			<p> New Code </p>
+		</div>
+	<% end %>
+
   </div>
 
 	<%= link_to controller: "admins", action: "profile", id: current_admin do %>
 		<div class="home_button">
 			<p> Home </p>
-		</div>
-	<% end %>
-
-	<%= link_to new_invite_url do %>
-		<div class="home_button">
-			<p> Code </p>
 		</div>
 	<% end %>
 
