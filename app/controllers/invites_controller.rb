@@ -1,5 +1,6 @@
 class InvitesController < ApplicationController
   skip_before_filter :authorize
+  before_filter :admin_not_seen_msg
 
   def index 
     @invites = Invite.all
