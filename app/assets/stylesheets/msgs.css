@@ -78,9 +78,25 @@
 	background-color:WhiteSmoke;
 	color:#333;
 	font-family:"Helvetica";
+	opacity:0.5;
 }
 
 .admin_msg_each:hover {
+	background-color:white;
+}
+
+
+.admin_msg_each_not_seen {
+	float:left;
+	width:698px;
+	height:70px;
+	border:1px solid #D0D0D0;
+	background-color:WhiteSmoke;
+	color:#333;
+	font-family:"Helvetica";	
+}
+
+.admin_msg_each_not_seen:hover {
 	background-color:white;
 }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121230193225) do
+ActiveRecord::Schema.define(:version => 20130102174659) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20121230193225) do
     t.boolean  "seen"
     t.boolean  "user_hide"
     t.boolean  "admin_hide"
+    t.boolean  "admin_seen"
   end
 
   create_table "questions", :force => true do |t|

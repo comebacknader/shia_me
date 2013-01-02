@@ -31,7 +31,11 @@
 		<div class="admin_msg_box">
 			<% @msgs.each do |msg| %>
 			<%= link_to showmsg_admin_path(msg) do %>
-				<div class="admin_msg_each">
+			   <% if msg.admin_seen == nil %>
+				<div class="admin_msg_each_not_seen">
+			   <% else %>
+			    <div class="admin_msg_each">
+			   <% end %>
 				<%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
 			  <% if msg.user.avatar.present? %>	
 				<%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>

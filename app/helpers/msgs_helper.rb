@@ -6,5 +6,9 @@ module MsgsHelper
 	 @newmsg = Msg.where(:user_id => @user.id, :seen => nil).all
 	end
 
+	def admin_not_seen_msg
+	  @admin = current_admin	
+	  @unseen = Msg.where(:admin_id => @admin.id, :admin_seen => nil).all
+	end
 
 end

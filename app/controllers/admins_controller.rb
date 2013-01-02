@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   before_filter :correct_admin, only: [:edit, :update, :pics, :picsupdate, :crop, :cropupdate]
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
+  before_filter :admin_not_seen_msg   
   
   def index
     @admins = Admin.all
@@ -118,6 +119,7 @@ class AdminsController < ApplicationController
     @msg = Msg.find(params[:id])
   	@admin = current_admin
     @users = User.where(:admin_id => current_admin.id)	
+    @msg.update_attribute(:admin_seen, "true")
   end
 
   def deleteusers

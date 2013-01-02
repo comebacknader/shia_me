@@ -1,6 +1,7 @@
 class MsgsController < ApplicationController
    skip_before_filter :authorize, except: [:index]
    before_filter :retrieve_newmsg, only: [:new, :show]
+   before_filter :admin_not_seen_msg, only: [:index] 
 
   def index
   	@admin = current_admin 
@@ -63,6 +64,7 @@ class MsgsController < ApplicationController
   def adminhide 
     @msg = Msg.find(params[:id])
     @msg.update_attribute(:admin_hide, "true")
+    @msg.update_attribute(:admin_seen, "true")
     redirect_to msgs_path
   end   
 
