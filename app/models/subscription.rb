@@ -1,6 +1,7 @@
 class Subscription < ActiveRecord::Base
   attr_accessible :email, :name, :user_id, :stripe_card_token, :plan_id
   attr_accessor :stripe_card_token  
+  
   belongs_to :user
    
 	

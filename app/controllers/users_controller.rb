@@ -64,7 +64,13 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to current_admin
+    if current_admin
+       flash[:notice] = "Successfully delete #{@user.name}"       
+     redirect_to profile_admin_path(current_admin)
+    else if current_user
+     redirect_to current_user
+    end
+    end 
   end
   
   def profile

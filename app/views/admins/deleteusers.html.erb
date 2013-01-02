@@ -1,0 +1,46 @@
+<% provide(:title, @admin.name) %>
+
+	<%= link_to profile_admin_path(current_admin) do %>
+	  <div class="all_logo">
+		<%= image_tag("headerlogo.png") %>	
+	  </div>
+	<% end %>
+
+
+	<%= render 'shared/admin_navbar' %>
+	<%= render 'shared/allbar' %>
+	<%= render 'shared/sidebar' %>
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>	
+	
+	<div class="admin_show">
+		
+		<h1 class="admin_show_header">Delete A User</h1>
+
+	<div class="admin_all_men_box">
+		<% @all.each do |user| %>
+			<%= link_to :controller => "users", :action => "profile", :id => user.id do %>
+		<div class="admin_each_men">
+			<% if user.avatar.present? %>
+				<%= image_tag(user.avatar(:small)) %>
+			<% else %>
+				<%= image_tag("viewprofile.png") %>
+			<% end %>
+			<% end %>	
+			<div class="admin_each_men_info">
+				<p><%= truncate(user.name, :length => 15) %></p>
+				<p><%= user.location %></p>
+			    <%= button_to "Delete", {:action => "destroy",
+			                        :id => user.id, 
+			                        :controller => "users"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :form_class => "admin_user_delete" %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+	
+	</div>

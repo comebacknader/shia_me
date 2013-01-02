@@ -119,6 +119,12 @@ class AdminsController < ApplicationController
   	@admin = current_admin
     @users = User.where(:admin_id => current_admin.id)	
   end
+
+  def deleteusers
+    @admin = current_admin
+    @users = User.where(:admin_id => current_admin.id)      
+    @all = User.order("name ASC")
+  end
     
   
   private 

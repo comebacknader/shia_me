@@ -34,6 +34,7 @@ ShiaMe::Application.routes.draw do
        get 'showmsg'
        get 'crop' 
        put 'cropupdate'
+       get 'deleteusers'
      end     
    end
 
