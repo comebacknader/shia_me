@@ -8,8 +8,9 @@
 
 	<%= render 'shared/admin_navbar' %>
 	<%= render 'shared/allbar' %>
-	<%= render 'shared/sidebar' %>
 
+  <div class="admin_cont">
+	<%= render 'shared/sidebar' %>
 
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
@@ -48,5 +49,6 @@
 
 	<%= render 'shared/feed_form' %>	
 
+</div>
 
 	</div>

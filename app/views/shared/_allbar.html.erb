@@ -30,6 +30,13 @@
 		</div>
 		<% end %>
 
+
+		<%= link_to controller: "admins", action: "deleteusers", :id => current_admin do %>
+		<div class="admin_delete_users_drop">
+				<p> Delete Users </p>
+		</div>
+		<% end %>
+
   </div>
 
 	<%= link_to controller: "admins", action: "profile", id: current_admin do %>

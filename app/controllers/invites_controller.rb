@@ -3,7 +3,7 @@ class InvitesController < ApplicationController
 
   def index 
     @invites = Invite.all
-     @admin = current_admin
+    @admin = current_admin
     @users = User.where(:admin_id => current_admin.id)
     @men = User.where(:gender => "MALE").order   
   end
