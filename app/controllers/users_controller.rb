@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
   before_filter :retrieve_newmsg, only: [:show]
-  before_filter :admin_not_seen_msg
+  before_filter :admin_not_seen_msg, only: [:assign, :match]
   
   def index
     @users = User.all
