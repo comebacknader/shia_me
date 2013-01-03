@@ -20,7 +20,7 @@
 		<p> All MatchMakers </p>
 	</div>
 
-	<%= link_to controller: "admins", action: "index" do %>
+	<%= link_to controller: "admins", action: "profile", id: current_admin.id do %>
 		<div class="home_button">
 			<p> Home </p>
 		</div>
@@ -53,6 +53,21 @@
 	
 	<div class="admin_show">
 		
-		<h1 class="admin_show_header">Select a MatchMaker </h1>
+		<h1 class="admin_show_header">Select MatchMaker </h1>
+		
+	  <%= form_for @mmsg do |f| %>	
+			  <%= f.collection_select(:receiver_id,  @admins, 
+			  		:id, :name) %>
+		<div class="new_mmsg_box">
+			
+				<%= f.label :message, "New Message",  class: "new_mmsg_label" %>
+				<%= f.text_area :message, class: "new_mmsg_textarea" %>
+
+				<%= f.hidden_field(:sender_id) %>
+				
+				<%= f.submit "Send Message", class:"new_mmsg_submit" %>
+				
+			<% end %>	
+		</div>	
 
 	</div>

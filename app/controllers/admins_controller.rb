@@ -7,6 +7,7 @@ class AdminsController < ApplicationController
   
   def index
     @admins = Admin.all
+    @mmsg = Mmsg.new(:sender_id => current_admin.id)
   end
 
   def new

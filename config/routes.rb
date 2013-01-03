@@ -16,6 +16,7 @@ ShiaMe::Application.routes.draw do
    resources :mquests
    resources :subscriptions
    resources :feeds
+   resources :mmsgs
 
    
    scope :admins do 
@@ -75,6 +76,7 @@ ShiaMe::Application.routes.draw do
 	resources :admins do 
 		resources :msgs
     resources :feeds
+    resources :mmsgs
 	end
     	
     resources :matches do 

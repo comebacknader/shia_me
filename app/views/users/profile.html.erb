@@ -21,7 +21,8 @@
 			</div>
 		<% end %>	
 	  <% end %>
-	
+
+
 	<div class="user_profile_box">		
 	
 	
@@ -94,48 +95,52 @@
 	
 	<% if current_admin %> 
 	
-	<div class="profile_spouse_box">
-	
 	<% if @user.mquest.present? %>
+
+	<div class="profile_spouse_box">
+		<h1 class="profile_mquest_header">Spouse Preferences</h1>
 	
-	<h1 class="profile_mquest_header">Spouse Preferences</h1>
-	
-	<p class="list_of_mquest_answers">
-	 Age Range: <%= @user.mquest.agerange %>
-	</p>
-	<p class="list_of_mquest_answers">
-	 Ethnicity: <%= @user.mquest.ethnic %>
-	</p>
 		<p class="list_of_mquest_answers">
-	 Hijab: <%= @user.mquest.needhijabi %>
-	</p>
+		 Age Range: <%= @user.mquest.agerange %>
+		</p>
 		<p class="list_of_mquest_answers">
-	 Education Level: <%= @user.mquest.edulevel %>
-	</p>
+		 Ethnicity: <%= @user.mquest.ethnic %>
+		</p>
 		<p class="list_of_mquest_answers">
-	 Other Preferences: <%= @user.mquest.anypref %>
-	</p>
-	
-	<% end %>
-	
+	 	 Hijab: <%= @user.mquest.needhijabi %>
+		</p>
+		<p class="list_of_mquest_answers">
+		 Education Level: <%= @user.mquest.edulevel %>
+		</p>
+		<p class="list_of_mquest_answers">
+		 Other Preferences: <%= @user.mquest.anypref %>
+		</p>
 	</div>
-	
-	
+	<% end %>	
 	<% end %>
-	
-	
+
+	<%= link_to @user.admin do %>
+		<div class="user_profile_mm">
+			
+			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+			<p class="message_mm_title_bold"> MatchMaker:</p>			
+			<p class="message_mm_title"><%= @user.admin.name %></p>
+
+		</div>
+	<% end %>
+
 	<% if current_admin  %>
 		<%= link_to profile_admin_url(current_admin) do %>
 			<div class="admin_go_home">
 				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 			</div>
 		<% end %>
-	<% else if current_user %>
-		<%= link_to current_user do %>
-	     <div class="admin_go_home">
-				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
-		 </div>
+		<% else if current_user %>
+			<%= link_to current_user do %>
+		     <div class="admin_go_home">
+					<%= image_tag("homebutton2.png", class: "home_list_logo") %>
+			 </div>
+			<% end %>
 		<% end %>
-	<% end %>
 	<% end %>
 </div>

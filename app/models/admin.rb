@@ -13,6 +13,13 @@ class Admin < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :feeds, :as => :feedable 
 
+  has_many :mmsgs, foreign_key: "sender_id", dependent: :destroy
+  has_many :receiver, through: :mmsgs, source: "receiver_id"
+  
+  has_many :received, foreign_key: "receiver_id", class_name: "Mmsg", dependent: :destroy
+  has_many :sender, through: :received, source: "sender_id"
+
+
   before_save { |admin| admin.email = email.downcase }
   before_save :create_remember_token
   
