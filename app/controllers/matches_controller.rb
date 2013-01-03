@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   skip_before_filter :authorize, except: [:index]
-  before_filter :admin_not_seen_msg
+  before_filter :admin_not_seen_msg, only: [:index]
   
   def index
     @admin = current_admin
