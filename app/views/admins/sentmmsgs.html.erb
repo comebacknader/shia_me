@@ -28,13 +28,17 @@
 		
 		<div class="admin_msg_box">
 			<% @mmsgs.each do |msg| %>
-			<%= link_to msg do %>
-			   <% if msg.receiver_hide == nil %>
+			<%= link_to sentmmsg_mmsg_path(msg) do %>
+			   <% if msg.sender_seen == nil %>
 				<div class="admin_msg_each_not_seen">
 			   <% else %>
 			    <div class="admin_msg_each">
 			   <% end %>
-				<%= image_tag(msg.sender.avatar(:small), class:"mm_msg_photo") %>
+		  <% if msg.sender.avatar.present? %>
+		   <%= image_tag(msg.sender.avatar(:small), class:"mm_msg_photo") %>
+		  <% else %>
+			<%= image_tag("viewprofile.png", class:"mm_msg_photo") %>
+		  <% end %>		
 			  <% if msg.receiver.avatar.present? %>	
 				<%= image_tag(msg.receiver.avatar(:small), class:"mm_user_msg_photo") %>
 			  <% else %>
@@ -47,7 +51,7 @@
 					  <%= time_ago_in_words(msg.created_at) %> 
 					</p>
 				</div>
-	 		  <%= button_to "X", {:controller => "mmsgs", :action => "adminhide", :id => msg.id }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_msg_delete"  %>
+	 		  <%= button_to "X", {:controller => "mmsgs", :action => "senthide", :id => msg.id }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_msg_delete"  %>
 			<% end %>
 		   <% end %>
 		</div>	

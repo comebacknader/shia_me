@@ -98,6 +98,8 @@ ShiaMe::Application.routes.draw do
     resources :mmsgs do 
       member do 
         put 'adminhide'
+        get 'sentmmsg'
+        put 'senthide'         
       end
     end
 

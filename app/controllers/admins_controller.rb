@@ -132,7 +132,7 @@ class AdminsController < ApplicationController
   def sentmmsgs
     @admin = current_admin
     @users = User.where(:admin_id => current_admin.id)     
-    @mmsgs = Mmsg.where(:sender_id => @admin.id).order('created_at DESC').page(params[:page]).per(20)     
+    @mmsgs = Mmsg.where(:sender_id => @admin.id, :sender_hide => nil).order('created_at DESC').page(params[:page]).per(20)     
   end
     
   

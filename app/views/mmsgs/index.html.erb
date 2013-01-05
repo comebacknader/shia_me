@@ -29,7 +29,7 @@
 		<div class="admin_msg_box">
 			<% @mmsgs.each do |msg| %>
 			<%= link_to msg do %>
-			   <% if msg.receiver_hide == nil %>
+			   <% if msg.receiver_seen == nil %>
 				<div class="admin_msg_each_not_seen">
 			   <% else %>
 			    <div class="admin_msg_each">
