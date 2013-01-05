@@ -12,6 +12,7 @@ class MmsgsController < ApplicationController
     @admin = current_admin
     @users = User.where(:admin_id => @admin.id)
   	@mmsg = Mmsg.find(params[:id])
+    @mmsg.update_attribute(:receiver_seen, true)
   end
 
   def new

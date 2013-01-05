@@ -20,7 +20,7 @@
 	<% end %>	
 	
 	<div class="admin_show">
-		 <%= link_to sendmsg_admin_path(@admin) do %>	
+		 <%= link_to admins_path do %>	
 			<div class="mmsgs_new_button_link">
 				New Message
 			</div>
@@ -28,13 +28,18 @@
 
 		<div class="admin_show_msg_box">
 			<div class="admin_msg_each_show">
-			<%= image_tag(@mmsg.sender.avatar(:small), class:"mm_msg_photo") %>
+		  
+		  <% if @mmsg.sender.avatar.present? %>
+		   <%= image_tag(@mmsg.sender.avatar(:small), class:"mm_msg_photo") %>
+		  <% else %>
+			<%= image_tag("viewprofile.png", class:"mm_msg_photo") %>
+		  <% end %>				   
 		  <% if @mmsg.receiver.avatar.present? %>	
 			<%= image_tag(@mmsg.receiver.avatar(:small), class:"mm_user_msg_photo") %>
 		  <% else %>
 			<%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
 		  <% end %>				
-		  		<p class="admin_msg_to_user"> between you and <%= @mmsg.sender.name %>:</p>
+		  		<p class="admin_msg_to_user"> between <%= @mmsg.receiver.name %> and <%= @mmsg.sender.name %>:</p>
 				<p class="admin_msg_each_msg_show"> <%= @mmsg.message %> </p>
 				<p class="admin_msg_each_time"> <%= time_ago_in_words(@mmsg.created_at) %> ago </p>
 			</div>		

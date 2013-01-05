@@ -234,3 +234,71 @@
 }
 
 
+/* MSGS INDEX */
+
+
+.msgs_inbox_bar {
+		float:left;
+		width:150px;
+		height:30px;
+		border-right:1px solid DimGray;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		padding:10px 0px 0px 0px;
+		background-color:#313131;
+		background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#272727));
+		background: -moz-linear-gradient(top, #313131,  #272727);
+		text-shadow: 0px 0px 0px, -1px -1px #000;
+}
+
+.msgs_inbox_bar:hover {
+	background-color:#464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
+	background: -moz-linear-gradient(top, #464646,  #464646);
+}
+
+.users_msgs_bar {
+		display:none;
+		position:absolute;
+		width:150px;
+		height:30px;
+		margin:9px 0px 0px 0px;
+		border-right:0px 1px 0px 1px solid DimGray;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		padding:10px 0px 0px 0px;
+		background-color:#313131;
+}
+
+.users_msgs_bar:hover {
+	background-color:#464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
+	background: -moz-linear-gradient(top, #464646,  #464646);
+}
+
+.admin_mmsgs_bar {
+		display:none;	
+		position:absolute;
+		width:150px;
+		height:30px;
+		margin:46px 0px 0px 0px;
+		border-right:0px 1px 0px 1px solid DimGray;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		padding:10px 0px 0px 0px;
+		background-color:#313131;
+}
+
+.admin_mmsgs_bar:hover {
+	background-color:#464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
+	background: -moz-linear-gradient(top, #464646,  #464646);
+}
+
+

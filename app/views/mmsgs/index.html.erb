@@ -34,7 +34,11 @@
 			   <% else %>
 			    <div class="admin_msg_each">
 			   <% end %>
+			  <% if msg.sender.avatar.present? %> 
 				<%= image_tag(msg.sender.avatar(:small), class:"mm_msg_photo") %>
+			  <% else %>
+				<%= image_tag("viewprofile.png", class:"mm_msg_photo") %>
+			  <% end %>					
 			  <% if msg.receiver.avatar.present? %>	
 				<%= image_tag(msg.receiver.avatar(:small), class:"mm_user_msg_photo") %>
 			  <% else %>
@@ -53,10 +57,16 @@
 		</div>	
 		
 		  <%= link_to admins_path do  %>
-			<div class="mmsgs_new_button_link">
+			<div class="mmsgs_new_small">
 				New Message
 			</div>		
 		  <% end %>
+
+		  <%= link_to sentmmsgs_admin_path(@admin) do  %>
+			<div class="mmsgs_sent_small">
+				Sent Messages
+			</div>		
+		  <% end %>		  
 
 		<div class="paginate_msgs">
 			<%= paginate @mmsgs %>

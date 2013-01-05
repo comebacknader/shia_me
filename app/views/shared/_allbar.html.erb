@@ -4,11 +4,22 @@
 		<p> Your Users </p>
 	</div>
 	
-		<%= link_to msgs_path do %>
-		<div class="admin_all_users">
-				<p> Inbox (<%= @unseen.count %>) </p>
-		</div>
-	<% end %>
+	  <div class="msgs_inbox_bar">
+		<p> Inbox (<%= @unseen.count + @unseen_admin.count %>) </p>
+
+ 		<%= link_to msgs_path do %>
+ 		 <div class="users_msgs_bar">
+ 		 	<p> Users (<%= @unseen.count %>) </p> 
+ 		 </div>
+ 		<% end %>
+
+ 		<%= link_to mmsgs_path do %>
+ 		 <div class="admin_mmsgs_bar">
+ 		 	<p> MatchMakers (<%= @unseen_admin.count %>) </p> 
+ 		 </div>
+ 		<% end %> 		
+
+	  </div>
 
 	<div class="admin_menu">
 		<p> Menu </p>
