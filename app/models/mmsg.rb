@@ -3,6 +3,6 @@ class Mmsg < ActiveRecord::Base
 
 
   belongs_to :sender, class_name: "Admin"
-  belongs_to :reciever, class_name: "Admin"
+  belongs_to :receiver, class_name: "Admin"
 
 end

@@ -111,7 +111,7 @@ class AdminsController < ApplicationController
   
   def sendmsg
   	@admin = Admin.find(params[:id])
-  	@msg = Msg.new(:admin_id => @admin.id)
+  	@msg = Msg.new(:admin_id => @admin.id, :admin_seen => true)
     @msgs = Msg.all
     @users = User.where(:admin_id => current_admin.id)	 	
   end

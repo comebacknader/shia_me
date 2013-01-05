@@ -19,28 +19,32 @@
 
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
-	<% end %>	
-	
+	<% end %>
+
+
 	<div class="admin_show">
 		
+		<h1 class="admin_show_header">Select User </h1>
 		
-		<h1 class="admin_show_header">New Message</h1>
+	<%= form_for @msg, controller: "admins", action: "newmsg" do |f| %>
+	
+	  <%= f.collection_select(:user_id,  @users.all, 
+	  		:id, :name) %>
+		<div class="new_mmsg_box">
 
-	<div class="admin_msg_box">
-		<%= form_for @msg, controller: "admins", action: "newmsg" do |f| %>
-				<%= f.text_area :message, class: "new_msg_textarea" %>
-				
-				<%= f.hidden_field(:admin_id) %>
-				<%= f.hidden_field :seen %>				
-				<div class="admin_msg_user_select">
-				  <p> Send Message To: </p>
-				  <%= f.collection_select(:user_id,  @users.all, 
-				  		:id, :name) %>
-				</div>
-				
-				<%= f.submit "Send Message", class:"admin_msg_submit" %>				
-		<% end %>
+		<%= f.hidden_field(:admin_id) %>
+		<%= f.hidden_field :seen %>		
+		<%= f.hidden_field :admin_seen %>	
+	
+		<%= f.label :message, "New Message",  class: "new_mmsg_label" %>
+		<%= f.text_area :message, class: "new_mmsg_textarea" %>
+		
+		<%= f.submit "Send Message", class:"new_mmsg_submit" %>
+		
+			<% end %>	
+		</div>	
+	</div>
 
-	</div>
-	</div>
+
+
   </div>

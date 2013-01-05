@@ -94,6 +94,11 @@ ShiaMe::Application.routes.draw do
       end
     end
 
+    resources :mmsgs do 
+      member do 
+        put 'adminhide'
+      end
+    end
 
    match "/about", to: 'pages#about'
    match "/thankyou", to: 'subscribers#thankyou'
