@@ -62,16 +62,22 @@
 			<p class="admin_show_bio"> <%= @user.name %> attended 
 			<%= @question.education %> and is pursuing a career as a
 			 <%= @question.job %>.  <%= @they %> prays <%= @question.prayer %>.  </p>
-			 
-			 <div class="user_profile_question">
-			 	<p> Some of <%= @user.name %>'s Hobbies Include:
-			 		<ul> 
-			 			<li> <%= @question.firsthobby %> </li> 
-			 			<li> <%= @question.secondhobby %> </li>
-			 			<li> <%= @question.thirdhobby %> </li>
-			 		</ul>
-			 	</p>
-			 </div>
+		    
+			  <% if @question.firsthobby.present? %>	    	 
+				 <div class="user_profile_question">	
+				 	<p> Some of <%= @user.name %>'s Hobbies Include:
+				 		<ul> 	
+				 			<li> <%= @question.firsthobby %> </li> 
+				 		<% if @question.secondhobby.present? %>	
+				 			<li> <%= @question.secondhobby %> </li>
+				 	    <% end %>
+				 	     <% if @question.thirdhobby.present? %>
+				 			<li> <%= @question.thirdhobby %> </li>
+				 		 <% end %>
+				 		</ul>
+				 	</p>
+				 </div>
+			<% end %>
 			 <div class="user_islamtome">
 			 <p class="user_islamtome_header">
 			 What Islam means to <%= @user.name %> : 
