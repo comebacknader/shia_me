@@ -19,6 +19,13 @@ class MatchesController < ApplicationController
   def show
   	@match = Match.find(params[:id])
   	@user = @match.man
+
+    if @user.gender == "MALE"
+      @matcher = @match.woman
+    else if @user.gender == "FEMALE"
+      @matcher = @wmatch.man 
+    end
+    end 
   end
 
   def edit
@@ -68,7 +75,7 @@ class MatchesController < ApplicationController
     if current_user
     redirect_to current_user 
     else
-    redirect_to current_admin
+    redirect_to profile_admin_path(current_admin)
     end
   end
   

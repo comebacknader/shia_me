@@ -9,46 +9,60 @@
 		</div>
 			<% end %>	
 	
-	<div class="admin_profile_box">		
+	<div class="matches_profile_box">		
 	
 	  <% if @user.avatar.present? %>
 		<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
 	  <% else %>
-	   <%= image_tag("viewprofile.png", class: "delete_match_pic" ) %>	
+	   <%= image_tag("viewprofile.png", class: "delete_match_pic" ) %>
 	  <% end %>
-		<div class="delete_match_middle">	
-			<%= image_tag("goldpack.png", class: "delete_match_middle_logo") %>
-			<p class="delete_match_header"> Are You Sure? </p>
+
+
+		  <% if @matcher.avatar.present? %>
+			<%= image_tag(@matcher.avatar(:large), 
+			   class:"delete_match_other_pic") %>
+		  <% else %>
+		    <%= image_tag("viewprofile.png", 
+			   class:"delete_match_other_pic") %>	 
+		  <% end %>  
+
+
+		<div class="delete_match_info">
+			<p class="matches_show_header"><%= @user.name %> </p>
+			<p class="matches_show_header"><%= @matcher.name %> </p>
+			<p class="delete_match_time"> Match Created <%= time_ago_in_words(@matcher.created_at) %> Ago </p>	
+			<div class="delete_match_mm">
+				<%= image_tag(@match.admin.avatar(:small), class: 'message_mm_pic') %>
+				<p class="message_mm_title_bold"> MatchMaker:</p>
+				<p class="message_mm_title"><%= @match.admin.name %></p>
+			</div>	
+
+			    <%= button_to "X", {:action => "destroy",
+			                        :id => @match.id, 
+			                        :controller => "matches"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :form_class => "delete_match_button" %>			
+			
+
 		</div>
-		<% if @user.gender == "MALE" %>
-		  <% if @match.woman.avatar.present? %>
-			<%= image_tag(@match.woman.avatar(:small), 
-			   class:"delete_match_other_pic") %>
-		  <% else %>
-		    <%= image_tag("viewprofile.png", 
-			   class:"delete_match_other_pic") %>	 
-		  <% end %>  
-		<% end %>
-		<% if @user.gender == "FEMALE" %>
-		  <% if @wmatch.man.avatar.present? %>
-			<%= image_tag(@wmatch.man.avatar(:small), 
-			   class:"delete_match_other_pic") %>
-		  <% else %>
-		    <%= image_tag("viewprofile.png", 
-			   class:"delete_match_other_pic") %>	 
-		  <% end %>  
-		<% end %>
+
+
 	</div>
 
-	<div class="delete_match_bottom_bar">	
-		<% if current_admin  %>
-		<%= link_to profile_admin_path(current_admin) do %>
-			<div class="delete_match_go_back">
-				Go Home 
+	<% if current_admin  %>
+		<%= link_to profile_admin_url(current_admin) do %>
+			<div class="admin_go_home">
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
 			</div>
 		<% end %>
-			<%= button_to 'Delete Match', @match, :method => :delete, :class=> "delete_match_big_button" %>
+		<% else if current_user %>
+			<%= link_to current_user do %>
+		     <div class="admin_go_home">
+					<%= image_tag("homebutton2.png", class: "home_list_logo") %>
+			 </div>
+			<% end %>
 		<% end %>
-	</div>
+	<% end %>
 
 </div>

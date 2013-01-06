@@ -180,8 +180,15 @@ class UsersController < ApplicationController
     
   def deletematch
   	@user = current_user
-  	@match = @user.matches.last
-    @wmatch = @user.wmatches.last
+
+     if @user.gender == "MALE"
+      @match = current_user.matches.last
+      @matcher = @match.woman
+    else if @user.gender == "FEMALE"
+      @match = current_user.wmatches.last      
+      @matcher = @match.man 
+    end
+    end    
   end   
   
   

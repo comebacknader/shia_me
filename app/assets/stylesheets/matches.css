@@ -2,3 +2,221 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+.matches_profile_box {
+		float:left;
+		width:890px;
+		height:240px;
+		margin:0px 0px 0px 20px;
+		border:1px solid #D0D0D0;
+		background-color:#F6F6F6;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+			box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.matches_profile_box_header {
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:30px;
+		width:550px;
+		text-align:left;
+		margin:40px 0px 0px 20px;	
+}
+
+.matches_show_header {
+		clear:left;
+		float:left;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:24px;;
+		text-align:left;
+		margin:0px 0px 0px 0px;
+}
+
+.matches_show_bio	{
+	float:left;
+	width:550px;
+	font-size:14px;
+	color:DimGray;
+	padding:20px;
+}
+
+.matches_show_location {
+		float:left;
+		color:DimGray;
+		width:550px;
+		padding:5px 20px 0px 25px;
+		font-weight:bold;
+}
+
+.matches_show_img {
+		clear:right;
+		float:right;
+		width:200px;
+		height:200px;
+		margin:20px 40px 0px 0px;
+		border:1px solid #D0D0D0;
+		padding:10px;
+}
+
+
+							/* DELETE MACH PAGE */
+
+.delete_match_pic {
+	clear:left;
+	float:left;
+	width:200px;
+	height:200px;
+	margin:10px 0px 0px 20px;
+	border:1px solid #D0D0D0;
+	padding:10px;
+}
+
+.delete_match_other_pic {
+	float:left;
+	width:200px;
+	height:200px;
+	margin:10px 0px 0px 20px;
+	border:1px solid #D0D0D0;
+	padding:10px;
+}
+
+.delete_match_info {
+	float:left;
+	width:370px;
+	height:210px;
+	margin:10px 0px 0px 10px;
+	border:1px solid none;
+	padding:5px;
+	font-family:"Helvetica";
+}
+
+.delete_match_header {
+	float:left;
+	font-family:"Helvetica";
+	font-size:20px;
+	font-weight:bold;
+	margin:0px 0px 0px 10px;
+	color:#800000;
+}
+
+.delete_match_time {
+	clear:left;
+	float:left;
+	font-family:"Helvetica";
+	font-size:14px;
+	font-weight:none;
+	margin:10px 0px 0px 0px;
+	color:#333;	
+}
+
+.delete_match_mm {
+		float:left;
+		width:220px;
+		height:80px;
+		margin:20px 0px 0px 5px;
+		border:1px solid none;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		padding:5px 0px 5px 5px;
+}
+
+
+.delete_match_button div input  {
+	float:left;
+	margin:30px 0px 0px 35px;
+	width:100px;
+	padding:20px 0px 20px 0px;
+	text-align:center;
+	font-family:"Arial";
+	font-weight:bold;
+	font-size:44px;
+	color:white;
+	border:1px solid #D0D0D0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FF0000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#CC0000));
+	background: -moz-linear-gradient(top, #FF0000,  #CC0000);
+}
+
+.delete_match_button div input:hover {
+	background-color:#CC0000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#CC0000), to(#990000));
+	background: -moz-linear-gradient(top, #CC0000,  #990000);	
+}
+
+.delete_match_bottom_bar {
+	float:left;
+	width:900px;
+	height:200px;
+}
+
+.delete_match_go_back {
+	float:left;
+	padding:20px 100px 20px 100px;
+	margin:30px 0px 0px 150px;
+	border:1px solid #D0D0D0;
+	background-color:White;
+	font-family:"Helvetica";
+	text-align:center;
+	font-weight:bold;
+	color:white;
+	background-color:#336CC1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#336CC1), to(#0047B2));
+	background: -moz-linear-gradient(top, #336CC1,  #0047B2);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+				box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.delete_match_go_back:hover {
+	background-color: #0047B2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0047B2), to(#003380));
+	background: -moz-linear-gradient(top, #0047B2,  #003380);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+				box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.delete_match_big_button {
+	clear:right;
+	float:right;
+	padding:20px 100px 20px 100px;
+	margin:30px 100px 0px 0px;
+	border:1px solid #D0D0D0;
+	font-family:"Helvetica";
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+	color:White;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#CC0000));
+	background: -moz-linear-gradient(top, #FF0000,  #CC0000);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+				box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.delete_match_big_button:hover {
+	background-color:#CC0000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#CC0000), to(#990000));
+	background: -moz-linear-gradient(top, #CC0000,  #990000);
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}	
+
