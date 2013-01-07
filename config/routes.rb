@@ -50,7 +50,6 @@ ShiaMe::Application.routes.draw do
        put 'assignmm'
        get 'match'
        post 'makematch'
-       get 'deletematch'
        get 'crop'
        put 'cropupdate'
        get 'permission'
@@ -85,6 +84,7 @@ ShiaMe::Application.routes.draw do
      	put 'approvefem'
         put 'approveinfo'
         put 'approvepic'
+        get 'deletematch'        
      end
     end	
     

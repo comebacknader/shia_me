@@ -62,8 +62,8 @@ class User < ActiveRecord::Base
               :secret_access_key => ENV['S3_SECRET_SHIAME']            
             }
   
-  
-    
+
+
   def password_validation_required?
 	 updating_password || new_record?
   end
@@ -76,7 +76,8 @@ class User < ActiveRecord::Base
    @geometry ||= {}
    avatar_path = (avatar.options[:storage] == :s3) ? avatar.url(style) : avatar.to_file(style)
    @geometry[style] ||= Paperclip::Geometry.from_file(avatar_path)
-  end            
+  end 
+
 
   private
   

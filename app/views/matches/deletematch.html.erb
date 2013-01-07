@@ -1,0 +1,68 @@
+
+	<div class="user_all_bar">
+	</div>
+	<div class="container">
+	
+				<%= link_to root_path do %>
+		<div class="all_logo">
+			<%= image_tag("headerlogo.png") %>	
+		</div>
+			<% end %>	
+	
+	<div class="matches_profile_box">		
+	
+	  <% if @user.avatar.present? %>
+		<%= image_tag(@user.avatar(:medium), class: "delete_match_pic" ) %>
+	  <% else %>
+	   <%= image_tag("viewprofile.png", class: "delete_match_pic" ) %>
+	  <% end %>
+
+
+		  <% if @matcher.avatar.present? %>
+			<%= image_tag(@matcher.avatar(:large), 
+			   class:"delete_match_other_pic") %>
+		  <% else %>
+		    <%= image_tag("viewprofile.png", 
+			   class:"delete_match_other_pic") %>	 
+		  <% end %>  
+
+
+		<div class="delete_match_info">
+			<p class="matches_show_header"><%= @user.name %> </p>
+			<p class="matches_show_header"><%= @matcher.name %> </p>
+			<p class="delete_match_time"> Match Created <%= time_ago_in_words(@matcher.created_at) %> Ago </p>	
+			<div class="delete_match_mm">
+				<%= image_tag(@match.admin.avatar(:small), class: 'message_mm_pic') %>
+				<p class="message_mm_title_bold"> MatchMaker:</p>
+				<p class="message_mm_title"><%= @match.admin.name %></p>
+			</div>	
+
+			    <%= button_to "X", {:action => "destroy",
+			                        :id => @match.id, 
+			                        :controller => "matches"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :form_class => "delete_match_button" %>			
+			
+
+		</div>
+
+
+	</div>
+
+	<% if current_admin  %>
+		<%= link_to profile_admin_url(current_admin) do %>
+			<div class="admin_go_home">
+				<%= image_tag("homebutton2.png", class: "home_list_logo") %>
+			</div>
+		<% end %>
+		<% else if current_user %>
+			<%= link_to current_user do %>
+		     <div class="admin_go_home">
+					<%= image_tag("homebutton2.png", class: "home_list_logo") %>
+			 </div>
+			<% end %>
+		<% end %>
+	<% end %>
+
+</div>

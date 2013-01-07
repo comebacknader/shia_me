@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
   skip_before_filter :authorize, except: [:index]
   before_filter :admin_not_seen_msg, only: [:index]
+  before_filter :user_in_match, only: [:deletematch]
   
   def index
     @admin = current_admin
@@ -78,6 +79,35 @@ class MatchesController < ApplicationController
     redirect_to profile_admin_path(current_admin)
     end
   end
+
+
+    def deletematch
+    @user = current_user
+
+     if @user.gender == "MALE"
+      @match = current_user.matches.last
+      @matcher = @match.woman
+    else if @user.gender == "FEMALE"
+      @match = current_user.wmatches.last      
+      @matcher = @match.man 
+    end
+    end    
+  end   
   
+
+private 
+
+ def user_in_match 
+  @match = Match.find(params[:id])
+  if @match.man.id == current_user.id || @match.woman.id == current_user.id
+    if @match.femapprove.blank? && @match.man.id == current_user.id
+      redirect_to current_user
+    else
+    end
+  else
+    redirect_to current_user
+  end
+end 
+
 
 end

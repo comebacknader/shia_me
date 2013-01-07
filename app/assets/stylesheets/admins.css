@@ -804,6 +804,17 @@
 		background: -moz-linear-gradient(top, #0047B2,  #003380);
 }
 
+
+.new_match #match_woman_id {
+	float:right;
+	width:400px;
+	height:55px;
+}
+
+.new_match #match_woman_id option {
+	width:25px;
+	height:25px;
+}
 			
 
 						/* All Matches Check Matches.css */

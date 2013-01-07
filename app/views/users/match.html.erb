@@ -1,5 +1,15 @@
 <% provide(:title, @admin.name) %>
 
+  <script language="javascript">
+$(document).ready(function(e) {
+try {
+$("body select").msDropDown();
+} catch(e) {
+alert(e.message);
+}
+});
+</script>
+
 	<%= link_to root_path do %>
 <div class="all_logo">
 	<%= image_tag("headerlogo.png") %>	
@@ -49,9 +59,9 @@
 			<%= f.hidden_field :admin_id, :value =>  @admin.id %>			
 			
 			<%= f.label :woman_id, "Select Woman", class: "admin_create_match_label" %>
-			<%= collection_select(:match, :woman_id,  User.where(:gender => "FEMALE").order("name ASC"), :id, :name, 
-			{:prompt => true}, :class => "admin_create_match_dropdown" )%>
-			
+
+		<%= f.select :woman_id, options_for_select(@women.map{ |c| [c.name, c.id, {'data-image' => c.avatar(:small)}]}, {:prompt => 'Select A Person'}) %>
+
 		<%= f.label :reason, "Tell the MAN why you made the match",
 								class: "user_signup" %>
 		<%= f.text_area :reason, class: "create_match_textarea" %>

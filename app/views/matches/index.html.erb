@@ -29,9 +29,12 @@
 			<div class="admin_each_match">
 				<% if match.man.avatar.present? %>
 					<%= image_tag(match.man.avatar(:small)) %>
-					<%= image_tag(match.woman.avatar(:small)) %>					
 				<% else %>
 					<%= image_tag("viewprofile.png") %>
+				<% end %>
+				<% if match.woman.avatar.present? %> 
+					<%= image_tag(match.woman.avatar(:small)) %>					
+				<% else %>
 					<%= image_tag("viewprofile.png") %>
 				<% end %>
 				<div class="admin_each_men_info">

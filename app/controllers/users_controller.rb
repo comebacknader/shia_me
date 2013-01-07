@@ -166,6 +166,7 @@ class UsersController < ApplicationController
     @users = User.where(:admin_id => current_admin.id)
     @user = User.find(params[:id])
     @match = Match.new
+    @women = User.where(:gender => "FEMALE").order("name ASC")
   end
   
   def makematch
@@ -178,18 +179,7 @@ class UsersController < ApplicationController
     end
   end
     
-  def deletematch
-  	@user = current_user
 
-     if @user.gender == "MALE"
-      @match = current_user.matches.last
-      @matcher = @match.woman
-    else if @user.gender == "FEMALE"
-      @match = current_user.wmatches.last      
-      @matcher = @match.man 
-    end
-    end    
-  end   
   
   
   def permission
