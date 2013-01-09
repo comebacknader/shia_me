@@ -31,6 +31,6 @@ group :test do
 end
 
 group :assets do 
-	gem 'therubyracer'
+	gem 'therubyracer', '0.10.2'
 	gem 'uglifier', '>= 1.0.3'
 end

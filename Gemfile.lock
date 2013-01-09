@@ -86,6 +86,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
+    libv8 (3.3.10.4)
     listen (0.6.0)
     lumberjack (1.0.2)
     mail (2.4.4)
@@ -135,7 +136,6 @@ GEM
     rake (10.0.2)
     rdoc (3.12)
       json (~> 1.4)
-    ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.10.0)
@@ -172,8 +172,8 @@ GEM
       rest-client (>= 1.4.0, < 1.7.0)
       sequel (~> 3.20.0)
       sinatra (~> 1.0.0)
-    therubyracer (0.11.0)
-      ref
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -214,6 +214,6 @@ DEPENDENCIES
   sqlite3
   stripe
   taps
-  therubyracer
+  therubyracer (= 0.10.2)
   thin
   uglifier (>= 1.0.3)

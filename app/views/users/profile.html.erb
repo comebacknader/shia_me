@@ -78,6 +78,7 @@
 				 	</p>
 				 </div>
 			<% end %>
+		   <% if @question.islamtoyou.present? %>	
 			 <div class="user_islamtome">
 			 <p class="user_islamtome_header">
 			 What Islam means to <%= @user.name %> : 
@@ -91,6 +92,7 @@
 			 			"
 			 	</p>			 	
 			 </div>
+		   <% end %> 
 		<% else %>
 			<p class="admin_show_bio"> <%= @user.name %> has not filled 
 				out a profile. 
