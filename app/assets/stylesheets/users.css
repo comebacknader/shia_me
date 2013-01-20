@@ -384,9 +384,7 @@
 }
 
 .user_end_match:hover {
-	background-color:#CC0000;
-	background: -webkit-gradient(linear, left top, left bottom, from(#CC0000), to(#990000));
-	background: -moz-linear-gradient(top, #CC0000,  #990000);
+s
 	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
 	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
 	            box-shadow: 0 4px 4px -1px #B8B8B8;

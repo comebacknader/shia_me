@@ -721,6 +721,15 @@
 
 						/* CREATE MATCH */
 
+.user_match_already {
+	float:left;
+	font-size:33px;
+	color:#333;
+	border:1px solid #D0D0D0;
+	padding:20px;
+	text-align: center;
+}
+
 .admin_create_match_list {
 		float:left;
 		margin:20px 0px 0px 20px;

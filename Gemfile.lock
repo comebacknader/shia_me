@@ -208,7 +208,7 @@ DEPENDENCIES
   mail
   paperclip (~> 3.0)
   pg
-  rails (~> 3.2.11)
+  rails (~> 3.2.11bund)
   rspec-rails (= 2.10.0)
   sanitize
   sqlite3
