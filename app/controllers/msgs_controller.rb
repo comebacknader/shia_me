@@ -1,7 +1,9 @@
 class MsgsController < ApplicationController
+  include AdminsHelper
    skip_before_filter :authorize, except: [:index]
    before_filter :retrieve_newmsg, only: [:new, :show]
    before_filter :admin_not_seen_msg, only: [:index] 
+   before_filter :matched_users, only: [:index]
 
   def index
   	@admin = current_admin 
@@ -9,7 +11,6 @@ class MsgsController < ApplicationController
     @msgs = Msg.where(:admin_id => 
     @admin.id, :admin_hide => nil).order('created_at DESC').
     page(params[:page]).per(20) 
-    @users = User.where(:admin_id => current_admin.id)	
   end
 
   def show

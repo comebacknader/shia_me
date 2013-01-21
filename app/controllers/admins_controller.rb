@@ -1,9 +1,11 @@
 class AdminsController < ApplicationController
+  include AdminsHelper
   before_filter :signed_in_admin, only: [:index, :edit, :update, :pics, :picsupdate, :crop, :cropupdate]
   before_filter :correct_admin, only: [:edit, :update, :pics, :picsupdate, :crop, :cropupdate]
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
-  before_filter :admin_not_seen_msg   
+  before_filter :admin_not_seen_msg
+  before_filter :matched_users   
   
   def index
     @admins = Admin.all
@@ -48,19 +50,16 @@ class AdminsController < ApplicationController
   
   def profile
     @admin = @feedable = Admin.find(params[:id])
-    @users = User.where(:admin_id => current_admin.id)
     @feeds = Feed.order("created_at DESC")
   end 
   
   def allmen
-    @admin = Admin.find(params[:id]) 
-    @users = User.where(:admin_id => current_admin.id)
+    @admin = Admin.find(params[:id])     
     @men = User.where(:gender => "MALE").order
   end
   
   def allwomen 
     @admin = Admin.find(params[:id])
-    @users = User.where(:admin_id => current_admin.id)
     @women = User.where(:gender => "FEMALE").order
   end
   
@@ -113,25 +112,22 @@ class AdminsController < ApplicationController
   	@admin = Admin.find(params[:id])
   	@msg = Msg.new(:admin_id => @admin.id, :admin_seen => true)
     @msgs = Msg.all
-    @users = User.where(:admin_id => current_admin.id)	 	
+    @my_users = User.where(:admin_id => @admin.id)
   end
   
   def showmsg 
     @msg = Msg.find(params[:id])
   	@admin = current_admin
-    @users = User.where(:admin_id => current_admin.id)	
     @msg.update_attribute(:admin_seen, "true")
   end
 
   def deleteusers
     @admin = current_admin
-    @users = User.where(:admin_id => current_admin.id)      
     @all = User.order("name ASC")
   end
 
   def sentmmsgs
     @admin = current_admin
-    @users = User.where(:admin_id => current_admin.id)     
     @mmsgs = Mmsg.where(:sender_id => @admin.id, :sender_hide => nil).order('created_at DESC').page(params[:page]).per(20)     
   end
     

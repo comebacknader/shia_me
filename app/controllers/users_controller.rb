@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+  include AdminsHelper
   skip_before_filter :authorize, except: [:assign, :assignmm, :match]
   before_filter :invite, only: [:new]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
   before_filter :retrieve_newmsg, only: [:show]
   before_filter :admin_not_seen_msg, only: [:assign, :match]
+  before_filter :matched_users, only: [:match, :only]
   
+
   def index
     @users = User.all
   end
@@ -131,7 +134,6 @@ class UsersController < ApplicationController
   def assign
     @admin = current_admin
     @user = User.find(params[:id])  
-    @users = User.where(:admin_id => current_admin.id)
   end
   
   def assignmm 
@@ -163,7 +165,6 @@ class UsersController < ApplicationController
   
   def match 
     @admin = current_admin
-    @users = User.where(:admin_id => current_admin.id)
     @user = User.find(params[:id])
     @match = Match.new
     @women = User.where(:gender => "FEMALE").order("name ASC")

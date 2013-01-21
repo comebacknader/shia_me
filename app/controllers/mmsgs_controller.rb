@@ -1,16 +1,16 @@
 class MmsgsController < ApplicationController
+  include AdminsHelper
  before_filter :authorize
  before_filter :admin_not_seen_msg
+ before_filter :matched_users
 
   def index
     @admin = current_admin    
-    @mmsgs = Mmsg.where(:receiver_id => @admin.id, :receiver_hide => nil).order('created_at DESC').page(params[:page]).per(20)     
-    @users = User.where(:admin_id => @admin.id)   
+    @mmsgs = Mmsg.where(:receiver_id => @admin.id, :receiver_hide => nil).order('created_at DESC').page(params[:page]).per(20)        
   end
 
   def show
     @admin = current_admin
-    @users = User.where(:admin_id => @admin.id)
   	@mmsg = Mmsg.find(params[:id])
     @mmsg.update_attribute(:receiver_seen, true)
   end
@@ -42,7 +42,6 @@ class MmsgsController < ApplicationController
 
   def sentmmsg 
     @admin = current_admin
-    @users = User.where(:admin_id => @admin.id)
     @mmsg = Mmsg.find(params[:id]) 
     @mmsg.update_attribute(:sender_seen, "true")    
   end

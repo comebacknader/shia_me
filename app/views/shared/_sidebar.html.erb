@@ -11,6 +11,23 @@
 		  <p class="admin_sidebar_name"><%= user.name %></p>	
 		</li>
 		<% end %>
-	<% end %>
+	<% end %>	
 	</ul>
+	<div class="matched_users_here">
+		Matched Users
+	</div>
+	<ul class="admin_sidebar_matched_list">
+	<% @matched_users.each do |user| %>
+		<%= link_to :controller => "users", :action => "match", :id => user.id do %>
+		<li>
+		  <% if user.avatar.present? %>
+		   <%= image_tag(user.avatar(:small), class: "admin_sidebar_pics")%>
+		  <% else %>
+		   <%= image_tag("viewprofile.png", class: "admin_sidebar_pics")%>
+		  <% end %>	  	
+		  <p class="admin_sidebar_name"><%= user.name %></p>	
+		</li>
+		<% end %>
+	<% end %>	
+	</ul>	
 </div>
