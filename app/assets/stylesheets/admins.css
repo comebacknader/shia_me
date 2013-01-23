@@ -319,6 +319,17 @@
 		margin:40px 0px 0px 20px;	
 }
 
+.admin_feed_about  {
+	float:left;
+	border:1px solid #D0D0D0;
+	padding:10px 20px 10px 20px;
+	font-size:44px;
+	margin:10px 0px 0px 200px;
+	background-color:#FDFDFD;
+	font-family:"Helvetica";
+	font-weight:bold;
+}
+
 .admin_show_header {
 		float:left;
 		font-family:"Helvetica";
