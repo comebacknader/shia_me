@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
   before_filter :admin_not_seen_msg
-  before_filter :matched_users   
+  before_filter :matched_users, except: [:show]   
   
   def index
     @admins = Admin.all

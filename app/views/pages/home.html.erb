@@ -1,37 +1,103 @@
+<div class="home_bar">
+	<div class="container">
+	 <%= link_to login_path do %>	
+		<div class="home_log_in">
+			MatchMakers
+		</div>
+	<% end %>	
+	 <%= link_to signin_path do %>	
+		<div class="home_sign_in">
+			Users
+		</div>
+	<% end %>
+	</div>
+</div>
 
 <div class="container">
 
-	<div class="home_logo">
-		<%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "home_logo_new") %>
-
-	<div class="invite_code">
-		<h1 class="home_tagline"> a matchmaking service </h1>
-		
-	<div class="home_video">
-<iframe width="300" height="169" src="http://www.youtube-nocookie.com/embed/zGPJB2hDxmU?rel=0&showinfo=0&vq=hd720"
-				 frameborder="0" allowfullscreen></iframe>
-	</div>		
-	<br />
-	<br />			
-		<p>Enter Your Invite Code</p>
-		<%= form_tag test_path, :method => :get  do %>
-		    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
-		    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
-		<% end %>
+ <div class="home_main_box">
+	<div class="home_user_example">
+		<%= image_tag(@user.avatar(:medium), class: "home_user_example_img") %>
+		<p class="home_user_name">
+			<%= @user.name %>
+		</p>
+		<p class="home_user_location">
+			<%= @user.location %>
+		</p>
+		<p class="home_user_location">
+			USER
+		</p>
 	</div>
 
+	<div class="home_logo">
+	 <%= image_tag("logonew1.png", :alt => "shiaME Home Page", 
+	 															 :class => "home_logo_new") %>
+		<div class="invite_code">
+			<h1 class="home_tagline"> a matchmaking service </h1>
+
+			<p>Enter Your Invite Code</p>
+			<%= form_tag test_path, :method => :get  do %>
+			    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+			    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="home_admin_example">
+		<%= image_tag("admin_example.png", class: "home_admin_example_img") %>
+		<p class="home_admin_name">
+			Auntie Zahra
+		</p>
+		<p class="home_admin_location">
+			San Francisco, CA
+		</p>
+		<p class="home_admin_location">
+			MATCHMAKER
+		</p>
+	</div>
+
+ </div>
 </div>
-	
-	<%= link_to signin_path do %>
-		<div class="what_is_site">
-			<p> Sign In </p>
-		</div>
-	<% end %>	
 
-	<%= link_to login_path do %>
-		<div class="matchmaker_signin">
-			MatchMakers
-		</div>
-	<% end %>
+<div class="how_it_works_box">
+	<div class="container">
+		<h1 class="how_it_works_header">
+			How It Works
+		</h1>
 
+		<div class="how_it_works_tagline">
+			shiaME is a <strong>private</strong> invite-only matchmaking service for Shia Muslims. Nobody can view your profile except for your MatchMaker and the User we match you with. 
+		</div>
+
+		<h1 class="how_it_works_header">
+			1. Pick MatchMaker
+		</h1>
+
+		<%= image_tag("pick_mm.png", class:"how_it_works_pick") %>
+
+		<h1 class="how_it_works_header">
+		 2. Create Your Profile 
+		</h1>
+
+		<%= image_tag("create_profile.png", class:"how_it_works_create") %>
+
+		<h1 class="how_it_works_header">
+		 3. Get Matched By MatchMaker 
+		</h1>
+		
+		<%= image_tag("get_matched.png", class:"how_it_works_create") %>
+
+		<h1 class="how_it_works_header">
+		 4. Start Talking
+		</h1>		
+
+	<%= image_tag("talking_now.png", class:"how_it_works_talking") %>
+
+		<h1 class="how_it_works_header">
+		 5. Give Your MatchMaker Feedback  
+		</h1>		
+		<%= image_tag("mm_msg.png", class:"how_it_works_create") %>		
+
+
+	</div>
 </div>

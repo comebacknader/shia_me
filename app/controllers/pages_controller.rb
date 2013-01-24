@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   
   def home
     @subscriber = Subscriber.new
+    @user = User.find(1)
+    @admin = Admin.find(1)
   end
   
   def about 
