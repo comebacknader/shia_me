@@ -15,7 +15,11 @@
 
 	<%= link_to @user.admin do %>
 	 <div class="message_show_mm_box">
+	   <% if @user.admin.avatar.present? %>	
 		<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+	   <% else %>
+		<%= image_tag("viewprofile.png", class: 'message_mm_pic') %>	
+	   <% end %>   
 		<p class="message_mm_title_bold">Your MatchMaker:</p>
 		<p class="message_mm_title"><%= @user.admin.name %></p>
 	 </div>
@@ -155,11 +159,15 @@
 		<% @msgs.each do |msg| %>
 		 <div class="each_message"> 
 		  <%= link_to msg do %>
-		   <%= image_tag(msg.admin.avatar(:small), class:"mm_msg_photo") %>
+		   <% if msg.admin.avatar.present? %>
+		    <%= image_tag(msg.admin.avatar(:small), class: "mm_msg_photo") %>
+		   <% else %>
+ 			<%= image_tag("viewprofile.png", class: "mm_msg_photo") %>
+ 		   <% end %>
 		    <% if msg.user.avatar.present? %>
-		     <%= image_tag(msg.user.avatar(:small), class:"mm_user_msg_photo") %>
+		     <%= image_tag(msg.user.avatar(:small), class: "mm_user_msg_photo") %>
 		    <% else %>
-		     <%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
+		     <%= image_tag("viewprofile.png", class: "mm_user_msg_photo") %>
 		    <% end %> 				
 		  <p class="all_msg_message">
 			<%= truncate(msg.message, length: 70) %> <br />

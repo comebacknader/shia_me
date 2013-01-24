@@ -260,8 +260,11 @@
 				
 	<%= link_to @user.admin do %>
 		<div class="user_show_match_bar">
-			
+		   <% if @user.admin.avatar.present? %>	
 			<%= image_tag(@user.admin.avatar(:large), class: 'user_matchmaker_pic') %>
+		   <% else %>
+		    <%= image_tag("viewprofile.png", class: 'user_matchmaker_pic') %>
+		   <% end %>
 			<p class="user_matchmaker_title_bold">Your MatchMaker:</p>			
 			<p class="user_matchmaker_title"><%= @user.admin.name %></p>
 
