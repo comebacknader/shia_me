@@ -27,8 +27,11 @@
 
 	<%= link_to @user.admin do %>
 		<div class="message_show_mm_box">
-			
+		 <% if @user.admin.avatar.present? %>	
 			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
+		 <% else %>
+			<%= image_tag("viewprofile.png", class: 'message_mm_pic') %>
+		 <% end %>		  	
 			<p class="message_mm_title_bold">Your MatchMaker:</p>			
 			<p class="message_mm_title"><%= @user.admin.name %></p>
 
