@@ -48,6 +48,12 @@ class AdminsController < ApplicationController
     end
   end
   
+  def destroy
+    @admin = Admin.find(params[:id])
+    @admin.destroy
+    redirect_to profile_admin_path(current_admin)
+  end
+
   def profile
     @admin = @feedable = Admin.find(params[:id])
     @feeds = Feed.order("created_at DESC")

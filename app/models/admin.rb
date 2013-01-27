@@ -10,8 +10,8 @@ class Admin < ActiveRecord::Base
   has_many :msgs
   has_many :users, :through => :msgs
 
-  has_many :feeds, :dependent => :destroy
-  has_many :feeds, :as => :feedable 
+  has_many :feeds
+  has_many :feeds, :as => :feedable, :dependent => :destroy 
 
   has_many :mmsgs, foreign_key: "sender_id", dependent: :destroy
   has_many :receiver, through: :mmsgs, source: "receiver_id"

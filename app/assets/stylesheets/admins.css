@@ -366,6 +366,24 @@
 		padding:10px;
 }
 
+.delete_admin_master div input{
+		float:left;
+		width:900px;
+		padding:20px 0px 20px 0px;
+		border:1px solid #D0D0D0;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:14px;
+		margin:20px 0px 0px 20px;
+		color:#333;
+		text-align:center;
+		background-color:#FCFCFC;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;			
+}
+
+
 .admin_menu {
 		float:left;
 		width:150px;
@@ -452,12 +470,34 @@
 	background: -moz-linear-gradient(top, #464646,  #464646);
 }
 
+.admin_all_matchmakers_drop {
+		display:none;	
+		position:absolute;
+		width:150px;
+		height:30px;
+	margin:120px 0px 0px 0px;
+		border-right:0px 1px 0px 1px solid DimGray;
+		font-family:"Helvetica";
+		font-weight:bold;
+		color:white;
+		text-align:center;
+		padding:10px 0px 0px 0px;
+		background-color:#313131;
+		z-index:1;
+}
+
+.admin_all_matchmakers_drop:hover {
+	background-color:#464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#464646));
+	background: -moz-linear-gradient(top, #464646,  #464646);
+}
+
 .admin_delete_users_drop {
 	display:none;	
 	position:absolute;
 	width:150px;
 	height:30px;
-	margin:120px 0px 0px 0px;
+	margin:160px 0px 0px 0px;
 	border-right:0px 1px 0px 1px solid DimGray;
 	font-family:"Helvetica";
 	font-weight:bold;
@@ -479,7 +519,7 @@
 	position:absolute;
 	width:150px;
 	height:30px;
-	margin:160px 0px 0px 0px;
+	margin:195px 0px 0px 0px;
 	border-right:0px 1px 0px 1px solid DimGray;
 	font-family:"Helvetica";
 	font-weight:bold;

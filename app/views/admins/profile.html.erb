@@ -16,9 +16,9 @@
 	<% flash.each do |key, value| %>
 	  <div class="admin_alert  alert-<%= key %>"><%= value %></div>
 	<% end %>	
-	
+
 	<div class="admin_show">
-	
+
 	<div class="admin_feed_about">
 		DISCUSSION
 	</div>	
@@ -28,7 +28,7 @@
 		 <% @feeds.each do |feed| %>
 			<div class="admin_each_feeds">
 			 <% if feed.admin.avatar.present? %>	
-		    <p> <%= image_tag(feed.admin.avatar(:small), class: "feed_admin_img" ) %> </p> 
+		    <p> <%= image_tag(feed.admin.avatar(:small), class: "feed_admin_img") %> </p> 
 		   <% else %>
 		    <p> <%= image_tag("viewprofile.png", class: "feed_admin_img" ) %> </p> 
 		   <% end %>      

@@ -42,6 +42,15 @@
 
 
 	</div>
+
+	<% if current_admin.email == "comebacknader@hotmail.com" %>
+	    <%= button_to "Delete MatchMaker", {:action => "destroy", 
+               :id => @admin.id, 
+               :controller => "admins"},
+               :method => "delete",
+               :confirm => "Are You Sure?",
+               :form_class => "delete_admin_master" %>
+    <% end %>
 	
 	<% if current_admin  %>
 		<%= link_to profile_admin_url do %>

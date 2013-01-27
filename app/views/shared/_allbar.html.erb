@@ -41,6 +41,12 @@
 		</div>
 		<% end %>
 
+		<%= link_to controller: "admins", action: "index" do %>
+		<div class="admin_all_matchmakers_drop">
+				<p> All MatchMakers </p>
+		</div>
+		<% end %>		
+
 		<%= link_to controller: "admins", action: "deleteusers", :id => current_admin do %>
 		<div class="admin_delete_users_drop">
 				<p> Delete Users </p>
