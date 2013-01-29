@@ -46,6 +46,7 @@ ShiaMe::Application.routes.draw do
        get 'arabmen'
        get 'arabwomen'
        get 'othermen'
+       get 'otherwomen'
      end     
    end
 

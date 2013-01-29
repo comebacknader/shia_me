@@ -84,6 +84,21 @@ class AdminsController < ApplicationController
     end
   end
 
+   def desiwomen
+    @admin = Admin.find(params[:id])     
+    @womenn = User.where(:gender => "FEMALE").order
+    @women = []
+    @womenn.each do |women|
+      if women.question
+        if women.question.ethnicity == "pakistani" || 
+          women.question.ethnicity == "indian" ||
+          women.question.ethnicity == "desi"          
+          @women << women
+        end
+      end
+    end
+  end  
+
   def persianmen
     @admin = Admin.find(params[:id])     
     @menn = User.where(:gender => "MALE").order
@@ -93,6 +108,20 @@ class AdminsController < ApplicationController
         if men.question.ethnicity == "persian" || 
           men.question.ethnicity == "afghan"
           @men << men
+        end
+      end
+    end
+  end 
+
+  def persianwomen
+    @admin = Admin.find(params[:id])     
+    @womenn = User.where(:gender => "FEMALE").order
+    @women = []
+    @womenn.each do |women|
+      if women.question
+        if women.question.ethnicity == "persian" || 
+          women.question.ethnicity == "afghan"
+          @women << women
         end
       end
     end
@@ -112,6 +141,20 @@ class AdminsController < ApplicationController
     end
   end   
 
+  def arabwomen
+    @admin = Admin.find(params[:id])     
+    @womenn = User.where(:gender => "FEMALE").order
+    @women = []
+    @womenn.each do |women|
+      if women.question
+        if women.question.ethnicity == "iraqi" || 
+          women.question.ethnicity == "arab"
+          @women << women
+        end
+      end
+    end
+  end 
+
   def othermen
     @admin = Admin.find(params[:id])     
     @menn = User.where(:gender => "MALE").order
@@ -129,6 +172,27 @@ class AdminsController < ApplicationController
         end
       else
         @men << men
+      end
+    end
+  end  
+
+  def otherwomen
+    @admin = Admin.find(params[:id])     
+    @womenn = User.where(:gender => "FEMALE").order
+    @women = []
+    @womenn.each do |women|
+      if women.question
+        unless women.question.ethnicity == "iraqi" || 
+          women.question.ethnicity == "arab" || 
+          women.question.ethnicity == "persian" ||
+          women.question.ethnicity == "afghan" ||
+          women.question.ethnicity == "pakistani" ||
+          women.question.ethnicity == "indian" || 
+          women.question.ethnicity == "desi" 
+          @women << women
+        end
+      else
+        @women << women
       end
     end
   end  
