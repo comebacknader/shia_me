@@ -37,6 +37,15 @@ ShiaMe::Application.routes.draw do
        put 'cropupdate'
        get 'deleteusers'
        get 'sentmmsgs'
+       get 'desiwomen'
+       get 'desimen'
+       get 'persianmen'
+       get 'persianwomen'
+       get 'othermen'
+       get 'otherwomen'
+       get 'arabmen'
+       get 'arabwomen'
+       get 'othermen'
      end     
    end
 

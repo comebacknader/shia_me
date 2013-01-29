@@ -36,6 +36,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    unless @user.admin.present? 
+      redirect_to pick_user_path
+    else
     @question = @user.question
     @match = @user.matches.last
     @wmatch = @user.wmatches.last
@@ -47,6 +50,7 @@ class UsersController < ApplicationController
     end
     end
     @newmessages = @user.recieved.where(:seen => "false")
+   end
   end
   
   def edit

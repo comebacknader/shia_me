@@ -3,5 +3,7 @@ class Question < ActiveRecord::Base
   				  :ethnicity, :firsthobby, :secondhobby, :thirdhobby, :islamtoyou
   
   belongs_to :user
+
+  before_save { |question| question.ethnicity = ethnicity.downcase }
   
 end

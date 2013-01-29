@@ -68,7 +68,77 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     @women = User.where(:gender => "FEMALE").order
   end
-  
+
+  def desimen
+    @admin = Admin.find(params[:id])     
+    @menn = User.where(:gender => "MALE").order
+    @men = []
+    @menn.each do |men|
+      if men.question
+        if men.question.ethnicity == "pakistani" || 
+          men.question.ethnicity == "indian" ||
+          men.question.ethnicity == "desi"
+          @men << men
+        end
+      end
+    end
+  end
+
+  def persianmen
+    @admin = Admin.find(params[:id])     
+    @menn = User.where(:gender => "MALE").order
+    @men = []
+    @menn.each do |men|
+      if men.question
+        if men.question.ethnicity == "persian" || 
+          men.question.ethnicity == "afghan"
+          @men << men
+        end
+      end
+    end
+  end 
+
+  def arabmen
+    @admin = Admin.find(params[:id])     
+    @menn = User.where(:gender => "MALE").order
+    @men = []
+    @menn.each do |men|
+      if men.question
+        if men.question.ethnicity == "iraqi" || 
+          men.question.ethnicity == "arab"
+          @men << men
+        end
+      end
+    end
+  end   
+
+  def othermen
+    @admin = Admin.find(params[:id])     
+    @menn = User.where(:gender => "MALE").order
+    @men = []
+    @menn.each do |men|
+      if men.question
+        unless men.question.ethnicity == "iraqi" || 
+          men.question.ethnicity == "arab" || 
+          men.question.ethnicity == "persian" ||
+          men.question.ethnicity == "afghan" ||
+          men.question.ethnicity == "pakistani" ||
+          men.question.ethnicity == "indian" || 
+          men.question.ethnicity == "desi" 
+          @men << men
+        end
+      else
+        @men << men
+      end
+    end
+  end  
+
+
+  def desi_women 
+    @admin = Admin.find(params[:id])
+    @women = User.where(:gender => "FEMALE").order
+  end
+
   def allmatches 
     @users = User.where(:admin_id => current_admin.id)
     @admin = Admin.find(params[:id])
