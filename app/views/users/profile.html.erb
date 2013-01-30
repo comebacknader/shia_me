@@ -52,9 +52,16 @@
 		<p class="user_profile_ethnic">
 			<strong> Age: </strong> <%= @user.age %>
 		</p>		
-		<p class="user_profile_ethnic">
-			<strong> Ethnicity: </strong> <%= @question.ethnicity.capitalize %>
+
+		<% if @question.ethnicity == "other" %>
+		 <p class="user_profile_ethnic">
+			<strong> Ethnicity: </strong> <%= @question.race.capitalize %>
 		</p>	
+		<% else %>
+		 <p class="user_profile_ethnic">
+			<strong> Ethnicity: </strong> <%= @question.ethnicity.capitalize %>
+		 </p>
+		<% end %>
 		
 		<% end %>
 	

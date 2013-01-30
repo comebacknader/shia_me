@@ -74,10 +74,20 @@
 		  "<%= @user.name %> is pursuing a career as a ____________"
 		</div>				
 		<%= f.text_field :job, class: "user_signup_field" %>
-
+	
 		<%= f.label :ethnicity, "What is your Ethnicity?", class: "user_signup" %>
-		<%= f.text_field :ethnicity, class: "user_signup_field" %>			
-		
+		<div class="question_form_details">
+		  Unfortunately some people within the Middle Eastern/Desi cultures are looking for people of the same race/ethnicity, so this categorization process is mainly for them. 
+		</div>			
+		<%= f.select(:ethnicity, ['pakistani',
+					    'indian', 'persian',
+						 'arab', 'afghan', 'khoja', 'other']) %>			
+		<div class="question_form_details">
+		 If you selected <strong>"Other" </strong>, please write your ethnicity here:
+		</div>			
+		<%= f.text_field :race, class: "user_signup_field" %>
+
+
 		<%= f.label :education, "Highest Level of Education Finished", class: "user_signup" %>
 		<%= f.select(:education, ['High School',
 						 'Community College', 'University','Grad School',
