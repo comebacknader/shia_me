@@ -65,19 +65,24 @@
 		</h1>
 
 		<div class="how_it_works_tagline">
-			shiaME is a <strong>private</strong> invite-only matchmaking service for Shia Muslims. Nobody can view your profile except for your MatchMaker and the User we match you with. 
+			shiaME is a <strong>private</strong> invite-only matchmaking service for Shia Muslims.
 		</div>
 
 		<h1 class="how_it_works_header">
 			1. Pick A MatchMaker
 		</h1>
+		  <p class="step_tagline">
+		  	You get to pick your own <strong> Personal MatchMaker </strong> that works specifically with you to find you a match. 
+		  </p>
 
 		<%= image_tag("pick_mm.png", class:"how_it_works_pick") %>
 
 		<h1 class="how_it_works_header">
 		 2. Create Your Profile 
 		</h1>
-
+		<p class="step_tagline">
+		 Nobody can view your profile except for your MatchMaker and the User we match you with. 		
+		</p>
 		<%= image_tag("create_profile.png", class:"how_it_works_create") %>
 
 		<h1 class="how_it_works_header">
@@ -94,9 +99,35 @@
 
 		<h1 class="how_it_works_header">
 		 5. Give Your MatchMaker Feedback  
-		</h1>		
-		<%= image_tag("mm_msg.png", class:"how_it_works_create") %>		
+		</h1>	
+		<p class="step_tagline">
+		 Tell your MatchMaker what you liked or didn't like about your match, so the MatchMaker can get a better sense of what you're looking for. 		
+		</p>			
+		<%= image_tag("mm_msg.png", class:"how_it_works_create") %>	
 
+	    <h1 class="how_it_works_header">
+		 6. Pricing  
+		</h1>	
+		  <p class="step_tagline">
+		  	We charge on a monthly basis and this ensures that whoever is on our site is serious and dedicated to getting married. 
+		  </p>
+
+
+    <div class="main_price_container">
+	  	<div class="price_box">
+	  	  $50/month 
+	  	</div>
+
+		<div class="bottom_invite_code">
+			<p>Enter Your Invite Code</p>
+			<%= form_tag test_path, :method => :get  do %>
+			    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+			    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
+			<% end %>
+		</div>	  	
+	</div>
 
 	</div>
 </div>
+
+	<div class="footer">  © Copyright 2013 shiaME | All rights reserved. </div>

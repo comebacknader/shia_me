@@ -198,10 +198,12 @@
 .how_it_works_box {
 	float:left;
 	width:100%;
-	padding:10px 0px 100px 0px;
+	padding:10px 0px 20px 0px;
 	background-color:#FCFCFC;
 	border:1px solid #D0D0D0;
 	margin:80px 0px 0px 0px;
+	font-family:"Helvetica";
+	color:#333;
 }
 
 .how_it_works_header {
@@ -237,7 +239,7 @@
 	float:left;
 	width:500px;
 	height:270px;
-	margin:20px 0px 0px 270px;
+	margin:20px 0px 20px 270px;
 	border:1px solid #D0D0D0;
 }
 
@@ -248,6 +250,94 @@
 	height:370px;
 	margin:20px 0px 0px 220px;
 	border:1px solid #D0D0D0;
+}
+
+.main_price_container {
+	float:left;
+	margin:0px 0px 0px 250px;
+	width:600px;
+	padding:20px;
+}
+
+.price_box {
+	float:left;
+	margin:20px 0px 20px 125px;
+	border:2px solid #5CADFF;
+	background-color: white;
+	text-align: center;
+	font-size:44px;
+	color:white;
+	padding:20px;
+	font-family: "Helvetica";
+	background-color:#5CADFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5CADFF), to(#2E8AE6));
+	background: -moz-linear-gradient(top, #5CADFF,  #2E8AE6);		
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;		
+}
+
+
+.women_using {
+	float:left;
+	font-size:34px;
+	text-align: center;
+	margin:20px 0px 0px 125px;
+}
+
+.women_using_box {
+	float:left;
+	margin:20px 0px 0px 135px;
+	border:2px solid #5CADFF;
+	background-color: white;
+	text-align: center;
+	font-size:44px;
+	color:white;
+	padding:20px 100px 20px 100px;
+	font-family: "Helvetica";
+	background-color:#5CADFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5CADFF), to(#2E8AE6));
+	background: -moz-linear-gradient(top, #5CADFF,  #2E8AE6);		
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;			
+}
+
+.step_tagline {
+	float:left;
+	font-size:14px;
+	color:#333;
+	text-align:center;
+	font-weight:none;
+	width:500px;
+	margin:0px 0px 0px 260px;
+}
+
+.bottom_invite_code {
+		float:left;
+		margin:50px 0px 0px 100px;
+		z-index:2;
+		width:300px;
+		color:DimGray;
+}
+
+.bottom_invite_code p {
+	font-size:12px;
+	text-align:center;
+}
+
+
+.footer {
+	float:left;
+	width:100%;
+	padding:20px 0px 20px 0px;
+	border:1px solid #D0D0D0;
+	background-color:whitesmoke;
+	opacity:0.7;
+	text-align: center;
+	font-family:"Helvetica";
+	color:#333;
+	font-size:14px;
 }
 
 #img_bg{
