@@ -10,14 +10,11 @@
 </head>
 <body>
 
-
+<div id="wrap">
+	<div id="main">
 <%= yield %>
-
-<% if Rails.env.development? %>
-<div class="debug">
-<%= debug(params) if Rails.env.development? %>
+    </div>
 </div>
-<% end %>
-</body>
 <%= render 'shared/footer' %>
+</body>
 </html>

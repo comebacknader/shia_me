@@ -68,6 +68,21 @@
 	            box-shadow: 0 4px 4px -1px #B8B8B8;
 }
 
+.mm_all_messages_box {
+	float:right;
+	width:500px;
+	margin:20px 0px 50px 50px;
+	border:1px solid #D0D0D0;
+	background-color:#FDFDFD;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding:0px 0px 10px 0px;
+	-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+	   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+	            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
 .message_home_list {
 	clear:left;
 	float:left;
