@@ -1,46 +1,34 @@
-<div class="home_bar">
-	<div class="container">
-	 <%= link_to login_path do %>	
-		<div class="home_log_in">
-			MatchMakers
-		</div>
-	<% end %>	
-	 <%= link_to signin_path do %>	
-		<div class="home_sign_in">
-			Users
-		</div>
-	<% end %>
-	</div>
-</div>
+
+<%= render 'homebar' %>
 
 <div class="container">
 
  <div class="home_main_box">
-	<div class="home_user_example">
-		<%= image_tag(@user.avatar(:medium), class: "home_user_example_img") %>
-		<p class="home_user_name">
-			<%= @user.name %>
-		</p>
-		<p class="home_user_location">
-			<%= @user.location %>
-		</p>
-		<p class="home_user_location">
-			USER
-		</p>
-	</div>
-
-	<div class="home_logo">
-	 <%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "home_logo_new") %>
-		<div class="invite_code">
-			<h1 class="home_tagline"> a matchmaking service </h1>
-
-			<p>Enter Your Invite Code</p>
-			<%= form_tag test_path, :method => :get  do %>
-			    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
-			    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
-			<% end %>
+		<div class="home_user_example">
+			<%= image_tag(@user.avatar(:medium), class: "home_user_example_img") %>
+			<p class="home_user_name">
+				<%= @user.name %>
+			</p>
+			<p class="home_user_location">
+				<%= @user.location %>
+			</p>
+			<p class="home_user_location">
+				USER
+			</p>
 		</div>
-	</div>
+
+		<div class="home_logo">
+		 <%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "home_logo_new") %>
+			<div class="invite_code">
+				<h1 class="home_tagline"> a matchmaking service </h1>
+
+				<p>Enter Your Invite Code</p>
+				<%= form_tag test_path, :method => :get  do %>
+				    <%= text_field_tag :code, params[:code], :class => "invite_code_field" %>
+				    <%= submit_tag "ENTER", :class => "invite_code_button"  %>
+				<% end %>
+			</div>
+		</div>
 
 	<div class="home_admin_example">
 		<%= image_tag("admin_example.png", class: "home_admin_example_img") %>

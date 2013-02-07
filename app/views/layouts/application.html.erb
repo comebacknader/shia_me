@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
- 	<%= render 'layouts/stylesheets' %>
-	<%= render 'layouts/analytics' %>
-	<%= render 'layouts/meta' %>	
-    <%= favicon_link_tag 'favicon.ico' %>	
-    <%= yield(:head) %>
-</head>
-<body>
+	<head>
+	 <title><%= full_title(yield(:title)) %></title>
+	 	<%= render 'layouts/stylesheets' %>
+			<%= render 'layouts/analytics' %>
+			<%= render 'layouts/meta' %>	
+	  <%= favicon_link_tag 'favicon.ico' %>	
+	  <%= yield(:head) %>
+	</head>
+	<body>
 
-<div id="wrap">
-	<div id="main">
-<%= yield %>
-    </div>
-</div>
-<%= render 'shared/footer' %>
-</body>
+	<div id="wrap">
+		<div id="main">
+		 <%= yield %>
+	 </div>
+	</div>
+
+	<%= render 'shared/footer' %>
+
+	</body>
 </html>
