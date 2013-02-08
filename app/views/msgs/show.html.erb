@@ -81,7 +81,7 @@
          						 Ago </p>
          </div>
          <div class="message_show_msg">
-         <p> <%= @msg.message %> </p>
+         <p>  <%= sanitize(@msg.message.gsub(/\n/, '<br/>')) %></p>
          </div>
 		
 		  <%= button_to "Delete", {:action => "userhide", :id => @msg.id, :controller => "msgs" }, 

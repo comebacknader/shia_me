@@ -35,7 +35,7 @@
 			<%= image_tag("viewprofile.png", class:"mm_user_msg_photo") %>
 		  <% end %>				
 		  		<p class="admin_msg_to_user"> between you and <%= @msg.user.name %>:</p>
-				<p class="admin_msg_each_msg_show"> <%= @msg.message %> </p>
+				<p class="admin_msg_each_msg_show">  <%= sanitize(@msg.message.gsub(/\n/, '<br/>')) %> </p>
 				<p class="admin_msg_each_time"> <%= time_ago_in_words(@msg.created_at) %> ago </p>
 			</div>		
 	 		  <%= button_to "Delete Message", {:action => "adminhide", :id => @msg.id, :controller => "msgs" }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_show_msg_delete"  %>				
