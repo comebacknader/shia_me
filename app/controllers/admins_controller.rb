@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   include AdminsHelper
-  before_filter :signed_in_admin, only: [:index, :edit, :update, :pics, :picsupdate, :crop, :cropupdate]
+  before_filter :signed_in_admin, only: [:index, :edit, :update, :pics, :picsupdate]
   before_filter :correct_admin, only: [:edit, :update, :pics, :picsupdate, :crop, :cropupdate]
   before_filter :invite, only: [:new]
   skip_before_filter :authorize, only: [:show, :new, :create]
@@ -218,9 +218,9 @@ class AdminsController < ApplicationController
      if params[:admin][:avatar].blank?
       flash[:success] = "Picture Updated"
       sign_in @admin      
-	  redirect_to @admin
+	    redirect_to @admin
      else 
-     sign_in @admin
+      sign_in @admin
       render :action => "crop"
      end
     else

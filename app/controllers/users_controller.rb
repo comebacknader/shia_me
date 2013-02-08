@@ -103,7 +103,7 @@ class UsersController < ApplicationController
      if params[:user][:avatar].blank?
       flash[:success] = "Picture Updated"
       sign_in_user @user      
-	  redirect_to @user
+	    redirect_to @user
      else 
       render :action => "crop"
      end
