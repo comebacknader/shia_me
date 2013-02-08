@@ -51,6 +51,7 @@ class UsersController < ApplicationController
     end
     @newmessages = @user.recieved.where(:seen => "false")
    end
+   @mquest = Mquest.where(:user_id => @user.id)
   end
   
   def edit

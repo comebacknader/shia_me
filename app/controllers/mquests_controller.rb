@@ -30,12 +30,12 @@ class MquestsController < ApplicationController
   end
 
   def edit
- 	@user = current_user	
-	@match = @user.matches.last
-	@wmatch = @user.wmatches.last 
-	@question = current_user.question	
-	@newmessages = @user.recieved.where(:seen => "false") 
-    @mquest = Mquest.find(params[:id])
+    @mquest = Mquest.find(params[:id])    
+   	@user = current_user	
+  	@match = @user.matches.last
+  	@wmatch = @user.wmatches.last 
+  	@question = current_user.question	
+  	@newmessages = @user.recieved.where(:seen => "false") 
   end
   
   def update 

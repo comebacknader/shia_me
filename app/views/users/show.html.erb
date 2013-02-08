@@ -290,7 +290,7 @@
 			</div>	
 		<% end %>	
 	<% else %>
-		<%= link_to edit_user_mquest_path(@user) do %>
+		<%= link_to :controller => "mquests", :action => "edit", :id => @user.mquest.id do %>
 			<div class="user_account_notif">	
 				<%= image_tag("questions.png", class: 'user_matchmaker_pic') %>
 					<h1 class="user_account_header"> 
