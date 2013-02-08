@@ -7,8 +7,13 @@
 	<% flash.each do |key, value| %>
 	  <div class="alert  alert-<%= key %>"><%= value %></div>
 	<% end %>
-	
+
 	<div class="admin_signup_box">
+
+	  <div class="instructions_box">
+				Enter Your Email and we will send you instruction on how to Reset Your Password insh'Allah.
+	  </div>	
+
 		<%= form_tag admin_resets_path, :method => :post do %>
 	
 		<%= label_tag :email, "Email", class: "admin_signup" %>
