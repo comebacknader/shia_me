@@ -608,8 +608,6 @@ body:before {
 	color:#333;
 }
 
-
-
 /* RANDOM */
 
 .password_reset_home {
@@ -620,4 +618,17 @@ body:before {
     padding:10px;
     background-color:#FCFCFC;
     border:1px solid #D0D0D0;
+}
+
+.instructions_box {
+	float:left;
+	width:550px;
+	margin:10px 0px 0px 10px;
+	padding:20px 10px 20px 10px;
+	font-family: "Helvetica";
+	font-size:16px;
+	color:DimGray;
+	text-align:center;
+	border:1px solid #D0D0D0;
+	background-color:#FCFCFC;
 }

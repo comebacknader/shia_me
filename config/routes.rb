@@ -16,7 +16,7 @@ ShiaMe::Application.routes.draw do
    resources :subscriptions
    resources :feeds
    resources :mmsgs
-   resources :admin_resets
+   resources :admin_resets, only: [:new, :create, :edit, :update]
 
    
    scope :admins do 

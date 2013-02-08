@@ -1,5 +1,18 @@
+ <% provide(:title, "Reset Password") %>
+
+ <div class="container"> 
+
+  <%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "signin_logo") %>
+  
   <div class="admin_signup_box">
+
+  <div class="instructions_box">
+  	Reset Your Password Below
+  </div>
+
     <%= form_for @admin, :url => admin_reset_path(params[:id]) do |f| %>
+
+		<%= render 'shared/error_messages' %>
     
     <%= f.label :password, class: "admin_signup" %>
     <%= f.password_field :password, class: "admin_signup_field" %>
@@ -7,7 +20,8 @@
     <%= f.label :password_confirmation, class: "admin_signup" %>
     <%= f.password_field :password_confirmation, class: "admin_signup_field" %>   
 
-    <%= f.submit "Sign Up", class: "admin_create" %>
+    <%= f.submit "Reset", class: "admin_create" %>
 
     <% end %>
   </div>
+</div>
