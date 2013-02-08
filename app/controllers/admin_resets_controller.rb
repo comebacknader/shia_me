@@ -19,7 +19,7 @@ class AdminResetsController < ApplicationController
   	@admin = Admin.find_by_password_reset_token!(params[:id])
   if @admin.password_reset_sent_at < 2.hours.ago
   	redirect_to new_admin_reset_path, :alert => "Password Reset Has Expired"
-  elseif @admin.update_attributes(params[:admin])
+  elsif @admin.update_attributes(params[:admin])
   	sign_in @admin
   	redirect_to @admin, :notice => "Password Has Been Reset"
   else 
