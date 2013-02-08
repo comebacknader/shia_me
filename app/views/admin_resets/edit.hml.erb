@@ -1,8 +1,6 @@
   <div class="admin_signup_box">
-<%= form_for @admin, :url => admin_reset_path(params[:id]) do |f| %>
+    <%= form_for @admin, :url => admin_reset_path(params[:id]) do |f| %>
     
-    <%= render 'shared/error_messages' %>
-  
     <%= f.label :password, class: "admin_signup" %>
     <%= f.password_field :password, class: "admin_signup_field" %>
 
