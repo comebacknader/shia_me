@@ -805,6 +805,27 @@ s
 		background: -moz-linear-gradient(top, #FF5050,  #CC4040);
 }
 
+.forgot_password {
+		float:right;
+		width:200px;
+		border:1px solid #D0D0D0;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:14px;
+		padding:20px 10px 20px 10px;
+		margin: 0px 0px 0px 20px;
+		color:#333;
+		text-align:center;
+		background-color:#FCFCFC;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;		
+}
+
+.forgot_password:hover {
+		border:1px solid dimgray;
+}
+
 
 .error_messages {
 	float:left;

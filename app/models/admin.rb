@@ -50,6 +50,20 @@ class Admin < ActiveRecord::Base
               :secret_access_key => ENV['S3_SECRET_SHIAME']
             }
   
+
+  def send_admin_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    AdminMailer.admin_reset(self).deliver
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while Admin.exists?(column => self[column])
+  end
+
   def password_validation_required?
 	 updating_password || new_record?
   end

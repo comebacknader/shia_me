@@ -1,0 +1,28 @@
+<% provide(:title, "Log In") %>
+
+<div class="container">
+
+	<%= image_tag("logonew1.png", :alt => "shiaME Home Page", :class => "signin_logo") %>
+	
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>
+	
+	<div class="admin_signup_box">
+		<%= form_tag admin_resets_path, :method => :post do %>
+	
+		<%= label_tag :email, "Email", class: "admin_signup" %>
+		<%= text_field_tag :email, params[:email], class: "admin_signup_field" %>
+
+		<%= submit_tag "RESET", class: "admin_create" %>
+		
+	<%= link_to root_path do %>	
+		<div class="login_to_home">
+		<p>Home</p>
+		</div>
+	<% end %>
+
+		<% end %>
+	</div>
+	
+</div>

@@ -64,6 +64,10 @@ class User < ActiveRecord::Base
   
 
 
+  def send_password_reset
+    
+  end
+
   def password_validation_required?
 	 updating_password || new_record?
   end

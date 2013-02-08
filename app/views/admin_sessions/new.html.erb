@@ -19,6 +19,11 @@
 
 		<%= f.submit "Log In", class: "admin_create" %>
 		
+	<%= link_to  new_admin_reset_path do %>
+	 <div class="forgot_password">
+      Forget Your Password?
+	 </div>	
+	<% end %>		
 		
 	<%= link_to root_path do %>	
 		<div class="login_to_home">

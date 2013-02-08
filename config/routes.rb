@@ -1,6 +1,5 @@
 ShiaMe::Application.routes.draw do
 
-
    root to: 'pages#home'
     
    resources :admins       
@@ -17,6 +16,7 @@ ShiaMe::Application.routes.draw do
    resources :subscriptions
    resources :feeds
    resources :mmsgs
+   resources :admin_resets
 
    
    scope :admins do 
@@ -125,6 +125,7 @@ ShiaMe::Application.routes.draw do
    match '/signout', to: 'usersessions#destroy', via: :delete
    match '/sent', to: 'messages#sent'
    match '/allbox', to: 'messages#allbox'
+   match '/adminreset', to: 'admin_resets#adminreset'
 
    
 end
