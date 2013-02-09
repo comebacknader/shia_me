@@ -16,7 +16,8 @@ ShiaMe::Application.routes.draw do
    resources :subscriptions
    resources :feeds
    resources :mmsgs
-   resources :admin_resets, only: [:new, :create, :edit, :update]
+   resources :admin_resets
+   resources :password_resets
 
    
    scope :admins do 
@@ -127,6 +128,7 @@ ShiaMe::Application.routes.draw do
    match '/sent', to: 'messages#sent'
    match '/allbox', to: 'messages#allbox'
    match '/adminreset', to: 'admin_resets#adminreset'
+   match '/userreset', to: 'password_resetsw#userreset'
 
    
 end

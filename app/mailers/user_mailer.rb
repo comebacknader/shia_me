@@ -14,4 +14,10 @@ class UserMailer < ActionMailer::Base
   	@link = "http://www.shiame.com"
   	mail(to: user.email, subject: "You have a New Message")
   end
+
+  def user_reset(user)
+    @user = user
+    mail :to => user.email, :subject => "Password Reset"
+  end  
+
 end
