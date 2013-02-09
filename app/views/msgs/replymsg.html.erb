@@ -1,0 +1,60 @@
+<% provide(:title, @admin.name) %>
+
+	<%= link_to root_path do %>
+<div class="all_logo">
+	<%= image_tag("headerlogo.png") %>	
+	
+</div>
+	<% end %>
+
+	<%= render 'shared/admin_navbar' %>
+	<%= render 'shared/allbar' %>
+
+  <div class="admin_cont">
+
+	<%= render 'shared/sidebar' %>
+
+
+	<% flash.each do |key, value| %>
+	  <div class="alert  alert-<%= key %>"><%= value %></div>
+	<% end %>
+
+
+	<div class="admin_show">
+		
+		<div class="admin_show_msg_box">
+		 <div class="admin_msg_each_show">
+			<%= image_tag(@lastmsg.admin.avatar(:small), class:"mm_msg_photo") %>
+		  <% if @lastmsg.user.avatar.present? %>	
+			<%= image_tag(@lastmsg.user.avatar(:small), 
+					class:"mm_user_msg_photo") %>
+		  <% else %>
+			<%= image_tag("viewprofile.png", 
+					class:"mm_user_msg_photo") %>
+		  <% end %>				
+		  		<p class="admin_msg_to_user"> between you and <%= @lastmsg.user.name %>:</p>
+				<p class="admin_msg_each_msg_show">  <%= sanitize(@lastmsg.message.gsub(/\n/, '<br/>')) %> </p>
+				<p class="admin_msg_each_time"> <%= time_ago_in_words(@lastmsg.created_at) %> ago </p>
+			</div>	
+		
+	<%= form_for @msg, controller: "admins", action: "newmsg" do |f| %>
+	
+	
+		<div class="new_mmsg_box">
+		<%= f.hidden_field(:user_id) %>
+		<%= f.hidden_field(:admin_id) %>
+		<%= f.hidden_field :seen %>		
+		<%= f.hidden_field :admin_seen %>	
+	
+		<%= f.label :message, "New Message",  class: "new_mmsg_label" %>
+		<%= f.text_area :message, class: "new_mmsg_textarea" %>
+		
+		<%= f.submit "Send Message", class:"new_mmsg_submit" %>
+		
+			<% end %>	
+		</div>	
+	</div>
+
+
+
+  </div>

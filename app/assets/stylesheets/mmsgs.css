@@ -13,9 +13,9 @@
 
 .new_mmsg_box {	
 	float:left;
-	width:500px;
+	width:700px;
 	height:350px;
-	margin:15px 0px 0px 25px;
+	margin:15px 0px 0px 5px;
 	border:1px solid #D0D0D0;
 	background-color:#FDFDFD;	
 	-moz-border-radius: 10px;
@@ -91,7 +91,7 @@
 
 .new_mmsg_textarea {
 	float:left;
-	width:460px;
+	width:660px;
 	height:200px;
 	margin:10px;
 	border:1px solid #D0D0D0;

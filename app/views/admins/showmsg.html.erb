@@ -27,7 +27,7 @@
 		 <% end %>
 
 		<div class="admin_show_msg_box">
-			<div class="admin_msg_each_show">
+		 <div class="admin_msg_each_show">
 			<%= image_tag(@msg.admin.avatar(:small), class:"mm_msg_photo") %>
 		  <% if @msg.user.avatar.present? %>	
 			<%= image_tag(@msg.user.avatar(:small), class:"mm_user_msg_photo") %>
@@ -37,8 +37,14 @@
 		  		<p class="admin_msg_to_user"> between you and <%= @msg.user.name %>:</p>
 				<p class="admin_msg_each_msg_show">  <%= sanitize(@msg.message.gsub(/\n/, '<br/>')) %> </p>
 				<p class="admin_msg_each_time"> <%= time_ago_in_words(@msg.created_at) %> ago </p>
-			</div>		
-	 		  <%= button_to "Delete Message", {:action => "adminhide", :id => @msg.id, :controller => "msgs" }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_show_msg_delete"  %>				
+			</div>	
+
+ 		<%= button_to "REPLY", { :controller => "msgs", :action => "replymsg"}, :method => "get", form_class: "admin_show_msg_delete"  %>	
+
+		<%= button_to "Delete Message", {:action => "adminhide", :id => @msg.id, :controller => "msgs" }, :confirm => "Are you sure you want to delete this message?", :method => "put", form_class: "admin_show_msg_reply" %>
+
 		</div>
 	</div>
+
+
   </div>

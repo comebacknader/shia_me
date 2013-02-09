@@ -102,6 +102,7 @@ ShiaMe::Application.routes.draw do
       member do 
         put 'adminhide'
         put 'userhide'
+        get 'replymsg'
       end
     end
 

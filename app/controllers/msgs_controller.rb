@@ -2,7 +2,7 @@ class MsgsController < ApplicationController
   include AdminsHelper
    skip_before_filter :authorize, except: [:index]
    before_filter :retrieve_newmsg, only: [:new, :show]
-   before_filter :admin_not_seen_msg, only: [:index] 
+   before_filter :admin_not_seen_msg, only: [:index, :replymsg] 
    before_filter :matched_users, only: [:index]
 
   def index
@@ -57,12 +57,12 @@ class MsgsController < ApplicationController
   
   def destroy
     @msg = Msg.find(params[:id])
-    @msg.destroy
-    if current_admin
-      redirect_to current_admin
-    else 
-      redirect_to current_user
-    end
+     @msg.destroy
+      if current_admin
+        redirect_to current_admin
+      else 
+        redirect_to current_user
+      end
   end
 
   def adminhide 
@@ -78,5 +78,13 @@ class MsgsController < ApplicationController
     redirect_to messages_path
   end
 
+  def replymsg
+    @lastmsg = Msg.find(params[:id])
+    @user = @lastmsg.user
+    @admin = current_admin
+    @msgs = Msg.all
+    @users = User.where(:admin_id => @admin.id)   
+    @msg = Msg.new(:user_id => @user.id, :admin_id => current_admin.id, :admin_seen => "true")
+  end
 
 end
