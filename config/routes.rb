@@ -128,7 +128,7 @@ ShiaMe::Application.routes.draw do
    match '/sent', to: 'messages#sent'
    match '/allbox', to: 'messages#allbox'
    match '/adminreset', to: 'admin_resets#adminreset'
-   match '/userreset', to: 'password_resetsw#userreset'
+   match '/userreset', to: 'password_resets#userreset'
 
    
 end
