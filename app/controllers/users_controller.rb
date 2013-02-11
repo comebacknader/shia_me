@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.subscription.present?  
      @subscription = @user.subscription  
-     @stripe = Stripe::Customer.retrieve(@user.stripe_customer_token)
+     @stripe = Stripe::Customer.retrieve(@subscription.stripe_customer_token)
      @stripe.delete
     end
     @user.destroy
