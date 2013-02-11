@@ -73,6 +73,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    if @user.subscription.present?  
+     @subscription = @user.subscription  
+     @stripe = Stripe::Customer.retrieve(@user.stripe_customer_token)
+     @stripe.delete
+    end
     @user.destroy
     if current_admin
      flash[:notice] = "Successfully deleted #{@user.name}"       

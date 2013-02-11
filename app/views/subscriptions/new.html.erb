@@ -34,14 +34,7 @@
 	<div class="question_new_box">
 	
 		<%= form_for @subscription, :html => { :multipart => true } do |f| %>
-		<%= render 'shared/sub_errors' %>
-	
-	
-		<%= f.label :name, "Name on Card", class: "user_signup" %>
-		<%= f.text_field :name, class: "user_signup_field" %>
-
-		<%= f.label :email, "Email", class: "user_signup" %>
-		<%= f.text_field :email, class: "user_signup_field" %>			
+		<%= render 'shared/sub_errors' %>	
 				
 		<%= f.hidden_field :stripe_card_token %>
 		<%= f.hidden_field :user_id %>	
