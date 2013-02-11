@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   include AdminsHelper
   skip_before_filter :authorize, except: [:assign, :assignmm, :match]
-  before_filter :invite, only: [:new]
+  before_filter :invite, only: [:new, :freeuser]
   before_filter :sign_this_user, only: [:index, :show, :edit, :update, :pics, :picsupdate]
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
   before_filter :retrieve_newmsg, only: [:show]
   before_filter :admin_not_seen_msg, only: [:assign, :match]
   before_filter :matched_users, only: [:match, :only]
+  before_filter :notpaid, only: [:show, :edit]
   
 
   def index
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     unless @user.admin.present? 
-      redirect_to pick_user_path
+      redirect_to new_user_subscription(@user)
     else
     @question = @user.question
     @match = @user.matches.last
@@ -74,12 +75,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     if current_admin
-       flash[:notice] = "Successfully delete #{@user.name}"       
+     flash[:notice] = "Successfully deleted #{@user.name}"       
      redirect_to profile_admin_path(current_admin)
-    else if current_user
-     redirect_to current_user
+    else
+     redirect_to root_path
     end
-    end 
   end
   
   def profile
@@ -123,7 +123,7 @@ class UsersController < ApplicationController
     @user.attributes = params[:user] 
 	 if @user.update_attributes(params[:user])
        if @user.cropping? 
-    	@user.avatar.reprocess!       
+    	  @user.avatar.reprocess!       
         sign_in_user @user
         redirect_to  @user
        else
@@ -162,7 +162,7 @@ class UsersController < ApplicationController
     if @user.update_attribute(:admin_id, params[:user][:admin_id])
       flash[:success] = "MatchMaker Assigned"
       sign_in_user @user
-      redirect_to @user
+      redirect_to new_user_subscription_path(@user)
     else
       render 'pick'
     end  
@@ -184,9 +184,6 @@ class UsersController < ApplicationController
       render 'match'
     end
   end
-    
-
-  
   
   def permission
   	@user = User.find(params[:id])
@@ -201,6 +198,11 @@ class UsersController < ApplicationController
   	else
   	 render :action => "permission"
   	end	  	
+  end
+
+  def freeuser
+    @admin = Admin.last
+    @user = User.new(:admin_id => @admin.id)
   end
   
   private 

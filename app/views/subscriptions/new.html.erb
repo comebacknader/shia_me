@@ -1,63 +1,35 @@
 <% provide(:title, @user.name) %>
 
-<%= render 'shared/userallbar' %>
+	<div class="user_all_bar">
+	</div>
 
 	<div class="user_container">
 
 		<% flash.each do |key, value| %>
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
 		<% end %>	
-		
-		<div class="message_left_column">
 	
-			<div class="message_show_image">
-				<% if @user.avatar.present? %>
-					<%= image_tag(@user.avatar(:large), class: "user_no_pic") %>
-				<% else %>
-					<%= image_tag("userlogo.png", class: "user_no_pic") %>
-				<% end %>
+
 	
-				<div class="user_show_pic">
-					<%= link_to "Change Profile Picture", pics_user_path(@user) %>
-				</div>
+	<div class="subscription_pay_column">
 
-			</div>
-			
-	<%= render 'shared/navbar' %> 
-
-	<%= link_to @user.admin do %>
-		<div class="message_show_mm_box">
-			
+		<div class="subscribe_mm_box">
 			<%= image_tag(@user.admin.avatar(:small), class: 'message_mm_pic') %>
 			<p class="message_mm_title_bold">Your MatchMaker:</p>			
 			<p class="message_mm_title"><%= @user.admin.name %></p>
+		</div>
+			
+	 <h1 class="subscribe_header">
+		 Payment  
+		</h1>	
+		  <p class="subscribe_tagline">
+		  	We charge on a monthly basis and this ensures that whoever is on our site is serious and dedicated to getting married. 
+		  </p>
 
-		</div>
-	<% end %>
-		
-	<% if @user.matches.present? || @user.wmatches.present? %>
-		<div class="message_match_box">
-		<% if @user.gender == "MALE" %>
-			<%= link_to profile_user_url(@match.woman)  do %>
-				<%= image_tag(@match.woman.avatar(:small)) %>
-				<p class="message_mm_title_bold">Your Match:</p>
-				<p class="message_mm_title"> <%= @match.woman.name %> </p>
-			<% end %>
-		<% else %>
-			<%= link_to profile_user_url(@wmatch.man) do %>
-				<%= image_tag(@wmatch.man.avatar(:small)) %>
-				<p class="message_mm_title_bold">Your Match:</p>				
-				<p class="message_mm_title"> <%= @wmatch.man.name %> </p>
-			<% end %>
-		<% end %>
-		</div>			
-		</div>
-	<% end %>	
-	</div>
-	
-	<div class="message_right_column">
-	
-			<h1 class="user_header"> Monthly Subscription</h1>
+	  	<div class="price_box">
+	  	  $50/month 
+	  	</div>
+
 
 	<div class="question_new_box">
 	
@@ -98,10 +70,16 @@
 		</div>	
 		
 	
-		<%= f.submit "Submit", class: "user_create" %>
+		<%= f.submit "Submit", class: "user_create_bigger" %>
 
 		<% end %>
-		
+
+  <%= button_to "Don't Want to Join", {:action => "destroy",
+			                        :id => @user.id, 
+			                        :controller => "users"},
+			                        :method => "delete", 
+			                        :confirm => "Are you sure?", 
+			                        :class => "no_join" %>			
 	
 	</div>
 		

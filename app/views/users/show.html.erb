@@ -2,7 +2,7 @@
 
 <%= render 'shared/userallbar' %>
 	
-	<div class="user_container">
+<div class="user_container">
 
 		<% flash.each do |key, value| %>
 		  <div class="alert  alert-<%= key %>"><%= value %></div>
@@ -10,274 +10,56 @@
 
 	<div class="message_left_column">	
 
-		<%= render 'shared/userimage' %>
-		<%= render 'shared/navbar' %>
+			<%= render 'shared/userimage' %>
+			<%= render 'shared/navbar' %>
 
 	</div>
 
 	
-	<div class="message_right_column">
-	
+ <div class="message_right_column">
+
 	<% if @user.matches.present? || @user.wmatches.present? %>
-	   <% if @user.gender == "MALE" %>
-	   <% if @match.femapprove.blank? %>
-			<div class="user_show_match_none">	
-				<h1 class="no_match_made"> You are being Matched</h1>
-				<p class="no_match_description"> 
-					We have someone in mind for you and are reviewing it. </p>
-			</div>	  								   
-		<% else if @match.infoapprove.blank? %>		   
-			<div class="user_show_match">	
-				<%= image_tag("viewprofile.png", 
-				 	class: 'user_show_match_no_pic') %> 	
-			<div class="user_show_match_info">
-				<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
-				<p class="user_show_match_location"> Age: <%= @match.woman.age %>  </p>			
-				<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
-				<p class="user_show_match_location"> Ethnicity: 
-					   <%= @match.woman.question.ethnicity %> </p>
-			</div>				
-			<div class="user_to_match_buttons">			
-			<p class="should_info_approve"> WANT TO SEE HER PHOTO? </p>
-				<%= link_to profile_user_url(@match.woman) do %>
-					<div class="view_match_profile">
-						<%= image_tag("search3.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to(approveinfo_match_path(@match.id), :method => :put)  do %>
-					<div class="view_match_profile">
-						<%= image_tag("thumbsup.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to deletematch_match_path(@match) do %>						
-					<div class="user_end_match">
-					  <%= image_tag("thumbsdown.png", class: "end_button") %> 
-					</div>
-				<% end %>						
-			</div>	
-		</div>
-			<div class="user_show_match_reason">
-			  <% if @admin.avatar.present? %>
-				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
-			  <% else %>
-				<%= image_tag("viewprofile.png", class:"user_show_reason_img") %>			  
-			  <% end %>	
-			<p>	<%= truncate(@match.reason, length: 200) %> </p>
-			</div>				
-		 <% else if @match.picapprove.blank? %>
-		  <div class="user_show_match">
-			 <% if @match.woman.avatar.present? %>
-				<%= image_tag(@match.woman.avatar(:large), 
-				 	class: 'user_show_match_no_pic') %>
-			<% else %>
-				<%= image_tag("viewprofile.png", 
-				 	class: 'user_show_match_no_pic') %>
-			<% end %> 	
-			<div class="user_show_match_info">
-					<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
-					<p class="user_show_match_location"> Age: <%= @match.woman.age %>  </p>			
-					<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
-					<p class="user_show_match_location"> Ethnicity: 
-					       <%= @match.woman.question.ethnicity %> </p>
-			</div>				
-			<div class="user_to_match_buttons">			
-			<p class="should_info_approve"> WANT TO START TALKING TO HER? </p>
-				<%= link_to profile_user_url(@match.woman) do %>
-					<div class="view_match_profile">
-						<%= image_tag("search3.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to(approvepic_match_path(@match.id), :method => :put)  do %>
-					<div class="view_match_profile">
-						<%= image_tag("thumbsup.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to deletematch_match_path(@match) do %>						
-					<div class="user_end_match">
-					  <%= image_tag("thumbsdown.png", class: "end_button") %> 
-					</div>
-				<% end %>						
-			    </div>	
-	     	 </div>
-		     	<div class="user_show_match_reason">
-			  <% if @admin.avatar.present? %>		     	
-				 <%= image_tag(@admin.avatar(:large), 
-				        class:"user_show_reason_img") %>
-			  <% else %>
-			    <%= image_tag("viewprofile.png", class: "user_show_reason_img") %>
-			  <% end %>	        
-			 <p><%= truncate(@match.reason, length: 200) %> </p>
-			</div>						 
-		 <% else %>		
-			<div class="user_show_match">	
-			 <% if @match.woman.avatar.present? %>
-				<%= image_tag(@match.woman.avatar(:large), 
-				 	class: 'user_show_match_no_pic') %>
-			<% else %>
-				<%= image_tag("viewprofile.png", 
-				 	class: 'user_show_match_no_pic') %>
-			<% end %> 		
-			<div class="user_show_match_info">
-					<h1 class="user_show_match_name"> <%= @match.woman.name %> </h1>
-					<p class="user_show_match_location"> Age: <%= @match.woman.age %>  </p>			
-					<p class="user_show_match_location"> Location: <%= @match.woman.location %> </p>
-					<p class="user_show_match_location"> Ethnicity: 
-					       <%= @match.woman.question.ethnicity %> </p>
-			</div>			 											
-		  <div class="user_to_match_buttons">
-				<%= link_to profile_user_url(@match.woman) do %>
-			<div class="view_match_profile">
-				<%= image_tag("search3.png", class: "search_button") %> 
-			</div>
-				<% end %>
-				<%= link_to new_user_message_path(@user) do %>
-			<div class="user_msg_match">
-			 <%= image_tag("message.png", class: "msg_button") %> 
-			</div>		
-				<% end %>
-				<%= link_to deletematch_match_path(@match) do %>	
-			<div class="user_end_match">
-			 <%= image_tag("endmatch2.png", class: "end_button") %> 
-			</div>		
-				<% end %>				
-		</div>
-		</div>
-			<div class="user_show_match_reason">
-				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
-			<p>	<%= truncate(@match.reason, length: 200) %> </p>
-			</div>		
-		<% end %>
-		<% end %>
-		<% end %>
-	   <% else %> 
-		<div class="user_show_match">
-		  <% if @wmatch.man.avatar.present? %>
-			<%= image_tag(@wmatch.man.avatar(:large), 
-				class: 'user_show_match_no_pic') %>
-		  <% else %>
-			<%= image_tag("viewprofile.png", 
-				class: 'user_show_match_no_pic') %>		
-		  <% end %>  		
-				<div class="user_show_match_info">
-					<h1 class="user_show_match_name"> <%= @wmatch.man.name %> </h1>
-					<p class="user_show_match_location"> Age: <%= @wmatch.man.age %>  </p>			
-					<p class="user_show_match_location"> Location: 
-							<%= @wmatch.man.location %> </p>
-			<% if @wmatch.femapprove.blank? %>					
-					<p class="user_show_match_location"> Ethnicity:
-							  <%= @wmatch.woman.question.ethnicity %> </p>							
-					</div>
-			<div class="user_to_match_buttons">			
-			<p class="should_info_approve"> SHOULD WE SEND HIM YOUR INFO? </p>
-				<%= link_to profile_user_url(@wmatch.man) do %>
-					<div class="view_match_profile">
-						<%= image_tag("search3.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to(approvefem_match_path(@wmatch.id), :method => :put)  do %>
-					<div class="view_match_profile">
-						<%= image_tag("thumbsup.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to deletematch_match_path(@wmatch) do %>						
-					<div class="user_end_match">
-					  <%= image_tag("thumbsdown.png", class: "end_button") %> 
-					</div>
-				<% end %>						
-			</div>											
-			<% else if @wmatch.infoapprove.blank? %>	
-				<div class="user_to_match_buttons">
-					<p class="should_info_approve"> WE ARE SENDING HIM YOUR INFO </p>
-				<%= link_to profile_user_url(@wmatch.man) do %>
-					<div class="view_match_profile_wide">
-						<%= image_tag("search3.png", class: "search_button_wide") %> 
-					</div>
-				<% end %>
-				</div>
-				</div>
-			<% else if @wmatch.picapprove.blank? %>	
-				<div class="user_to_match_buttons">
-					<p class="should_info_approve"> WE ARE SENDING HIM YOUR INFO </p>
-				<%= link_to profile_user_url(@wmatch.man) do %>
-					<div class="view_match_profile_wide">
-						<%= image_tag("search3.png", class: "search_button_wide") %> 
-					</div>
-				<% end %>
-				</div>
-				</div>
-			<% else %>					
-			<div class="user_to_match_buttons">
-				<%= link_to profile_user_url(@wmatch.man) do %>
-					<div class="view_match_profile">
-						<%= image_tag("search3.png", class: "search_button") %> 
-					</div>
-				<% end %>
-				<%= link_to new_user_message_path(@user) do %>
-					<div class="user_msg_match">
-					 <%= image_tag("message.png", class: "msg_button") %> 
-					</div>			
-				<% end %>
-				<%= link_to deletematch_match_path(@wmatch) do %>						
-					<div class="user_end_match">
-					 <%= image_tag("endmatch2.png", class: "end_button") %> 
-					</div>
-				<% end %>
-			</div>
-			</div>
-		  	<% end %>				  		
-		  	<% end %>  
-		    <% end %>
-		  </div>
-			<div class="user_show_match_reason">
-			  <% if @admin.avatar.present? %>			 
-				<%= image_tag(@admin.avatar(:large), class:"user_show_reason_img") %>
-			  <% else %>
-			    <%= image_tag("viewprofile.png", class: "user_show_reason_img") %>
-			  <% end %>				
-				<p><%= truncate(@wmatch.femreason, length: 200) %></p>
-			</div>		
-	    <% end %>
+  <% if @user.gender == "MALE" %>
+   <%= render 'man_show' %>
+	 <% else %> 
+	  <%= render 'woman_show' %>					
+	 <% end %>
 	<% else %>
-				<div class="user_show_match_none">	
-					<% if @user.question %>
+
+		<div class="user_show_match_none">	
+			<% if @user.question %>
 					<h1 class="no_match_made"> No Match Made </h1>
 					<p class="no_match_description"> We are finding you the best match available. <br />
 					  Thank You for your Patience. </p>
-					<% else %>
-					<h1 class="no_match_made"> STEP ONE </h1>
-					<p class="no_match_description"> Answer Profile Questions  </p>
+			<% else %>
+				 	<h1 class="no_match_made"> STEP ONE </h1>
+			 		<p class="no_match_description"> Answer Profile Questions  </p>
 				<%= link_to new_user_question_path(@user) do %>
-						<div class="no_match_answer_button">
-					    	<%= image_tag("answer.png", class: "") %>							
-				    	</div>
-				      <% end %>
-					<% end %>							
-				</div>
-    <% end %>									
-
+					<div class="no_match_answer_button">
+				   <%= image_tag("answer.png", class: "") %>							
+			  </div>
+				<% end %>
+		 <% end %>							
+		</div>							
+<% end %>
 	
-	<% if @user.admin.present? %>
-				
-	<%= link_to @user.admin do %>
-		<div class="user_show_match_bar">
-		   <% if @user.admin.avatar.present? %>	
-			<%= image_tag(@user.admin.avatar(:large), class: 'user_matchmaker_pic') %>
-		   <% else %>
-		    <%= image_tag("viewprofile.png", class: 'user_matchmaker_pic') %>
-		   <% end %>
-			<p class="user_matchmaker_title_bold">Your MatchMaker:</p>			
-			<p class="user_matchmaker_title"><%= @user.admin.name %></p>
-
-		</div>
-	<% end %>
-	
+	<% if @user.admin.present? %>			
+		<%= link_to @user.admin do %>
+			<div class="user_show_match_bar">
+			   <% if @user.admin.avatar.present? %>	
+							<%= image_tag(@user.admin.avatar(:large), class: 'user_matchmaker_pic') %>
+			   <% else %>
+			    <%= image_tag("viewprofile.png", class: 'user_matchmaker_pic') %>
+			   <% end %>
+				<p class="user_matchmaker_title_bold">Your MatchMaker:</p>			
+				<p class="user_matchmaker_title"><%= @user.admin.name %></p>
+			</div>
+		<% end %>
 	<% else %>
 		<div class="user_show_match_bar">
-			
 			<%= image_tag("viewprofile.png", class: 'user_matchmaker_pic') %>
 			<p class="user_matchmaker_title_bold">Select A MatchMaker</p>			
 			<p class="user_matchmaker_title"></p>
-
 		</div>
 	<% end %>	
 		
@@ -299,6 +81,6 @@
 		<% end %>
 	<% end %>			
 	
-	</div>	
-		</div>
+	 </div>	
 	</div>
+</div>

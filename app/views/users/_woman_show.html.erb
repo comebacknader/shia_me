@@ -1,0 +1,103 @@
+	<div class="user_show_match">
+		<% if @wmatch.man.avatar.present? %>
+			<%= image_tag(@wmatch.man.avatar(:large), 
+				class: 'user_show_match_no_pic') %>
+		<% else %>
+			<%= image_tag("viewprofile.png", 
+				class: 'user_show_match_no
+					_pic') %>		
+		<% end %>  		
+			<div class="user_show_match_info">
+				<h1 class="user_show_match_name"> 
+					<%= @wmatch.man.name %> 
+				</h1>
+					<p class="user_show_match_location"> 
+						Age: <%= @wmatch.man.age %>  
+					</p>			
+					<p class="user_show_match_location"> Location: 
+							<%= @wmatch.man.location %> 
+					</p>
+			<% if @wmatch.femapprove.blank? %>					
+					<p class="user_show_match_location"> 
+						Ethnicity:<%= @wmatch.woman.question.ethnicity.capitalize %> 
+					</p>							
+			</div>
+			<div class="user_to_match_buttons">			
+			 <p class="should_info_approve"> 
+			 	SHOULD WE SEND HIM YOUR INFO? 
+			 </p>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile">
+						<%= image_tag("search3.png", class: "search_button") %> 
+					</div>
+				<% end %>
+				<%= link_to(approvefem_match_path(@wmatch.id), :method => :put)  do %>
+					<div class="view_match_profile">
+						<%= image_tag("thumbsup.png", class: "search_button") %> 
+					</div>
+				<% end %>
+				<%= link_to deletematch_match_path(@wmatch) do %>						
+					<div class="user_end_match">
+					  <%= image_tag("thumbsdown.png", class: "end_button") %> 
+					</div>
+				<% end %>						
+			</div>											
+			<% else if @wmatch.infoapprove.blank? %>	
+				<div class="user_to_match_buttons">
+					<p class="should_info_approve"> WE ARE SENDING HIM YOUR INFO </p>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile_wide">
+						<%= image_tag("search3.png", class: "search_button_wide") %> 
+					</div>
+				<% end %>
+				</div>
+				</div>
+			<% else if @wmatch.picapprove.blank? %>	
+				<div class="user_to_match_buttons">
+					<p class="should_info_approve"> WE ARE SENDING HIM YOUR INFO </p>
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile_wide">
+						<%= image_tag("search3.png", class: "search_button_wide") %> 
+					</div>
+				<% end %>
+				</div>
+				</div>
+			<% else %>					
+			<div class="user_to_match_buttons">
+				<%= link_to profile_user_url(@wmatch.man) do %>
+					<div class="view_match_profile">
+						<%= image_tag("search3.png", class: "search_button") %> 
+					</div>
+				<% end %>
+				<%= link_to new_user_message_path(@user) do %>
+					<div class="user_msg_match">
+					 <%= image_tag("message.png", class: "msg_button") %> 
+					</div>			
+				<% end %>
+				<%= link_to deletematch_match_path(@wmatch) do %>						
+					<div class="user_end_match">
+					 <%= image_tag("endmatch2.png", class: "end_button") %> 
+					</div>
+				<% end %>
+			</div>
+	</div>
+		 <% end %>				  		
+		 <% end %>  
+		 <% end %>
+	</div>
+			<div class="user_show_match_reason">
+			  <% if @admin.avatar.present? %>			 
+						<%= image_tag(@admin.avatar(:large), 
+						class:"user_show_reason_img") %>
+			  <% else %>
+			   <%= image_tag("viewprofile.png", 
+			    	class: "user_show_reason_img") %>
+			  <% end %>				
+				<p><%= truncate(@wmatch.femreason, length: 200) %></p>
+			</div>		
+
+	
+
+
+
+

@@ -38,9 +38,14 @@ class ApplicationController < ActionController::Base
         params[:code] == "MatchMaker4Mahdi"
         session[:code] = "MatchMaker4Mahdi"
         redirect_to new_admin_url
+      else if 
+        params[:code] == "freeshiauser"
+        session[:code] = "freeshiauser"
+        redirect_to freeuser_path
       else
         redirect_to root_path
       end
+     end
      end
     end
     
@@ -49,11 +54,32 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       end
     end
-    
+
+
+    def paid
+      if current_user.free == true or current_user.free == nil
+        redirect_to current_user, :notice => "Welcome!"
+      else
+        nil
+      end
+    end
+
+    def notpaid
+      unless current_user.free == true or current_user.subscription.present? 
+        redirect_to new_user_subscription_path(@user) 
+      else
+        nil
+      end
+    end
+  
     def alreadypaid 
-      if current_user.subscription.present? 
-        redirect_to current_user, :notice => "You Already Paid"
+      if current_user
+       if current_user.subscription.present? 
+         redirect_to current_user, :notice => "You Already Paid"
        end
+      else
+        redirect_to root_path
+      end
     end
   
 end

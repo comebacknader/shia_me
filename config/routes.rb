@@ -66,7 +66,7 @@ ShiaMe::Application.routes.draw do
        get 'permission'
        put 'gotpermit'  
        get 'pick'
-       put 'pickmm'     
+       put 'pickmm'   
       end
     end
     
@@ -129,6 +129,7 @@ ShiaMe::Application.routes.draw do
    match '/allbox', to: 'messages#allbox'
    match '/adminreset', to: 'admin_resets#adminreset'
    match '/userreset', to: 'password_resets#userreset'
+   match '/freeuser', to: 'users#freeuser'
 
    
 end

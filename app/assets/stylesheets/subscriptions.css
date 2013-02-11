@@ -4,7 +4,7 @@
 */
 
 
-#stripe_error {	
+#stripe_error {
 	font-family:"Helvetica";
 	font-weight:bold;
 	color:red;
@@ -12,4 +12,71 @@
 	text-align:left;
 	width:500px;
 	padding:5px;
+}
+
+.subscription_pay_column {
+	float:left;
+	width:500px;
+	margin:20px 0px 50px 200px;
+}
+
+.subscribe_mm_box {
+		clear:left;
+		float:left;
+		width:200px;
+		height:80px;
+		margin:5px 10px 0px 120px;
+		border:1px solid #D0D0D0;
+		background-color:#FDFDFD;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		padding:5px 20px 5px 20px;
+		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
+		            box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.subscribe_mm_box:hover {
+		-webkit-box-shadow: 0 4px 4px -1px #B8B8B8;
+		   -moz-box-shadow: 0 4px 4px -1px #B8B8B8;
+		            box-shadow: 0 4px 4px -1px #B8B8B8;
+}
+
+.subscribe_header {
+		float:left;
+		width:100%;
+		text-align:center;
+		font-family:"Helvetica";
+		font-weight:bold;
+		font-size:40px;
+		color:dimgray;
+		margin:20px 0px 10px 0px;
+}
+
+.subscribe_tagline {
+	float:left;
+	width:100%;
+	text-align:center;
+}
+
+.no_join {
+	float:right;
+	margin:10px 0px 0px 35px;
+	width:100%;
+	padding:20px 0px 20px 0px;
+	text-align:center;
+	font-family:"Arial";
+	font-weight:bold;
+	font-size:16px;
+	color:#333;
+	border:1px solid #D0D0D0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FCFCFC
+}
+
+.no_join:hover {
+	border:1px solid dimgray;
 }
