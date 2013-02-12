@@ -35,10 +35,12 @@ class ApplicationController < ActionController::Base
         session[:code] = Invite.find_by_code(params[:code])
         redirect_to new_user_url
       else if  
-        params[:code] == "MatchMaker4Mahdi"
-        session[:code] = "MatchMaker4Mahdi"
+        params[:code].downcase
+        params[:code] == "matchmaker4mahdi" || "saba"
+        session[:code] = "matchmaker4mahdi" 
         redirect_to new_admin_url
       else if 
+        params[:code].downcase
         params[:code] == "freeshiauser"
         session[:code] = "freeshiauser"
         redirect_to freeuser_path
