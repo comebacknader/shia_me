@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
   
   def new
-  	@admin = Admin.last
-    @user = User.new(:admin_id => @admin.id)
+  	  @admin = Admin.last
+      @user = User.new(:admin_id => @admin.id)
   end
   
   def create
@@ -36,22 +36,22 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    unless @user.admin.present? 
-      redirect_to new_user_subscription(@user)
-    else
-    @question = @user.question
-    @match = @user.matches.last
-    @wmatch = @user.wmatches.last
-    if @match || @wmatch
-    unless @user.gender == "MALE"
-    	@admin = Admin.where(:id => @wmatch.admin_id).last
-    else
-    	@admin = Admin.where(:id => @match.admin_id).last
-    end
-    end
-    @newmessages = @user.recieved.where(:seen => "false")
-   end
+   @user = User.find(params[:id])
+     unless @user.admin.present? 
+       redirect_to new_user_subscription(@user)
+     else
+      @question = @user.question
+      @match = @user.matches.last
+      @wmatch = @user.wmatches.last
+       if @match || @wmatch
+        unless @user.gender == "MALE"
+    	    @admin = Admin.where(:id => @wmatch.admin_id).last
+        else
+    	    @admin = Admin.where(:id => @match.admin_id).last
+        end
+       end
+        @newmessages = @user.recieved.where(:seen => "false")
+     end
    @mquest = Mquest.where(:user_id => @user.id)
   end
   
@@ -206,8 +206,12 @@ class UsersController < ApplicationController
   end
 
   def freeuser
-    @admin = Admin.last
-    @user = User.new(:admin_id => @admin.id)
+   unless session[:code] == "freeshiauser"
+      redirect_to root_path
+    else
+     @admin = Admin.last
+     @user = User.new(:admin_id => @admin.id)
+    end
   end
   
   private 

@@ -55,6 +55,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def notfree
+      unless session[:code] == "freeshiauser"
+        redirect_to root_path
+      end
+    end
+
 
     def paid
       if current_user.free == true or current_user.free == nil
