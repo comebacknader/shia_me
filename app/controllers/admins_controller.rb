@@ -59,8 +59,8 @@ class AdminsController < ApplicationController
     @feeds = Feed.order("created_at DESC")
   end 
   
-  def allmen
-    @admin = Admin.find(params[:id])     
+  def allmen 
+    @admin = Admin.find(params[:id])
     @men = User.where(:gender => "MALE").order
   end
   

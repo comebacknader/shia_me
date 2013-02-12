@@ -86,8 +86,8 @@ alert(e.message);
 					<%= f.hidden_field :woman_id, :value =>  @user.id %>
 
 					<%= f.label :man_id, "Select Man", class: "admin_create_match_label" %>
-					<%= collection_select(:match, :man_id,  User.where(:gender => "MALE").order("name ASC"), :id, :name, 
-					{:prompt => true}, :class => "admin_create_match_dropdown" )%>
+
+								<%= f.select :man_id, options_for_select(@men.map{ |c| [c.name, c.id, {'data-image' => c.avatar(:small)}]}, {:prompt => 'Select A Person'}) %>
 
 					<%= f.label :reason, "Tell the MAN why you made the match",
 											class: "user_signup" %>

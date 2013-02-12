@@ -955,6 +955,17 @@
 	width:25px;
 	height:25px;
 }
+
+.new_match #match_man_id {
+	float:right;
+	width:400px;
+	height:55px;
+}
+
+.new_match #match_man_id option {
+	width:25px;
+	height:25px;
+}
 			
 
 						/* All Matches Check Matches.css */

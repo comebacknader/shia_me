@@ -177,7 +177,23 @@ class UsersController < ApplicationController
     @admin = current_admin
     @user = User.find(params[:id])
     @match = Match.new
-    @women = User.where(:gender => "FEMALE").order("name ASC")
+    @men = []
+    @women = []
+    if @user.gender == "FEMALE"
+      @allmen = User.where(:gender => "MALE").order("name ASC")
+      @allmen.each do |men|
+       if men.matches.empty? 
+        @men << men
+       end
+      end
+    else
+      @allwomen = User.where(:gender => "FEMALE").order("name ASC") 
+      @allwomen.each do |women|
+        if women.wmatches.empty?
+          @women << women
+        end
+      end
+    end
   end
   
   def makematch
