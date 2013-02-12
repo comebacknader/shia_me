@@ -3,7 +3,7 @@
 <meta name="description" content = "<%= metacontent %>" />
  
  <% if Rails.env.production? %>
-  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_LIVE_PUB'] %>
  <% else %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
  <% end %>
