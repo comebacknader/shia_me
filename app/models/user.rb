@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   		:crop_x, :crop_y, :crop_w, :crop_h, :updating_password		
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h, :updating_password
   	
+  serialize :already, Array
+    
   has_secure_password
   
   belongs_to :admin

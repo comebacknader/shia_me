@@ -44,10 +44,16 @@ alert(e.message);
 									:class => "create_match_user_pic") %>
 				<% end %>
 				<div class="admin_each_men_info">
-					<p><%= truncate(@user.name, :length => 15) %></p>
-					<p><%= @user.location %></p>
+						<p><%= truncate(@user.name, :length => 15) %></p>
+						<p><%= @user.location %></p>
 				</div>
-		  <% end %>		
+		  <% end %>
+						<div class="admin_match_already_list">
+						 <strong>	Already Matched With: </strong>
+							<% @user.already.each do |already| %>
+							 <p> <%= already %></p>
+						 <% end %>
+				</div>  		
 		</div>
 		<% if @user.matches.present? || @user.wmatches.present? %>	
 	    <div class="user_match_already"> THIS PERSON IS IN A MATCH </div>		

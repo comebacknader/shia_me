@@ -197,9 +197,18 @@ class UsersController < ApplicationController
   end
   
   def makematch
+    @user = User.find(params[:id])
+    @already = @user.already
     @match = Match.new(params[:match])
     
     if @match.save
+      if @user.gender == "FEMALE"
+        @user.already << @match.man.name
+        @user.save
+      else 
+        @user.already << @match.woman.name
+        @user.save
+      end
       redirect_to matches_path
     else
       render 'match'

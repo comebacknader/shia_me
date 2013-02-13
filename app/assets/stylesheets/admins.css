@@ -771,7 +771,6 @@
 }
 
 .admin_match_each_men:hover {
-	opacity:0.5;
 }
 
 
@@ -784,6 +783,23 @@
 
 .admin_delete_user {}
 
+.admin_match_already_list {
+	clear:left;
+	float:left;
+	margin:10px 0px 0px 0px;
+	width:200px;
+	border:1px solid #D0D0D0;
+	padding:10px;
+}
+
+.admin_match_already_list p {
+	float:left;
+	width:175px;
+	font-family:"Helvetica";
+	color:dimgray;
+	height:10px;
+}
+
 					/* ASSIGN MatchMaker to User */
 
 .admin_assign_mm {
@@ -793,7 +809,7 @@
 
 .admin_assign_button {
 		float:left;
-		width:100px;
+		width:500px;
 		height:60px;
 		border:1px solid #D0D0D0;
 		font-family:"Helvetica";
