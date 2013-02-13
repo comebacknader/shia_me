@@ -134,6 +134,16 @@
 		<p class="list_of_mquest_answers">
 		 Other Preferences: <%= @user.mquest.anypref %>
 		</p>
+		<% if @user.already.present? %>
+		  <div class="user_profile_already_list">
+		  	<h1> 
+		  		Already Matched With:
+		    </h1> 
+		  	<% @user.already.each do |already| %>
+		    	<p> <%= already %> </p>
+		    <% end %>
+		  </div>
+	    <% end %>
 	</div>
 	<% end %>	
 	<% end %>

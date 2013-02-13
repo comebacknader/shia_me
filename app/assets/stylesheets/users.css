@@ -956,6 +956,22 @@ s
 	text-align:left
 }
 
+.user_profile_already_list h1 {
+	clear:both;
+	float:left;
+	width:900px;
+	color:#333;
+	font-size:34px;
+	margin:10px 0px 0px 0px;
+}
+
+.user_profile_already_list {
+	float:left;
+	width:300px;
+	font-family:"Helvetica";
+	color:#333;
+}
+
 .profile_mquest_header {
 	clear:both;
 	float:left;
