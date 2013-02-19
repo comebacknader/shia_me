@@ -37,7 +37,11 @@ class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
      unless @user.admin.present? 
-       redirect_to new_user_subscription(@user)
+      if @user.free == true
+        redirect_to pick_user_path(@user)
+      else
+       redirect_to new_user_subscription_path(@user)
+      end
      else
       @question = @user.question
       @match = @user.matches.last
@@ -233,8 +237,7 @@ class UsersController < ApplicationController
    unless session[:code] == "freeshiauser"
       redirect_to root_path
     else
-     @admin = Admin.last
-     @user = User.new(:admin_id => @admin.id)
+     @user = User.new
     end
   end
   
