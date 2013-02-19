@@ -10,4 +10,11 @@ class AdminMailer < ActionMailer::Base
     @admin = admin
     mail :to => admin.email, :subject => "Password Reset"
   end
+
+  def saba_users(user)
+    @user = user
+    @home = "http://www.shiame.com"    
+    mail :to => @user, :subject => "shiaME Invitation"
+  end
+
 end

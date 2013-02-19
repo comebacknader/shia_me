@@ -270,7 +270,21 @@ class AdminsController < ApplicationController
     @admin = current_admin
     @mmsgs = Mmsg.where(:sender_id => @admin.id, :sender_hide => nil).order('created_at DESC').page(params[:page]).per(20)     
   end
-    
+
+  def saba
+  end
+  
+  def sendsaba
+   if !params[:email].blank?
+    @email = params[:email] 
+    AdminMailer.saba_users(@email).deliver  
+    flash[:error] = "Invitation Sent!"      
+    redirect_to profile_admin_path(current_admin)     
+   else 
+    flash.now[:error] = "You Must Enter Email"     
+    render 'saba'   
+   end    
+  end  
   
   private 
   

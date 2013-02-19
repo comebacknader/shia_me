@@ -1,0 +1,40 @@
+<% provide(:title, "Create Invite Code") %>
+
+	<%= link_to profile_admin_path(current_admin) do %>
+	  <div class="all_logo">
+		<%= image_tag("headerlogo.png") %>	
+	  </div>
+	<% end %>
+
+	<%= render 'shared/admin_navbar' %>
+	
+	<div class="all_bar">
+		
+		<%= link_to profile_admin_url(current_admin) do %>
+			<div class="home_button">
+				<p> Home </p>
+			</div>
+		<% end %>
+		
+		<%= link_to invites_url do %>
+			<div class="home_button">
+				<p> All Codes </p>
+			</div>
+		<% end %>
+		
+	</div>
+
+
+
+<div class="container">
+	
+	<h1 class="invite_header">Invite SABA Matrimonial Member</h1>
+	
+	<div class="invite_saba_user">
+   <%= form_tag sendsaba_path, :method => :post  do %>
+    <%= text_field_tag :email, params[:email], :class => "invite_code_field" %>
+    <%= submit_tag "INVITE", :class => "invite_code_button"  %>
+   <% end %>
+	</div>
+	
+</div>

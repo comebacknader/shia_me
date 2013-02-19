@@ -130,6 +130,7 @@ ShiaMe::Application.routes.draw do
    match '/adminreset', to: 'admin_resets#adminreset'
    match '/userreset', to: 'password_resets#userreset'
    match '/freeuser', to: 'users#freeuser'
-
+   match '/saba', to: 'admins#saba'
+   match '/sendsaba', to: 'admins#sendsaba', via: [:post]
    
 end
