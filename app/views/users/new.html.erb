@@ -13,31 +13,30 @@
 	
 		<%= render 'shared/user_errors' %>
 	
-		<%= f.label :name, class: "user_signup" %>
-		<%= f.text_field :name, class: "user_signup_field" %>
-		
-		<%= f.label :email, class: "user_signup" %>
-		<%= f.text_field :email, class: "user_signup_field" %>
+			<%= f.label :name, class: "user_signup" %>
+			<%= f.text_field :name, class: "user_signup_field" %>
+			
+			<%= f.label :email, class: "user_signup" %>
+			<%= f.text_field :email, class: "user_signup_field" %>
 
-		<%= f.label :age, "Age", class: "user_signup" %>
-		<%= f.text_field :age, class: "user_signup_field" %>
+			<%= f.label :age, "Age", class: "user_signup" %>
+			<%= f.text_field :age, class: "user_signup_field" %>
 
-		<%= f.label :location, "City", class: "user_signup" %>
-		<%= f.text_field :location, class: "user_signup_field" %>
-		
-		<%= f.label :password, class: "user_signup" %>
-		<%= f.password_field :password, class: "user_signup_field" %>	
+			<%= f.label :location, "City", class: "user_signup" %>
+			<%= f.text_field :location, class: "user_signup_field" %>
+			
+			<%= f.label :password, class: "user_signup" %>
+			<%= f.password_field :password, class: "user_signup_field" %>	
 
-		<%= f.hidden_field :free, :value => "false" %>	
+			<%= f.hidden_field :free, :value => "false" %>	
+			
+			<%= f.label :password_confirmation, "Confirm Password", class: "user_signup" %>
+			<%= f.password_field :password_confirmation, class: "user_signup_field" %>
 		
-		<%= f.label :password_confirmation, "Confirm Password", class: "user_signup" %>
-		<%= f.password_field :password_confirmation, class: "user_signup_field" %>
-	
-		<%= f.hidden_field :updating_password, :value => "true" %>	
-	
-		<%= f.label :gender, class: "user_signup" %>
-		<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
-	
+			<%= f.hidden_field :updating_password, :value => "true" %>	
+		
+			<%= f.label :gender, class: "user_signup" %>
+			<%= f.select(:gender, %w[MALE FEMALE], { :index => nil }) %>
 	
 	<div class= "signup_rules">
 	
@@ -62,8 +61,7 @@
 		</p>
 	</div>
 	
-		<%= f.hidden_field :admin_id %>
-	
+
 		<%= f.submit "Sign Up", class: "user_create" %>
 
 		<% end %>
