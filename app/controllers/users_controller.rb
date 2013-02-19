@@ -162,7 +162,13 @@ class UsersController < ApplicationController
   
   def pick
   	@user = User.find(params[:id])
-  	@admins = Admin.all
+    @admins = []
+  	@all = Admin.all
+    @all.each do |admin|
+      unless admin.email == "comebacknader@hotmail.com"
+        @admins << admin
+      end
+    end
   end
   
   def pickmm
