@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_filter :correct_user, only: [:show, :edit, :update, :picsupdate]
   before_filter :retrieve_newmsg, only: [:show]
   before_filter :admin_not_seen_msg, only: [:assign, :match]
-  before_filter :matched_users, only: [:match, :only]
+  before_filter :matched_users, only: [:match, :only, :assign]
   before_filter :notpaid, only: [:show, :edit]
   
 
