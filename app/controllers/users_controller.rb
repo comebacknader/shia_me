@@ -30,7 +30,11 @@ class UsersController < ApplicationController
         redirect_to pick_user_path(@user)
       end	
     else
+     if session[:code] == "freeshiauser"
+      render 'freeuser'
+     else   
       render 'new'
+     end
     end
   end
   
@@ -243,6 +247,7 @@ class UsersController < ApplicationController
    unless session[:code] == "freeshiauser"
       redirect_to root_path
     else
+     session[:code] = "freeshiauser"
      @user = User.new
     end
   end
