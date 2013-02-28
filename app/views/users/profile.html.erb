@@ -133,6 +133,7 @@
         <% end %>  
     <% end %>      
    <div class="user_profile_body_box"> 
+   	<% if @question.present? %>
    	<% if @question.height.present? %>
    	 <strong>Height:</strong>
     	<%= @question.height %> <br/>
@@ -142,6 +143,7 @@
     	<%= @question.bodytype %> 
     <% end %>
    </div>
+   <% end %>
  </div>
 
 	</div>
