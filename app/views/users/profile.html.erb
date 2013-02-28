@@ -46,35 +46,36 @@
 		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
         <% end %>  
     <% end %>      
-		<p class="user_profile_ethnic">
+		<p class="user_profile_generic">
 			<strong><%= @user.location %> </strong>
 		</p>
 		<% if @question %>
-		<p class="user_profile_ethnic">
+		<p class="user_profile_generic">
 			<strong> Age: </strong> <%= @user.age %>
 		</p>		
 
 		<% if @question.ethnicity == "other" %>
-		 <p class="user_profile_ethnic">
-			<strong> Ethnicity: </strong> <%= @question.race.capitalize %>
+		 <p class="user_profile_generic">
+		<strong> Ethnicity: </strong> <%= @question.race.capitalize %>
 		</p>	
 		<% else %>
-		 <p class="user_profile_ethnic">
+		 <p class="user_profile_generic">
 			<strong> Ethnicity: </strong> <%= @question.ethnicity.capitalize %>
 		 </p>
 		<% end %>
-		
 		<% end %>
 	
 		<% if @question %>
-			<p class="admin_show_bio"> <%= @user.name %> attended 
-			<%= @question.education %> 
+			<p class="user_profile_generic"> 
+			<strong> Education: </strong>
+				<%= @question.education %> <br/>
 			<% if @question.job.present? %>
-			and is pursuing a career as a
-			 <%= @question.job %>.  
-   <% else %>
-   .
-   <% end %>
+			<strong>Occupation: </strong>
+			 <%= @question.job %>
+	
+   		<% else %>
+  	    <% end %>
+  	    <br/><br/>
 			 <%= @they %> prays <%= @question.prayer %>.  </p>
 		    
 			  <% if @question.firsthobby.present? %>	    	 
