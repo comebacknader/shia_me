@@ -27,25 +27,9 @@
 
 
 	<div class="user_profile_box">		
+		<div class="user_profile_left_side">
 	 <h1 class="admin_profile_box_header"><%= @user.name %></h1>
 
-	 <% if current_user.present? && current_user != @user && current_user.gender == "MALE" %>
-	  <% if @wmatch.infoapprove.blank? %>
-		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
-	  <% else %>
-		<% if @user.avatar.present? %>
-		 <%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
-        <% else %>
-		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
-        <% end %>	 
-       <% end %>  
-    <% else %> 
-		<% if @user.avatar.present? %>
-		 <%= image_tag(@user.avatar(:medium), class: "admin_show_img" ) %>
-        <% else %>
-		 <%= image_tag("viewprofile.png", class: "admin_show_img" ) %>         
-        <% end %>  
-    <% end %>      
 		<p class="user_profile_generic">
 			<strong><%= @user.location %> </strong>
 		</p>
@@ -129,6 +113,37 @@
 				out a profile. 
 			</p>
 		<% end %>	
+	</div>
+ <div class="user_profile_right_side">
+	 <% if current_user.present? && current_user != @user && current_user.gender == "MALE" %>
+	  <% if @wmatch.infoapprove.blank? %>
+		 <%= image_tag("viewprofile.png", class: "user_profile_image" ) %>         
+	  <% else %>
+		<% if @user.avatar.present? %>
+		 <%= image_tag(@user.avatar(:medium), class: "user_profile_image" ) %>
+        <% else %>
+		 <%= image_tag("viewprofile.png", class: "user_profile_image" ) %>         
+        <% end %>	 
+       <% end %>  
+    <% else %> 
+		<% if @user.avatar.present? %>
+		 <%= image_tag(@user.avatar(:medium), class: "user_profile_image" ) %>
+        <% else %>
+		 <%= image_tag("viewprofile.png", class: "user_profile_image" ) %>         
+        <% end %>  
+    <% end %>      
+   <div class="user_profile_body_box"> 
+   	<% if @question.height.present? %>
+   	 <strong>Height:</strong>
+    	<%= @question.height %> <br/>
+    <% end %>
+    <% if @question.bodytype.present? %>
+    	<strong>Body Type: </strong> 
+    	<%= @question.bodytype %> 
+    <% end %>
+   </div>
+ </div>
+
 	</div>
 	
 	

@@ -186,6 +186,57 @@
 	  white-space: nowrap;
 }
 
+#question_height {
+		float:left;
+		margin:10px 0px 5px 0px;
+		width:500px;
+		height:40px;
+		-webkit-appearance: button;
+	  -webkit-border-radius: 2px;
+	  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	  -webkit-padding-end: 20px;
+	  -webkit-padding-start: 2px;
+	  -webkit-user-select: none;
+	  background-image: url(arrow2.png);
+	    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	  background-position: center right;
+	  background-repeat: no-repeat;
+	  border: 1px solid #AAA;
+	  color: #555;
+	  font-size: inherit;
+	  overflow: hidden;
+	  padding-top: 2px;
+	  padding-bottom: 2px;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+}
+
+
+#question_bodytype {
+		float:left;
+		margin:10px 0px 5px 0px;
+		width:500px;
+		height:40px;
+		-webkit-appearance: button;
+	  -webkit-border-radius: 2px;
+	  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	  -webkit-padding-end: 20px;
+	  -webkit-padding-start: 2px;
+	  -webkit-user-select: none;
+	  background-image: url(arrow2.png);
+	    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	  background-position: center right;
+	  background-repeat: no-repeat;
+	  border: 1px solid #AAA;
+	  color: #555;
+	  font-size: inherit;
+	  overflow: hidden;
+	  padding-top: 2px;
+	  padding-bottom: 2px;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+}
+
 
 .question_form_details {
 	float:left;
@@ -227,6 +278,27 @@
 		-webkit-box-shadow: 0 4px 4px -2px #B8B8B8;
  		  -moz-box-shadow: 0 4px 4px -2px #B8B8B8;
 			box-shadow: 0 4px 4px -2px #B8B8B8;
+}
+
+.user_profile_image {
+		clear:right;
+		float:right;
+		width:200px;
+		height:200px;
+		margin:20px 20px 0px 0px;
+		border:1px solid #D0D0D0;
+		padding:10px;
+}
+
+.user_profile_left_side {
+	float:left;
+	width:600px;
+}
+
+.user_profile_right_side {
+	float:right;
+	width:250px;
+	padding:10px;
 }
 
 .user_profile_question ul {
@@ -282,19 +354,34 @@
 }
 
 .user_profile_generic {
+		clear:left;
 		float:left;
 		color:DimGray;
-		width:550px;
+		width:450px;
 		margin:0px 0px 0px 0px;
 		padding:0px 20px 0px 25px;
 }
 
 .user_profile_career {
 		float:left;
-		color:DimGray;
+		color:dimgray;
 		width:550px;
 		font-size:12px;
 		margin:20px 0px 20px 0px;
 		padding:0px 20px 0px 25px;
+}
+
+
+.user_profile_body_box {
+		clear:right;
+		float:right;
+		width:250px;
+		height:200px;
+		font-size:12px;
+		margin:20px 0px 0px 0px;
+		border:1px solid none;
+		padding:10px;
+		color:dimgray;
+		text-align:center;
 }
 

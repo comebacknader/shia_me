@@ -71,6 +71,16 @@
 	
 		<%= form_for @question, :html => { :multipart => true } do |f| %>
 	
+		<%= f.label :height, "Height", class: "user_signup" %>
+
+		<%= f.select(:height, ['4 Feet',
+					    '4 Feet 1 Inch', '4 Feet 2 Inches',
+						 '4 Feet 3 Inches', '4 Feet 4 Inches', '4 Feet 5 Inches', '4 Feet 6 Inches', '4 Feet 7 Inches', '4 Feet 8 Inches', '4 Feet 9 Inches', '4 Feet 10 Inches', '4 Feet 11 Inches', '5 Feet', '5 Feet 1 Inches', '5 Feet 2 Inches', '5 Feet 3 Inches', '5 Feet 4 Inches', '5 Feet 5 Inches', '5 Feet 6 Inches', '5 Feet 7 Inches', '5 Feet 8 Inches', '5 Feet 9 Inches', '5 Feet 10 Inches', '5 Feet 11 Inches', '6 Feet', '6 Feet 1 Inch', '6 Feet 2 Inches', '6 Feet 3 Inches', '6 Feet 4 Inches', '6 Feet 5 Inches', '6 Feet 6 Inches', '6 Feet 7 Inches', '6 Feet 8 Inches', '6 Feet 9 Inches', '6 Feet 10 Inches', '6 Feet 11 Inches', '7 Feet']) %>
+
+		
+		<%= f.label :bodytype, "Body Type", class: "user_signup" %>	
+		<%= f.select(:bodytype, ['Skinny',
+						 'Athletic', 'A Few Extra Pounds','Curvy']) %>		
 		<%= f.label :job, "What Is Your Occupation?", class: "user_signup" %>
 		<div class="question_form_details">
 		  "<%= @user.name %> is pursuing a career as a ____________"
