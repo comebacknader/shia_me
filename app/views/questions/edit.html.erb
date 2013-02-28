@@ -74,6 +74,17 @@
 		  "<%= @user.name %> is pursuing a career as a ____________"
 		</div>				
 		<%= f.text_field :job, class: "user_signup_field" %>
+
+		<%= f.label :employed, "Are You Currently Employed?", class: "user_signup" %>
+
+		<%= f.select(:employed, ['YES', 'LOOKING FOR JOB']) %>
+
+		<%= f.label :employer, "Where Do You Work?", class: "user_signup" %>
+		 <div class="question_form_details">
+			List the name of your employer.
+	     </div>				
+		<%= f.text_field :employer, class: "user_signup_field" %>
+		
 	
 		<%= f.label :ethnicity, "What is your Ethnicity?", class: "user_signup" %>
 		<div class="question_form_details">
@@ -89,10 +100,26 @@
 
 
 		<%= f.label :education, "Highest Level of Education Finished", class: "user_signup" %>
+		<div class="question_form_details">
+		  List the level even if you are still attending school. 
+		</div>				
+
 		<%= f.select(:education, ['High School',
 						 'Community College', 'University','Grad School',
 						 'PHD']) %>
-						 
+
+		<%= f.label :graduated, "Have you Graduated or are Still Attending?", class: "user_signup" %>
+		
+		<%= f.select(:graduated, ['Graduated', 'Still Attending']) %>
+
+		<%= f.label :edulevel, "What Was the Name of the School?", class: "user_signup" %>
+		<div class="question_form_details">
+		  List the school even if you are still attending it. 
+		</div>				
+
+		<%= f.text_field :edulevel, class: "user_signup_field" %>	
+
+
 		<%= f.label :prayer, "How Often Do You Pray?", class: "user_signup" %>
 		<div class="question_form_details">
 		 Be honest. 

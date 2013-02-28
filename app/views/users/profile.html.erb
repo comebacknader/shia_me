@@ -66,18 +66,34 @@
 		<% end %>
 	
 		<% if @question %>
-			<p class="user_profile_generic"> 
+		<div class="user_profile_career">
 			<strong> Education: </strong>
 				<%= @question.education %> <br/>
+		 <% if @question.edulevel.present? %>				
+			<strong> School: </strong>
+			<%= @question.edulevel %>
+			<br/>
+			<% end %>
+			<% if @question.graduated.present? %>
+			<strong> Status: </strong>
+			<%= @question.graduated %>
+			<br/>
+			<% end %>
+
 			<% if @question.job.present? %>
 			<strong>Occupation: </strong>
-			 <%= @question.job %>
-	
-   		<% else %>
-  	    <% end %>
-  	    <br/><br/>
-			 <%= @they %> prays <%= @question.prayer %>.  </p>
-		    
+			 <%= @question.job %> 
+			 <br/>
+			 <% if @question.employer.present? %>
+		  	<strong> Employer: </strong>
+			   <%= @question.employer %>
+			 <% end %>
+   <% else %>
+  	<% end %>
+		</div>      	
+  <p class="user_profile_ethnic">
+			 <%= @they %> prays <%= @question.prayer %>.
+		</p>  
 			  <% if @question.firsthobby.present? %>	    	 
 				 <div class="user_profile_question">	
 				 	<p> Some of <%= @user.name %>'s Hobbies Include:
@@ -118,38 +134,38 @@
 	
 	<% if current_admin %> 
 	
-	<% if @user.mquest.present? %>
-
-	<div class="profile_spouse_box">
-		<h1 class="profile_mquest_header">Spouse Preferences</h1>
-	
-		<p class="list_of_mquest_answers">
-		 Age Range: <%= @user.mquest.agerange %>
-		</p>
-		<p class="list_of_mquest_answers">
-		 Ethnicity: <%= @user.mquest.ethnic %>
-		</p>
-		<p class="list_of_mquest_answers">
-	 	 Hijab: <%= @user.mquest.needhijabi %>
-		</p>
-		<p class="list_of_mquest_answers">
-		 Education Level: <%= @user.mquest.edulevel %>
-		</p>
-		<p class="list_of_mquest_answers">
-		 Other Preferences: <%= @user.mquest.anypref %>
-		</p>
-		<% if @user.already.present? %>
-		  <div class="user_profile_already_list">
-		  	<h1> 
-		  		Already Matched With:
-		    </h1> 
-		  	<% @user.already.each do |already| %>
-		    	<p> <%= already %> </p>
+		<% if @user.mquest.present? %>
+		<div class="profile_spouse_box">
+			<h1 class="profile_mquest_header">Spouse Preferences</h1>
+		
+			<p class="list_of_mquest_answers">
+			 Age Range: <%= @user.mquest.agerange %>
+			</p>
+			<p class="list_of_mquest_answers">
+			 Ethnicity: <%= @user.mquest.ethnic %>
+			</p>
+			<p class="list_of_mquest_answers">
+		 	 Hijab: <%= @user.mquest.needhijabi %>
+			</p>
+			<p class="list_of_mquest_answers">
+			 Education Level: <%= @user.mquest.edulevel %>
+			</p>
+			<p class="list_of_mquest_answers">
+			 Other Preferences: <%= @user.mquest.anypref %>
+			</p>
+			<% if @user.already.present? %>
+			  <div class="user_profile_already_list">
+			  	<h1> 
+			  		Already Matched With:
+			    </h1> 
+			  	<% @user.already.each do |already| %>
+			    	<p> <%= already %> </p>
+			    <% end %>
+			  </div>
 		    <% end %>
-		  </div>
-	    <% end %>
-	</div>
-	<% end %>	
+		</div>
+		<% end %>
+
 	<% end %>
 
    <% if @user.admin.present? %>
