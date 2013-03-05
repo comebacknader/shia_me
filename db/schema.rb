@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228161339) do
+ActiveRecord::Schema.define(:version => 20130302121524) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20130228161339) do
     t.string   "graduated"
     t.string   "height"
     t.string   "bodytype"
+    t.string   "oftencenter"
   end
 
   create_table "subscribers", :force => true do |t|

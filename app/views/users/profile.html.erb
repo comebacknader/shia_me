@@ -54,20 +54,20 @@
 			<strong> Education: </strong>
 				<%= @question.education %> <br/>
 		 <% if @question.edulevel.present? %>				
-			<strong> School: </strong>
-			<%= @question.edulevel %>
-			<br/>
+			 <strong> School: </strong>
+			  <%= @question.edulevel %>
+			 <br/>
 			<% end %>
 			<% if @question.graduated.present? %>
-			<strong> Status: </strong>
-			<%= @question.graduated %>
-			<br/>
+			 <strong> Status: </strong>
+			  <%= @question.graduated %>
+		 	<br/>
 			<% end %>
 
 			<% if @question.job.present? %>
-			<strong>Occupation: </strong>
-			 <%= @question.job %> 
-			 <br/>
+			 <strong>Occupation: </strong>
+			  <%= @question.job %> 
+			  <br/>
 			 <% if @question.employer.present? %>
 		  	<strong> Employer: </strong>
 			   <%= @question.employer %>
@@ -75,9 +75,13 @@
    <% else %>
   	<% end %>
 		</div>      	
+
   <p class="user_profile_ethnic">
 			 <%= @they %> prays <%= @question.prayer %>.
 		</p>  
+
+		
+
 			  <% if @question.firsthobby.present? %>	    	 
 				 <div class="user_profile_question">	
 				 	<p> Some of <%= @user.name %>'s Hobbies Include:
