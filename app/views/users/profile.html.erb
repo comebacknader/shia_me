@@ -160,19 +160,19 @@
 			<h1 class="profile_mquest_header">Spouse Preferences</h1>
 		
 			<p class="list_of_mquest_answers">
-			 Age Range: <%= @user.mquest.agerange %>
+			 <strong>Age Range:</strong> <%= @user.mquest.agerange %>
 			</p>
 			<p class="list_of_mquest_answers">
-			 Ethnicity: <%= @user.mquest.ethnic %>
+			 <strong>Preferred Ethnicity:</strong> <%= @user.mquest.ethnic %>
 			</p>
 			<p class="list_of_mquest_answers">
-		 	 Hijab: <%= @user.mquest.needhijabi %>
+			 <strong>Does She Have To Wear Hijab?:</strong> <%= @user.mquest.needhijabi %>
 			</p>
 			<p class="list_of_mquest_answers">
-			 Education Level: <%= @user.mquest.edulevel %>
+			 <strong>Education Level:</strong> <%= @user.mquest.edulevel %>
 			</p>
 			<p class="list_of_mquest_answers">
-			 Other Preferences: <%= @user.mquest.anypref %>
+			 <strong>Other Preferences: </strong> <%= @user.mquest.anypref %>
 			</p>
 			<% if @user.already.present? %>
 			  <div class="user_profile_already_list">
