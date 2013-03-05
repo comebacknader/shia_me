@@ -76,18 +76,20 @@
   	<% end %>
 		</div>      	
 
+ <% if @question.center.present? %>
 		 <p class="user_profile_generic">
 			<strong> Islamic Center: </strong> <%= @question.center %>
 		 </p>
+	<% end %>
+	<% if @question.oftencenter.present? %>
 		 <p class="user_profile_generic">
 			<strong> How Often They Attend: </strong> <%= @question.oftencenter %>
 		 </p>
-
+ <% end %>
+ 
   <p class="user_profile_prayer">
 			 <%= @they %> prays <%= @question.prayer %>.
 		</p>  
-
-		
 
 			  <% if @question.firsthobby.present? %>	    	 
 				 <div class="user_profile_question">	
