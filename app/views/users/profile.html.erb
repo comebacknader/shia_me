@@ -86,6 +86,11 @@
 			<strong> How Often They Attend: </strong> <%= @question.oftencenter %>
 		 </p>
  <% end %>
+	<% if @question.famdeen.present? %>
+		 <p class="user_profile_generic">
+			<strong> Immediate Family's Religion: </strong> <%= @question.famdeen %>
+		 </p>
+ <% end %> 
 
   <p class="user_profile_prayer">
 			 <%= @they %> prays <%= @question.prayer %>.

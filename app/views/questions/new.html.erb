@@ -158,7 +158,9 @@
 		
 		<%= f.label :syed, "Are You a Syed?", class: "user_signup" %>
 		<%= f.select(:syed, %w[NO YES]) %>			 				 
-							
+			
+		<%= f.label :famdeen, "Is Your Immediate Family Muslim?", class: "user_signup" %>
+		<%= f.select(:famdeen, ['Not Religious', 'Culturally Religious', 'Very Religious', 'Different Sect', 'Different Religion']) %>			
 		
 		<%= f.label :firsthobby, "What hobbies do you engage in?", class: "user_signup" %>
 		<div class="question_form_details">
