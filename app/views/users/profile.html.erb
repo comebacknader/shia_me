@@ -86,7 +86,7 @@
 			<strong> How Often They Attend: </strong> <%= @question.oftencenter %>
 		 </p>
  <% end %>
- 
+
   <p class="user_profile_prayer">
 			 <%= @they %> prays <%= @question.prayer %>.
 		</p>  
@@ -154,7 +154,11 @@
     <% if @question.bodytype.present? %>
     	<strong>Body Type: </strong> 
     	<%= @question.bodytype %> 
-    <% end %>
+    <% end %><br/>
+    <% if @question.syed.present? %>
+    	<strong>Syed: </strong> 
+    	<%= @question.syed %> 
+    <% end %>    
    <% end %>    
    </div>
  </div>
