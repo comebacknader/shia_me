@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
   attr_accessible :education, :hijab, :job, :prayer, :syed, :user_id, 
   				  :ethnicity, :firsthobby, :secondhobby, :thirdhobby, :islamtoyou, :race,
   				  :employed, :employer, :graduated, :bodytype, :height, :visa, :famdeen, 
-  				  :center, :edulevel
+  				  :center, :edulevel, :oftencenter
   
   belongs_to :user
 

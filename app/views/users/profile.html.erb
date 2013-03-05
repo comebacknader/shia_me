@@ -76,7 +76,14 @@
   	<% end %>
 		</div>      	
 
-  <p class="user_profile_ethnic">
+		 <p class="user_profile_generic">
+			<strong> Islamic Center: </strong> <%= @question.center %>
+		 </p>
+		 <p class="user_profile_generic">
+			<strong> How Often They Attend: </strong> <%= @question.oftencenter %>
+		 </p>
+
+  <p class="user_profile_prayer">
 			 <%= @they %> prays <%= @question.prayer %>.
 		</p>  
 
@@ -86,12 +93,12 @@
 				 <div class="user_profile_question">	
 				 	<p> Some of <%= @user.name %>'s Hobbies Include:
 				 		<ul> 	
-				 			<li> <%= @question.firsthobby %> </li> 
+				 			<li> <%= @question.firsthobby.capitalize %> </li> 
 				 		<% if @question.secondhobby.present? %>	
-				 			<li> <%= @question.secondhobby %> </li>
+				 			<li> <%= @question.secondhobby.capitalize %> </li>
 				 	    <% end %>
 				 	     <% if @question.thirdhobby.present? %>
-				 			<li> <%= @question.thirdhobby %> </li>
+				 			<li> <%= @question.thirdhobby.capitalize %> </li>
 				 		 <% end %>
 				 		</ul>
 				 	</p>

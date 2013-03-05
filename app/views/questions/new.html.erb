@@ -131,6 +131,15 @@
 
 		<%= f.text_field :edulevel, class: "user_signup_field" %>	
 
+		<%= f.label :center, "What's the Name of the Islamic Center You Attend?", class: "user_signup" %>
+		<%= f.text_field :center, class: "user_signup_field" %>	
+
+		<%= f.label :oftencenter, "How Often Do You Attend Your Islamic Center?", class: "user_signup" %>
+		<div class="question_form_details">
+		  Be honest.
+		</div>				
+
+		<%= f.select(:oftencenter, ['I Practically Live There', 'Once A Week', 'Once A Month', 'Only On Special Occasions', 'Never']) %>
 
 		<%= f.label :prayer, "How Often Do You Pray?", class: "user_signup" %>
 		<div class="question_form_details">
@@ -138,7 +147,7 @@
 		</div>
 		<%= f.select(:prayer, ['almost all the Wajib prayers',
 					    'all the Wajib prayers', 'all the Wajib prayers & some extra prayers',
-						 'all the Wajib and a lot of extra prayers']) %>			
+						 'all the Wajib and a lot of extra prayers']) %>					
 		
 		<% if @user.gender == "FEMALE" %> 
 	
